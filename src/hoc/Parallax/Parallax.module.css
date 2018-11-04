@@ -1,0 +1,68 @@
+.Parallax {
+    position: relative;
+    margin-top: -56px;
+}
+
+.ParallaxIntro {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+    text-shadow: 6px 6px 9px rgba(0,0,0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 60px;
+    margin-bottom: 25px;
+    color: #60dcfb;
+    background: linear-gradient(to right, #944adb 20%, #60dcfb 40%, #60dcfb 60%, #944adb 80%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-text 5s linear infinite;
+}
+
+.ParallaxMotto {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+    text-shadow: 6px 6px 9px rgba(0,0,0, 0.1);
+    text-transform: none;
+    letter-spacing: 2px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #FFF;
+}
+
+@keyframes gradient-text {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.ParallaxOverlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5)
+}
+
+.ParallaxContent {
+    position: absolute;
+    width: 100%;
+    top: 42.5%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.ParallaxChildren {
+    position: absolute;
+    width: 100%;
+    top: 100vh;
+    height: 1000px;
+    background-color: #282c34;
+}
