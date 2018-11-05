@@ -1,6 +1,6 @@
 import React from 'react'
 
-import imageLogo from '../../../assets/React-And-React-Redux-Logo.png';
+import imageLogo from '../../../assets/images/React-And-React-Redux-Logo.png';
 
 import classes from './Logo.module.css'
 

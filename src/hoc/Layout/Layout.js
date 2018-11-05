@@ -6,7 +6,7 @@ import classes from './Layout.module.css'
 
 class Layout extends Component {
 
-    render (props) {
+    render () {
         return (
             <>
                 <Navbar />

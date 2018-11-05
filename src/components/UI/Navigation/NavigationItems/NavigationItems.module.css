@@ -1,10 +1,12 @@
 .NavigationItems {
+    user-select: none;
     margin: 16px 0;
     padding: 0;
     list-style: none;
     display: flex;
     flex-flow: column;
     align-items: center;
+    width: 100vw;
     height: 100%;
 }
 
@@ -13,4 +15,15 @@
         margin: 0;
         flex-flow: row;
     }
+}
+
+.NavbarLogo {
+    flex-grow: 1;
+}
+
+.NavbarLogo img {
+    width: 50px;
+    display: flex;
+    margin-left: auto;
+    margin-right: 25px;
 }

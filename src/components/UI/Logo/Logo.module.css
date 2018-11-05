@@ -7,11 +7,12 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     position: relative;
+    user-select: none;
 }
 
 .Logo img {
     display: block;
-    max-width:40vh;
+    max-width:62.5vw;
     max-height:40vh;
     width: auto;
     height: auto;
@@ -22,9 +23,18 @@
 .Logo span {
     user-select: none;
     color: #764abd;
-    width: 6vw;
+    width: auto;
     font-weight: 700;
     position: absolute;
+}
+
+@media only screen and (max-width: 485px) {
+    .Logo img {
+        max-width: 33.5vw;
+    }
+    .Logo span {
+        font-size: 10px;
+    }
 }
 
 @keyframes Logo-spin {
