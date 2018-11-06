@@ -9,6 +9,7 @@
     margin: 5px 0 5px 0;
     color: #569cd6;
 }
+
 .Class span {
     margin: 0 1ch 0 1ch;
     color: rgb(250,200,99)
@@ -23,4 +24,13 @@
 .ClassWrapper {
     min-height: 40px;
     margin: 25px 0 25px 15px;
+}
+
+@media only screen and (max-width: 475px) {
+    .Class {
+        display: block;
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 }

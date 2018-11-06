@@ -6,6 +6,7 @@
     display: block;
     margin: auto;
     padding-top: 15px;
+    padding-bottom: 75px;
     width: 90vw ;
     color: #000;
 }
@@ -39,14 +40,20 @@
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
-    box-shadow: 0px 3px 6px rgba(0 ,0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: -2px 3px 6px rgba(0 ,0, 0, 0.16), 5px 10px 26px rgba(0, 0, 0, 0.53);
     box-sizing: border-box;
     padding: 15px;
     flex-flow: row;
+    background-image: linear-gradient(to right, #054f7d, #00a7cf, #efe348, #861a54, #054f7d);
+    background-size: 400% 400%;
+    border-radius: 20px;
+    animation: gradient-background 30s infinite;
 }
 
 .Portrait {
+    box-sizing: border-box;
     border-right: 2px dashed #EEEEEE;
+    border-radius: 20px;
     background: #FFFFFF;
     flex: 0 0 25%;
     max-width: 25%;
@@ -57,12 +64,17 @@
 .Portrait img {
     display: block;
     margin: auto;
-    margin-top: 20%;
+    margin-top: 15%;
     margin-bottom: 20px;
     transform: scale(0.9);
     border-radius: 20px;
     transition: all 0.25s ease-out;
     box-shadow: 0 2px 3px #333;
+}
+
+.Portrait img:hover {
+    transform: scale(1);
+    box-shadow: 0 10px 17.5px #333;
 }
 
 .PortraitName {
@@ -82,9 +94,13 @@
     width: 80%;
 }
 
-.Portrait img:hover {
-    transform: scale(1);
-    box-shadow: 0 10px 17.5px #333;
+.PersonalLogo {
+    transform: scale(1.25) !important;
+    margin-top: 17.5% !important;
+    max-width: 200px;
+    width: 80%;
+    border-radius: 0  !important;
+    box-shadow: none !important;
 }
 
 .Code {
@@ -102,4 +118,130 @@
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0px 5px 20px #333;
+}
+
+.MoreInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(40,44,52);
+    font-size: 2em;
+    padding: 25px 0 25px 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.Interested {
+    display: block;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #944adb;
+}
+
+.MoreInfo div span:last-of-type {
+    display: block;
+    text-transform: none;
+    font-size: 1em;
+    margin-bottom: 5px;
+    animation: gradient-text 5s linear infinite alternate;
+}
+
+.PageReferences {
+    display: block;
+    margin-top: 50px;
+    text-transform: none;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.LinksWrapper {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.Link {
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 250px;
+    color: #944adb;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    transition: all linear 0.2s;
+    box-shadow: 0 0 1px;
+    border: 3px solid transparent;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.Link:hover {
+    color: #60dcfb;
+    border: 3px solid;
+}
+
+@keyframes gradient-background {
+    0% {
+        background-position: 0 0;
+    }
+    25% {
+        background-position: 50% 0;
+    }
+    50% {
+        background-position: 90% 0;
+    }
+    60% {
+        background-position: 60%;
+    }
+    75% {
+        background-position: 40%;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes gradient-text {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .Profile {
+        flex-flow: column;
+    }
+
+    .Portrait {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 50px;
+        border: none;
+    }
+    .Portrait img {
+        margin: 10% auto !important;
+    }
+    
+    .AboutMeContainer {
+        width: 75vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .AboutMeContainer {
+        width: 80vw;
+    }
+
+    .MoreInfo div span {
+        font-size: 1.5em;
+    }
+
+    .MoreInfoWrapper {
+        width: 80vw !important;
+    }
+
+    .LinksWrapper {
+        flex-flow: column;
+    }
 }

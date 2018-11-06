@@ -12,9 +12,12 @@ class Code extends Component {
     constructor(props) {
         super(props)
         this.isInViewportElements = {
+            import: React.createRef(),
+            class: React.createRef(),
             education: React.createRef(),
             tools: React.createRef(),
-            skills: React.createRef()
+            skills: React.createRef(),
+            export: React.createRef()
         }
     }
 
@@ -24,26 +27,26 @@ class Code extends Component {
 
     isInViewport = (event, offset = 50 ) => {
         Object.keys(this.isInViewportElements).forEach( key => {
-            if (this.isInViewportElements) {
-                if (window.scrollY > this.isInViewportElements[key].current.offsetTop + offset && !this.state.isInViewport[key]) {
-                    const setStateObject = {
-                        ...this.state.isInViewport,
-                        [key]: true
-                    }
-                    this.setState({ 
-                        isInViewport:setStateObject 
-                    });
+            console.log("key", this.isInViewportElements[key])
+            if (!this.isInViewportElements[key].current) {return};
+            if (window.scrollY > this.isInViewportElements[key].current.offsetTop + offset && !this.state.isInViewport[key]) {
+                const setStateObject = {
+                    ...this.state.isInViewport,
+                    [key]: true
                 }
+                this.setState({ 
+                    isInViewport:setStateObject 
+                });
             }
         });
     }
 
     componentDidMount () {
-        window.addEventListener('scroll', (el) => this.isInViewport(el, 100));
+        window.addEventListener('scroll', (el) => this.isInViewport(el, 75));
     }
 
     componentWillUnmount () {
-        window.removeEventListener('scroll', (el) => this.isInViewport(el, 100));
+        window.removeEventListener('scroll', (el) => this.isInViewport(el, 75));
     }
 
     render () {
@@ -76,35 +79,60 @@ class Code extends Component {
                 export: 'Information'
             }
         }
-
+        console.log(this.isInViewportElements)
         return (
             <div  className={classes.Code}>
                 <div className={classes.CodeWrapper}>
-                    <Import defaultImport={curriculumVitae.import.defaultImport} import={curriculumVitae.import.import} package={curriculumVitae.import.package} />
-                    <Class name={curriculumVitae.class.name} extends={curriculumVitae.class.extends}>
-                        <div ref={this.isInViewportElements.education}>
-                            {this.state.isInViewport.education ?
-                                <Method method={curriculumVitae.method.education.method} argument={curriculumVitae.method.education.argument}>
-                                    <span>Full Stack Web Development, Backend Logic, Data Visualization, Flat Design, Vector Illustrations, & Unity games!</span>
-                                </Method>
-                            : null}
-                        </div>
-                        <div ref={this.isInViewportElements.skills}>
-                            {this.state.isInViewport.skills ?
-                                <Method method={curriculumVitae.method.skills.method} argument={curriculumVitae.method.skills.argument}>
-                                    <span>Full Stack Web Development, Backend Logic, Data Visualization, Flat Design, Vector Illustrations, & Unity games!</span>
-                                </Method>
-                            : null}
-                        </div>
-                        <div ref={this.isInViewportElements.tools}>
-                            {this.state.isInViewport.tools ?
-                                <Method method={curriculumVitae.method.tools.method} argument={curriculumVitae.method.tools.argument}>
-                                    <span>React.js - HTML, CSS, JavaScript, ES6, Next-Gen JS, Babel, Webpack, Loaders. - jQuery, Bootstrap 3 & 4, - Node.js, Express.js, - MongoDB, Firebase - Git, Heroku.</span>
-                                </Method>
-                            : null}
-                        </div>
-                    </Class>
-                    <Export export={curriculumVitae.export.export}/>
+                    <div ref={this.isInViewportElements.import}>
+                        {this.state.isInViewport.import ?
+                            <Import defaultImport={curriculumVitae.import.defaultImport} import={curriculumVitae.import.import} package={curriculumVitae.import.package} />
+                        : null}
+                    </div>
+                    <div ref={this.isInViewportElements.class}>
+                        {this.state.isInViewport.class ?
+                            <Class name={curriculumVitae.class.name} extends={curriculumVitae.class.extends}>
+                                <div ref={this.isInViewportElements.education}>
+                                    {this.state.isInViewport.education ?
+                                        <Method method={curriculumVitae.method.education.method} argument={curriculumVitae.method.education.argument}>
+                                            <span>
+                                                Major in <span className={classes.String}>Mechanical Engineering</span>, turns out I liked to code more than I liked to build parts so here I am!
+                                                I'm Passionate about computer science, with strong technical, commercial and interpersonal skills
+                                                to work as a team and successfully complete any project.
+                                            </span>
+                                        </Method>
+                                    : null}
+                                </div>
+                                <div ref={this.isInViewportElements.skills}>
+                                    {this.state.isInViewport.skills ?
+                                        <Method method={curriculumVitae.method.skills.method} argument={curriculumVitae.method.skills.argument}>
+                                            <span>
+                                                I'm an adept at Fullstack Web Development, lots of Backend Logic & Procceses, Data Visualization, Vector Illustrations, &
+                                                Unity 3D games development as a side hobby.
+                                            </span>
+                                        </Method>
+                                    : null}
+                                </div>
+                                <div ref={this.isInViewportElements.tools}>
+                                    {this.state.isInViewport.tools ?
+                                        <Method method={curriculumVitae.method.tools.method} argument={curriculumVitae.method.tools.argument}>
+                                            <span>
+                                                MongoDB, Firebase, Express, React.js (often using Redux, Saga, Router-DOM, Next.js, etc.), Node.js.<br />
+                                                Always using Webpack with Babel, tons of other loaders.<br />
+                                                JavaScript, ES6, Next-Gen JS, HTML, CSS, - jQuery, and sometimes Bootstrap 3 & 4 for quick projects. C#.<br/>
+                                                Deploying done through Firebase and/or Heroku.<br />
+                                                Made a habit of using Git and Github.
+                                            </span>
+                                        </Method>
+                                    : null}
+                                </div>
+                            </Class>
+                        : null}
+                    </div>
+                    <div ref={this.isInViewportElements.export}>
+                        {this.state.isInViewport.export ?
+                            <Export export={curriculumVitae.export.export}/>
+                        : null}
+                    </div>
                 </div>
             </div>
         );

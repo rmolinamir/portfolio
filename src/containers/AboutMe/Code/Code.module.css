@@ -3,14 +3,26 @@
     flex: 0 0 75%;
     width: 100%;
     margin-left: 7.5px;
-    padding: 10px;
     box-sizing: border-box;
 }
 
 .CodeWrapper {
-    min-height: 550px;
+    min-height: 750px;
     background: rgb(40,44,52);
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0px 5px 20px #333;
+}
+
+.String {
+    color: #ff8a41;
+}
+
+@media only screen and (max-width: 900px) {
+    .Code {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 }

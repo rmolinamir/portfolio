@@ -2,13 +2,8 @@ import React, { Component } from 'react';
 
 import SlideDown from './SlideDown/SlideDown';
 import Logo from '../../components/UI/Logo/Logo';
-import SocialMediaButton from '../../components/UI/SocialMediaButton/SocialMediaButton';
 
-import classes from './Parallax.module.css'
-
-import githubSVG from '../../assets/svg/github-icon.svg';
-import gmailSVG from '../../assets/svg/google-gmail.svg';
-import linkedinSVG from '../../assets/svg/linkedin-icon.svg';
+import classes from './Parallax.module.css';
 
 class parallax extends Component {
 
@@ -36,13 +31,6 @@ class parallax extends Component {
             backgroundSize: 'cover',
             zIndex: '-1'
         }
-        const socialMediaButtons = [
-            {icon: githubSVG, href: "https://github.com/rmolinamir", targetBlank: true},
-            {icon: gmailSVG, href: "mailto:rmolinamir@gmail.com", targetBlank: false},
-            {icon: linkedinSVG, href: "https://www.linkedin.com/in/robert-molina-467798153/", targetBlank: true}
-        ].map( (Button, index) => {
-            return <SocialMediaButton key={index} svg={Button.icon} href={Button.href} targetBlank={Button.targetBlank}/>
-        });
         return (
             <div className={classes.Parallax}>
                 <div style={parallaxBackground}>
@@ -50,7 +38,7 @@ class parallax extends Component {
                         <div className={classes.ParallaxContent}>
                             <Logo />
                             <div className={classes.ParallaxIntro}>Robert Molina</div>
-                            {socialMediaButtons}
+                            {this.props.socialMediaButtons}
                             <div className={classes.ParallaxMotto}>"Quality means doing it right, even when no one is looking."</div>
                         </div>
                     </div>

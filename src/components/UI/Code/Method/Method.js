@@ -7,12 +7,12 @@ const method = (props) => {
     return (
         <div className={classes.MethodContainer}>
             <Typist avgTypingDelay={25} stdTypingDelay={5} cursor={{show: false}}>
-                <div className={classes.Method}>{props.method ? props.method : 'No props.method found.'} <span>(<span className={classes.Argument}>{props.argument ? props.argument : null}</span>)</span> <span>=></span> {'{'} </div>
+                <div className={classes.Method}><span className={classes.Const}>const</span> {props.method ? props.method : 'No props.method found.'} <span>(<span className={classes.Argument}>{props.argument ? props.argument : null}</span>)</span> <span>=></span> {'{'} </div>
             </Typist>
             <div className={classes.MethodWrapper}>
                 <Typist startDelay={1000} avgTypingDelay={5} stdTypingDelay={5} cursor={{show: false}}> 
                     <code>
-                        {props.children}
+                        <span className={classes.Return}>return {'{'}</span> <div>{props.children}</div> <span className={classes.Return}>{'}'}</span>
                     </code>
                 </Typist>
             </div>
