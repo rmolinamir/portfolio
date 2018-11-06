@@ -9,7 +9,7 @@ import navbarLogo from '../../../../assets/svg/Robert-Molina.svg';
 const nagivationItems = (props) => {
     return (
         <ul className={classes.NavigationItems}>
-            <NavigationItem {...props} link='/'>Home</NavigationItem>
+            <NavigationItem {...props} link='/'>About Me</NavigationItem>
             <NavigationItem {...props} link='/projects'>Projects</NavigationItem>
             <NavigationItem {...props} link='/skills'>Skills</NavigationItem>
             <div style={{flexGrow: '1'}} />

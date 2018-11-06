@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
-import parallaxImage from '../../assets/images/Parallax-Background.jpg'
-
-// Components
-import Parallax from '../../hoc/Parallax/Parallax';
 import classes from './AboutMe.module.css';
 
+import Parallax from '../../hoc/Parallax/Parallax';
+import DownloadButton from '../../components/UI/DownloadButton/DownloadButton';
+import Code from './Code/Code';
+
 import profilePicture from '../../assets/images/Profile-Picture.jpg';
+import parallaxImage from '../../assets/images/Parallax-Background.jpg';
 
 class AboutMe extends Component {
+
     render () {
-        // const parallaxImagePath = 'assets/Parallax-Background.jpg';
+
         const pageContent = (
             <div className={classes.AboutMeContainer}>
                 <h1><span>i</span> About Me</h1>
@@ -19,18 +21,10 @@ class AboutMe extends Component {
                         <img src={profilePicture} alt='Profile'/>
                         <div className={classes.PortraitName}>Robert Molina</div>
                         <div className={classes.PortraitTitle}>Fullstack Developer</div>
+                        <p className={classes.Download}>Click the button below to download my full resume:</p>
+                        <DownloadButton>Full Resume</DownloadButton>
                     </div>
-                    <div  className={classes.Information}>
-                        <h2>Information</h2>
-                        <h3>Skills</h3>
-                        <div>
-                            Full Stack Web Development, Backend Logic, Data Visualization, Flat Design, Vector Illustrations, & Unity games!
-                        </div>
-                        <h3>Tools</h3>
-                        <div>
-                            React.js - HTML, CSS, JavaScript, ES6, Next-Gen JS, Babel, Webpack, Loaders. - jQuery, Bootstrap 3 & 4, - Node.js, Express.js, - MongoDB, Firebase - Git, Heroku.
-                        </div>
-                    </div>
+                    <Code />
                 </div>
             </div>  
         );

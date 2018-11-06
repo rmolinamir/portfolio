@@ -52,7 +52,7 @@
     .NavigationItem a:active,
     .NavigationItem a.active {
         font-size: 18px;
-        background-color: rgba(118, 74, 189, .5);
+        background-color: rgba(118, 74, 189, .5);   
         border-bottom: 4px solid #60dcfb;
         color: #60dcfb;
     }
