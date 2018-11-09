@@ -55,14 +55,20 @@ class Navbar extends PureComponent {
         }
     };
 
-    static getDerivedStateFromProps (nextProps, prevState) {
-        if (window.scrollY > 56) {
-            return {
-                navbarTransparent: false
+    static getDerivedStateFromProps (nextProps) {
+        if ((nextProps.location.pathname !== "/projects" && nextProps.location.pathname !== "/skills")) {
+            if (window.scrollY > 56) {
+                return {
+                    navbarTransparent: false
+                }
+            } else {
+                return {
+                    navbarTransparent: true
+                }
             }
         } else {
             return {
-                navbarTransparent: true
+                navbarTransparent: false
             }
         }
     }

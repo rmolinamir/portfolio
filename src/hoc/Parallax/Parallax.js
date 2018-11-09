@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
 
+import IntroHeader from '../../components/UI/IntroHeader/IntroHeader';
+
 import SlideDown from './SlideDown/SlideDown';
 import Logo from '../../components/UI/Logo/Logo';
 
 import classes from './Parallax.module.css';
+
+import { scrollToContent } from '../../shared/scrollToContent';
 
 class parallax extends Component {
 
     constructor(props) {
         super(props);
         this.parallaxContent = React.createRef();
-    }
-
-    scrollToContent = () => {
-        window.scrollTo({
-            top: this.parallaxContent.current.offsetTop - 56,
-            left: 0,
-            behavior: 'smooth'
-        });
     }
 
     render () {
@@ -37,12 +33,12 @@ class parallax extends Component {
                     <div className={classes.ParallaxOverlay}>
                         <div className={classes.ParallaxContent}>
                             <Logo />
-                            <div className={classes.ParallaxIntro}>Robert Molina</div>
+                            <IntroHeader>Robert Molina</IntroHeader>
                             {this.props.socialMediaButtons}
                             <div className={classes.ParallaxMotto}>"Quality means doing it right, even when no one is looking."</div>
                         </div>
                     </div>
-                    <SlideDown scrollOnClick={this.scrollToContent} />
+                    <SlideDown scrollOnClick={() => scrollToContent(this.parallaxContent.current.offsetTop)} />
                 </div>
                 <main className={classes.ParallaxChildren} ref={this.parallaxContent}>  
                     {this.props.children}

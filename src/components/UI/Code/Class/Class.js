@@ -4,7 +4,6 @@ import Typist from 'react-typist';
 import classes from './Class.module.css';
 
 const classComponent = (props) => {
-    console.log(props.children)
     if (props.extends) {
         return (
         <div className={classes.ClassContainer}>

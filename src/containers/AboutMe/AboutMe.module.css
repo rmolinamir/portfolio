@@ -1,4 +1,4 @@
-.AboutMe {
+    .AboutMe {
     text-align: center;
 }
 
@@ -52,9 +52,9 @@
 
 .Portrait {
     box-sizing: border-box;
-    border-right: 2px dashed #EEEEEE;
+    box-shadow: 2.5px 2.5px 10px #333;
     border-radius: 20px;
-    background: #FFFFFF;
+    background: rgba(255,255,255,.25);
     flex: 0 0 25%;
     max-width: 25%;
     display: flex;
@@ -79,9 +79,11 @@
 
 .PortraitName {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 28px;
     color: #60dcfb;
     line-height: 2;
+    text-transform: uppercase;
+    text-shadow: 1px 2px 5px #333;
 }
 
 .PortraitTitle {
@@ -101,84 +103,6 @@
     width: 80%;
     border-radius: 0  !important;
     box-shadow: none !important;
-}
-
-.Code {
-    text-align: left;
-    flex: 0 0 75%;
-    max-width: 75%;
-    margin-left: 7.5px;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.CodeWrapper {
-    min-height: 550px;
-    background: rgb(40,44,52);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 5px 20px #333;
-}
-
-.MoreInfo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgb(40,44,52);
-    font-size: 2em;
-    padding: 25px 0 25px 0;
-    box-sizing: border-box;
-    user-select: none;
-}
-
-.Interested {
-    display: block;
-    font-size: 2em;
-    text-transform: uppercase;
-    color: #944adb;
-}
-
-.MoreInfo div span:last-of-type {
-    display: block;
-    text-transform: none;
-    font-size: 1em;
-    margin-bottom: 5px;
-    animation: gradient-text 5s linear infinite alternate;
-}
-
-.PageReferences {
-    display: block;
-    margin-top: 50px;
-    text-transform: none;
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-}
-
-.LinksWrapper {
-    display: flex;
-    align-items: center;
-    flex-flow: row;
-    justify-content: space-evenly;
-    margin-top: 50px;
-}
-
-.Link {
-    text-transform: uppercase;
-    text-decoration: none;
-    width: 250px;
-    color: #944adb;
-    font-size: 2.5rem;
-    margin-bottom: 25px;
-    transition: all linear 0.2s;
-    box-shadow: 0 0 1px;
-    border: 3px solid transparent;
-    padding: 10px 0;
-    box-sizing: border-box;
-}
-
-.Link:hover {
-    color: #60dcfb;
-    border: 3px solid;
 }
 
 @keyframes gradient-background {
@@ -231,17 +155,5 @@
 @media only screen and (max-width: 500px) {
     .AboutMeContainer {
         width: 80vw;
-    }
-
-    .MoreInfo div span {
-        font-size: 1.5em;
-    }
-
-    .MoreInfoWrapper {
-        width: 80vw !important;
-    }
-
-    .LinksWrapper {
-        flex-flow: column;
     }
 }

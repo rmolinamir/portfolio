@@ -17,7 +17,7 @@ const method = (props) => {
                 </Typist>
             </div>
             <Typist avgTypingDelay={25} stdTypingDelay={5} cursor={{show: false}}>
-                <div className={classes.Method}>{'}'}</div>
+                <div style={{marginTop: '1ch', marginLeft: '1ch'}} className={classes.Method}>{'}'}</div>
             </Typist>
         </div>
     );

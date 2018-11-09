@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     min-height: 40px;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .MethodWrapper code {
@@ -49,7 +49,7 @@
 }
 
 .Return:last-of-type {
-    margin-left: 1ch;
+    margin-left: 1.5ch;
 }
 
 .MethodWrapper code div {

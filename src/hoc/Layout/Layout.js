@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-
-import Navbar from '../../containers/Navbar/Navbar';
+import { withRouter } from 'react-router-dom';
 
 import classes from './Layout.module.css'
 
-class Layout extends Component {
+import Navbar from '../../containers/Navbar/Navbar';
+import Footer from '../../components/UI/Footer/Footer';
 
+class Layout extends Component {
     render () {
+        const footer = this.props.location.pathname === "/projects" || this.props.location.pathname === "/skills" ? <Footer /> : null;
         return (
             <>
                 <Navbar />
                 <main className={classes.Layout}>
                     {this.props.children}
                 </main>
+                {footer}
             </>
         );
     }
 }
 
-export default Layout;
+export default withRouter(Layout);

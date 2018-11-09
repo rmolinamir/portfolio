@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 import classes from './NagivationItem.module.css'
 
@@ -13,9 +13,10 @@ const navigationItem = (props) => {
             <NavLink
                 activeClassName={navLinkClasses.join(' ')}
                 exact={props.exact}
-                to={props.link}>{props.children}</NavLink>
+                to={props.link}>
+                {props.icon && props.link === props.location.pathname ? <img className={classes.NavigationItemIcon} src={props.icon} alt=""/> : null} {props.children}</NavLink>
         </li>
     );
 }
 
-export default navigationItem;
+export default withRouter(navigationItem);
