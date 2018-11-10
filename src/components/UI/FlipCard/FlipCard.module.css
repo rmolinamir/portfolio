@@ -46,6 +46,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     border-bottom: 1px solid #fff;
+    transform: translateZ(0);
 }
 
 .Front .Media img,

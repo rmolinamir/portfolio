@@ -33,7 +33,7 @@ const footer = (props) => {
                     </div>
                     <div className={classes.CloserWrapper}>
                         <div>Copyright © Robert Molina</div>
-                        <div>React.js</div>
+                        <div>React</div>
                     </div>
                 </div>
             </div>

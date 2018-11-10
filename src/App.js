@@ -13,7 +13,7 @@ const AboutMe = React.lazy(() => import('./containers/AboutMe/AboutMe'));
 const Projects = React.lazy(() => import('./containers/Projects/Projects'));
 const Skills = React.lazy(() => import('./containers/Skills/Skills'));
 
-const SpinnerContainer = () => <Container className={classes.AppContainer}><Spinner /></Container>
+const SpinnerContainer = () => <Container className={classes.SpinnerContainer}><Spinner /></Container>
 
 class App extends Component {
 

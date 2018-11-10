@@ -1,0 +1,51 @@
+.LabelWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    user-select: none;
+}
+
+.Label {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column;
+    padding: 5px 0px 5px 10px;
+    margin-left: 78.5%;
+    width: 100%;
+}
+
+.Label strong {
+    width: 100%;
+}
+
+.Label:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    align-items: center;
+    height: 80%;
+    border-left: 5px solid;
+    border-color: greenyellow;
+}
+
+.LabelMaster:after {
+    border-color: #556f4b;
+}
+
+.LabelHigh:after {
+    border-color: #8ebd7b;
+}
+
+.LabelMedium:after {
+    border-color: #beca7d;
+}
+
+.LabelBasic:after {
+    border-color: #f4b800;
+}
+
+.LabelDefault:after {
+    border-color: #e6581b;
+}

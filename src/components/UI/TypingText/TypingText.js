@@ -1,6 +1,7 @@
 import React from 'react'
 
 import injectStyle from '../../../shared/injectStyle';
+
 import classes from './TypingText.module.css';
 
 const typingText = (props) => {

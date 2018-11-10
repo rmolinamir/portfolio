@@ -1,3 +1,4 @@
-.AppContainer {
+.SpinnerContainer {
     height: 100vh;
+    background: rgb(40,44,52);
 }

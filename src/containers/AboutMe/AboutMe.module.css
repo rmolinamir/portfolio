@@ -1,4 +1,4 @@
-    .AboutMe {
+.AboutMe {
     text-align: center;
 }
 
@@ -16,6 +16,7 @@
     display: flex;
     width: 100%;
     align-items: center;
+    justify-content: center;
     flex-grow: 1;
     margin-bottom: 40px;
 }

@@ -95,7 +95,8 @@ class Code extends Component {
                                             <span>
                                                 Major in <span className={classes.String}>Mechanical Engineering</span>, turns out I like to code more than I like to build parts, so here I am!
                                                 I'm Passionate about computer science, with strong technical, commercial and interpersonal skills,
-                                                allowing me to work as a team and successfully complete any project.
+                                                allowing me to work as a team and successfully complete any project, be sure to check out my previous
+                                                projects in the projects tab up top!
                                             </span>
                                         </Method>
                                     : null}
@@ -105,7 +106,7 @@ class Code extends Component {
                                         <Method method={curriculumVitae.method.skills.method} argument={curriculumVitae.method.skills.argument}>
                                             <span>
                                                 I'm adept at Fullstack Web Development, lots of Backend Logic & Procceses, Data Visualization, Vector Illustrations, &
-                                                Unity 3D games development as a side hobby.
+                                                Unity 3D games development as a side hobby, check the skills tab for more details!
                                             </span>
                                         </Method>
                                     : null}
