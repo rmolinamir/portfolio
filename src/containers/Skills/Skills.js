@@ -25,7 +25,7 @@ class Skills extends Component {
                 percentage: '80%',
             },
             html5: {
-                name: 'HTML 3',
+                name: 'HTML 5',
                 icon: icons.html5,
                 percentage: '85%',
             },

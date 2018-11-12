@@ -65,12 +65,15 @@
 .Portrait img {
     display: block;
     margin: auto;
-    margin-top: 15%;
-    margin-bottom: 20px;
+    max-width: 225px;
     transform: scale(0.9);
     border-radius: 20px;
     transition: all 0.25s ease-out;
     box-shadow: 0 2px 3px #333;
+}
+
+.Portrait img:last-of-type {
+    width: 150px;
 }
 
 .Portrait img:hover {

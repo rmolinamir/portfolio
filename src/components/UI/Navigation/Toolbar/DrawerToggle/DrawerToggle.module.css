@@ -9,6 +9,7 @@
     margin-left: 10px;
     box-sizing: border-box;
     cursor: pointer;
+    z-index: 205;
 }
 
 .DrawerToggle div {

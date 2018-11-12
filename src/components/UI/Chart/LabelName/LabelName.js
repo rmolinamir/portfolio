@@ -8,30 +8,34 @@ const labelName = (props) => {
         case ('master'):
             label = <span 
                 className={[classes.Label, classes.LabelMaster].join(' ')}>
-                    <strong>Master,</strong> I'm pretty good.</span>
+                    <strong>Master</strong> <span>I'm pretty good.</span></span>
             break;
         case ('high'):
             label = <span 
                 className={[classes.Label, classes.LabelHigh].join(' ')}>
-                    <strong>High,</strong> Just the tip of the surface.</span>
+                    <strong>High</strong> <span>Just the tip of the surface.</span></span>
             break;
         case ('medium'):
             label = <span 
                 className={[classes.Label, classes.LabelMedium].join(' ')}>
-                    <strong>Medium,</strong> Trying to improve!</span>
+                    <strong>Medium</strong> <span>Trying to improve!</span></span>
             break;
         case ('basic'):
             label = <span 
                 className={[classes.Label, classes.LabelBasic].join(' ')}>
-                    <strong>Basic,</strong> Just started learning.</span>
+                    <strong>Basic</strong> <span>Just started learning.</span></span>
             break;
         default:
             label = <span 
                 className={[classes.Label, classes.LabelDefault].join(' ')}>
-                    <strong>Uhh..</strong> Next question please...</span>
+                    <strong>Uhh...</strong> <span>Next question please...</span></span>
+    }
+    let labelWrapperClasses = [classes.LabelWrapper];
+    if (!props.isHorizontal) {
+        labelWrapperClasses = [classes.VerticalLabelWrapper];
     }
     return (
-        <li className={classes.LabelWrapper}>
+        <li className={labelWrapperClasses.join(' ')}>
             {label}
         </li>
     );

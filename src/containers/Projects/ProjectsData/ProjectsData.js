@@ -12,6 +12,8 @@ import bonpreuFoodsImage from '../../../assets/projects/BonpreuFoods/BonpreuFood
 import repuestosSotomayorVideo from '../../../assets/projects/RepuestosSotomayor/RepuestosSotomayor.mp4';
 import repuestosSotomayorImage  from '../../../assets/projects/RepuestosSotomayor/RepuestosSotomayor2.png';
 
+import personalWebsiteVideo  from '../../../assets/projects/PersonalWebsite/PersonalWebsite.mp4';
+
 import githubSVG from '../../../assets/svg/github-icon.svg';
 import externalLinkSymbol from '../../../assets/svg/external-link-symbol.svg';
 
@@ -92,7 +94,7 @@ export const projectsData = {
     personalWebsite: {
         front: {
             classes: [classes.PersonalWebsiteFront].join(' '),
-            card: bonpreuFoodsVideo,
+            card: personalWebsiteVideo,
             content: (
                 <ProjectFront header={'This very same Web App done for myself!'} />                
             ),

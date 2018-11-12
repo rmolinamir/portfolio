@@ -1,11 +1,11 @@
 import React from 'react';
 
-import classes from './IntroHeader.module.css'
+import classes from './IntroHeader.module.css';
 
-const parallaxIntro = (props) => {
+const introHeader = (props) => {
     return (
-        <div className={classes.ParallaxIntro}>{props.children}</div>        
-    )
+        <div className={classes.IntroHeader}>{props.children}</div>        
+    );
 }
 
-export default parallaxIntro;
+export default introHeader;

@@ -19,9 +19,7 @@ const flipCard = (props) => {
                     card[key].content = (
                         <video 
                         width={props.width} height={"auto" }
-                        autoPlay
-                        loop
-                        muted>
+                        autoPlay muted playsInline>
                             <source src={props[key].card} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
@@ -59,7 +57,8 @@ const flipCard = (props) => {
                     <div className={card.back.classes.join(' ')}>
                         <div className={classes.Media} style={{
                             height: card.back.height,
-                            backgroundImage: `url(${card.back.spinner})`}}>
+                            // backgroundImage: `url(${card.back.spinner})`
+                            }}>
                             {card.back.content}
                         </div>
                         {props.back ? props.back.content : null}

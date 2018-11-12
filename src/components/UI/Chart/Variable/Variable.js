@@ -11,12 +11,14 @@ const variable = (props) => {
         height: 300
     }
     let variableClasses = [classes.Variable];
+    let variableNameClasses = [classes.VariableName];
     if (!props.isHorizontal) {
         dimensions = {
             width: props.width,   
             height: 20
         }
         variableClasses.push(classes.VerticalVariable);
+        variableNameClasses.push(classes.VerticalVariableName);
     }
     return (
         <li className={variableClasses.join(' ')}>
@@ -25,11 +27,11 @@ const variable = (props) => {
                         width={dimensions.width}
                         height={dimensions.height}
                         percentage={props.percentage ? props.percentage : randomPercentage}/>
-            <div className={classes.VariableName}>
+            <div className={variableNameClasses.join(' ')}>
                 <div className={classes.IconWrapper}>
                     <img src={props.icon} alt='' />
                 </div>
-                <div>{props.name}</div>
+                <div className={classes.VerticalIconName}>{props.name}</div>
             </div>
         </li>
     );

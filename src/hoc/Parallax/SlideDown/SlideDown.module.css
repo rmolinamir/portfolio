@@ -1,10 +1,10 @@
 .Arrows {
     position: absolute;
     cursor: pointer;
-    top: 90%;
+    top: 85%;
     left: 50%;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     margin-left: -12px;
     border-left: 1px solid #fff;
     border-bottom: 1px solid #fff;
@@ -56,5 +56,19 @@
     }
     100% {
         opacity: 0;
+    }
+}
+
+@media (max-width: 750px) {
+    .Arrows {
+        top: 82.5%;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media screen and (orientation:landscape) and (max-width: 900px) {
+    .Arrows {
+        left: 90%;
     }
 }

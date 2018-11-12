@@ -6,6 +6,30 @@
     min-height: 250px;
     width: auto;
     height: auto;
-    margin: 25px;
+    margin: 20px;
     box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+    .Project {
+        margin: 15px;
+    }
+}
+
+@media (max-width: 900px) {
+    .Project {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .Project {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .Project {
+        margin: 10px 0 10px 0;
+    }
 }

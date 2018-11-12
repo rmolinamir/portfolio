@@ -7,3 +7,9 @@
     width: fit-content;
     margin: auto;
 }
+
+@media (max-width: 350px) {
+    .Container {
+        max-width: 300px;
+    }
+}

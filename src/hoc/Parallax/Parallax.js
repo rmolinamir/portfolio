@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import IntroHeader from '../../components/UI/IntroHeader/IntroHeader';
 
@@ -38,7 +39,7 @@ class parallax extends Component {
                             <div className={classes.ParallaxMotto}>"Quality means doing it right, even when no one is looking."</div>
                         </div>
                     </div>
-                    <SlideDown scrollOnClick={() => scrollToContent(this.parallaxContent.current.offsetTop)} />
+                    <SlideDown scrollOnClick={() => scrollToContent(this.parallaxContent.current.offsetTop, this.props.isMobile)} />
                 </div>
                 <main className={classes.ParallaxChildren} ref={this.parallaxContent}>  
                     {this.props.children}
@@ -48,4 +49,10 @@ class parallax extends Component {
     }
 }
 
-export default parallax;
+const mapStateToProps = (state) => {
+    return {
+        isMobile: state.mobileReducer.isMobile
+    }
+}
+
+export default connect(mapStateToProps)(parallax);

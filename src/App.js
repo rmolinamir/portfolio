@@ -1,5 +1,7 @@
 import React, { Component, Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { mobileCreators } from './store/actions/mobile';
 
 import classes from './App.module.css';
 
@@ -17,6 +19,10 @@ const SpinnerContainer = () => <Container className={classes.SpinnerContainer}><
 
 class App extends Component {
 
+  componentDidMount () {
+    this.props.onMobileCheck();
+  }
+
   render() {
 
     return (
@@ -26,10 +32,17 @@ class App extends Component {
           <Route path="/projects" render={ () => <Suspense fallback={<SpinnerContainer />}><Projects /></Suspense>} />
           <Route path="/skills" render={ () => <Suspense fallback={<SpinnerContainer />}><Skills /></Suspense>} />
           <Route path="/" exact render={ () => <Suspense fallback={<SpinnerContainer />}><AboutMe /></Suspense>} />
+          <Redirect to="/" />
         </Switch>
       </Layout>
     );
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onMobileCheck: () => dispatch(mobileCreators.mobileCheckInit())
+  }
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(App));

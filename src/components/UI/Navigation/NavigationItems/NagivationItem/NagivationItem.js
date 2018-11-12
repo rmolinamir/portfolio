@@ -8,12 +8,14 @@ const navigationItem = (props) => {
     if (props.isNavbarTransparent) {
         navLinkClasses.push(classes.Transparent)
     }
+    console.log(props.clicked)
     return (
         <li className={classes.NavigationItem}>
             <NavLink
                 activeClassName={navLinkClasses.join(' ')}
                 exact={props.exact}
-                to={props.link}>
+                to={props.link}
+                onClick={props.clicked}>
                 {props.icon && props.link === props.location.pathname ? <img className={classes.NavigationItemIcon} src={props.icon} alt=""/> : null} {props.children}</NavLink>
         </li>
     );

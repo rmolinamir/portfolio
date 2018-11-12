@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import classes from './Navbar.module.css';
 
+import SideDrawer from '../../components/UI/Navigation/SideDrawer/SideDrawer';
 import NagivationItems from '../../components/UI/Navigation/NavigationItems/NavigationItems';
 import DrawerToggle from '../../components/UI/Navigation/Toolbar/DrawerToggle/DrawerToggle';
 import ScrollToTopButton from '../../components/UI/ScrollToTopButton/ScrollToTopButton';
@@ -96,11 +97,12 @@ class Navbar extends PureComponent {
                         drawerClass={classes.MobileOnly}
                         isOpen={this.state.isDrawerOpen}
                         click={this.sideDrawerToggleClick}/>
-                    <div className={classes.Logo}>
-                    </div>
+                    <SideDrawer 
+                        drawerClass={classes.MobileOnly}
+                        isOpen={this.state.isDrawerOpen}
+                        click={this.sideDrawerToggleClick}/>
                 </header>
                 {this.state.showScrollToTop ? <ScrollToTopButton clicked={this.scrollToTop} /> : null}
-                {/* <ScrollToTopButton /> */}
             </>
         );
     }

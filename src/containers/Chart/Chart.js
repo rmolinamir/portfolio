@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 
 import classes from './Chart.module.css';
 
@@ -14,43 +15,63 @@ class Chart extends PureComponent {
     }
 
     state = {
-        width: typeof window === 'object' ? window.innerWidth : null,
+        width: typeof window === 'object' ? window.outerWidth : null,
         isHorizontal: null,
-        chartPlotArea: null
+        chartPlotAreaWidth: null
+    }
+
+    windowsResizeEventListener =  (event) => {
+        this.setState({
+            width: event.target.outerWidth
+        });
+    }
+
+    orientationChangeWidthSetter = () => {
+        this.setState({
+            width: typeof window === 'object' ? window.outerWidth : null,
+            chartPlotAreaWidth: typeof window === 'object' ? window.outerWidth : null
+        });
     }
 
     componentDidMount () {
-        window.addEventListener('resize', () => {
-            this.setState({
-                width: typeof window === 'object' ? window.innerWidth : null
-            });
-        });
-        if (this.setState.width > 900) {
+        window.addEventListener('resize', this.windowsResizeEventListener);
+        if (this.props.isMobile) {
+            window.addEventListener("orientationchange", this.orientationChangeWidthSetter);
+        }
+        if (this.state.width > 900) {
             this.setState({
                 isHorizontal: true
             });
         } else {
             this.setState({
                 isHorizontal: false,
-                chartPlotAreaWidth: this.chartPlotArea.current.clientWidth*0.8
+                chartPlotAreaWidth: this.chartPlotArea.current.clientWidth*0.75
             });
         }
     }
 
     componentDidUpdate () {
-        if (this.state.width >= 900 && !this.state.isHorizontal) {
+        if (this.state.width > 900) {
             this.setState({
                 isHorizontal: true
             });
-        } else if (this.state.width < 900) {
+        } else {
             this.setState({
                 isHorizontal: false,
-                chartPlotAreaWidth: this.chartPlotArea.current.clientWidth*0.8
+                chartPlotAreaWidth: this.chartPlotArea.current.clientWidth*0.75
             });
         }
     }
 
+    componentWillUnmount () {
+        window.removeEventListener('resize', this.windowsResizeEventListener);
+        if (this.props.isMobile) {
+            window.removeEventListener("orientationchange", this.orientationChangeWidthSetter);
+        }
+    }
+
     render () {
+        console.log('render')
         let variables = [];
         if (this.props.data) {
             Object.values(this.props.data).map( (skill, index) => {
@@ -66,17 +87,33 @@ class Chart extends PureComponent {
             });
         }
         let chartPlotAreaClasses = [classes.ChartPlotArea];
+        let chartLabelNamesClasses = [classes.ChartLabelNames];
+        let chartLabelNamesStyle;
         if (!this.state.isHorizontal) {
             chartPlotAreaClasses.push(classes.VerticalPlotArea);
+            chartLabelNamesClasses.push(classes.VerticalLabelNames);
+            chartLabelNamesStyle = {
+                width: this.state.chartPlotAreaWidth
+            }
         }
         return (
             <div className={classes.ChartContainer}>
-                <ul className={classes.ChartLabelNames}>
-                    <LabelName labelType='master'/>
-                    <LabelName labelType='high'/>
-                    <LabelName labelType='medium'/>
-                    <LabelName labelType='basic'/>
-                    <LabelName />
+                <ul style={chartLabelNamesStyle} className={chartLabelNamesClasses.join(' ')}>
+                    <LabelName
+                        isHorizontal={this.state.isHorizontal}
+                        labelType='master'/>
+                    <LabelName 
+                        isHorizontal={this.state.isHorizontal}
+                        labelType='high'/>
+                    <LabelName 
+                        isHorizontal={this.state.isHorizontal}
+                        labelType='medium'/>
+                    <LabelName 
+                        isHorizontal={this.state.isHorizontal}
+                        labelType='basic'/>
+                    <LabelName
+                        isHorizontal={this.state.isHorizontal}
+                    />
                 </ul>
                 <ul ref={this.chartPlotArea} className={chartPlotAreaClasses.join(' ')}>
                     {variables}
@@ -87,4 +124,10 @@ class Chart extends PureComponent {
     }
 }
 
-export default Chart;
+const mapStateToProps = (state) => {
+    return {
+        isMobile: state.mobileReducer.isMobile
+    }
+}
+
+export default connect(mapStateToProps)(Chart);
