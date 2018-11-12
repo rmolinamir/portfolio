@@ -20,7 +20,7 @@ class AboutMe extends Component {
         const socialMediaButtons = [
             {icon: githubSVG, href: "https://github.com/rmolinamir", targetBlank: true},
             {icon: gmailSVG, href: "mailto:rmolinamir@gmail.com", targetBlank: false},
-            {icon: linkedinSVG, href: "https://www.linkedin.com/in/robert-molina-467798153/", targetBlank: true}
+            {icon: linkedinSVG, href: "https://www.linkedin.com/in/rmolinamir/", targetBlank: true}
         ].map( (Button, index) => {
             return <SocialMediaButton key={index} svg={Button.icon} href={Button.href} targetBlank={Button.targetBlank}/>
         });
