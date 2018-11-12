@@ -34,7 +34,7 @@ class AboutMe extends Component {
                             <div className={classes.PortraitName}>Robert Molina</div>
                             <div className={classes.PortraitTitle}>Fullstack Developer</div>
                             <p className={classes.Download}>Click the button below to download my full resume:</p>
-                            <DownloadButton>Full Resume</DownloadButton>
+                            <DownloadButton href='https://drive.google.com/open?id=15bEpE77LztNaNu2fn2wRtPsXeKzHSCu9'>Full Resume</DownloadButton>
                             <img className={classes.PersonalLogo} src={personalLogoNameless} alt='Personal Logo' />
                         </div>
                         <Code />
