@@ -36,6 +36,80 @@
     background-size: 64px 128px;
 }
 
+.MyReactBurgerBuilderAppFront {	
+	background-color: hsl(55,45%,90%);
+	background-image:
+		linear-gradient(-116deg, transparent 40%, hsl(0,80%,80%) 0, hsl(0,80%,80%) 42%, transparent 42%),
+        linear-gradient(116deg, transparent 41%, hsl(0,80%,80%) 0, hsl(0,80%,80%) 43%, transparent 43%),
+        linear-gradient(-116deg,transparent 40%,hsl(0,0%,40%) 0,hsl(0,0%,40%) 42%,transparent 42%),linear-gradient(116deg,transparent 41%,hsl(0,0%,40%) 41%,hsl(0,0%,40%) 43%,transparent 43%),
+        linear-gradient(-115deg,hsl(0,0%,40%) 16.5%,transparent 0),linear-gradient(-65deg,hsl(0,0%,40%) 16.5%,transparent 0),linear-gradient(115deg,hsl(0,0%,40%) 16.5%,transparent 0),linear-gradient(65deg,hsl(0,0%,40%) 16.5%,transparent 0),
+        linear-gradient(-115deg,hsl(0,80%,80%) 16.5%,transparent 0),linear-gradient(-65deg,hsl(0,80%,80%) 16.5%,transparent 0),linear-gradient(115deg,hsl(0,80%,80%) 16.5%,transparent 0),linear-gradient(65deg,hsl(0,80%,80%) 16.5%,transparent 0);
+	background-size: 
+		/* Pink lines */
+		8em 8em,
+		8em 8em,
+		8em 8em,
+		8em 8em,
+		/* Black diamonds */
+		8em 8em,
+		8em 8em,
+		8em 8em,
+		8em 8em,
+		/* Pink diamonds */
+		8em 8em,
+		8em 8em,
+		8em 8em,
+		8em 8em;
+	background-position: 
+		/* Pink lines */
+		3em -8em,
+		-3em -8em,
+		/* Black Lines */
+		-9em 8em,
+		9em 8em,
+		/* Black diamonds */
+		0, 0, 0, 0,
+		/* Pink diamonds */
+		4em, 4em, 4em, 4em;
+}
+
+.MyReactBurgerBuilderAppBack {	
+	background-color: hsl(55,45%,90%);
+	background-image:
+		linear-gradient(-116deg, transparent 40%, hsl(0,80%,80%) 0, hsl(0,80%,80%) 42%, transparent 42%),
+        linear-gradient(116deg, transparent 41%, hsl(0,80%,80%) 0, hsl(0,80%,80%) 43%, transparent 43%),
+        linear-gradient(-116deg,transparent 40%,hsl(0,0%,40%) 0,hsl(0,0%,40%) 42%,transparent 42%),linear-gradient(116deg,transparent 41%,hsl(0,0%,40%) 41%,hsl(0,0%,40%) 43%,transparent 43%),
+        linear-gradient(-115deg,hsl(0,0%,40%) 16.5%,transparent 0),linear-gradient(-65deg,hsl(0,0%,40%) 16.5%,transparent 0),linear-gradient(115deg,hsl(0,0%,40%) 16.5%,transparent 0),linear-gradient(65deg,hsl(0,0%,40%) 16.5%,transparent 0),
+        linear-gradient(-115deg,hsl(0,80%,80%) 16.5%,transparent 0),linear-gradient(-65deg,hsl(0,80%,80%) 16.5%,transparent 0),linear-gradient(115deg,hsl(0,80%,80%) 16.5%,transparent 0),linear-gradient(65deg,hsl(0,80%,80%) 16.5%,transparent 0);
+	background-size: 
+		/* Pink lines */
+		8em 8em,
+		8em 8em,
+		8em 8em,
+		8em 8em,
+		/* Black diamonds */
+		8em 8em,
+		8em 8em,
+		8em 8em,
+		8em 8em,
+		/* Pink diamonds */
+		8em 8em,
+		8em 8em,
+		8em 8em,
+		8em 8em;
+	background-position: 
+		/* Pink lines */
+		3em -8em,
+		-3em -8em,
+		/* Black Lines */
+		-9em 8em,
+		9em 8em,
+		/* Black diamonds */
+		0, 0, 0, 0,
+		/* Pink diamonds */
+		4em, 4em, 4em, 4em;
+}
+
 .PersonalWebsiteFront {
     background-color:#556;
     background-image: 
@@ -68,80 +142,4 @@
     linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
     linear-gradient(#eee .1em, transparent .1em);
     background-size: 100% 1.2em;
-}
-
-.FrontContent {
-    display: flex;
-    flex-flow: column;
-    background-color: rgba(50,50,50,.2);
-    justify-content: center;
-    width: 100%;
-    height: 155px;
-    box-sizing: border-box;
-}
-
-
-.FrontContentHeader {
-    font-size: 19px;
-    width: 90%;
-    margin: auto;
-    color: #fff;
-    text-shadow: 1px 1px 2.5px #000;
-}
-
-.BackContent {
-    background: rgba(35,35,35,0.15);
-    display: flex;
-    position: absolute;
-    flex-flow: column;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.BackContentContainer {
-    padding: 10px 5px;
-    font-size: 17px;
-    color: #fff;
-    text-shadow: 2px 2px 1.5px #000;
-}
-
-.MoreInfo {
-    display: flex;
-    background: rgba(0,0,0,.25);
-    align-items: center;
-    border-radius: 5px;
-    font-size: 19px;
-    margin: auto;
-    color: #fff;
-    padding: 5px 10px 5px 5px;
-    border: 1px solid;
-    text-shadow: 1px 1px 2.5px #000;
-    box-sizing: border-box;
-    box-shadow: .5px 1px 2.5px #fff;
-}
-.MoreInfo span {
-    margin-left: 10px;
-    margin-bottom: 3.5px;
-}
-
-.FeaturesList {
-    position: relative;
-    text-align: left;
-    line-height: 1.3;
-    padding-bottom: 5px;
-    margin-bottom: 0px;
-}
-
-.FeaturesList li {
-    list-style-type: square;
-}
-
-.SocialMediaButtonsHeader {
-    display: inline-block;
-    text-align: center;
-    padding: 5px;
-    font-size: 17px;
-    color: #fff;
-    text-shadow: 2px 2px 1.5px #000;
 }

@@ -58,20 +58,13 @@
     box-sizing: border-box;
 }
 
-.Front .Media video {
+.Front .Media video,
+.Back .Media video {
     display: block;
     margin: auto;
     object-fit: fill;
     min-height: 197px;
-    border: 1px solid #999;
-    border-bottom: 2px solid #999;
-    box-sizing: border-box;
-}
-
-.Back .Media video {
-    display: block;
-    margin: auto;
-    min-height: 197px;
+    width: calc(100% + 1.5px);
     border: 1px solid #999;
     border-bottom: 2px solid #999;
     box-sizing: border-box;
@@ -86,7 +79,8 @@
 
 .FlipCard:hover .Inner .Front .Media video {
     opacity: 0;
-    transition: opacity 0.6s;
+    transition: opacity 0.1s;
+    transition-delay: 0.2s;
 }
 
 .Content {

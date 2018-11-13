@@ -12,6 +12,10 @@ import bonpreuFoodsImage from '../../../assets/projects/BonpreuFoods/BonpreuFood
 import repuestosSotomayorVideo from '../../../assets/projects/RepuestosSotomayor/RepuestosSotomayor.mp4';
 import repuestosSotomayorImage  from '../../../assets/projects/RepuestosSotomayor/RepuestosSotomayor2.png';
 
+import myReactBurgerBuilderAppVideo from '../../../assets/projects/MyReactBurgerBuilderApp/MyReactBurgerBuilderApp.mp4';
+import myReactBurgerBuilderAppImage from '../../../assets/projects/MyReactBurgerBuilderApp/MyReactBurgerBuilderApp.png';
+
+
 import personalWebsiteVideo  from '../../../assets/projects/PersonalWebsite/PersonalWebsite.mp4';
 
 import githubSVG from '../../../assets/svg/github-icon.svg';
@@ -28,6 +32,10 @@ const socialMediaButtons = {
     repuestosSotomayor: [
         {icon: githubSVG, href: "https://github.com/rmolinamir/David-Sotomayor", targetBlank: true},
         {icon: externalLinkSymbol, href: "https://nameless-basin-74779.herokuapp.com", targetBlank: true}
+    ],
+    myReactBurgerBuilderApp: [
+        {icon: githubSVG, href: "https://github.com/rmolinamir/React-App-Burger-Builder", targetBlank: true},
+        {icon: externalLinkSymbol, href: "https://my-react-burger-builder-app.firebaseapp.com/", targetBlank: true}
     ],
     personalWebsite: [
         {icon: githubSVG, href: "https://github.com/rmolinamir/Curriculum-Vitae", targetBlank: true},
@@ -88,6 +96,30 @@ export const projectsData = {
                     'Instagram images by using Instafeed',
                     'Contact form through the website'
                 ]}>{mapSocialMediaButtons(socialMediaButtons.repuestosSotomayor)}</ProjectBack>
+            )
+        }
+    },
+    myReactBurgerBuilderApp: {
+        front: {
+            classes: [classes.MyReactBurgerBuilderAppFront].join(' '),
+            card: myReactBurgerBuilderAppVideo,
+            content: (
+                <ProjectFront header={'React Burger Builder, my React.js course project.'} />                
+            ),
+        },
+        back: {
+            classes: [classes.MyReactBurgerBuilderAppBack].join(' '),
+            card: myReactBurgerBuilderAppImage,
+            content: (
+                <ProjectBack 
+                backContentHeader={'This was my course project in which I learned core React.js features such as:'}
+                featuresList={[
+                    'Axios',
+                    'React-Router-Dom',
+                    'React-Redux',
+                    'Redux-Thunk and Redux-Saga',
+                    'React.lazy()'
+                ]}>{mapSocialMediaButtons(socialMediaButtons.myReactBurgerBuilderApp)}</ProjectBack>
             )
         }
     },

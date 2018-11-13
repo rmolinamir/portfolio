@@ -1,5 +1,5 @@
 .BackContent {
-    background: rgba(35,35,35,0.15);
+    background: rgba(35,35,35,0.35);
     display: flex;
     position: absolute;
     flex-flow: column;

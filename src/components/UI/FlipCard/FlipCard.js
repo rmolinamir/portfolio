@@ -18,8 +18,7 @@ const flipCard = (props) => {
                     card[key].height = 'auto';
                     card[key].content = (
                         <video 
-                        width={props.width} height={"auto" }
-                        autoPlay muted playsInline>
+                        width={props.width} height={"auto" } autoPlay loop muted playsInline>
                             <source src={props[key].card} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
