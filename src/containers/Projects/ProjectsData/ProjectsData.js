@@ -22,7 +22,7 @@ import githubSVG from '../../../assets/svg/github-icon.svg';
 import externalLinkSymbol from '../../../assets/svg/external-link-symbol.svg';
 
 import underConstruction from '../../../assets/svg/under-construction.svg';
-import unityLogo from '../../../assets/svg/unity-logo.svg';
+import unrealEngine from '../../../assets/svg/unreal-engine-black.svg';
 
 const socialMediaButtons = {
     bonpreuFoods: [
@@ -146,26 +146,26 @@ export const projectsData = {
             )
         }
     },
-    unityGame1: {
+    unrealEngineGame1: {
         front: {
-            classes: [classes.WorkInProgress].join(' '),
+            classes: [classes.WorkInProgressFront].join(' '),
             card: null,
             content: (
                 <>
-                    <h1>Unity 3D Game</h1>
+                    <h1>Unreal Engine Game</h1>
                     <img style={{display: 'block', margin: '45px auto', width: 75}} src={underConstruction} alt='' />
-                    <img style={{display: 'block', margin: 'auto', width: 200}} src={unityLogo} alt='' />
+                    <img style={{display: 'block', margin: 'auto', width: 100}} src={unrealEngine} alt='' />
                 </>
             )
         },
         back: {
-            classes: [classes.WorkInProgress].join(' '),
+            classes: [classes.WorkInProgressBack].join(' '),
             card: null,
             content: (
                 <>  
-                    <h1>In development!</h1>
-                    <img style={{display: 'block', margin: '45px auto', width: 75}} src={underConstruction} alt='' />
-                    <img style={{display: 'block', margin: 'auto', width: 200}} src={unityLogo} alt='' />
+                    <h1>In development<br />it's gonna take a while :(</h1>
+                    <img style={{display: 'block', margin: '45px auto', width: 55}} src={underConstruction} alt='' />
+                    <img style={{display: 'block', margin: 'auto', width: 50}} src={unrealEngine} alt='' />
                 </>
             )
         }

@@ -106,7 +106,7 @@ class Code extends Component {
                                         <Method method={curriculumVitae.method.skills.method} argument={curriculumVitae.method.skills.argument}>
                                             <span>
                                                 I'm adept at Fullstack Web Development, lots of Backend Logic & Procceses, Data Visualization, Vector Illustrations, &
-                                                Unity 3D games development as a side hobby, check the skills tab for more details!
+                                                develop Unreal Engine games as a side hobby, check the skills tab for more details!
                                             </span>
                                         </Method>
                                     : null}
@@ -117,9 +117,9 @@ class Code extends Component {
                                             <span>
                                                 MongoDB, Firebase, Express, React.js (often using Redux, Saga, Router-DOM, Next.js, etc.), Node.js.<br />
                                                 Always using Webpack with Babel, tons of other loaders.<br />
-                                                JavaScript, ES6, Next-Gen JS, HTML, CSS, - jQuery, and sometimes Bootstrap 3 & 4 for quick projects. C#.<br/>
+                                                JavaScript, ES6, Next-Gen JS, HTML, CSS, - jQuery, and sometimes Bootstrap 3 & 4 for quick projects.<br/>
                                                 Deploying done through Firebase and/or Heroku.<br />
-                                                Made a habit of using Git and Github.
+                                                C++ & Unreal Engine.
                                             </span>
                                         </Method>
                                     : null}

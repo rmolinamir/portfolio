@@ -49,9 +49,14 @@ class Skills extends Component {
                 icon: icons.java,
                 percentage: '15%',
             },
-            unity: {
-                name: 'Unity',
-                icon: icons.unity,
+            cpp: {
+                name: 'C++',
+                icon: icons.cpp,
+                percentage: '35%',
+            },
+            unrealEngine: {
+                name: 'Unreal Engine',
+                icon: icons.unrealEngine,
                 percentage: '25%',
             }
         }

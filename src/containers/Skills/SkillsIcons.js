@@ -5,7 +5,8 @@ import react from '../../assets/svg/react.svg';
 import nodejs from '../../assets/svg/node-js.svg';
 import mongodb from '../../assets/svg/mongodb.svg';
 import java from '../../assets/svg/java.svg';
-import unity from '../../assets/svg/unity-white.svg';
+import cpp from '../../assets/svg/c++.svg';
+import unrealEngine from '../../assets/svg/unreal-engine.svg';
 
 export {
     javascript,
@@ -15,5 +16,6 @@ export {
     nodejs,
     mongodb,
     java,
-    unity
+    cpp,
+    unrealEngine
 }
