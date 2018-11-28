@@ -8,7 +8,6 @@ const navigationItem = (props) => {
     if (props.isNavbarTransparent) {
         navLinkClasses.push(classes.Transparent)
     }
-    console.log(props.clicked)
     return (
         <li className={classes.NavigationItem}>
             <NavLink
