@@ -9,7 +9,6 @@ const initialState = {
 const mobileReducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.MOBILE_CHECK_REDUCER:
-            console.log('')
             return updateObject(state, {isMobile: action.isMobile});
     default: 
         // do nothing
