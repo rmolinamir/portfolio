@@ -71,7 +71,6 @@ class Chart extends PureComponent {
     }
 
     render () {
-        console.log('render')
         let variables = [];
         if (this.props.data) {
             Object.values(this.props.data).map( (skill, index) => {
