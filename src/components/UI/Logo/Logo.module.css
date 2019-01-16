@@ -1,22 +1,24 @@
 .Logo {
-    margin: 25px; 
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     font-size: calc(10px + 2vmin);
     position: relative;
     user-select: none;
+    width: 335px;
+    height: 300px;
+    margin: 24px auto 12px; 
+}
+
+.Logo div {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .Logo img {
-    display: block;
-    max-width:62.5vw;
-    max-height:40vh;
-    width: auto;
-    height: auto;
-    margin: auto;
     animation: Logo-spin infinite 20s linear;
 }
 
@@ -29,8 +31,9 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .Logo img {
-        max-width: 33.5vw;
+    .Logo {
+        width: 175px;
+        height: 180px;
     }
     .Logo span {
         font-size: 10px;

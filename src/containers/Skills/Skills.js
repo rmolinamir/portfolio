@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-
+// Assets
+import * as icons from './SkillsIcons';
+// CSS
 import classes from './Skills.module.css';
-
+// JSX
 import Container from '../../components/UI/Container/Container';
-
 import IntroHeader from '../../components/UI/IntroHeader/IntroHeader';
-
 import Chart from '../Chart/Chart';
 
-import * as icons from './SkillsIcons';
-
 class Skills extends Component {
-
     state = {
         skills: {
             javascript: {

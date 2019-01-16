@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-
+// CSS
 import classes from './Chart.module.css';
-
+// JSX
 import LabelName from '../../components/UI/Chart/LabelName/LabelName';
 import Variable from '../../components/UI/Chart/Variable/Variable';
 
@@ -100,7 +100,7 @@ class Chart extends PureComponent {
                 <ul style={chartLabelNamesStyle} className={chartLabelNamesClasses.join(' ')}>
                     <LabelName
                         isHorizontal={this.state.isHorizontal}
-                        labelType='master'/>
+                        labelType='very high'/>
                     <LabelName 
                         isHorizontal={this.state.isHorizontal}
                         labelType='high'/>

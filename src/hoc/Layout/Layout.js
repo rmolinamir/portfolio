@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
+// CSS
 import classes from './Layout.module.css'
-
-import Navbar from '../../containers/Navbar/Navbar';
+// JSX
 import Footer from '../../components/UI/Footer/Footer';
 
 class Layout extends Component {
@@ -11,7 +10,6 @@ class Layout extends Component {
         const footer = this.props.location.pathname === "/projects" || this.props.location.pathname === "/skills" ? <Footer /> : null;
         return (
             <>
-                <Navbar />
                 <main className={classes.Layout}>
                     {this.props.children}
                 </main>

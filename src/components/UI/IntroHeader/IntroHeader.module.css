@@ -3,16 +3,16 @@
     justify-content: center;
     text-align: center;
     user-select: none;
-    text-shadow: 6px 6px 9px rgba(0,0,0, 0.1);
+    text-shadow: 3px 3px 9px rgba(0,0,0, 0.1);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 60px;
     margin-bottom: 25px;
-    color: #60dcfb;
+    color: rgb(38, 187, 225);
     color: transparent;
-    background: linear-gradient(to right, #944adb 20%, #60dcfb 40%, #60dcfb 60%, #944adb 80%);
+    background: linear-gradient(to right, #944adb 20%, rgb(38, 187, 225) 40%, rgb(38, 187, 225) 60%, #944adb 80%);
     background-size: 200% auto;
     background-clip: text;
     -webkit-background-clip: text;
@@ -23,8 +23,8 @@
 @supports (-ms-ime-align:auto) {
     /* IE Edge 12+ CSS */ 
     .IntroHeader {
-        color: #60dcfb;
-        -webkit-text-fill-color: #60dcfb;
+        color: rgb(38, 187, 225);
+        -webkit-text-fill-color: rgb(38, 187, 225);
     }
 }
 

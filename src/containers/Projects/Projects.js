@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-
+// Data
+import { projectsData } from './ProjectsData/ProjectsData';
+// CSS
 import classes from './Projects.module.css';
-
+// JSX
 import Project from '../../components/Projects/Project/Project';
-
 import IntroHeader from '../../components/UI/IntroHeader/IntroHeader';
-
 import Container from '../../components/UI/Container/Container';
 
-import { projectsData } from './ProjectsData/ProjectsData';
-
 class Projects extends Component {
-
     state = {
         projects: projectsData
     }

@@ -1,14 +1,14 @@
 import React from 'react';
-
+// CSS
 import classes from './LabelName.module.css';
 
 const labelName = (props) => {
     let label;
     switch(props.labelType) {
-        case ('master'):
+        case ('very high'):
             label = <span 
                 className={[classes.Label, classes.LabelMaster].join(' ')}>
-                    <strong>Master</strong> <span>I'm pretty good.</span></span>
+                    <strong>Very High</strong> <span>I'm pretty good.</span></span>
             break;
         case ('high'):
             label = <span 

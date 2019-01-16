@@ -62,10 +62,10 @@
 }
 @media screen and (max-width: 900px) {
     .VerticalLabelWrapper .Label:after {
-        top: -480px;
+        top: -450px;
         left: 100%;
         align-items: center;
-        height: 570px;
+        height: 540px;
     }
     .Label:after {
         content: '';

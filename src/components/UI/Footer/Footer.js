@@ -1,14 +1,17 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-
+// Image
+import background from '../../../assets/images/footer-background.jpg'
+// CSS
 import classes from './Footer.module.css';
-
+// JSX
+import { NavLink, withRouter } from 'react-router-dom';
 import SocialMediaButton from '../SocialMediaButton/SocialMediaButton';
 import githubSVG from '../../../assets/svg/github-icon.svg';
 import gmailSVG from '../../../assets/svg/google-gmail.svg';
 import linkedinSVG from '../../../assets/svg/linkedin-icon.svg';
+import ImageFadeIn from '../ImageFadeIn/ImageFadeIn';
 
-const footer = (props) => {
+const footer = () => {
     const socialMediaButtons = [
         {icon: githubSVG, href: "https://github.com/rmolinamir", targetBlank: true},
         {icon: gmailSVG, href: "mailto:rmolinamir@gmail.com", targetBlank: false},
@@ -18,24 +21,40 @@ const footer = (props) => {
     });
     return (
         <div className={classes.Footer}>
-            <div className={classes.FooterWrapper}>
-                <span className={classes.Interested}>Interested?</span>
-                <span>Hit me up at any of the links below.</span>
-                <br />
-                {socialMediaButtons}
-                <div className={classes.PageReferences}>
-                    <span>Feel free to also check out my projects or have a look at my skills!</span>
-                    <br />
-                    <div className={classes.LinksWrapper}>
-                        {props.location.pathname !== "/" ? <Link className={classes.Link} to="/" >About Me</Link> : null}
-                        {props.location.pathname !== "/projects" ? <Link className={classes.Link} to="/projects">Projects</Link> : null}
-                        {props.location.pathname !== "/skills" ? <Link className={classes.Link} to="/skills">Skills</Link> : null}
+            <div className={classes.BannerWrapper}>
+                    <div className={classes.BannerBackground} >
+                        <ImageFadeIn src={background} />
                     </div>
-                    <div className={classes.CloserWrapper}>
-                        <div>Copyright © Robert Molina</div>
-                        <div>Powered by React</div>
+                    <div className={classes.BannerContainer}>
+                        <div className={classes.Banner}>
+                            <h1 className={classes.Interested}>Interested?</h1>
+                            <div className={classes.Contact}>
+                                <span>You can get in touch with me through any of the links below.</span>
+                            </div>
+                            <div className={classes.SocialLinks}>
+                                <div>
+                                    {socialMediaButtons}
+                                </div>
+                            </div>
+                        </div>
                     </div>
+            </div>
+            <div style={{marginTop: '16px'}} className={classes.FooterWrapper}>
+                <div>
+                    <span style={{fontSize: '18px'}}>Feel free to also check out my projects, have a look at my skills, or send me an email.</span>
                 </div>
+            </div>
+            <div className={classes.NavLinks}>
+                <NavLink exact activeClassName={classes.active} className={classes.NavLink} to='/'><span className={classes.Link}>About Me</span></NavLink>
+                <NavLink activeClassName={classes.active} className={classes.NavLink} to='/projects'><span className={classes.Link}>Projects</span></NavLink>
+                <NavLink activeClassName={classes.active} className={classes.NavLink} to='/skills'><span className={classes.Link}>Skills</span></NavLink>
+                <a href="mailto:rmolinamir@gmail.com" className={classes.NavLink}><span className={classes.Link}>Mail Me</span></a>
+            </div>
+            <div className={classes.CopyrightWrapper}>
+                <span> 
+                    <ins className={classes.Legalmark}>©</ins>
+                    <span>2019 Robert Molina.</span>
+                </span>
             </div>
         </div>
     );

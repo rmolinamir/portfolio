@@ -1,6 +1,10 @@
 import React from 'react';
-import classes from './FlipCard.module.css';
+// Assets
 import loading from '../../../assets/svg/loading.svg'
+// CSS
+import classes from './FlipCard.module.css';
+// JSX
+import ImageFadeIn from '../ImageFadeIn/ImageFadeIn';
 
 const flipCard = (props) => {
     let card = {
@@ -17,8 +21,7 @@ const flipCard = (props) => {
                 if (String(props[key].card).substring(props[key].card.length - 4) === '.mp4') {
                     card[key].height = 'auto';
                     card[key].content = (
-                        <video 
-                        width={props.width} height={"auto" } autoPlay loop muted playsInline>
+                        <video width={props.width} height={"auto" } autoPlay loop muted playsInline>
                             <source src={props[key].card} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
@@ -27,7 +30,7 @@ const flipCard = (props) => {
                 } else {
                     card[key].height = props.height;
                     card[key].content = (
-                        <img 
+                        <ImageFadeIn 
                             src={props[key].card} 
                             alt="" 
                             style={{
@@ -44,9 +47,8 @@ const flipCard = (props) => {
             className={classes.Inner}>
                 {card.front ? 
                     <div className={card.front.classes.join(' ')}>
-                        <div className={classes.Media} style={{
-                            height: card.front.height, 
-                            backgroundImage: `url(${card.front.spinner})`}}>
+                        <div className={classes.Media} style={{height: card.front.height}}>
+                            <ImageFadeIn draggable='false' src={card.front.spinner} />
                             {card.front.content}
                         </div>
                         {props.front ? props.front.content : null}
@@ -54,10 +56,7 @@ const flipCard = (props) => {
                 : null}
                 {card.back ? 
                     <div className={card.back.classes.join(' ')}>
-                        <div className={classes.Media} style={{
-                            height: card.back.height,
-                            // backgroundImage: `url(${card.back.spinner})`
-                            }}>
+                        <div className={classes.Media} style={{height: card.back.height}}>
                             {card.back.content}
                         </div>
                         {props.back ? props.back.content : null}

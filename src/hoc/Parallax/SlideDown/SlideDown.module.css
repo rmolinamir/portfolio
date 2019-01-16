@@ -61,14 +61,8 @@
 
 @media (max-width: 750px) {
     .Arrows {
-        top: 82.5%;
-        width: 24px;
-        height: 24px;
-    }
-}
-
-@media screen and (orientation:landscape) and (max-width: 900px) {
-    .Arrows {
-        left: 90%;
+        top: 90%;
+        width: 18px;
+        height: 18px;
     }
 }
