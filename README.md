@@ -11,4 +11,4 @@ Feel free to ask me any questions, or contact me at [rmolinamir@gmail.com](hmail
 
 Obligatory mention to everyone involved in the making of the '[React 16 - The Complete Guide (incl. React Router 4 & Redux)](https://www.udemy.com/react-the-complete-guide-incl-redux)' online course, can't recomment enough.
 
-Below you'll find instructions on how to run this app, feel free to use anything, no need to credit me at all but I'd love to know my stuff is used somewhere in the internet at least :)
+Feel free to use anything, no need to credit me at all but I'd love to know my stuff is used somewhere in the internet at least :)
