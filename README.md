@@ -13,5 +13,4 @@ Obligatory mention to everyone involved in the making of the '[React 16 - The Co
 Feel free to use anything, no need to credit me at all but I'd love to know my stuff is used somewhere in the internet at least :)
 
 #
-
 # [Link](https://robertmolinamir.firebaseapp.com/)
