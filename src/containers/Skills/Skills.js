@@ -19,7 +19,7 @@ class Skills extends Component {
             css3: {
                 name: 'CSS 3',
                 icon: icons.css3,
-                percentage: '80%',
+                percentage: '85%',
             },
             html5: {
                 name: 'HTML 5',
@@ -27,14 +27,14 @@ class Skills extends Component {
                 percentage: '85%',
             },
             reactjs: {
-                name: 'React',
+                name: 'React.js',
                 icon: icons.react,
-                percentage: '67.5%',
+                percentage: '72.5%',
             },
             nodejs: {
                 name: 'Node.js',
                 icon: icons.nodejs,
-                percentage: '60%',
+                percentage: '65%',
             },
             mongodb: {
                 name: 'MongoDB',
@@ -49,12 +49,12 @@ class Skills extends Component {
             cpp: {
                 name: 'C++',
                 icon: icons.cpp,
-                percentage: '35%',
+                percentage: '30%',
             },
             unrealEngine: {
                 name: 'Unreal Engine',
                 icon: icons.unrealEngine,
-                percentage: '25%',
+                percentage: '35%',
             }
         }
     }

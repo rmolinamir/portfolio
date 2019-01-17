@@ -28,9 +28,12 @@
 }
 
 .SocialMediaButtonsHeader {
-    display: inline-block;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
     text-align: center;
-    padding: 5px;
+    padding: 5px 0;
+    margin: 3px 0;
     font-size: 17px;
     color: #fff;
     text-shadow: 2px 2px 1.5px #000;

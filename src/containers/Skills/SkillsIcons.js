@@ -6,7 +6,7 @@ import nodejs from '../../assets/svg/node-js.svg';
 import mongodb from '../../assets/svg/mongodb.svg';
 import java from '../../assets/svg/java.svg';
 import cpp from '../../assets/svg/c++.svg';
-import unrealEngine from '../../assets/svg/unreal-engine.svg';
+import unrealEngine from '../../assets/svg/unreal-engine-black.svg';
 
 export {
     javascript,

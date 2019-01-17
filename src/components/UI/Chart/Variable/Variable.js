@@ -29,7 +29,7 @@ const variable = (props) => {
                 percentage={props.percentage ? props.percentage : randomPercentage}/>
             <div className={variableNameClasses.join(' ')}>
                 <div className={classes.IconWrapper}>
-                    <img src={props.icon} alt='' />
+                    <img draggable="false" src={props.icon} alt='' />
                 </div>
                 <div className={classes.VerticalIconName}>{props.name}</div>
             </div>

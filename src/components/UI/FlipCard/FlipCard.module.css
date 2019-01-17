@@ -30,17 +30,16 @@
 }
 
 .Front {
-    background-color: inherit;
-    color: #333;
+    color: #484848;
 }
 
 .Back {
     transform: rotateY(180deg);
-    color: #333;
+    color: #484848;
 }
 
 .Media {
-    background: #333;
+    background: #484848;
     position: relative;;
     background-color: transparent;
     background-repeat: no-repeat;

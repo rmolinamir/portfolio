@@ -10,9 +10,9 @@ const method = (props) => {
                 <div className={classes.Method}><span className={classes.Const}>const</span> {props.method ? props.method : 'No props.method found.'} <span style={{fontSize: '14px'}} className={classes.Const}>=</span> <span> (<span className={classes.Argument}>{props.argument ? props.argument : null}</span>)</span> <span>=></span> {'{'} </div>
             </Typist>
             <div className={classes.MethodWrapper}>
-                <Typist startDelay={1000} avgTypingDelay={5} stdTypingDelay={5} cursor={{show: false}}> 
+                <Typist startDelay={1000} avgTypingDelay={0.5} stdTypingDelay={2.5} cursor={{show: false}}> 
                     <code>
-                        <span className={classes.Return}>return {'{'}</span> <div>{props.children}</div> <span className={classes.Return}>{'}'}</span>
+                        <span className={classes.Return}>return {'('}</span> <div className={classes.Content}>{props.children}</div> <span className={classes.Return}>{')'}<span style={{color: '#FFF'}}>;</span></span>
                     </code>
                 </Typist>
             </div>

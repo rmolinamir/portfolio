@@ -1,6 +1,6 @@
 export const scrollToContent = (element, isMobile) => {
     window.scrollTo({
-        top: element - 56,
+        top: element,
         behavior: 'smooth'
     });
 };

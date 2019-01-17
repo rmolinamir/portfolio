@@ -93,10 +93,15 @@ class Code extends Component {
                                     {this.state.isInViewport.education ?
                                         <Method method={curriculumVitae.method.education.method} argument={curriculumVitae.method.education.argument}>
                                             <span>
-                                                Major in <span className={classes.String}>Mechanical Engineering</span>, turns out I like to code more than I like to build parts, so here I am!
-                                                I'm Passionate about computer science, with strong technical, commercial and interpersonal skills,
-                                                allowing me to work as a team and successfully complete any project, be sure to check out my previous
-                                                projects in the projects tab up top!
+                                                <div style={{display: 'block', marginLeft: 0}}>
+                                                    Major in <span className={classes.String}>Mechanical Engineering</span>, turns out I like to code more 
+                                                    than I like to build parts though. I'm Passionate about computer science, with strong technical, commercial 
+                                                    and interpersonal skills, allowing me to work as a team and successfully complete any project.
+                                                </div>
+                                                <br />
+                                                <div style={{display: 'block', marginLeft: 0}}>
+                                                    For more information about my previous projects, you may go to the projects tab down at the bottom.
+                                                </div>
                                             </span>
                                         </Method>
                                     : null}
@@ -105,8 +110,16 @@ class Code extends Component {
                                     {this.state.isInViewport.skills ?
                                         <Method method={curriculumVitae.method.skills.method} argument={curriculumVitae.method.skills.argument}>
                                             <span>
-                                                I'm adept at Fullstack Web Development, lots of Backend Logic & Procceses, Data Visualization, Vector Illustrations, &
-                                                develop Unreal Engine games as a side hobby, check the skills tab for more details!
+                                                <div style={{display: 'block', marginLeft: 0}}>
+                                                    I'm adept at Fullstack Development, Backend Procceses, Data Visualization, and Vector Illustrations.
+                                                    I'm also profficient with Data Analytics and Engineering software such as SolidWorks, AutoCAD, and such,
+                                                    due to my major in Mechanical Engineering. 
+                                                </div>
+                                                <br/>
+                                                <div style={{display: 'block', marginLeft: 0}}>
+                                                    I program in the Unreal Engine software as a side hobby. If you want more information, you may go 
+                                                    to the skills tab by clicking the link down at the bottom.
+                                                </div>
                                             </span>
                                         </Method>
                                     : null}
@@ -115,11 +128,32 @@ class Code extends Component {
                                     {this.state.isInViewport.tools ?
                                         <Method method={curriculumVitae.method.tools.method} argument={curriculumVitae.method.tools.argument}>
                                             <span>
-                                                MongoDB, Firebase, Express, React.js (often using Redux, Saga, Router-DOM, Next.js, etc.), Node.js.<br />
-                                                Always using Webpack with Babel, tons of other loaders.<br />
-                                                JavaScript, ES6, Next-Gen JS, HTML, CSS, - jQuery, and sometimes Bootstrap 3 & 4 for quick projects.<br/>
-                                                Deploying done through Firebase and/or Heroku.<br />
-                                                C++ & Unreal Engine.
+                                                <div style={{display: 'block', marginLeft: 0}}>
+                                                    When it comes to frontend, I find myself using React.js (often using Redux, 
+                                                    Saga, Router-DOM, Next.js, etc.) all the time.
+                                                </div>
+                                                <br />
+                                                <div style={{display: 'block', marginLeft: 0}}>
+                                                    If I'm doing anything backend related, my go-to software are: MongoDB, Firebase, 
+                                                    Express, Node.js. It all depends on the context.
+                                                </div>
+                                                <br />
+                                                <div style={{display: 'block', marginLeft: 0}}>
+                                                    Nowadays I'm practially always using Webpack with Babel, and tons of other loaders 
+                                                    (create-react-app for the win though).
+                                                </div>
+                                                <br />
+                                                <div style={{display: 'block', marginLeft: 0}}>
+                                                    Amongst my programming languages, I pretty much focus on JavaScript, ES6, Next-Gen JS, HTML, CSS, 
+                                                    jQuery (practically no more jQuery nowadays though), and very rarely Bootstrap 3 & 4 for quick projects. 
+                                                    Aside from JavaScript I have basic knowledge of, C# and Java and a somewhat intermediate knowledge
+                                                    of  C++ due to Unreal Engine.
+                                                </div>
+                                                <br />
+                                                <div style={{display: 'block', marginLeft: 0}}>
+                                                    I do hosting and deployments almost entirely through Firebase and/or Heroku. Many people dislike
+                                                    Firebase, but I find it really useful for understaffed projects or quick ones.
+                                                </div>
                                             </span>
                                         </Method>
                                     : null}

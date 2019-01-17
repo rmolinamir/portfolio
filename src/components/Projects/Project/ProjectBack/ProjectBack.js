@@ -16,9 +16,10 @@ const projectBack = (props) => {
                 </div>
             </div>
             <p style={{flexGrow: 1, margin: 0}}></p>
-            <div>
-                <div className={classes.SocialMediaButtonsHeader}>Visit the links below for more info</div>
-                {props.children}
+            <div className={classes.SocialMediaButtonsHeader}>Visit the links below for more info
+                <div>
+                            {props.children}
+                </div>
             </div>
         </div>
     );

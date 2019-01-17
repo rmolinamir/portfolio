@@ -22,12 +22,16 @@
     align-items: center;
     padding-left: 2.5px;
     padding-right: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .VerticalBarContainer {
     align-items: flex-end;
     padding-top: 0;
     padding-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .AnimatedBar {

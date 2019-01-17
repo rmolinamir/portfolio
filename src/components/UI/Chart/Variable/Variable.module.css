@@ -48,8 +48,14 @@
     margin-right: 10px;
 }
 
+.VerticalIconName {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
 @media (max-width:625px) {
     .VerticalIconName {
+        margin: 0;
         overflow: hidden;
         width: 10%;
         text-overflow: ellipsis;

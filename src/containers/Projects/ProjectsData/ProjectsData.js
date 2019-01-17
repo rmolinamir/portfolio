@@ -56,7 +56,7 @@ export const projectsData = {
             classes: [classes.BonpreuFoodsFront].join(' '),
             card: bonpreuFoodsVideo,
             content: (
-                <ProjectFront header={'Business Website developed for the Bonpreu Foods company.'} />
+                <ProjectFront header={'Business website developed for the Bonpreu Foods company.'} />
             )
         },
         back: {
@@ -64,13 +64,13 @@ export const projectsData = {
             card: bonpreuFoodsImage,
             content: (
                 <ProjectBack 
-                backContentHeader={'Ecommerce oriented web app offering subscription plans that cover the meals for the whole week! It features:'}
+                backContentHeader={'E-commerce oriented web app offering subscription plans covering the meals for the whole week. Featuring:'}
                 featuresList={[
-                    'Full blown backend',
-                    'Secure payment handling',
-                    'Global shopping cart',
-                    'User subscription managing',
-                    'Products managing',
+                    'Full blown backend.',
+                    'Secure payment handling.',
+                    'Global shopping cart.',
+                    'User subscription managing.',
+                    'Products managing.',
                     'And more!'
                 ]}>{mapSocialMediaButtons(socialMediaButtons.bonpreuFoods)}</ProjectBack>
             )
@@ -81,7 +81,7 @@ export const projectsData = {
             classes: [classes.RepuestosSotomayorFront].join(' '),
             card: repuestosSotomayorVideo,
             content: (
-                <ProjectFront header={'Business Web App developed for the Sotomayor Autoparts company.'} />
+                <ProjectFront header={'Website developed for the Sotomayor Autoparts company.'} />
             )
         },
         back: {
@@ -89,12 +89,12 @@ export const projectsData = {
             card: repuestosSotomayorImage,
             content: (
                 <ProjectBack 
-                backContentHeader={'Simple Web App showcasing their product categories. Amongst its features are:'}
+                backContentHeader={'Simple yet elegand website showcasing their product categories & images. Amongst its features are:'}
                 featuresList={[
-                    'Simple backend handling emails with Nodemailer',
-                    'Dynamic opening & closing hours with MomentJS',
-                    'Instagram images by using Instafeed',
-                    'Contact form through the website'
+                    'Simple backend handling emails with Nodemailer.',
+                    'Contact form through the website.',
+                    'Dynamic opening & closing hours with MomentJS.',
+                    'Instagram images by using Instafeed API.',
                 ]}>{mapSocialMediaButtons(socialMediaButtons.repuestosSotomayor)}</ProjectBack>
             )
         }
@@ -112,13 +112,13 @@ export const projectsData = {
             card: myReactBurgerBuilderAppImage,
             content: (
                 <ProjectBack 
-                backContentHeader={'This was my course project in which I learned core React.js features such as:'}
+                backContentHeader={'A course project in which I learned core React.js features such as:'}
                 featuresList={[
-                    'Axios',
-                    'React-Router-Dom',
-                    'React-Redux',
-                    'Redux-Thunk and Redux-Saga',
-                    'React.lazy()'
+                    'Axios.',
+                    'React-Router-Dom.',
+                    'React-Redux.',
+                    'Redux-Thunk and Redux-Saga.',
+                    'React.lazy().'
                 ]}>{mapSocialMediaButtons(socialMediaButtons.myReactBurgerBuilderApp)}</ProjectBack>
             )
         }
@@ -128,7 +128,7 @@ export const projectsData = {
             classes: [classes.PersonalWebsiteFront].join(' '),
             card: personalWebsiteVideo,
             content: (
-                <ProjectFront header={'This very same Web App done for myself!'} />                
+                <ProjectFront header={'This very same website (duh).'} />                
             ),
         },
         back: {
@@ -136,13 +136,13 @@ export const projectsData = {
             card: null,
             content: (
                 <ProjectBack 
-                backContentHeader={'Powered by the awesome framework React.js, it features:'}
-                featuresList={[
-                    'React-router-dom for the routes, and React.lazy() to load the files in chunks.',
-                    'Usage of React-Redux and Redux-Sagas.',
-                    'Heavily used an OOP design approach for scalability',
-                    'Fully custom CSS and React components'
-                ]}>{mapSocialMediaButtons(socialMediaButtons.personalWebsite)}</ProjectBack>
+                    backContentHeader={'Made using React.js, it features:'}
+                    featuresList={[
+                        'Lazy loading with React.lazy() to load the files in chunks.',
+                        'Usage of React-Redux and Redux-Saga.',
+                        'Heavily used an OOP design approach for scalability.',
+                        'Fully custom CSS and React components.'
+                    ]}>{mapSocialMediaButtons(socialMediaButtons.personalWebsite)}</ProjectBack>
             )
         }
     },
@@ -163,7 +163,9 @@ export const projectsData = {
             card: null,
             content: (
                 <>  
-                    <h1>In development<br />it's gonna take a while :(</h1>
+                    <h2>In development.</h2>
+                    <br />
+                    <h2>It's gonna take a while.</h2>
                     <img style={{display: 'block', margin: '45px auto', width: 55}} src={underConstruction} alt='' />
                     <img style={{display: 'block', margin: 'auto', width: 50}} src={unrealEngine} alt='' />
                 </>

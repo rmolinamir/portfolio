@@ -61,6 +61,10 @@
     color: #fff;
 }
 
+.Content {
+    padding: 12px 24px;
+}
+
 @media only screen and (max-width: 425px) {
     .Method {
         display: block;
