@@ -1,5 +1,6 @@
-### `My Curriculum Vitae`
-[My Curriculum Vitae](https://robertmolinamir.firebaseapp.com/)
+# Portfolio Website
+
+## [Link](https://robertmolinamir.firebaseapp.com/)
 
 In this repository you'll find all of the files I used for my Curriculum Vitae Web App. You'll find things such as a Redux Saga that detect if the user is using a Mobile device or not, and if so, it implements a polyfill that enables smooth scrolling on mobile devices as well, just like in desktops or laptops (think, 'scrollTo{...options, behavior: smooth}').
 
