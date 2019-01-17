@@ -129,7 +129,7 @@ class Code extends Component {
                                         <Method method={curriculumVitae.method.tools.method} argument={curriculumVitae.method.tools.argument}>
                                             <span>
                                                 <div style={{display: 'block', marginLeft: 0}}>
-                                                    When it comes to frontend, I find myself using React.js (often using Redux, 
+                                                    When it comes to frontend development, I find myself using React.js (often using Redux, 
                                                     Saga, Router-DOM, Next.js, etc.) all the time.
                                                 </div>
                                                 <br />
