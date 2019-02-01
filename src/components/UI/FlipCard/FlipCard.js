@@ -48,7 +48,7 @@ const flipCard = (props) => {
                 {card.front ? 
                     <div className={card.front.classes.join(' ')}>
                         <div className={classes.Media} style={{height: card.front.height}}>
-                            <ImageFadeIn draggable='false' src={card.front.spinner} />
+                            <ImageFadeIn className={classes.Spinner} noWrapper draggable='false' src={card.front.spinner} />
                             {card.front.content}
                         </div>
                         {props.front ? props.front.content : null}

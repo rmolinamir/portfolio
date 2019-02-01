@@ -49,7 +49,6 @@ class Code extends Component {
     }
 
     render () {
-
         const curriculumVitae = {
             import: {
                 defaultImport: 'Information',
@@ -94,9 +93,9 @@ class Code extends Component {
                                         <Method method={curriculumVitae.method.education.method} argument={curriculumVitae.method.education.argument}>
                                             <span>
                                                 <div style={{display: 'block', marginLeft: 0}}>
-                                                    Major in <span className={classes.String}>Mechanical Engineering</span>, turns out I like to code more 
-                                                    than I like to build parts though. I'm Passionate about computer science, with strong technical, commercial 
-                                                    and interpersonal skills, allowing me to work as a team and successfully complete any project.
+                                                    Major in <span className={classes.String}>Mechanical Engineering</span>, I ended up liking to code more 
+                                                    than I like to build parts nearing the end of my major. I'm very passionate about computer science, with strong 
+                                                    technical, commercial and interpersonal skills, allowing me to work as a team and successfully complete any project.
                                                 </div>
                                                 <br />
                                                 <div style={{display: 'block', marginLeft: 0}}>
@@ -111,7 +110,7 @@ class Code extends Component {
                                         <Method method={curriculumVitae.method.skills.method} argument={curriculumVitae.method.skills.argument}>
                                             <span>
                                                 <div style={{display: 'block', marginLeft: 0}}>
-                                                    I'm adept at Fullstack Development, Backend Procceses, Data Visualization, and Vector Illustrations.
+                                                    I'm adept at Fullstack Development, Backend Procceses, Data Visualization, and Vector Illustration.
                                                     I'm also profficient with Data Analytics and Engineering software such as SolidWorks, AutoCAD, and such,
                                                     due to my major in Mechanical Engineering. 
                                                 </div>
@@ -129,8 +128,8 @@ class Code extends Component {
                                         <Method method={curriculumVitae.method.tools.method} argument={curriculumVitae.method.tools.argument}>
                                             <span>
                                                 <div style={{display: 'block', marginLeft: 0}}>
-                                                    When it comes to frontend development, I find myself using React.js (often using Redux, 
-                                                    Saga, Router-DOM, Next.js, etc.) all the time.
+                                                    When it comes to frontend development, I find myself using React.js almost entirely (often using Redux, 
+                                                    Saga, Router-DOM, Next.js, etc.).
                                                 </div>
                                                 <br />
                                                 <div style={{display: 'block', marginLeft: 0}}>
@@ -139,20 +138,20 @@ class Code extends Component {
                                                 </div>
                                                 <br />
                                                 <div style={{display: 'block', marginLeft: 0}}>
-                                                    Nowadays I'm practially always using Webpack with Babel, and tons of other loaders 
+                                                    Nowadays I'm always using Webpack with Babel, and tons of other loaders 
                                                     (create-react-app for the win though).
                                                 </div>
                                                 <br />
                                                 <div style={{display: 'block', marginLeft: 0}}>
-                                                    Amongst my programming languages, I pretty much focus on JavaScript, ES6, Next-Gen JS, HTML, CSS, 
+                                                    Amongst my programming languages, I focus on JavaScript, ES6, Next-Gen JS, HTML, CSS, 
                                                     jQuery (practically no more jQuery nowadays though), and very rarely Bootstrap 3 & 4 for quick projects. 
-                                                    Aside from JavaScript I have basic knowledge of, C# and Java and a somewhat intermediate knowledge
-                                                    of  C++ due to Unreal Engine.
+                                                    Aside from JavaScript I have basic knowledge of C# and Java, and a somewhat intermediate knowledge
+                                                    of  C++ due to the Unreal Engine.
                                                 </div>
                                                 <br />
                                                 <div style={{display: 'block', marginLeft: 0}}>
                                                     I do hosting and deployments almost entirely through Firebase and/or Heroku. Many people dislike
-                                                    Firebase, but I find it really useful for understaffed projects or quick ones.
+                                                    Firebase, but I find it really useful for understaffed projects, small ones, or projects that need to be done quick.
                                                 </div>
                                             </span>
                                         </Method>

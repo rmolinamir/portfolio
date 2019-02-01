@@ -24,6 +24,7 @@ class App extends Component {
 
     return (
       <Layout>
+        {/* Scrolls to the top after a route change */}
         <ScrollToTop />
         <Switch>
           <Route path="/projects" render={ () => <Suspense fallback={<SpinnerContainer />}><Projects /></Suspense>} />

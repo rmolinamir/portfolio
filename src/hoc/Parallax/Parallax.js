@@ -28,22 +28,24 @@ class parallax extends Component {
             zIndex: '-1'
         }
         return (
-            <div className={classes.Parallax}>
+            <div className={classes.Wrapper}>
                 <div style={parallaxBackground}>
-                    <ImageFadeIn style={{position: 'absolute'}} draggable="false" src={this.props.image} />
-                    <div className={classes.ParallaxOverlay}>
-                        <div className={classes.ParallaxContent}>
+                    <div className={classes.Background}>
+                        <ImageFadeIn style={{position: 'absolute'}} draggable="false" src={this.props.image} />
+                    </div>
+                    <div className={classes.Overlay}>
+                        <div className={classes.Content}>
                             <Logo />
                             <IntroHeader>Robert Molina</IntroHeader>
                             <div>
                                 {this.props.socialMediaButtons}
                             </div>
-                            <div className={classes.ParallaxMotto}>"Quality means doing it right, even when no one is looking."</div>
+                            <div className={classes.Motto}>"Quality means doing it right, even when no one is looking."</div>
                         </div>
                     </div>
                     <SlideDown scrollOnClick={() => scrollToContent(this.parallaxContent.current.offsetTop, this.props.isMobile)} />
                 </div>
-                <main className={classes.ParallaxChildren} ref={this.parallaxContent}>  
+                <main className={classes.Children} ref={this.parallaxContent}>  
                     {this.props.children}
                 </main>
             </div>

@@ -55,7 +55,6 @@
 .MethodWrapper code div {
     display: flex;
     align-items: center;
-    min-height: 40px;
     margin-left: 30px;
     font-size: 1.15rem;
     color: #fff;

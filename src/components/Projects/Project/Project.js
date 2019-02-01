@@ -6,7 +6,7 @@ import FlipCard from '../../UI/FlipCard/FlipCard';
 
 const project = (props) => {
     return (
-        <div className={classes.Projects}>
+        <div className={classes.Container}>
             <div className={classes.Project}>
                 <FlipCard
                     {...props}

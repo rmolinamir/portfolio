@@ -1,8 +1,14 @@
-.Parallax {
+.Wrapper {
     position: relative;
 }
 
-.ParallaxMotto {
+.Background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.Motto {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -16,14 +22,14 @@
     color: #FFF;
 }
 
-.ParallaxOverlay {
+.Overlay {
     position: relative;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5)
 }
 
-.ParallaxContent {
+.Content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +37,7 @@
     height: 90%;
 }
 
-.ParallaxChildren {
+.Children {
     position: absolute;
     width: 100%;
     top: 100vh;
