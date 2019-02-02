@@ -8,7 +8,6 @@ import MoreInfoButton from '../../../UI/MoreInfoButton/MoreInfoButton';
 
 
 const projectFront = (props) => {
-    console.log(props)
     return (
         <div className={classes.FrontContent}>
             <h1 className={classes.FrontContentHeader}>
