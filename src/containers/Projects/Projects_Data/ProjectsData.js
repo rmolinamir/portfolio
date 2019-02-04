@@ -1,28 +1,27 @@
 import React from 'react';
-
-import classes from './ProjectsData.module.css';
-
+// CSS
+import classes from './Projects_Data.module.css';
+// Media & assets
+// Bonpreu Foods
+import bonpreuFoodsVideo from '../../../assets/projects/BonpreuFoods/BonpreuFoods.mp4';
+import bonpreuFoodsImage from '../../../assets/projects/BonpreuFoods/BonpreuFoods.png';
+// Autoparts Sotomayor
+import repuestosSotomayorVideo from '../../../assets/projects/RepuestosSotomayor/RepuestosSotomayor.mp4';
+import repuestosSotomayorImage  from '../../../assets/projects/RepuestosSotomayor/RepuestosSotomayor2.png';
+// React Course Project
+import myReactBurgerBuilderAppVideo from '../../../assets/projects/MyReactBurgerBuilderApp/MyReactBurgerBuilderApp.mp4';
+import myReactBurgerBuilderAppImage from '../../../assets/projects/MyReactBurgerBuilderApp/MyReactBurgerBuilderApp.png';
+// Personal Website
+import personalWebsiteVideo  from '../../../assets/projects/PersonalWebsite/PersonalWebsite.mp4';
+// svgS
+import githubSVG from '../../../assets/svg/github-icon.svg';
+import externalLinkSymbol from '../../../assets/svg/external-link-symbol.svg';
+import underConstruction from '../../../assets/svg/under-construction.svg';
+import unrealEngine from '../../../assets/svg/unreal-engine-black.svg';
+// JSX
 import ProjectFront from '../../../components/Projects/Project/ProjectFront/ProjectFront';
 import ProjectBack from '../../../components/Projects/Project/ProjectBack/ProjectBack';
 import SocialMediaButton from '../../../components/UI/SocialMediaButton/SocialMediaButton';
-
-import bonpreuFoodsVideo from '../../../assets/projects/BonpreuFoods/BonpreuFoods.mp4';
-import bonpreuFoodsImage from '../../../assets/projects/BonpreuFoods/BonpreuFoods.png';
-
-import repuestosSotomayorVideo from '../../../assets/projects/RepuestosSotomayor/RepuestosSotomayor.mp4';
-import repuestosSotomayorImage  from '../../../assets/projects/RepuestosSotomayor/RepuestosSotomayor2.png';
-
-import myReactBurgerBuilderAppVideo from '../../../assets/projects/MyReactBurgerBuilderApp/MyReactBurgerBuilderApp.mp4';
-import myReactBurgerBuilderAppImage from '../../../assets/projects/MyReactBurgerBuilderApp/MyReactBurgerBuilderApp.png';
-
-
-import personalWebsiteVideo  from '../../../assets/projects/PersonalWebsite/PersonalWebsite.mp4';
-
-import githubSVG from '../../../assets/svg/github-icon.svg';
-import externalLinkSymbol from '../../../assets/svg/external-link-symbol.svg';
-
-import underConstruction from '../../../assets/svg/under-construction.svg';
-import unrealEngine from '../../../assets/svg/unreal-engine-black.svg';
 
 const socialMediaButtons = {
     bonpreuFoods: [

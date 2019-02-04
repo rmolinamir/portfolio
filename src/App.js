@@ -1,4 +1,5 @@
 import React, { Component, Suspense } from 'react';
+// react-router-dom, react-redux, react-saga creator
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { mobileCreators } from './store/actions/mobile';
@@ -11,12 +12,13 @@ import Container from './components/UI/Container/Container';
 import Spinner from './components/UI/Spinner/Spinner';
 const AboutMe = React.lazy(() => import('./containers/AboutMe/AboutMe'));
 const Projects = React.lazy(() => import('./containers/Projects/Projects'));
+const Designs = React.lazy(() => import('./containers/PSD_Desings/PSD_Desings'));
 const Skills = React.lazy(() => import('./containers/Skills/Skills'));
 const SpinnerContainer = () => <Container className={classes.SpinnerContainer}><Spinner /></Container>
 
 class App extends Component {
-
   componentDidMount () {
+    // Sets polyfill if on mobile
     this.props.onMobileCheck();
   }
 
@@ -27,6 +29,7 @@ class App extends Component {
         {/* Scrolls to the top after a route change */}
         <ScrollToTop />
         <Switch>
+          <Route path="/psd-designs" render={ () => <Suspense fallback={<SpinnerContainer />}><Designs /></Suspense>} />
           <Route path="/projects" render={ () => <Suspense fallback={<SpinnerContainer />}><Projects /></Suspense>} />
           <Route path="/skills" render={ () => <Suspense fallback={<SpinnerContainer />}><Skills /></Suspense>} />
           <Route path="/" exact render={ () => <Suspense fallback={<SpinnerContainer />}><AboutMe /></Suspense>} />
