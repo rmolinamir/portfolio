@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Import from '../../../components/UI/Code/Import/Import';
-import Class from '../../../components/UI/Code/Class/Class';
-import Method from '../../../components/UI/Code/Method/Method';
-import Export from '../../../components/UI/Code/Export/Export';
+import Import from '../../../components/AboutMe/Code/Import/Import';
+import Class from '../../../components/AboutMe/Code/Class/Class';
+import Method from '../../../components/AboutMe/Code/Method/Method';
+import Export from '../../../components/AboutMe/Code/Export/Export';
 
 import classes from './Code.module.css'
 
@@ -78,8 +78,8 @@ class Code extends Component {
             }
         }
         return (
-            <div  className={classes.Code}>
-                <div className={classes.CodeWrapper}>
+            <div  className={classes.Wrapper}>
+                <div className={classes.Container}>
                     <div ref={this.isInViewportElements.import}>
                         {this.state.isInViewport.import ?
                             <Import defaultImport={curriculumVitae.import.defaultImport} import={curriculumVitae.import.import} package={curriculumVitae.import.package} />

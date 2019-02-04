@@ -1,41 +1,13 @@
-.AboutMe {
+.Wrapper {
     text-align: center;
 }
 
-.AboutMeContainer {
+.Container {
     display: block;
     margin: auto;
     padding-top: 15px;
     padding-bottom: 75px;
-    width: 90vw ;
-}
-
-.AboutMeContainer h1 {
-    font-size: 2.75rem;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    margin-bottom: 40px;
-    user-select: none;
-    color: inherit;
-}
-
-.AboutMeContainer h1 span {
-    margin-right: 10px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: #484848;
-    color: inherit;
-    color: #fff;
-    box-sizing: border-box;
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 2.25rem;
-    font-family: 'Times New Roman', Times, serif
+    width: 90% ;
 }
 
 .Profile {
@@ -89,7 +61,7 @@
     box-shadow: 0 10px 17.5px #333;
 }
 
-.PortraitName {
+.Name {
     font-weight: 700;
     font-size: 28px;
     color: #60dcfb;
@@ -98,7 +70,7 @@
     text-shadow: 1px 2px 5px #333;
 }
 
-.PortraitTitle {
+.Title {
     font-weight: 700;
     line-height: 2;
 }
@@ -108,7 +80,7 @@
     width: 80%;
 }
 
-.PersonalLogo {
+.Logo {
     margin: 36px auto !important;
     width: 100%;
     border-radius: 0  !important;
@@ -157,13 +129,13 @@
         margin: 10% auto !important;
     }
     
-    .AboutMeContainer {
-        width: 75vw;
+    .Container {
+        width: 75%;
     }
 }
 
 @media only screen and (max-width: 500px) {
-    .AboutMeContainer {
-        width: 80vw;
+    .Container {
+        width: 80%;
     }
 }

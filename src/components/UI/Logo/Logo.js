@@ -9,7 +9,7 @@ import ImageFadeIn from '../ImageFadeIn/ImageFadeIn';
 const logo = () => {
     return (
         <div  className={classes.Logo}>
-            <ImageFadeIn style={{margin: '0 auto'}} draggable="false" src={imageLogo} />
+            <ImageFadeIn noWrapper style={{margin: '0 auto'}} draggable="false" src={imageLogo} />
             <span>RM</span>
         </div>
     );

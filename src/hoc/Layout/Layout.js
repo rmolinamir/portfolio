@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 // CSS
 import classes from './Layout.module.css'
 // JSX
+import Navbar from '../../containers/Navbar/Navbar';
 import Footer from '../../components/UI/Footer/Footer';
 import ScrollToTopButton from '../../components/UI/ScrollToTopButton/ScrollToTopButton';
 
@@ -35,6 +36,7 @@ class Layout extends Component {
         const footer = this.props.location.pathname === "/projects" || this.props.location.pathname === "/skills" ? <Footer /> : null;
         return (
             <>
+                <Navbar />
                 <main className={classes.Layout}>
                     {this.props.children}
                 </main>

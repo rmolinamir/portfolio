@@ -1,10 +1,10 @@
-.Projects {
+.Wrapper {
     margin: auto;
-    padding-top: 70px;
+    padding-top: 15px;
     max-width: 1200px;
     min-height: 100vh;
 }
 
-.ProjectsBackground {
+.Background {
     background-color: #fff;
 }

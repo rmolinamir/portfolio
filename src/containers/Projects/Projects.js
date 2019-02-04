@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // Data
-import { projectsData } from './ProjectsData/ProjectsData';
+import { projectsData } from './Projects_Data/Data';
 // CSS
 import classes from './Projects.module.css';
 // JSX
@@ -16,13 +16,13 @@ class Projects extends Component {
     render () {
         const projects = Object.keys(this.state.projects).map( (key) => {
             return <Project 
-                className={classes.ProjectsBackground}
+                className={classes.Background}
                 key={key} 
                 front={this.state.projects[key].front} 
                 back={this.state.projects[key].back} />
         });
         return (
-            <div className={classes.Projects}>
+            <div className={classes.Wrapper}>
                 <IntroHeader>My Projects</IntroHeader>
                 <Container>
                     {projects}                    

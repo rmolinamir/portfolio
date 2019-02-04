@@ -47,8 +47,8 @@ const footer = () => {
             <div className={classes.NavLinks}>
                 <NavLink exact activeClassName={classes.active} className={classes.NavLink} to='/'><span className={classes.Link}>About Me</span></NavLink>
                 <NavLink activeClassName={classes.active} className={classes.NavLink} to='/projects'><span className={classes.Link}>Projects</span></NavLink>
+                <NavLink activeClassName={classes.active} className={classes.NavLink} to='/psd-designs'><span className={classes.Link}>My Designs</span></NavLink>
                 <NavLink activeClassName={classes.active} className={classes.NavLink} to='/skills'><span className={classes.Link}>Skills</span></NavLink>
-                <a href="mailto:rmolinamir@gmail.com" className={classes.NavLink}><span className={classes.Link}>Email Me</span></a>
                 <a href="https://github.com/rmolinamir" target="_blank" rel="noopener noreferrer" className={classes.NavLink}><span className={classes.Link}>Github</span></a>
             </div>
             <div className={classes.CopyrightWrapper}>

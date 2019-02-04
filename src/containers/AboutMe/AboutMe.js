@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // Assets
 import profilePicture from '../../assets/images/Profile-Picture.jpg';
 import parallaxImage from '../../assets/images/Parallax-Background.jpg';
-import personalLogoNameless from '../../assets/svg/personal-logo.svg';
+import personalLogo from '../../assets/svg/personal-logo.svg';
 import githubSVG from '../../assets/svg/github-icon.svg';
 import gmailSVG from '../../assets/svg/google-gmail.svg';
 import linkedinSVG from '../../assets/svg/linkedin-icon.svg';
@@ -13,6 +13,7 @@ import Parallax from '../../hoc/Parallax/Parallax';
 import SocialMediaButton from '../../components/UI/SocialMediaButton/SocialMediaButton';
 import DownloadButton from '../../components/UI/DownloadButton/DownloadButton';
 import Code from './Code/Code';
+import IntroHeader from '../../components/UI/IntroHeader/IntroHeader';
 import Footer from '../../components/UI/Footer/Footer';
 import ImageFadeIn from '../../components/UI/ImageFadeIn/ImageFadeIn';
 
@@ -27,17 +28,17 @@ class AboutMe extends Component {
         });
         const pageContent = (
             <>
-                <div className={classes.AboutMeContainer}>
-                    <h1><span>i</span> About Me</h1>
+                <div className={classes.Container}>
+                    <IntroHeader>About Me</IntroHeader>
                     <div className={classes.Profile}>
                         <div className={classes.Portrait}>
                             <div className={classes.Content}>
                                 <ImageFadeIn style={{marginTop: '12px'}} className={classes.Portrait}  draggable="false" src={profilePicture} />
-                                <div className={classes.PortraitName}>Robert Molina</div>
-                                <div className={classes.PortraitTitle}>Fullstack Developer</div>
+                                <div className={classes.Name}>Robert Molina</div>
+                                <div className={classes.Title}>Fullstack Developer</div>
                                 <p className={classes.Download}>Click the button below to download my full resume:</p>
                                 <DownloadButton href='https://drive.google.com/open?id=15bEpE77LztNaNu2fn2wRtPsXeKzHSCu9'>Full Resume</DownloadButton>
-                                <img className={classes.PersonalLogo} src={personalLogoNameless} alt='Personal Logo' />
+                                <img className={classes.Logo} src={personalLogo} alt='Personal Logo' />
                             </div>
                         </div>
                         <Code />
@@ -47,7 +48,7 @@ class AboutMe extends Component {
             </>
         );
         return (
-            <div className={classes.AboutMe}>
+            <div className={classes.Wrapper}>
                 <Parallax image={parallaxImage} socialMediaButtons={socialMediaButtons}>
                     {pageContent}
                 </Parallax>

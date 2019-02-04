@@ -9,7 +9,7 @@
     user-select: none;
     width: 335px;
     height: 300px;
-    margin: 24px auto 12px; 
+    margin: 24px auto; 
 }
 
 .Logo div {
@@ -19,6 +19,7 @@
 }
 
 .Logo img {
+    object-fit: contain;
     animation: Logo-spin infinite 20s linear;
 }
 
@@ -30,7 +31,7 @@
     position: absolute;
 }
 
-@media only screen and (max-width: 500px) {
+@media (max-width: 744px) {
     .Logo {
         width: 175px;
         height: 157.5px;

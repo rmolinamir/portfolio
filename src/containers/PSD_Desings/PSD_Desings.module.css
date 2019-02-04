@@ -1,8 +1,6 @@
 .Wrapper {
     margin: auto;
     padding-top: 15px;
-}
-
-.Container {
-    flex-flow: column;
+    max-width: 1200px;
+    min-height: 100vh;
 }

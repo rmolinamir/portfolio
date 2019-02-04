@@ -1,12 +1,22 @@
+.Wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6px;
+    max-width: 240px;
+    margin: 0 auto;
+}
+
 .Button {
+    border: 0;
+    padding: 0;
     display: inline-block;
+    width: 100%;
     cursor: pointer;
     outline: none;
-    border: 0;
     vertical-align: middle;
     text-decoration: none;
     background: transparent;
-    padding: 0;
     font-size: inherit;
     font-family: inherit;
     position: relative;
@@ -16,7 +26,7 @@
     display: flex;
     justify-content: center;
     flex-flow: column;
-    width: 13rem;
+    width: auto;
     height: auto;
 }
 
@@ -61,22 +71,22 @@
 }
 
 .Text {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: absolute;
-    height: 100%;
     top: 50%;
-    transform: translateY(-50%);
     left: 0;
     bottom: 0;
-    margin: 0 0 0 1.85rem;
-    padding-left: 14px;
+    display: flex;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    transform: translateY(-50%);
     color: #484848;
     font-weight: 700;
     font-size: 18px;
-    text-align: center;
+    text-align: c;
     text-transform: uppercase;
-    display: flex;
-    align-items: center;
 }
 
 .Button:hover .Circle {

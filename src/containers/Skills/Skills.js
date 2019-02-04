@@ -6,7 +6,7 @@ import classes from './Skills.module.css';
 // JSX
 import Container from '../../components/UI/Container/Container';
 import IntroHeader from '../../components/UI/IntroHeader/IntroHeader';
-import Chart from '../Chart/Chart';
+import Chart from './Chart/Chart';
 
 class Skills extends Component {
     state = {
@@ -61,8 +61,8 @@ class Skills extends Component {
 
     render () {
         return (
-            <div className={classes.Skills}>
-                <Container className={classes.SkillsContainer}>
+            <div className={classes.Wrapper}>
+                <Container className={classes.Container}>
                     <IntroHeader>My Skills</IntroHeader>
                     <Chart data={this.state.skills}/>
                 </Container>
