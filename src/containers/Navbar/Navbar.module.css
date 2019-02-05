@@ -21,7 +21,7 @@
 	top: 0;
 	left: 0;
 	right: 0;
-    background: rgb(31, 165, 202) !important;
+    background: rgb(255, 255, 255) !important;
 	box-sizing: border-box;
 	z-index: 25;
 }

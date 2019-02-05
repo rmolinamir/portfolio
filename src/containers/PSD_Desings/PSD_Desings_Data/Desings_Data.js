@@ -76,7 +76,7 @@ export const designsData = {
         They're a spanish based company and their target audience is often spanish speakers, for this reason the flyer is in spanish as well, obviously.`
     },
     bonpreuFoodsInstagramPromotion: {
-        title: 'Instagram Images Post-Processing',
+        title: 'Instagram Promotion',
         company: 'Bonpreu Foods',
         images: [instagramPromotionBF],
         logo: bonpreuFoodsLogo,

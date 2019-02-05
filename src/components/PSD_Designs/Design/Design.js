@@ -82,8 +82,8 @@ class Design extends Component {
                             {this.props.images.map((image, index) => {
                                 return (
                                     <Slide key={index}>
-                                        <div>
-                                            <ImageFadeIn draggable='false' style={{position: 'relative'}} noWrapper src={image} />
+                                        <div className={classes.FullscreenContainer}>
+                                            <ImageFadeIn className={classes.FullscreenImage} draggable='false' style={{position: 'relative'}} noWrapper src={image} />
                                         </div>
                                     </Slide>
                                 );

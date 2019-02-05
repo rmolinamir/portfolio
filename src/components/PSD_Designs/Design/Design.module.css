@@ -180,3 +180,22 @@
     cursor: pointer;
     outline: inherit;
 }
+
+.FullscreenContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FullscreenImage {
+    object-fit: fill;
+    object-position: center;
+    height: auto;
+    width: auto;
+    max-height: 90vh;
+    max-width: 100%;
+    margin: 0 auto;
+    vertical-align: middle;
+    border: 0;
+    box-sizing: border-box;
+}

@@ -41,7 +41,7 @@ const renderNavigationItems = (props) => {
 					</div>
 					<Separator />
 					<NavigationItem {...props} link="/">
-						Projects
+						About Me
 					</NavigationItem>
 					<Separator />
 					<NavigationItem {...props} link="/projects">
@@ -54,13 +54,22 @@ const renderNavigationItems = (props) => {
 						Designs
 					</NavigationItem>
 					<Separator />
-					<a href='https://github.com/rmolinamir' className={classes.NavLink}>
+					<a href='https://github.com/rmolinamir' 
+						rel='noopener noreferrer' 
+						target='_blank' 
+						className={classes.NavLink}>
 						Github
 					</a>
-					<a href='https://www.linkedin.com/in/rmolinamir/' className={classes.NavLink}>
+					<a href='https://www.linkedin.com/in/rmolinamir/' 
+						rel='noopener noreferrer' 
+						target='_blank' 
+						className={classes.NavLink}>
 						LinkedIn
 					</a>
-					<a href='mailto:rmolinamir@gmail.com' className={classes.NavLink}>
+					<a href='mailto:rmolinamir@gmail.com' 
+						rel='noopener noreferrer' 
+						target='_blank' 
+						className={classes.NavLink}>
 						Email Me
 					</a>
 				</>
