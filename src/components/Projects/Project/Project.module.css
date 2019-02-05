@@ -3,7 +3,6 @@
     height: 100%;
 }
 
-
 .Project {
     display: flex;
     align-items: center;
@@ -37,5 +36,22 @@
 @media (max-width: 400px) {
     .Project {
         margin: 10px 0 10px 0;
+    }
+}
+
+.FlipCard {
+    box-shadow: 0px 1.5px 20px #944adb;
+    animation: change-colors 2s infinite;
+}
+
+@keyframes change-colors {
+    0% {
+        box-shadow: 0px 1.5px 20px #944adb;
+    } 
+    50% {
+        box-shadow: 0px 1.5px 20px #60dcfb;
+    }
+    100% {
+        box-shadow: 0px 1.5px 20px #944adb;
     }
 }

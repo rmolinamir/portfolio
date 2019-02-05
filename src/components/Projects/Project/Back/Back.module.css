@@ -30,15 +30,15 @@
 .Container {
     display: flex;
     position: absolute;
-    background: rgba(35,35,35,.5);
+    background: rgba(35,35,35,.7);
     top: 0;
     width: 100%;
     height: 100%;
     flex-flow: column;
-    padding: 5px;
-    font-size: 17px;
+    padding: 12px 6px;
+    font-size: 16px;
     color: #fff;
-    text-shadow: 2px 2px 1.5px #000;
+    text-shadow: 1px 1px 1.5px #333;
 }
 
 .Content {
@@ -47,12 +47,20 @@
     height: 100%;
 }
 
+.List {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
 .FeaturesList {
+    margin: 0;
+    padding-left: 24px;
+    margin-bottom: 24px;
     position: relative;
     text-align: left;
     line-height: 1.3;
-    padding-bottom: 5px;
-    margin-bottom: 0px;
 }
 
 .FeaturesList li {
@@ -68,5 +76,5 @@
     margin: 3px 0;
     font-size: 17px;
     color: #fff;
-    text-shadow: 2px 2px 1.5px #000;
+    text-shadow: 1px 1px 1.5px #333;
 }

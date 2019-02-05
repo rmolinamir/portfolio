@@ -10,6 +10,8 @@ const project = (props) => {
             <div className={classes.Project}>
                 <FlipCard
                     {...props}
+                    style={{animationDelay: Math.random()*Math.random()*4 + 's'}}
+                    className={classes.FlipCard}
                     width={345} 
                     height={415}
                     opacity={0.65} />

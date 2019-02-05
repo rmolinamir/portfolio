@@ -2,8 +2,12 @@ import React from 'react';
 // CSS
 import classes from './Data.module.css';
 // Media & assets
+// Servify
+import servifyVideo from '../../../assets/projects/servify/servify-video.mp4';
+import servifyIcon from '../../../assets/projects/servify/servify-icon.png';
 // Tus verdes
 import tusVerdesImage from '../../../assets/projects/tus-verdes/tus-verdes.png';
+import tusVerdesIcon from '../../../assets/projects/tus-verdes/tus-verdes-icon.png';
 // Bonpreu Foods
 import bonpreuFoodsVideo from '../../../assets/projects/bonpreu-foods/bonpreu-foods.mp4';
 import bonpreuFoodsImage from '../../../assets/projects/bonpreu-foods/bonpreu-foods.png';
@@ -12,7 +16,6 @@ import repuestosSotomayorVideo from '../../../assets/projects/sotomayor-autopart
 import repuestosSotomayorImage  from '../../../assets/projects/sotomayor-autoparts/sotomayor-autoparts-2.png';
 // React Course Project
 import myReactBurgerBuilderAppVideo from '../../../assets/projects/burger-builder-app/burger-builder-app.mp4';
-import myReactBurgerBuilderAppImage from '../../../assets/projects/burger-builder-app/burger-builder-app.png';
 // Personal Website
 import personalWebsiteVideo  from '../../../assets/projects/personal-website/personal-website.mp4';
 // svgS
@@ -28,6 +31,9 @@ import Video from '../../../components/UI/Video/Video';
 import ImageFadeIn from '../../../components/UI/ImageFadeIn/ImageFadeIn';
 
 const socialMediaButtons = {
+    servify: [
+        {icon: externalLinkSymbol, href: "https://www.servifyapp.com/", targetBlank: true}
+    ],
     tusVerdes: [
         {icon: githubSVG, href: "https://github.com/rmolinamir/tus-verdes", targetBlank: true},
         {icon: externalLinkSymbol, href: "https://www.tusverdes.com/", targetBlank: true}
@@ -57,21 +63,47 @@ const mapSocialMediaButtons = (socialMediaData) => {
 }
 
 export const projectsData = {
+    servify: {
+        front: (
+            <ProjectFront 
+                className={classes.ServifyFront}
+                media={<Video width={'100%'} height={'auto'} src={servifyVideo} />}
+                header={'Servify'}
+                description={'A great app for your everyday needs.'} />
+        ),
+        back: (
+            <ProjectBack 
+                backgroundImage={servifyIcon}
+                className={classes.ServifyBack}
+                header={'In Servify I was in charge of developing the entirety of the web app and part of the backend.'}
+                featuresList={[
+                    'Made with React.js.',
+                    'Hosted on Firebase.',
+                    'Backend hosted on the Firebase Cloud Functions, so that it can fetch data to the mobile application too.',
+                    'Real-time database.',
+                    'Almost entirely made from custom React components and CSS, for great scalability.',
+                    'Simple yet very user friendly design.'
+                ]}
+                websiteOnly
+                >{mapSocialMediaButtons(socialMediaButtons.servify)}</ProjectBack>
+        )
+    },
     tusVerdes: {
         front: (
             <ProjectFront 
-                className={classes.BonpreuFoodsFront}
+                className={classes.TusVerdesFront}
                 media={<ImageFadeIn
                         draggable='false'
                         noWrapper
                         src={tusVerdesImage} />}
-                header={'Web app that calculates hyperinflation conversion for Venezuelans local currency'} />
+                header={'Tus Verdes'}
+                description={'A web app that calculates dollars to local currency conversion for Venezuelans due to hyperinflation.'} />
         ),
         back: (
             <ProjectBack 
-                backgroundImage={bonpreuFoodsImage}
-                className={classes.BonpreuFoodsBack}
-                Header={'Tus Verdes is a web app made for Venezuelans to help them keep up with hyperinflation and local price conversions.'}
+                backgroundImage={tusVerdesIcon}
+                className={classes.TusVerdesBack}
+                header={'Tus Verdes is a web app made for Venezuelans to help them keep up with hyperinflation and local price conversions.'}
                 featuresList={[
                     'Made with React.js.',
                     'Calculates prices by calling a backend route.',
@@ -85,13 +117,14 @@ export const projectsData = {
             <ProjectFront 
                 className={classes.BonpreuFoodsFront}
                 media={<Video width={'100%'} height={'auto'} src={bonpreuFoodsVideo} />}
-                header={'Business website developed for the Bonpreu Foods company.'} />
+                header={'Bonpreu Foods'}
+                description={'E-commerce web app developed for Bonpreu Foods.'} />
         ),
         back: (
             <ProjectBack 
                 backgroundImage={bonpreuFoodsImage}
                 className={classes.BonpreuFoodsBack}
-                Header={'E-commerce oriented web app offering subscription plans covering the meals for the whole week. Featuring:'}
+                header={'E-commerce oriented web app offering subscription plans covering the meals for the whole week. Featuring:'}
                 featuresList={[
                     'Full blown backend.',
                     'Secure payment handling.',
@@ -107,13 +140,14 @@ export const projectsData = {
             <ProjectFront 
                 className={classes.RepuestosSotomayorFront}
                 media={<Video width={'100%'} height={'auto'} src={repuestosSotomayorVideo} />}
-                header={'Website developed for the Sotomayor Autoparts company.'} />
+                header={'Sotomayor Autoparts'}
+                description={'Website developed for Sotomayor Autoparts.'} />
         ),
         back: (
             <ProjectBack 
                 backgroundImage={repuestosSotomayorImage}
                 className={classes.RepuestosSotomayorBack}
-                Header={'Simple yet elegant website showcasing their product categories & images. Amongst its features are:'}
+                header={'Simple yet elegant website showcasing their product categories & images. Amongst its features are:'}
                 featuresList={[
                     'Simple backend handling emails with Nodemailer.',
                     'Contact form through the website.',
@@ -127,12 +161,13 @@ export const projectsData = {
             <ProjectFront 
                 className={classes.PersonalWebsiteFront}
                 media={<Video width={'100%'} height={'auto'} src={personalWebsiteVideo} />}
-                header={'This very same website (duh).'} />
+                header={'Portfolio'}
+                description={'This very same website (duh).'} />
         ),
         back: (
             <ProjectBack 
                 className={classes.PersonalWebsiteBack}
-                Header={'Designed using React.js and custom components for scalability.'}
+                header={'Designed using React.js and custom React components for scalability.'}
                 featuresList={[
                     'Lazy loading with React.lazy() to load the routes in file chunks.',
                     'Usage of react-redux and redux-saga, because why not?',
@@ -146,12 +181,13 @@ export const projectsData = {
             <ProjectFront 
                 className={classes.MyReactBurgerBuilderAppFront}
                 media={<Video width={'100%'} height={'auto'} src={myReactBurgerBuilderAppVideo} />}
-                header={'React Burger Builder, my React.js course project.'} />
+                header={'Burger Builder'}
+                description={'This project was my React.js course project.'} />
         ),
         back: (
             <ProjectBack 
                 className={classes.MyReactBurgerBuilderAppBack}
-                Header={'My course project in which I learned core React.js features such as:'}
+                header={'My course project in which I learned core React.js features such as:'}
                 featuresList={[
                     'axios,',
                     'react-router-dom,',
@@ -163,17 +199,6 @@ export const projectsData = {
         )
     },
     unrealEngineGame: {
-        // front: {
-        //     classes: [classes.WorkInProgressFront].join(' '),
-        //     card: null,
-        //     content: (
-        //         <>
-        //             <h1>Unreal Engine Game</h1>
-        //             <img style={{display: 'block', margin: '45px auto', width: 75}} src={underConstruction} alt='' />
-        //             <img style={{display: 'block', margin: 'auto', width: 100}} src={unrealEngine} alt='' />
-        //         </>
-        //     )
-        // },
         front: (
             <div style={{height: '100%'}} className={classes.WorkInProgressFront}>
                 <h1>Unreal Engine Game</h1>
@@ -190,18 +215,5 @@ export const projectsData = {
                 <img style={{display: 'block', margin: 'auto', width: 50}} src={unrealEngine} alt='' />
             </div>
         )
-        // back: {
-        //     classes: [classes.WorkInProgressBack].join(' '),
-        //     card: null,
-        //     content: (
-        //         <>  
-        //             <h2>In development.</h2>
-        //             <br />
-        //             <h2>It's gonna take a while.</h2>
-        //             <img style={{display: 'block', margin: '45px auto', width: 55}} src={underConstruction} alt='' />
-        //             <img style={{display: 'block', margin: 'auto', width: 50}} src={unrealEngine} alt='' />
-        //         </>
-        //     )
-        // }
-    },
+    }
 }
