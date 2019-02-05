@@ -1,0 +1,23 @@
+.Container {
+    position: relative;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.Video {
+    display: block;
+    margin: auto;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.Spinner {
+    position: absolute;
+    width: 100%;
+    background: rgba(0,0,0,.5)
+}

@@ -10,8 +10,8 @@ const project = (props) => {
             <div className={classes.Project}>
                 <FlipCard
                     {...props}
-                    width={325} 
-                    height={375}
+                    width={345} 
+                    height={415}
                     opacity={0.65} />
             </div>
         </div>

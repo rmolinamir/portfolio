@@ -1,18 +1,50 @@
 .Wrapper {
-    background: rgba(35,35,35,0.35);
-    display: flex;
-    position: absolute;
-    flex-flow: column;
-    top: 0;
+    position: relative;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
+}
+
+.Background {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #fff;
+    transform: translateZ(0);
+}
+
+.Image {
+    left: 0;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    border: 0;
+    box-sizing: border-box;
 }
 
 .Container {
+    display: flex;
+    position: absolute;
+    background: rgba(35,35,35,.5);
+    top: 0;
+    width: 100%;
+    height: 100%;
+    flex-flow: column;
     padding: 5px;
     font-size: 17px;
     color: #fff;
     text-shadow: 2px 2px 1.5px #000;
+}
+
+.Content {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .FeaturesList {
