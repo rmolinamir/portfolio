@@ -1,24 +1,35 @@
 .Button {
+    position: relative;
     background-color: transparent;
     border: none;
     color: white;
     outline: none;
     cursor: pointer;
     font: inherit;
-    padding: 10px;
-    margin: 10px;
-    width: 100px;
-    font-weight: bold;
+    width: fit-content;
     user-select: none;
     border: 1px solid transparent;
     line-height: 1.5;
-    border-radius: .25rem;
-    transition: background-color .1s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out, opacity 0.15s;
+    border-radius: .25rem;;
+    font-weight: var(--font-bold-font-weight, 600);
+    padding-top: var(--spacing-button-vertical, 10px);
+    padding-bottom: var(--spacing-button-vertical, 10px);
+    padding-left: var(--spacing-button-horizontal, 17px);
+    padding-right: var(--spacing-button-horizontal, 17px);
+    box-shadow: var(--shadow-button-level0-box-shadow, none);
+    transition: background-color .1s ease-in-out, border-color .15s ease-in-out,box-shadow .15s ease-in-out, opacity 0.15s;
 }
 
-/* .Button:first-of-type {
-    margin-left: auto;
-} */
+.Logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 10px;
+}
+
+.BlockButton {
+    width: 100%;
+}
 
 .Button:disabled {
     opacity: 0.45;
@@ -49,4 +60,57 @@
     color: #fff;
     background-color: #dc3545;
     border-color: #dc3545;
+}
+
+.Primary {
+    color: #944adb ;
+    background-color: transparent;
+    background-image: none;
+    border-color: #944adb ;
+}
+
+.Primary:not([disabled]):hover {
+    color: #fff;
+    background-color: #944adb ;
+    border-color: #944adb ;
+}
+
+.Default {
+    color: #484848;
+    border: 1px solid #EAEAEA;
+    background: #FFF;
+    background-image: none;
+}
+
+.Default:not([disabled]):hover {
+    color: #fff;
+    background-color: #484848;
+    border-color: #484848;
+}
+
+.Facebook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    color: rgb(255, 255, 255);
+    background: rgb(59, 89, 152);
+    border-color: transparent;
+}
+
+.Google {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    margin-bottom: 12px;
+    color: rgb(255, 255, 255);
+    background: rgb(219, 50, 54);
+    border-color: transparent;
+}
+
+.Auth {
+    margin: 12px 0;
+    color: rgb(255, 255, 255);
+    background: rgb(255, 112, 67);
+    border-color: transparent;
 }

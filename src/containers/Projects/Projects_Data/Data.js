@@ -3,24 +3,24 @@ import React from 'react';
 import classes from './Data.module.css';
 // Media & assets
 // Bonpreu Foods
-import bonpreuFoodsVideo from '../../../assets/projects/BonpreuFoods/BonpreuFoods.mp4';
-import bonpreuFoodsImage from '../../../assets/projects/BonpreuFoods/BonpreuFoods.png';
+import bonpreuFoodsVideo from '../../../assets/projects/bonpreu-foods/bonpreu-foods.mp4';
+import bonpreuFoodsImage from '../../../assets/projects/bonpreu-foods/bonpreu-foods.png';
 // Autoparts Sotomayor
-import repuestosSotomayorVideo from '../../../assets/projects/RepuestosSotomayor/RepuestosSotomayor.mp4';
-import repuestosSotomayorImage  from '../../../assets/projects/RepuestosSotomayor/RepuestosSotomayor2.png';
+import repuestosSotomayorVideo from '../../../assets/projects/sotomayor-autoparts/sotomayor-autoparts.mp4';
+import repuestosSotomayorImage  from '../../../assets/projects/sotomayor-autoparts/sotomayor-autoparts-2.png';
 // React Course Project
-import myReactBurgerBuilderAppVideo from '../../../assets/projects/MyReactBurgerBuilderApp/MyReactBurgerBuilderApp.mp4';
-import myReactBurgerBuilderAppImage from '../../../assets/projects/MyReactBurgerBuilderApp/MyReactBurgerBuilderApp.png';
+import myReactBurgerBuilderAppVideo from '../../../assets/projects/burger-builder-app/burger-builder-app.mp4';
+import myReactBurgerBuilderAppImage from '../../../assets/projects/burger-builder-app/burger-builder-app.png';
 // Personal Website
-import personalWebsiteVideo  from '../../../assets/projects/PersonalWebsite/PersonalWebsite.mp4';
+import personalWebsiteVideo  from '../../../assets/projects/personal-website/personal-website.mp4';
 // svgS
 import githubSVG from '../../../assets/svg/github-icon.svg';
 import externalLinkSymbol from '../../../assets/svg/external-link-symbol.svg';
 import underConstruction from '../../../assets/svg/under-construction.svg';
 import unrealEngine from '../../../assets/svg/unreal-engine-black.svg';
 // JSX
-import ProjectFront from '../../../components/Projects/Project/ProjectFront/ProjectFront';
-import ProjectBack from '../../../components/Projects/Project/ProjectBack/ProjectBack';
+import Front from '../../../components/Projects/Project/Front/Front';
+import ProjectBack from '../../../components/Projects/Project/Back/Back';
 import SocialMediaButton from '../../../components/UI/SocialMediaButton/SocialMediaButton';
 
 const socialMediaButtons = {
@@ -55,7 +55,7 @@ export const projectsData = {
             classes: [classes.BonpreuFoodsFront].join(' '),
             card: bonpreuFoodsVideo,
             content: (
-                <ProjectFront header={'Business website developed for the Bonpreu Foods company.'} />
+                <Front header={'Business website developed for the Bonpreu Foods company.'} />
             )
         },
         back: {
@@ -80,7 +80,7 @@ export const projectsData = {
             classes: [classes.RepuestosSotomayorFront].join(' '),
             card: repuestosSotomayorVideo,
             content: (
-                <ProjectFront header={'Website developed for the Sotomayor Autoparts company.'} />
+                <Front header={'Website developed for the Sotomayor Autoparts company.'} />
             )
         },
         back: {
@@ -103,7 +103,7 @@ export const projectsData = {
             classes: [classes.MyReactBurgerBuilderAppFront].join(' '),
             card: myReactBurgerBuilderAppVideo,
             content: (
-                <ProjectFront header={'React Burger Builder, my React.js course project.'} />                
+                <Front header={'React Burger Builder, my React.js course project.'} />                
             ),
         },
         back: {
@@ -127,7 +127,7 @@ export const projectsData = {
             classes: [classes.PersonalWebsiteFront].join(' '),
             card: personalWebsiteVideo,
             content: (
-                <ProjectFront header={'This very same website (duh).'} />                
+                <Front header={'This very same website (duh).'} />                
             ),
         },
         back: {
@@ -145,7 +145,7 @@ export const projectsData = {
             )
         }
     },
-    unrealEngineGame1: {
+    unrealEngineGame: {
         front: {
             classes: [classes.WorkInProgressFront].join(' '),
             card: null,

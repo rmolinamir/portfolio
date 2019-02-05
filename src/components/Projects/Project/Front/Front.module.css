@@ -1,0 +1,38 @@
+.Wrapper {
+    display: flex;
+    flex-flow: column;
+    background-color: rgba(50,50,50,.25);
+    justify-content: center;
+    width: 100%;
+    height: 177.5px;
+    box-sizing: border-box;
+}
+
+.Header {
+    font-size: 19px;
+    width: 90%;
+    margin: auto;
+    color: #fff;
+    text-shadow: 1px 1px 2.5px #000;
+}
+
+.MoreInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.25);
+    border-radius: 5px;
+    font-size: 19px;
+    height: 32px;
+    margin: auto;
+    color: #fff;
+    padding: 5px 10px 5px 5px;
+    border: 1px solid;
+    text-shadow: 1px 1px 2.5px #000;
+    box-sizing: border-box;
+    box-shadow: .5px 1px 2.5px #fff;
+}
+
+.MoreInfo span {
+    margin-left: 10px;
+}

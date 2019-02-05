@@ -3,21 +3,21 @@ import React from 'react';
 import classes from './AnimatedBar.module.css';
 
 const animatedBar = (props) => {
-    let wrapperClassName = [classes.AnimatedBarWrapper];
+    const wrapperClassName = [classes.Wrapper];
     if (props.wrapperClassName) {wrapperClassName.push(props.wrapperClassName);}
-    let containerClassName = [classes.AnimatedBarContainer, classes.HorizontalBarContainer];
-    if (props.vertical) {
-        containerClassName = [classes.AnimatedBarContainer, classes.VerticalBarContainer];
-    }
+    // Horizontal settings
+    let containerClassName = [classes.Container, classes.HorizontalContainer];
     let barStyle = {
         width: props.percentage
     };
-    let animatedBarClasses = [classes.AnimatedBar, classes.HorizontalBar];
+    let animatedBarClasses = [classes.Bar, classes.HorizontalBar];
+    // Vertical settings
     if (props.vertical) {
+        containerClassName = [classes.Container, classes.VerticalContainer];
         barStyle = {
             height: props.percentage    
         };
-        animatedBarClasses = [classes.AnimatedBar, classes.VerticalBar];
+        animatedBarClasses = [classes.Bar, classes.VerticalBar];
     }
     return (
         <div className={wrapperClassName.join(' ')}>

@@ -1,0 +1,40 @@
+.Wrapper {
+    background: rgba(35,35,35,0.35);
+    display: flex;
+    position: absolute;
+    flex-flow: column;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.Container {
+    padding: 5px;
+    font-size: 17px;
+    color: #fff;
+    text-shadow: 2px 2px 1.5px #000;
+}
+
+.FeaturesList {
+    position: relative;
+    text-align: left;
+    line-height: 1.3;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
+.FeaturesList li {
+    list-style-type: square;
+}
+
+.Children {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 0;
+    margin: 3px 0;
+    font-size: 17px;
+    color: #fff;
+    text-shadow: 2px 2px 1.5px #000;
+}

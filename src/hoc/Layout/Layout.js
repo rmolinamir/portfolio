@@ -33,7 +33,9 @@ class Layout extends Component {
     }
 
     render () {
-        const footer = this.props.location.pathname === "/projects" || this.props.location.pathname === "/skills" ? <Footer /> : null;
+        // The landing page has a parallax, so the footer is inside the parallax and this one has to be rendered null.
+        // Otherwise, render this footer.
+        const footer = this.props.location.pathname !== "/" ? <Footer /> : null;
         return (
             <>
                 <Navbar />

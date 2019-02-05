@@ -73,6 +73,9 @@ const renderNavigationItems = (props) => {
 						: (
 							<>
 								<div className={classes.Spacing} />
+								<NavigationItem {...props} link="/">
+									About Me
+								</NavigationItem>
 								<NavigationItem {...props} link="/projects">
 									Projects
 								</NavigationItem>

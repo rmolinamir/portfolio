@@ -14,10 +14,10 @@
     transition: box-shadow 0.25s ease-out, font-size 0.05s ease-out, color 0.15s ease-out;
 }
 
-.NavigationItem a:hover {
+.NavigationItem a:hover,
+.Active {
     color: #484848;
     box-shadow: 0px 2px #944adb;
-    height: 95%;
 }
 
 .NavigationItemWhite a{

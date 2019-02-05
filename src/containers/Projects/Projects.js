@@ -14,12 +14,12 @@ class Projects extends Component {
     }
 
     render () {
-        const projects = Object.keys(this.state.projects).map( (key) => {
+        const projects = Object.keys(this.state.projects).map((key, index) => {
             return <Project 
-                className={classes.Background}
-                key={key} 
-                front={this.state.projects[key].front} 
-                back={this.state.projects[key].back} />
+                    key={index} 
+                    className={classes.Background}
+                    front={this.state.projects[key].front} 
+                    back={this.state.projects[key].back} />
         });
         return (
             <div className={classes.Wrapper}>

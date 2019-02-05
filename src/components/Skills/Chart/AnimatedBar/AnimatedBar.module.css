@@ -1,4 +1,4 @@
-.AnimatedBarWrapper {
+.Wrapper {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -6,9 +6,9 @@
     width: 100%;
 }
 
-.AnimatedBarContainer {
+.Container {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     background-color: #333;
     box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -18,7 +18,7 @@
     border-radius: 5px;
 }
 
-.HorizontalBarContainer {
+.HorizontalContainer {
     align-items: center;
     padding-left: 2.5px;
     padding-right: 0;
@@ -26,7 +26,7 @@
     border-bottom-left-radius: 0;
 }
 
-.VerticalBarContainer {
+.VerticalContainer {
     align-items: flex-end;
     padding-top: 0;
     padding-bottom: 0;
@@ -34,7 +34,7 @@
     border-bottom-right-radius: 0;
 }
 
-.AnimatedBar {
+.Bar {
     position: relative;
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
     background-size: 200% auto;
@@ -63,7 +63,7 @@
     transition: background-position 1s;
 }
 
-.AnimatedBar:after {
+.Bar:after {
     content: "";
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
