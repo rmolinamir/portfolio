@@ -6,10 +6,6 @@
     cursor: pointer;
 }
 
-/* .FlipCard > * {
-    border-radius: 12px !important;
-} */
-
 .Inner {
     position: relative;
     width: 100%;
@@ -42,6 +38,7 @@
 }
 
 .Back {
+    z-index: 1;
     transform: rotateY(180deg);
     color: #484848;
 }
@@ -51,6 +48,10 @@
     position: absolute;
     width: 100%;
     background: rgba(0,0,0,.5)
+}
+
+.FlipCard:hover .Spinner {
+    display: none;
 }
 
 .Media {
