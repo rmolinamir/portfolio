@@ -32,8 +32,7 @@ class MobileDrawer extends Component {
                     <NagivationItems  
                         navbarType='MobileDrawer'
                         onClick={this.props.onClick}
-                        isNavbarTransparent={this.props.navbarTransparent} 
-                        toggleAuthModal={this.props.toggleAuthModal} />
+                        isNavbarTransparent={this.props.navbarTransparent} />
                 </nav>
             </div>
         </div>

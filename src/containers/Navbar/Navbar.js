@@ -15,8 +15,7 @@ const NavbarContainer = (props) => {
 				<NagivationItems
 					width={props.width}
 					navbarType={props.navbarType} 
-					isNavbarTransparent={props.isNavbarTransparent} 
-					toggleAuthModal={props.toggleAuthModal} />
+					isNavbarTransparent={props.isNavbarTransparent} />
 			</nav>
 			{props.width < 1121 ? 
 			<>
@@ -29,8 +28,7 @@ const NavbarContainer = (props) => {
 					isOpen={props.bIsDrawerOpen}
 					onClick={props.toggleMobileDrawer}
 					// NavItems props
-					isNavbarTransparent={props.navbarTransparent} 
-					toggleAuthModal={props.toggleAuthModal} />
+					isNavbarTransparent={props.navbarTransparent} />
 			</> 
 			: null}
 			
@@ -107,12 +105,6 @@ class Navbar extends PureComponent {
 		}
 	};
 
-	toggleAuthModal = () => {
-		this.setState( (prevState) => {
-			return { bShowAuthModal: !prevState.bShowAuthModal };
-		});
-	}
-
 	handleResize = () => {
 		this.setState({ width: window.innerWidth });
 	};
@@ -168,7 +160,6 @@ class Navbar extends PureComponent {
 				settings = {
 					className: [classes.Navbar, classes.DefaultNavbar].join(' '),
 					navbarType: 'Default', // pass navbarType prop to select respective navigation items
-					toggleAuthModal: this.props.toggleAuthModal, // Toggle Auth Modal
 					toggleMobileDrawer: this.toggleMobileDrawer,
 					isNavbarTransparent: false,
 					isDrawerTransparent: false
@@ -198,12 +189,8 @@ class Navbar extends PureComponent {
 
 const mapStateToProps = (state) => {
 	return {
-		isMobile: state.mobileReducer.isMobile,
+		isMobile: state.mobileReducer.isMobile
 	};
 };
 
-export default withRouter(
-	connect(
-		mapStateToProps
-	)(Navbar)
-);
+export default withRouter(connect(mapStateToProps)(Navbar));
