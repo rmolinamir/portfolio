@@ -19,6 +19,7 @@
 .Media {
     display: flex;
     min-height: 210px;
+    width: 100%;
 }
 
 .Media video {
