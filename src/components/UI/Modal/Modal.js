@@ -22,7 +22,7 @@ class Modal extends Component {
         this.props.closeModal();
     }
 
-    escFunction(e){
+    escFunction = (e) => {
         if(e.keyCode === 27) {
             //Do whatever when esc is pressed
             this.props.closeModal();
