@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
+// Worker functions
+import { isMobile } from '../../../shared/isMobile';
 // CSS
-import classes from './Modal.module.css'
+import classes from './Modal.module.css';
 // JSX
-import Backdrop from '../Backdrop/Backdrop.js'
 import Cancel from './cancel';
 
 class Modal extends Component {
-
     constructor(props) {
         super(props);
         this.myModal = React.createRef();
         this.escFunction = this.escFunction.bind(this);
-        // If on mobile drawer then don't do anything
-        if (document.body.clientWidth < 1121) {
-            return;
-        }
         document.body.style.overflow = null;
+    }
+
+    state = {
+        pageYOffset: null
+    }
+
+    onBackdropClickHandler = () => {
+        this.props.closeModal();
     }
 
     escFunction(e){
@@ -25,27 +29,56 @@ class Modal extends Component {
         }
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
+    onHandleMobileScroll = (handler) => {
+        switch (handler) {
+            case 'enable':
+                // Enabling mobile scrolling
+                document.body.style.position = null;
+                document.body.style.top = null;
+                document.body.style.width = null;
+                window.scrollTo(0, this.state.pageYOffset);
+            break;
+            case 'disable':
+                const pageYOffset = window.pageYOffset;
+                document.body.style.top = `-${pageYOffset}px`;
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+                this.setState({
+                    pageYOffset: pageYOffset
+                }); 
+            break;
+            default:
+            // do nothing
+        }
+        return;
+    }
+
+    shouldComponentUpdate(nextProps) {
         return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
     }
 
-    componentDidUpdate () {
-        // If on mobile drawer then don't do anything
-        if (document.body.clientWidth < 1121) {
-            return;
-        }
+    componentDidUpdate (prevProps) {
         // To prevent scrolling when the modal is open
         if (this.props.show) {
-            document.addEventListener("keydown", (e) => this.escFunction(e), false);
+            document.addEventListener("keydown", this.escFunction, false);
             document.body.style.overflow = 'hidden';
-        } else {
-            document.removeEventListener("keydown", () => this.escFunction(), false);
+            // Disabling mobile scrolling
+            if (isMobile()) {
+                this.onHandleMobileScroll('disable');
+            }
+        // Only remove oferflow null when dismounting modal
+        } else if ((prevProps.show !== this.props.show) && !this.props.show) {
+            document.removeEventListener("keydown", this.escFunction, false);
             document.body.style.overflow = null;
+            // Enabling mobile scrolling
+            if (isMobile()) {
+                this.onHandleMobileScroll('enable');
+            }
         }
     }
 
     componentWillUnmount() {
-        document.removeEventListener("keydown", () => this.escFunction(), false);
+        document.removeEventListener("keydown", this.escFunction, false);
         document.body.style.overflow = null;
     }
 
@@ -53,22 +86,27 @@ class Modal extends Component {
         const noCancel = this.props.alwaysShow;
         return (
             <div className={this.props.show ? classes.BodyOverlay : classes.Null}> 
-                <div className={this.props.show ? classes.ModalWrapper : null}>
-                    <div className={this.props.show ? classes.ModalContainer : null}>
-                        <Backdrop 
-                            show={this.props.show} 
-                            clicked={this.props.toggleModal} />
-                        <div ref={this.myModal}
+                <div onClick={this.onBackdropClickHandler} className={this.props.show ? classes.ModalWrapper : null}>
+                    <div className={this.props.show ? classes.ModalContainer : null} >
+                        <div 
+                            // Stopping propagation to stop the ModalWrapper closeModal execution from triggering upon
+                            // interacting with the modal's children elements.
+                            onClick={(e) => {e.stopPropagation()}} 
+                            ref={this.myModal}
                             style={{
                                 visibility: this.props.show ? 'visible' : 'hidden',
                                 transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
                                 opacity: this.props.show ? '1' : '0',
                                 maxWidth: this.props.maxWidth ? [this.props.maxWidth,'px'].join('') : null,
-                                // Transparent styling
-                                background: this.props.transparent ? 'none' : null,
-                                border: this.props.transparent ? 0 : null
+                                // Transparent or background styling
+                                border: this.props.transparent ? 0 : null,
+                                background: this.props.transparent ? 'none' 
+                                    // Background styling, if passed as props.
+                                    : this.props.background ? 
+                                        this.props.background 
+                                        : null
                             }}
-                            className={classes.Modal}>
+                            className={this.props.className ? this.props.className : classes.Modal}>
                             {noCancel ? 
                                 null
                                 : (
@@ -93,4 +131,4 @@ class Modal extends Component {
     }
 };
 
-export default React.memo(Modal);
+export default Modal;

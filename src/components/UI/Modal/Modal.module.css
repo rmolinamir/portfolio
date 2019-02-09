@@ -18,14 +18,16 @@
 
 .ModalWrapper {
     display: block;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     width: 100%; 
+    background-color: rgba(0,0,0,.55);
 }
 
 .ModalContainer {
     display: flex;
     justify-content: center;
-    padding: 50px;
+    padding: 60px 12px;
 }
 
 .Modal {
@@ -61,13 +63,13 @@
     .Modal {
         height: auto;
         top: 10%;
-        max-width: 650px;
+        max-width: 450px;
     }
 }
 
 @media (max-height: 600px) {
     .Modal {
-        overflow: scroll;
+        overflow: auto;
         width: 100%;
         height: 100%;
         left: 0;
