@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 // CSS
 import classes from './Design.module.css';
 // JSX
+import Modal from 'react-png-modal';
 import Button from '../../UI/Button/Button';
-import Modal from '../../UI/Modal/Modal';
 import Gallery from '../../UI/Gallery/Gallery';
 import Separator from '../../UI/Separator/Separator';
 import { Slider, Slide } from '../../UI/Slider/';
