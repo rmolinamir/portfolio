@@ -76,7 +76,6 @@ class Design extends Component {
                     <Modal 
                         transparent
                         show={this.state.bIsModalVisible} 
-                        toggleModal={this.toggleModal}
                         closeModal={this.closeModal}>
                         <Slider showOnlyActive disableNav>
                             {this.props.images.map((image, index) => {
