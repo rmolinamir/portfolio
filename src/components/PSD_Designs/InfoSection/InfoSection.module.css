@@ -1,108 +1,103 @@
 .Container {
-    display: flex;
-    flex-direction: row;
-    min-height: 200px;
+  display: flex;
+  flex-direction: row;
+  min-height: 200px;
 }
 
 .InfoWrapper {
-    min-width: 0px;
-    -webkit-flex: 3;
-    -ms-flex: 3;
-    flex: 3;
-    margin-right: 40px;
+  min-width: 0px;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  margin-right: 40px;
 }
 
 .Header {
-    margin-bottom: 30px;
-    font-weight: 600;
-    margin: 0px;
-    word-wrap: break-word;
-    font-size: 18px;
-    line-height: 30px;
-    letter-spacing: normal;
-    color: #484848;
+  margin-bottom: 30px;
+  font-weight: 600;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: normal;
+  color: inherit;
 }
 
 .InfoContainer {
-    margin-bottom: 0;
-    white-space: pre-line;
-    margin: 0px;
-    word-wrap: break-word;
-    font-size: 18px;
-    line-height: 26px;
-    letter-spacing: normal;
-    color: #484848;
-    font-weight: normal;
+  margin-bottom: 0;
+  white-space: pre-line;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: normal;
+  color: inherit;
+  font-weight: normal;
 }
 
 .Info {
-    margin: 0px;
-    text-align: justify;
-    word-wrap: break-word;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: normal;
-    color: #484848;
-    font-weight: normal;
+  margin: 0px;
+  text-align: justify;
+  word-wrap: break-word;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: normal;
+  color: inherit;
+  font-weight: normal;
 }
 
 .LogoWrapper {
-    flex: 1;
-    max-width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  flex: 1;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .LogoContainer {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .Logo {
-    height: 72px;
-    width: 72px;
-    display: inline-block;
+  height: 72px;
+  width: 72px;
+  display: inline-block;
 }
 
 .Logo img {
-    border: 0;
-    vertical-align: middle;
-    background-color: #fff;
-    border-radius: 25%;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #ffffff;
-    vertical-align: middle;
-    overflow: hidden;
-    background-color: var(--color-accent-light-gray, #fff);
-    border-radius: var(--border-profile-photo-border-radius, 25%);
-    border-width: var(--border-profile-photo-border-width, 2px);
-    border-color: var(--color-white, #ffffff);
+  vertical-align: middle;
+  background-color: inherit;
+  border-width: 1px;
+  border-radius: 25%;
+  border-style: solid;
+  border-color: currentColor;
+  vertical-align: middle;
+  overflow: hidden;
 }
 
 .Name {
-    font-weight: 600;
-    margin: 0px;
-    word-wrap: break-word;
-    font-size: 16px;
-    line-height: 22px;
-    letter-spacing: normal;
-    color: #484848;
+  font-weight: 600;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: normal;
+  color: inherit;
 }
 
 @media (max-width: 744px) {
-    .Container {
-        flex-direction: column;
-    }
-    .LogoWrapper {
-        order: 1;
-        margin: 8px 0 16px;
-        justify-content: center;
-        align-items: flex-start;
-    }
-    .InfoWrapper {
-        order: 2;
-        margin-right: 0;
-    }
+  .Container {
+    flex-direction: column;
+  }
+  .LogoWrapper {
+    order: 1;
+    margin: 8px 0 16px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .InfoWrapper {
+    order: 2;
+    margin-right: 0;
+  }
 }

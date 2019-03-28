@@ -13,11 +13,15 @@
     color:inherit;
     margin-top: 6px;
     z-index: 0;
+    background-color: inherit;
+    color: inherit;
 }
 
 .BannerWrapper {
     display: block;
     position: relative;
+    background-color: inherit;
+    color: inherit;
 }
 
 .BannerWrapper::before {
@@ -27,8 +31,8 @@
     right: 0;
     bottom: 0;
     left: 0;
-    -webkit-box-shadow: inset 0 0 0 1px rgb(229, 229, 229);
-    box-shadow: inset 0 0 0 1px rgb(229, 229, 229);
+    border-top: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
     display: block;
     pointer-events: none;
     z-index: 1;
@@ -40,12 +44,13 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgb(245, 246, 248);
+    background-color: inherit;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
     background-size: 200%;
+    opacity: 0.5;
 }
 
 .BannerBackground:before,
@@ -134,7 +139,7 @@
     display: inline-block;
     height: 12px;
     width: 1px;
-    background-color: rgba(35,35,35,0.4);
+    background-color: currentColor;
     margin: 0 15px;
     pointer-events: none;
     user-select: none;

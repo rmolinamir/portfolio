@@ -1,56 +1,65 @@
-.IntroHeader {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    user-select: none;
-    text-shadow: 3px 3px 9px rgba(0,0,0, 0.1);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 3.5rem;
-    font-weight: 700;
-    line-height: 60px;
-    margin-bottom: 25px;
-    color: rgb(38, 187, 225);
-    color: transparent;
-    background: linear-gradient(to right, #944adb 20%, rgb(38, 187, 225) 40%, rgb(38, 187, 225) 60%, #944adb 80%);
-    background-size: 200% auto;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-text 5s linear infinite;
+.Header {
+  display: flex;
+  width: 95%;
+  justify-content: center;
+  text-align: center;
+  user-select: none;
+  text-shadow: 3px 3px 9px rgba(0,0,0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 60px;
+  margin: 18px auto 24px;
+  color: rgb(38, 187, 225);
+  color: transparent;
+  background: linear-gradient(to right, #944adb 20%, rgb(38, 187, 225) 40%, rgb(38, 187, 225) 60%, #944adb 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text 5s linear infinite;
 }
 
 @supports (-ms-ime-align:auto) {
-    /* IE Edge 12+ CSS */ 
-    .IntroHeader {
-        color: rgb(38, 187, 225);
-        -webkit-text-fill-color: rgb(38, 187, 225);
-    }
+  /* IE Edge 12+ CSS */ 
+  .Header {
+    color: rgb(38, 187, 225);
+    -webkit-text-fill-color: rgb(38, 187, 225);
+  }
 }
 
 @media only screen and (max-width: 900px) {
-    .IntroHeader {
-        display: inline-block;
-        width: 100%;
-        font-size: 3em;
-    }
+  .Header {
+    display: inline-block;
+    width: 100%;
+    font-size: 3em;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .IntroHeader {
-        font-size: 2.75em;
-    }
+  .Header {
+    font-size: 2.75em;
+  }
 }
 
 @media only screen and (max-width: 400px) {
-    .IntroHeader {
-        font-size: 2.5em;
-    }
+  .Header {
+    font-size: 2.5em;
+  }
 }
 
 
 @keyframes gradient-text {
-    to {
-        background-position: 200% center;
-    }
+  to {
+    background-position: 200% center;
+  }
+}
+
+.Intro {
+  color: currentColor;
+  line-height: 28px;
+  font-weight: 600;
+  font-size: 21px;
+  margin: 12px 0 36px;
 }

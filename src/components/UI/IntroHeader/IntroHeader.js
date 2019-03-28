@@ -1,11 +1,26 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
+// CSS
+import classes from './IntroHeader.module.css'
 
-import classes from './IntroHeader.module.css';
-
-const introHeader = (props) => {
-    return (
-        <div className={classes.IntroHeader}>{props.children}</div>        
-    );
+const Header = (props) => {
+  return (
+    <>
+      <div className={classes.Header}>
+        {props.children}
+      </div>
+      {props.intro && (
+        <div className={classes.Intro}>
+          {props.intro}
+        </div>
+      )}
+    </>
+  )
 }
 
-export default introHeader;
+Header.propTypes = {
+  children: PropTypes.string.isRequired,
+  intro: PropTypes.string
+}
+
+export default Header

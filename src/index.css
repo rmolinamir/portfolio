@@ -1,16 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  color: #484848;
-  background-color: #FFF;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Carousels */
-.slick-track {
-  margin-left: 0 !important;
 }
 
 /* Common */

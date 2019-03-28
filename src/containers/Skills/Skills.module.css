@@ -1,8 +1,8 @@
 .Wrapper {
-    margin: auto;
-    padding-top: 15px;
+  margin: auto;
+  padding-top: 15px;
 }
 
 .Container {
-    flex-flow: column;
+  flex-flow: column;
 }

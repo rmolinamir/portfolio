@@ -1,5 +1,21 @@
-.Layout {
-    /* margin-top: 56px; */
-    padding: 0;
-    margin: 0;
+.Wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+.LightTheme {
+  background-color: #FFF;
+  color: #484848;
+}
+
+.DarkTheme {
+  background-color: #2F2F2F;
+  color: #FFF;
+}
+
+.Container {
+  padding: 0;
+  margin: 0;
+  background-color: inherit;
+  color: inherit;
 }
