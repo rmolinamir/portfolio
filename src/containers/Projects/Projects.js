@@ -18,7 +18,7 @@ const projects = () => {
   })
   return (
     <div className={classes.Wrapper}>
-      <IntroHeader>My Projects</IntroHeader>
+      <IntroHeader intro="These are some of my projects ever since I've started programming, excluding the most embarrassing ones! My NPM packages are not showcased here, if you want to check them out you may click the 'Code Lab' tab.">My Projects</IntroHeader>
       <Container>
         {projects}
       </Container>

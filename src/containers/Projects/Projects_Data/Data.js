@@ -18,12 +18,8 @@ import repuestosSotomayorImage from '../../../assets/projects/sotomayor-autopart
 import myReactBurgerBuilderAppVideo from '../../../assets/projects/burger-builder-app/burger-builder-app.mp4'
 // Personal Website
 import personalWebsiteVideo from '../../../assets/projects/personal-website/personal-website.mp4'
-// svgS
-import githubSVG from '../../../assets/svg/github-icon.svg'
-import externalLinkSymbol from '../../../assets/svg/external-link-symbol.svg'
-import underConstruction from '../../../assets/svg/under-construction.svg'
-import unrealEngine from '../../../assets/svg/unreal-engine-black.svg'
 // JSX
+import { Icon } from 'react-svg-library'
 import ProjectFront from '../../../components/Projects/Project/Front/Front'
 import ProjectBack from '../../../components/Projects/Project/Back/Back'
 import SocialMediaButton from '../../../components/UI/SocialMediaButton/SocialMediaButton'
@@ -32,33 +28,33 @@ import ImageFadeIn from '../../../components/UI/ImageFadeIn/ImageFadeIn'
 
 const socialMediaButtons = {
   servify: [
-    { icon: externalLinkSymbol, href: 'https://www.servifyapp.com/', targetBlank: true }
+    { icon: 'share-two', href: 'https://www.servifyapp.com/', targetBlank: true }
   ],
   tusVerdes: [
-    { icon: githubSVG, href: 'https://github.com/rmolinamir/tus-verdes', targetBlank: true },
-    { icon: externalLinkSymbol, href: 'https://www.tusverdes.com/', targetBlank: true }
+    { icon: 'github', href: 'https://github.com/rmolinamir/tus-verdes', targetBlank: true },
+    { icon: 'share-two', href: 'https://www.tusverdes.com/', targetBlank: true }
   ],
   bonpreuFoods: [
-    { icon: githubSVG, href: 'https://github.com/rmolinamir/Bonpreu-Foods', targetBlank: true },
-    { icon: externalLinkSymbol, href: 'http://bonpreufoods.com', targetBlank: true }
+    { icon: 'github', href: 'https://github.com/rmolinamir/Bonpreu-Foods', targetBlank: true },
+    { icon: 'share-two', href: 'http://bonpreufoods.com', targetBlank: true }
   ],
   repuestosSotomayor: [
-    { icon: githubSVG, href: 'https://github.com/rmolinamir/David-Sotomayor', targetBlank: true },
-    { icon: externalLinkSymbol, href: 'https://nameless-basin-74779.herokuapp.com', targetBlank: true }
+    { icon: 'github', href: 'https://github.com/rmolinamir/David-Sotomayor', targetBlank: true },
+    { icon: 'share-two', href: 'https://nameless-basin-74779.herokuapp.com', targetBlank: true }
   ],
   myReactBurgerBuilderApp: [
-    { icon: githubSVG, href: 'https://github.com/rmolinamir/React-App-Burger-Builder', targetBlank: true },
-    { icon: externalLinkSymbol, href: 'https://my-react-burger-builder-app.firebaseapp.com/', targetBlank: true }
+    { icon: 'github', href: 'https://github.com/rmolinamir/React-App-Burger-Builder', targetBlank: true },
+    { icon: 'share-two', href: 'https://my-react-burger-builder-app.firebaseapp.com/', targetBlank: true }
   ],
   personalWebsite: [
-    { icon: githubSVG, href: 'https://github.com/rmolinamir/Curriculum-Vitae', targetBlank: true },
-    { icon: externalLinkSymbol, href: 'https://robertmolina.com', targetBlank: true }
+    { icon: 'github', href: 'https://github.com/rmolinamir/Curriculum-Vitae', targetBlank: true },
+    { icon: 'share-two', href: 'https://www.robertmolina.dev', targetBlank: true }
   ]
 }
 
 const mapSocialMediaButtons = (socialMediaData) => {
   return socialMediaData.map(Button => {
-    return <SocialMediaButton key={Button.href} svg={Button.icon} href={Button.href} targetBlank={Button.targetBlank} />
+    return <SocialMediaButton key={Button.href} icon={Button.icon} href={Button.href} targetBlank={Button.targetBlank} />
   })
 }
 
@@ -197,8 +193,12 @@ export const projectsData = {
     front: (
       <div style={{ height: '100%' }} className={classes.WorkInProgressFront}>
         <h1 style={{ margin: 0, paddingTop: '6px' }}>Unreal Engine Game</h1>
-        <img style={{ display: 'block', margin: '45px auto', width: 75 }} src={underConstruction} alt='' />
-        <img style={{ display: 'block', margin: 'auto', width: 100 }} src={unrealEngine} alt='' />
+        <span style={{ display: 'block', margin: '45px auto', width: 75 }}>
+          <Icon size='100%' icon='under-construction' />
+        </span>
+        <span style={{ display: 'block', margin: 'auto', width: 100 }}>
+          <Icon size='100%' icon='unreal-engine' />
+        </span>
       </div>
     ),
     back: (
@@ -206,8 +206,12 @@ export const projectsData = {
         <h2 style={{ margin: 0, paddingTop: '6px' }}>In development.</h2>
         <br />
         <h2>It's gonna take a while.</h2>
-        <img style={{ display: 'block', margin: '45px auto', width: 55 }} src={underConstruction} alt='' />
-        <img style={{ display: 'block', margin: 'auto', width: 50 }} src={unrealEngine} alt='' />
+        <span style={{ display: 'block', margin: '45px auto', width: 55 }}>
+          <Icon size='100%' icon='under-construction' />
+        </span>
+        <span style={{ display: 'block', margin: 'auto', width: 50 }}>
+          <Icon size='100%' icon='unreal-engine' />
+        </span>
       </div>
     )
   }

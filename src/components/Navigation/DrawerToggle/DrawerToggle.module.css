@@ -19,13 +19,13 @@
 .Transparent div:after,
 .Transparent div:before {
     height: 3px !important;
-    background-color: #FFF !important;
+    background-color: currentColor !important;
 }
 
 .DrawerToggle div {
     width: 90%;
     height: 2px;
-    background-color: #484848;
+    background-color: currentColor;
     transition: all 0.25s ease-out;
 }
 
@@ -34,8 +34,8 @@
     display: block;
     transform:translateY(-12px);
     height: 100%;
-    background-color: #484848;
-    transition: all 0.25s ease-out;
+    background-color: currentColor;
+    transition: transform 0.25s ease-out;
 }
 
 .DrawerToggle div:before {
@@ -43,8 +43,8 @@
     display: block;
     transform:translateY(10px);
     height: 100%;
-    background-color: #484848;
-    transition: all 0.25s ease-out;
+    background-color: currentColor;
+    transition: transform 0.25s ease-out;
 }
 
 .DrawerToggle.Open {
@@ -54,7 +54,7 @@
 .Open div {
     width: 90%;
     height: 3px;
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 .Open div:after {
@@ -62,7 +62,7 @@
     display: block;
     transform: translateY(-3px) rotate(225deg);
     height: 100%;
-    background-color: #484848 !important;
+    background-color: currentColor !important;
 }
 
 .Open div:before {
@@ -70,7 +70,7 @@
     display: block;
     transform: rotate(-45deg);
     height: 100%;
-    background-color: #484848 !important;
+    background-color: currentColor !important;
 }
 
 @media (min-width: 1121px) {

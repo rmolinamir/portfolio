@@ -22,7 +22,7 @@ const navigationItem = (props) => {
         activeClassName={classes.Active}
         onClick={props.onClick}
         to={props.link}>
-        {props.children}
+        <span>{props.children}</span>
       </NavLink>
     </li>
   )

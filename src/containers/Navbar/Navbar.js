@@ -17,21 +17,21 @@ const NavbarContainer = (props) => {
         <NagivationItems
           width={props.width}
           navbarType={props.navbarType}
-          isNavbarTransparent={props.isNavbarTransparent} />
+          isNavTransparent={props.isNavTransparent} />
         <ThemeToggler />
       </nav>
       {props.width < 1121 &&
       <>
         <DrawerToggle
           isOpen={props.bIsDrawerOpen}
-          isNavbarTransparent={props.isNavbarTransparent || props.isDrawerTransparent}
+          isNavTransparent={props.isNavTransparent || props.isDrawerTransparent}
           onClick={props.toggleMobileDrawer} />
         <MobileDrawer
           drawerClass={classes.MobileOnly}
           isOpen={props.bIsDrawerOpen}
           onClick={props.toggleMobileDrawer}
           // NavItems props
-          isNavbarTransparent={props.navbarTransparent} />
+          isNavTransparent={props.scrollNavTransparent} />
       </>}
     </>
   )
@@ -41,11 +41,11 @@ NavbarContainer.propTypes = {
   onScroll: PropTypes.func,
   width: PropTypes.number,
   navbarType: PropTypes.string,
-  isNavbarTransparent: PropTypes.bool,
+  isNavTransparent: PropTypes.bool,
   isDrawerTransparent: PropTypes.bool,
   toggleMobileDrawer: PropTypes.func,
   bIsDrawerOpen: PropTypes.bool,
-  navbarTransparent: PropTypes.bool
+  scrollNavTransparent: PropTypes.bool
 }
 
 class Navbar extends PureComponent {
@@ -62,16 +62,16 @@ class Navbar extends PureComponent {
       isMobile: props.isMobile,
       width: window.innerWidth,
       bIsDrawerOpen: false,
-      navbarTransparent: window.pageYOffset < 50,
+      scrollNavTransparent: window.pageYOffset < 50,
       showScrollToTop: false,
       className: classes.LandingNavbar,
       // passing reference from constructor
       navbarType: 'LandingNavbar', // pass navbarType prop to select respective navigation items
       // Scroll Tracking Functionality if dependant on scroll then pass 'this.trackScrolling'
       onScroll: null, // No functionality
-      // Passing Is Navbar Transparent functionality, if dependant on scroll then pass 'this.state.navbarTransparent'
+      // Passing Is Navbar Transparent functionality, if dependant on scroll then pass 'this.state.scrollNavTransparent'
       // if never transparent then pass false or pass nothing, if always transparent then pass true
-      isNavbarTransparent: true
+      isNavTransparent: true
     }
   }
 
@@ -96,9 +96,9 @@ class Navbar extends PureComponent {
   }
 
   /**
-   * Tracks the window scroll then toggles the state navbarTransparent
+   * Tracks the window scroll then toggles the state scrollNavTransparent
    * depending on the window.scrollY property, if user scrolls further than
-   * the .clientHeight property then the navbarTransparent state shall be false,
+   * the .clientHeight property then the scrollNavTransparent state shall be false,
    * otherwise if the navbar is at the top it will be true.
    *
    * With the same functionality, it detects whenever the window.scrollY is less
@@ -112,7 +112,7 @@ class Navbar extends PureComponent {
       return
     }
     this.setState({
-      navbarTransparent: !(window.scrollY > this.myNavbar.current.clientHeight && this.state.isNavbarTransparent)
+      scrollNavTransparent: !(window.scrollY > this.myNavbar.current.clientHeight && this.state.isNavTransparent)
     })
   }
 
@@ -154,15 +154,14 @@ class Navbar extends PureComponent {
     switch (true) {
       case this.props.location.pathname === '/':
         settings = {
-          className: classes.TransparentNavbar,
+          className: classes.AboutMeNavbar,
           // passing reference from constructor
-          navbarType: 'TransparentNavbar', // pass navbarType prop to select respective navigation items
+          navbarType: 'AboutMeNavbar', // pass navbarType prop to select respective navigation items
           // Scroll Tracking Functionality if dependant on scroll then pass 'this.trackScrolling'
-          onScroll: () => {}, // No functionality
-          // Passing Is Navbar Transparent functionality, if dependant on scroll then pass 'this.state.navbarTransparent'
+          // onScroll: () => {}, // No functionality
+          // Passing Is Navbar Transparent functionality, if dependant on scroll then pass 'this.state.scrollNavTransparent'
           // if never transparent then pass false or pass nothing, if always transparent then pass true
-          isNavbarTransparent: true,
-          isDrawerTransparent: true,
+          isNavTransparent: true,
           toggleMobileDrawer: this.toggleMobileDrawer
         }
         break
@@ -172,7 +171,7 @@ class Navbar extends PureComponent {
           className: [classes.Navbar, classes.DefaultNavbar].join(' '),
           navbarType: 'Default', // pass navbarType prop to select respective navigation items
           toggleMobileDrawer: this.toggleMobileDrawer,
-          isNavbarTransparent: false,
+          isNavTransparent: false,
           isDrawerTransparent: false
         }
     }
@@ -184,9 +183,8 @@ class Navbar extends PureComponent {
   }
 
   render () {
-    console.log(this.state)
     const navbarClasses = [classes.Navbar, this.state.className]
-    if (this.state.isNavbarTransparent && this.state.navbarTransparent) {
+    if (this.state.isNavTransparent && this.state.scrollNavTransparent && !this.state.bIsDrawerOpen) {
       navbarClasses.push(classes.Transparent)
     /**
      * Navbar themes.

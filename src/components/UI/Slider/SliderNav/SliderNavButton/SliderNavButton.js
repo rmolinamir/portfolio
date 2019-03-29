@@ -1,15 +1,27 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 // CSS
-import classes from './SliderNavButton.module.css';
+import classes from './SliderNavButton.module.css'
 
 const sliderNavButton = (props) => {
-    const buttonClasses = [classes.SliderNavButton];
-    if (props.activeSlide === Number(props.slide)) {
-        buttonClasses.push(classes.Active);
-    }
-    return (
-        <button onClick={ () => props.onClick(null, props.slide) } className={buttonClasses.join(' ')} />
-    );
+  const onClickHandler = () => {
+    props.onClick(null, props.slide)
+  }
+
+  const buttonClasses = [classes.SliderNavButton]
+  if (props.activeSlide === Number(props.slide)) {
+    buttonClasses.push(classes.Active)
+  }
+
+  return (
+    <button onClick={onClickHandler} className={buttonClasses.join(' ')} />
+  )
 }
 
-export default sliderNavButton;
+sliderNavButton.propTypes = {
+  slide: PropTypes.string,
+  activeSlide: PropTypes.number,
+  onClick: PropTypes.func
+}
+
+export default sliderNavButton

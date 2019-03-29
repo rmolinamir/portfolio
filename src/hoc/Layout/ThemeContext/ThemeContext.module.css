@@ -7,3 +7,19 @@
   background-color: #2F2F2F;
   color: #FFF;
 }
+
+*::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: inherit;
+}
+
+*::-webkit-scrollbar {
+	width: 8px;
+  background-color: inherit;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: currentColor;
+  border: 2px solid inherit;
+}

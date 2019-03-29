@@ -5,7 +5,7 @@
   position: relative;
   flex-flow: column;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 16px;
   margin-bottom: 125px;
   max-width: 900px;
 }
@@ -86,7 +86,7 @@
   background-color: rgba(127, 219, 255, .15);
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .PlotArea {
     padding-left: 2.5px !important;
     padding-right: 5px !important;
@@ -113,7 +113,7 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media (max-width: 550px) {
   .VerticalLabelNames li {
     margin-left: 0 !important;
   }

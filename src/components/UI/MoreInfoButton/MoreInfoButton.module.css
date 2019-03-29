@@ -1,16 +1,16 @@
 .Container{
-    display: inline-block;
-	border-radius: 50%;
-	transition: all .3s ease-out;
+  display: inline-block;
+  border-radius: 50%;
+  transition: all .3s ease-out;
 }
 
 .NoHover {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .Container:hover{
-    backface-visibility: hidden;
-    transform: scale(1.05) rotate(3deg);
+  backface-visibility: hidden;
+  transform: scale(1.05) rotate(3deg);
 }
 
 .Container:hover {

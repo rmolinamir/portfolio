@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter, NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 // CSS
 import classes from './NavigationItems.module.css'
 // JSX
@@ -9,97 +10,79 @@ import Separator from './Separator/Separator'
 import desktopLogo from '../../../assets/svg/personal-logo.svg'
 import logo from '../../../assets/images/Robert-Molina.png'
 
-const renderNavigationItems = (props) => {
-	switch (props.navbarType) {
-		case 'TransparentNavbar':
-			return (
-				<>
-					{props.width < 1121 ? 
-						null : 
-						<>
-							<div className={classes.Spacing} />
-							<Separator />
-							<NavigationItem {...props} link='/projects' color='white'>
-								Projects
-							</NavigationItem>
-							<NavigationItem {...props} link='/skills' color='white'>
-								Skills
-							</NavigationItem>
-							<NavigationItem {...props} link='/psd-designs' color='white'>
-								Designs
-							</NavigationItem>
-							<Separator />
-						</>
-					}
-				</>
-			)
-		case 'MobileDrawer':
-			return (
-				<>
-					<div className={classes.MobileLogo}>
-						<img src={logo} draggable='false' alt='' />
-					</div>
-					<Separator />
-					<NavigationItem {...props} link='/'>
-						About Me
-					</NavigationItem>
-					<Separator />
-					<NavigationItem {...props} link='/projects'>
-						Projects
-					</NavigationItem>
-					<NavigationItem {...props} link='/skills'>
-						Skills
-					</NavigationItem>
-					<NavigationItem {...props} link='/psd-designs'>
-						Designs
-					</NavigationItem>
-					<Separator />
-					<a href='https://github.com/rmolinamir' 
-						rel='noopener noreferrer' 
-						target='_blank' 
-						className={classes.NavLink}>
-						Github
-					</a>
-					<a href='https://www.linkedin.com/in/rmolinamir/' 
-						rel='noopener noreferrer' 
-						target='_blank' 
-						className={classes.NavLink}>
-						LinkedIn
-					</a>
-					<a href='mailto:rmolinamir@gmail.com' 
-						rel='noopener noreferrer' 
-						target='_blank' 
-						className={classes.NavLink}>
-						Email Me
-					</a>
-				</>
-			)
-		default:
-			return (
-				<>
-					{props.width < 1121 ? 
-						null
-						: (
-							<>
-								<div className={classes.Spacing} />
-								<NavigationItem {...props} link='/'>
-									About Me
-								</NavigationItem>
-								<NavigationItem {...props} link='/projects'>
-									Projects
-								</NavigationItem>
-								<NavigationItem {...props} link='/skills'>
-									Skills
-								</NavigationItem>
-								<NavigationItem {...props} link='/psd-designs'>
-									Designs
-								</NavigationItem>
-							</>
-						)
-					}
-				</>
-			)
-	}
+const RenderNavigationItems = React.memo((props) => {
+  switch (props.navbarType) {
+    case 'MobileDrawer':
+      return (
+        <>
+          <div className={classes.MobileLogo}>
+            <img src={logo} draggable='false' alt='' />
+          </div>
+          <NavigationItem {...props} link='/'>
+            About Me
+          </NavigationItem>
+          <Separator />
+          <NavigationItem {...props} link='/projects'>
+            Projects
+          </NavigationItem>
+          <NavigationItem {...props} link='/skills'>
+            Skills
+          </NavigationItem>
+          <NavigationItem {...props} link='/psd-designs'>
+            Designs
+          </NavigationItem>
+          <Separator />
+          <a href='https://github.com/rmolinamir'
+            rel='noopener noreferrer'
+            target='_blank'
+            className={classes.NavLink}>
+            Github
+          </a>
+          <a href='https://www.linkedin.com/in/rmolinamir/'
+            rel='noopener noreferrer'
+            target='_blank'
+            className={classes.NavLink}>
+            LinkedIn
+          </a>
+          <a href='mailto:rmolinamir@gmail.com'
+            rel='noopener noreferrer'
+            target='_blank'
+            className={classes.NavLink}>
+            Email Me
+          </a>
+        </>
+      )
+    case 'AboutMeNavbar':
+    default:
+      return (
+        <>
+          {!(props.width < 1121) &&
+            (
+              <>
+                <div className={classes.Spacing} />
+                <NavigationItem {...props} link='/projects'>
+                  Projects
+                </NavigationItem>
+                <NavigationItem {...props} link='/skills'>
+                  Skills
+                </NavigationItem>
+                <NavigationItem {...props} link='/psd-designs'>
+                  Designs
+                </NavigationItem>
+                <NavigationItem {...props} link='/'>
+                  About Me
+                </NavigationItem>
+              </>
+            )
+          }
+        </>
+      )
+  }
+})
+
+RenderNavigationItems.propTypes = {
+  navbarType: PropTypes.string,
+  width: PropTypes.number
 }
 
 const nagivationItems = (props) => {
@@ -110,10 +93,10 @@ const nagivationItems = (props) => {
         <NavLink className={[classes.NavbarLogo, classes.DesktopOnly].join(' ')} to='/'>
           <img src={desktopLogo} draggable='false' alt='' />
         </NavLink>
-        {renderNavigationItems(props)}
+        <RenderNavigationItems {...props} />
       </ul>
     </>
   )
 }
 
-export default withRouter(nagivationItems)
+export default withRouter(React.memo(nagivationItems))

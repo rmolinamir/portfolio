@@ -3,12 +3,11 @@ import React from 'react'
 import profilePicture from '../../assets/images/Profile-Picture.jpg'
 import parallaxImage from '../../assets/images/Parallax-Background.jpg'
 import personalLogo from '../../assets/svg/personal-logo.svg'
-import githubSVG from '../../assets/svg/github-icon.svg'
-import gmailSVG from '../../assets/svg/google-gmail.svg'
-import linkedinSVG from '../../assets/svg/linkedin-icon.svg'
 // CSS
 import classes from './AboutMe.module.css'
 // JSX
+import { withContext } from 'with-context-react'
+import { ThemeContext } from '../../hoc/Layout/ThemeContext/ThemeContext'
 import Parallax from '../../hoc/Parallax/Parallax'
 import SocialMediaButton from '../../components/UI/SocialMediaButton/SocialMediaButton'
 import DownloadButton from '../../components/UI/DownloadButton/DownloadButton'
@@ -19,18 +18,16 @@ import ImageFadeIn from '../../components/UI/ImageFadeIn/ImageFadeIn'
 
 const aboutMe = () => {
   const socialMediaButtons = [
-    { icon: githubSVG, href: 'https://github.com/rmolinamir', targetBlank: true },
-    { icon: gmailSVG, href: 'mailto:rmolinamir@gmail.com', targetBlank: false },
-    { icon: linkedinSVG, href: 'https://www.linkedin.com/in/rmolinamir/', targetBlank: true }
+    { icon: 'github', href: 'https://github.com/rmolinamir', targetBlank: true },
+    { icon: 'gmail', href: 'mailto:rmolinamir@gmail.com', targetBlank: false },
+    { icon: 'linkedin-one', href: 'https://www.linkedin.com/in/rmolinamir/', targetBlank: true }
   ].map(Button => {
-    return <SocialMediaButton key={Button.href} svg={Button.icon} href={Button.href} targetBlank={Button.targetBlank} />
+    return <SocialMediaButton key={Button.href} icon={Button.icon} href={Button.href} targetBlank={Button.targetBlank} />
   })
   const pageContent = (
     <>
       <div className={classes.Container}>
-        <IntroHeader>
-          About Me
-        </IntroHeader>
+        <IntroHeader intro='Hey! Thanks for visiting my site. Below is a small introduction about me, where I talk about my education, skills, and what tools/stacks I commonly find myself using. For more detailed information you may check out the other tabs.'>About Me</IntroHeader>
         <div className={classes.Profile}>
           <div className={classes.Portrait}>
             <div className={classes.Content}>
@@ -61,4 +58,4 @@ const aboutMe = () => {
   )
 }
 
-export default aboutMe
+export default withContext(aboutMe, ThemeContext)

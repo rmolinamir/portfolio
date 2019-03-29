@@ -59,7 +59,9 @@
 .Intro {
   color: currentColor;
   line-height: 28px;
-  font-weight: 600;
   font-size: 21px;
-  margin: 12px 0 36px;
+  text-align: center;
+  margin: 12px auto 18px;
+  padding: 0 8px;
+  max-width: 1092px;
 }

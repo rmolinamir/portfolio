@@ -3,4 +3,14 @@
   max-width: 1400px;
   padding-top: 15px;
   margin-top: 70px;
+  animation: fade-in ease 1000ms;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

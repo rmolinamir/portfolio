@@ -1,57 +1,57 @@
 .Container {
-    width: auto;
-    height: 100%;
+  width: auto;
+  height: 100%;
 }
 
 .Project {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 250px;
-    min-height: 250px;
-    width: auto;
-    height: auto;
-    margin: 20px;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  min-height: 250px;
+  width: auto;
+  height: auto;
+  margin: 20px;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1000px) {
-    .Project {
-        margin: 15px;
-    }
+  .Project {
+    margin: 15px;
+  }
 }
 
 @media (max-width: 900px) {
-    .Project {
-        margin: 10px;
-    }
+  .Project {
+    margin: 10px;
+  }
 }
 
 @media (max-width: 600px) {
-    .Project {
-        margin: 5px;
-    }
+  .Project {
+    margin: 5px;
+  }
 }
 
 @media (max-width: 400px) {
-    .Project {
-        margin: 10px 0 10px 0;
-    }
+  .Project {
+    margin: 10px 0 10px 0;
+  }
 }
 
 .FlipCard {
-    box-shadow: 0px 1.5px 20px #944adb;
-    animation: change-colors 2s infinite;
+  box-shadow: 0px 1.5px 20px #944adb;
+  animation: change-colors 2s infinite;
 }
 
 @keyframes change-colors {
-    0% {
-        box-shadow: 0px 1.5px 20px #944adb;
-    } 
-    50% {
-        box-shadow: 0px 1.5px 20px #60dcfb;
-    }
-    100% {
-        box-shadow: 0px 1.5px 20px #944adb;
-    }
+  0% {
+    box-shadow: 0px 1.5px 20px #944adb;
+  } 
+  50% {
+    box-shadow: 0px 1.5px 20px #60dcfb;
+  }
+  100% {
+    box-shadow: 0px 1.5px 20px #944adb;
+  }
 }

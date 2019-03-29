@@ -1,28 +1,27 @@
-import React from 'react';
-import classes from './SocialMediaButton.module.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+// CSS
+import classes from './SocialMediaButton.module.css'
+// JSX
+import { Icon } from 'react-svg-library'
 
 const socialMediaButton = (props) => {
-    let mediaButton;
-    if (props.targetBlank) {
-        mediaButton = (
-            <a href={props.href} target="_blank" rel="noopener noreferrer">
-                <div className={classes.SocialMediaButton}>
-                    <img draggable="false" src={props.svg} alt="" />
-                </div>
-            </a>
-        );
-    } else {
-        mediaButton = (
-            <a href={props.href} >
-                <div className={classes.SocialMediaButton}>
-                    <img draggable="false" src={props.svg} alt="" />
-                </div>
-            </a>
-        );
-    }
-    return (
-        mediaButton
-    );
+  return (
+    <a
+      href={props.href}
+      target={props.targetBlank ? '_blank' : 'false'}
+      rel={props.targetBlank ? 'noopener noreferrer' : 'false'}>
+      <div className={classes.SocialMediaButton}>
+        <Icon size={'100%'} icon={props.icon} />
+      </div>
+    </a>
+  )
 }
 
-export default socialMediaButton;
+socialMediaButton.propTypes = {
+  href: PropTypes.string,
+  targetBlank: PropTypes.bool,
+  icon: PropTypes.string
+}
+
+export default socialMediaButton

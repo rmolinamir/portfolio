@@ -1,13 +1,19 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 // CSS
-import classes from './Slide.module.css';
+import classes from './Slide.module.css'
 
 const slide = (props) => {
-    return (
-        <div className={classes.Wrapper} style={props.style}>
-            {props.children}
-        </div>
-    );
+  return (
+    <div className={classes.Wrapper} style={props.style}>
+      {props.children}
+    </div>
+  )
 }
 
-export default slide;
+slide.propTypes = {
+  style: PropTypes.any,
+  children: PropTypes.any
+}
+
+export default slide

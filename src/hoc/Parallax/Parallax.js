@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { isMobile } from '../../shared/isMobile'
 // Shared
@@ -17,7 +16,6 @@ class parallax extends Component {
   static propTypes = {
     socialMediaButtons: PropTypes.any,
     children: PropTypes.any,
-    isMobile: PropTypes.bool,
     image: PropTypes.string
   }
 
@@ -87,7 +85,7 @@ class parallax extends Component {
               <div className={classes.Motto}>'Quality means doing it right, even when no one is looking.'</div>
             </div>
           </div>
-          <SlideDown scrollOnClick={() => scrollToContent(this.parallaxContent.current.offsetTop, this.props.isMobile)} />
+          <SlideDown scrollOnClick={() => scrollToContent(this.parallaxContent.current.offsetTop - 70)} />
         </div>
         <main className={classes.Children} ref={this.parallaxContent}>
           {this.props.children}
@@ -97,10 +95,4 @@ class parallax extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    isMobile: state.mobileReducer.isMobile
-  }
-}
-
-export default connect(mapStateToProps)(parallax)
+export default parallax

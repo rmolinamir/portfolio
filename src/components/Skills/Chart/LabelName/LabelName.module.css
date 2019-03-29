@@ -60,12 +60,12 @@
 .LabelDefault:after {
   border-color: #e6581b;
 }
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .VerticalLabelWrapper .Label:after {
-    top: -450px;
+    top: -400px;
     left: 100%;
     align-items: center;
-    height: 540px;
+    height: 480px;
   }
   .Label:after {
     content: '';
@@ -97,7 +97,7 @@
     border-color: #e6581b;
   }
 }
-@media screen and (max-width:550px) {
+@media (max-width:550px) {
   .Label strong {
     transform: rotate(-90deg) translate(-36px, 0);
   }

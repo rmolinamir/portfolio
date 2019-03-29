@@ -22,8 +22,10 @@ const setInitTheme = () => {
      */
     default:
       window.localStorage.setItem('theme', 'dark')
-      initialContext = classes.DarkTheme
+      initialContext.theme = 'dark'
+      initialContext.className = classes.DarkTheme
   }
+  document.body.classList.add(initialContext.className)
   return initialContext
 }
 
@@ -32,6 +34,7 @@ const initialContext = setInitTheme()
 export const ThemeContext = React.createContext(initialContext)
 
 const reducer = (state, action) => {
+  window.localStorage.setItem('theme', action.theme)
   const { ...newState } = action
   return {
     ...state,
@@ -43,15 +46,16 @@ const provider = (props) => {
   const [state, dispatch] = React.useReducer(reducer, initialContext)
 
   const toggleTheme = () => {
+    document.body.classList.remove(state.className)
     switch (state.theme) {
       case 'dark':
         dispatch({ theme: 'light', className: classes.LightTheme })
-        window.localStorage.setItem('theme', 'light')
+        document.body.classList.add(classes.LightTheme)
         break
       case 'light':
       default:
         dispatch({ theme: 'dark', className: classes.DarkTheme })
-        window.localStorage.setItem('theme', 'dark')
+        document.body.classList.add(classes.DarkTheme)
         break
     }
   }

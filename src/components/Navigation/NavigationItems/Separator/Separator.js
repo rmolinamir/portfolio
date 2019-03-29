@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 // CSS
-import classes from './Separator.module.css';
+import classes from './Separator.module.css'
 
 const separator = () => {
-    return (
-        <li className={classes.Separator}>
-            <hr />
-        </li>
-    );
+  return (
+    <div className={classes.Separator}>
+      <hr />
+    </div>
+  )
 }
 
-export default separator;
+export default separator

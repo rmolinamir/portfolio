@@ -2,6 +2,16 @@
   text-align: center;
   background-color: inherit;
   color: inherit;
+  animation: fade-in ease 200ms;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .Container {
@@ -18,7 +28,7 @@
   flex-wrap: wrap;
   flex-flow: row;
   justify-content: space-around;
-  margin: 0 auto;
+  margin: 36px auto 0;
   max-width: 1400px;
   width: 95%;
   box-shadow: -2px 3px 6px rgba(0 ,0, 0, 0.16), 5px 10px 26px rgba(0, 0, 0, 0.53);
@@ -94,6 +104,7 @@
   margin-bottom: 12px;
   font-size: 21px;
   text-transform: uppercase;
+  color: #FFF;
 }
 
 .Download {

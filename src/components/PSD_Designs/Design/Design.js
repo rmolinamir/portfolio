@@ -4,7 +4,9 @@ import PropTypes from 'prop-types'
 import classes from './Design.module.css'
 // JSX
 import Modal from 'react-png-modal'
-import Button from '../../UI/Button/Button'
+import Button from 'react-png-button'
+import { withContext } from 'with-context-react'
+import { ThemeContext } from '../../../hoc/Layout/ThemeContext/ThemeContext'
 import Gallery from '../../UI/Gallery/Gallery'
 import Separator from '../../UI/Separator/Separator'
 import { Slider, Slide } from '../../UI/Slider/'
@@ -19,11 +21,15 @@ class Design extends Component {
     company: PropTypes.string,
     logo: PropTypes.string,
     order: PropTypes.string,
-    description: PropTypes.string
+    description: PropTypes.string,
+    _context: PropTypes.object
   }
 
-  state = {
-    bIsModalOpen: false
+  constructor(props) {
+    super(props)
+    this.state = {
+      bIsModalOpen: false
+    }
   }
 
   openModal = () => {
@@ -57,10 +63,15 @@ class Design extends Component {
           <div className={classes.Gallery}>
             <Gallery style={{ borderRadius: '15px' }}>
               <Button
-                type='default'
-                clicked={this.openModal}
-                className={classes.Fullscreen}>Watch Fullscreen</Button>
-              <Slider sticky>
+                button={this.props._context && this.props._context.theme === 'dark' ? (
+                  'light'
+                ) : 'dark'}
+                blockButton
+                onClick={this.openModal}
+                style={{
+                  margin: '0 0 6px'
+                }}>Watch Fullscreen</Button>
+              <Slider modifySize sticky>
                 {slides}
               </Slider>
             </Gallery>
@@ -84,7 +95,6 @@ class Design extends Component {
             </InfoSection>
           </div>
           <Modal
-            transparent
             className={classes.Modal}
             open={this.state.bIsModalOpen}
             closeModal={this.closeModal}>
@@ -107,4 +117,4 @@ class Design extends Component {
   }
 }
 
-export default Design
+export default withContext(Design, ThemeContext)

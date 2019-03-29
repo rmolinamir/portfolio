@@ -14,10 +14,15 @@ import ScrollToTop from './hoc/ScrollToTop/ScrollToTop'
 import Container from './components/UI/Container/Container'
 import Spinner from './components/UI/Spinner/Spinner'
 
-const AboutMe = React.lazy(() => import('./containers/AboutMe/AboutMe'))
-const Projects = React.lazy(() => import('./containers/Projects/Projects'))
-const Designs = React.lazy(() => import('./containers/PSD_Desings/PSD_Desings'))
-const Skills = React.lazy(() => import('./containers/Skills/Skills'))
+import AboutMe from './containers/AboutMe/AboutMe'
+import Projects from './containers/Projects/Projects'
+import Designs from './containers/PSD_Desings/PSD_Desings'
+import Skills from './containers/Skills/Skills'
+
+// const AboutMe = React.lazy(() => import('./containers/AboutMe/AboutMe'))
+// const Projects = React.lazy(() => import('./containers/Projects/Projects'))
+// const Designs = React.lazy(() => import('./containers/PSD_Desings/PSD_Desings'))
+// const Skills = React.lazy(() => import('./containers/Skills/Skills'))
 const SpinnerContainer = () => <Container className={classes.SpinnerContainer}><Spinner /></Container>
 
 class App extends Component {

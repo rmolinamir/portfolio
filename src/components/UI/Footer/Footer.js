@@ -6,18 +6,15 @@ import classes from './Footer.module.css'
 // JSX
 import { NavLink, withRouter } from 'react-router-dom'
 import SocialMediaButton from '../SocialMediaButton/SocialMediaButton'
-import githubSVG from '../../../assets/svg/github-icon.svg'
-import gmailSVG from '../../../assets/svg/google-gmail.svg'
-import linkedinSVG from '../../../assets/svg/linkedin-icon.svg'
 import ImageFadeIn from '../ImageFadeIn/ImageFadeIn'
 
 const footer = () => {
   const socialMediaButtons = [
-    { icon: githubSVG, href: 'https://github.com/rmolinamir', targetBlank: true },
-    { icon: gmailSVG, href: 'mailto:rmolinamir@gmail.com', targetBlank: false },
-    { icon: linkedinSVG, href: 'https://www.linkedin.com/in/robert-molina-467798153/', targetBlank: true }
+    { icon: 'github', href: 'https://github.com/rmolinamir', targetBlank: true },
+    { icon: 'gmail', href: 'mailto:rmolinamir@gmail.com', targetBlank: false },
+    { icon: 'linkedin-one', href: 'https://www.linkedin.com/in/robert-molina-467798153/', targetBlank: true }
   ].map(Button => {
-    return <SocialMediaButton key={Button.href} svg={Button.icon} href={Button.href} targetBlank={Button.targetBlank} />
+    return <SocialMediaButton key={Button.href} icon={Button.icon} href={Button.href} targetBlank={Button.targetBlank} />
   })
   return (
     <div className={classes.Footer}>
@@ -27,7 +24,7 @@ const footer = () => {
         </div>
         <div className={classes.BannerContainer}>
           <div className={classes.Banner}>
-            <h1 className={classes.Interested}>Interested?</h1>
+            <h1 className={classes.Interested}>Coding, Learning, Improving</h1>
             <div className={classes.Contact}>
               <span>You can get in touch with me through any of the links below.</span>
             </div>
@@ -40,10 +37,10 @@ const footer = () => {
         </div>
       </div>
       <div className={classes.NavLinks}>
-        <NavLink exact activeClassName={classes.active} className={classes.NavLink} to='/'><span className={classes.Link}>About Me</span></NavLink>
         <NavLink activeClassName={classes.active} className={classes.NavLink} to='/projects'><span className={classes.Link}>Projects</span></NavLink>
-        <NavLink activeClassName={classes.active} className={classes.NavLink} to='/psd-designs'><span className={classes.Link}>My Designs</span></NavLink>
+        <NavLink activeClassName={classes.active} className={classes.NavLink} to='/psd-designs'><span className={classes.Link}>Designs</span></NavLink>
         <NavLink activeClassName={classes.active} className={classes.NavLink} to='/skills'><span className={classes.Link}>Skills</span></NavLink>
+        <NavLink exact activeClassName={classes.active} className={classes.NavLink} to='/'><span className={classes.Link}>About Me</span></NavLink>
         <a href='https://github.com/rmolinamir' target='_blank' rel='noopener noreferrer' className={classes.NavLink}><span className={classes.Link}>Github</span></a>
       </div>
       <div className={classes.CopyrightWrapper}>

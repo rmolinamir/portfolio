@@ -8,35 +8,33 @@
   padding: 0;
   background-color: inherit;
   color: inherit;
-  border-bottom: 0.5px solid rgba(51,51,51,0.15);
+  border: 0;
+  border-bottom: 0.5px solid rgba(51, 51, 51, 0.15);
+  box-shadow: 0px 1px 15px -5px currentColor;
   box-sizing: border-box;
   z-index: 25;
-  transition: all 300ms ease;
+  transition: all 300ms ease, background-color 100ms ease, color 50ms ease;
 }
 
 .Navbar nav {
   transition: inherit;
+  margin: 0 auto;
 }
 
 .Transparent {
   height: 90px;
+  box-shadow: 0px 1px 15px -5px transparent;
   border-bottom-color: transparent !important;
-  background-color: rgba(0,0,0,0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .Transparent nav {
   width: 95%;
-  margin: 0 auto;
 }
 
-.TransparentNavbar {
-  overflow: visible;
+.AboutMeNavbar {
   background-color: inherit;
   color: #FFF !important;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 25;
 }
 
 .LightTheme {
@@ -52,14 +50,13 @@
 .DefaultNavbar {
   background-color: inherit;
   color: inherit;
-  z-index: 25;
 }
 
 .NavbarContainer {
+  position: relative;
   display: flex;
   height: 100%;
   width: 100%;
-  position: relative;
 }
 
 .Logo {

@@ -36,8 +36,14 @@
 
 .IconWrapper {
     display: flex;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     justify-content: flex-start;
+}
+
+.IconWrapper svg {
+  width: 35px;
+  height: 35px;
 }
 
 .VariableName img {
@@ -57,8 +63,9 @@
 @media (max-width:625px) {
     .VerticalIconName {
         margin: 0;
+        margin-left: 6px;
         overflow: hidden;
-        width: 10%;
+        width: 16.66%;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
