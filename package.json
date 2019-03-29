@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-particles-js": "^2.5.1",
     "react-png-modal": "^2.0.1",
     "react-redux": "^6.0.1",
     "react-resize-detector": "^4.0.5",
@@ -13,7 +14,8 @@
     "react-typist": "^2.0.5",
     "redux": "^4.0.1",
     "redux-saga": "^1.0.2",
-    "smoothscroll-polyfill": "^0.4.4"
+    "smoothscroll-polyfill": "^0.4.4",
+    "with-context-react": "^1.1.1"
   },
   "devDependencies": {
     "eslint": "^5.15.3",

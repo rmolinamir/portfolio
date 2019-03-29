@@ -1,6 +1,16 @@
 .Container {
   min-height: 120px;
   width: 100%;
+  animation: fade-in 350ms ease;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .Method {

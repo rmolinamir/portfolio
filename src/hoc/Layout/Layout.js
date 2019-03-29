@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 // CSS
 import classes from './Layout.module.css'
 // JSX
+import { WithContext } from 'with-context-react'
+import { ThemeContext } from './ThemeContext/ThemeContext'
 import Navbar from '../../containers/Navbar/Navbar'
 import Footer from '../../components/UI/Footer/Footer'
 import ScrollToTopButton from '../../components/UI/ScrollToTopButton/ScrollToTopButton'
@@ -11,37 +13,14 @@ import ScrollToTopButton from '../../components/UI/ScrollToTopButton/ScrollToTop
 class Layout extends Component {
   static propTypes = {
     children: PropTypes.any,
+    _context: PropTypes.object,
     location: PropTypes.object
   }
 
   constructor(props) {
     super(props)
-    const localStorageTheme = window.localStorage.getItem('theme')
-    let theme
-    /**
-     * Checking local storage to see if a theme was pre-set.
-     */
-    if (localStorageTheme) {
-      switch (localStorageTheme) {
-        case 'dark':
-          theme = classes.DarkTheme
-          break
-        case 'light':
-          theme = classes.LightTheme
-          break
-        default:
-          // do nothing
-      }
-    /**
-     * Default theme is dark, we set the local storage theme as dark as well.
-     */
-    } else {
-      window.localStorage.setItem('theme', 'dark')
-      theme = classes.DarkTheme
-    }
     this.state = {
-      showScrollToTop: false,
-      theme: theme
+      showScrollToTop: false
     }
   }
 
@@ -72,9 +51,11 @@ class Layout extends Component {
     return (
       <div className={[
         classes.Wrapper,
-        this.state.theme
+        this.props._context && this.props._context.className
       ].join(' ')}>
-        <Navbar />
+        <WithContext context={ThemeContext}>
+          <Navbar />
+        </WithContext>
         <main className={classes.Container}>
           {this.props.children}
         </main>

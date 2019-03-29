@@ -34,15 +34,16 @@ const aboutMe = () => {
         <div className={classes.Profile}>
           <div className={classes.Portrait}>
             <div className={classes.Content}>
-              <ImageFadeIn
-                style={{ marginTop: '12px' }}
-                className={classes.Portrait}
-                draggable='false' src={profilePicture} />
+              <div className={classes.ProfilePicture}>
+                <ImageFadeIn
+                  noWrapper
+                  className={classes.Portrait}
+                  draggable='false' src={profilePicture} />
+              </div>
               <div className={classes.Name}>Robert Molina</div>
               <div className={classes.Title}>Fullstack Developer</div>
-              <p className={classes.Download}>Click the button below to download my full resume:</p>
-              <DownloadButton href='https://drive.google.com/open?id=15bEpE77LztNaNu2fn2wRtPsXeKzHSCu9'>Full Resume</DownloadButton>
               <img className={classes.Logo} src={personalLogo} alt='Personal Logo' />
+              <DownloadButton href='https://drive.google.com/open?id=15bEpE77LztNaNu2fn2wRtPsXeKzHSCu9'>Full Resume</DownloadButton>
             </div>
           </div>
           <Code />

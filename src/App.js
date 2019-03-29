@@ -7,6 +7,8 @@ import { mobileCreators } from './store/actions/mobile'
 // CSS
 import classes from './App.module.css'
 // JSX
+import { WithContext } from 'with-context-react'
+import Provider, { ThemeContext } from './hoc/Layout/ThemeContext/ThemeContext'
 import Layout from './hoc/Layout/Layout'
 import ScrollToTop from './hoc/ScrollToTop/ScrollToTop'
 import Container from './components/UI/Container/Container'
@@ -30,17 +32,19 @@ class App extends Component {
 
   render() {
     return (
-      <Layout>
-        {/* Scrolls to the top after a route change */}
-        <ScrollToTop />
-        <Switch>
-          <Route path='/psd-designs' render={() => <Suspense fallback={<SpinnerContainer />}><Designs /></Suspense>} />
-          <Route path='/projects' render={() => <Suspense fallback={<SpinnerContainer />}><Projects /></Suspense>} />
-          <Route path='/skills' render={() => <Suspense fallback={<SpinnerContainer />}><Skills /></Suspense>} />
-          <Route path='/' exact render={() => <Suspense fallback={<SpinnerContainer />}><AboutMe /></Suspense>} />
-          <Redirect to='/' />
-        </Switch>
-      </Layout>
+      <WithContext context={ThemeContext} provider={Provider}>
+        <Layout>
+          {/* Scrolls to the top after a route change */}
+          <ScrollToTop />
+          <Switch>
+            <Route path='/psd-designs' render={() => <Suspense fallback={<SpinnerContainer />}><Designs /></Suspense>} />
+            <Route path='/projects' render={() => <Suspense fallback={<SpinnerContainer />}><Projects /></Suspense>} />
+            <Route path='/skills' render={() => <Suspense fallback={<SpinnerContainer />}><Skills /></Suspense>} />
+            <Route path='/' exact render={() => <Suspense fallback={<SpinnerContainer />}><AboutMe /></Suspense>} />
+            <Redirect to='/' />
+          </Switch>
+        </Layout>
+      </WithContext>
     )
   }
 }

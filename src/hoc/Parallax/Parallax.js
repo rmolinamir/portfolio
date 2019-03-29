@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { isMobile } from '../../shared/isMobile'
 // Shared
 import { scrollToContent } from '../../shared/scrollToContent'
 // CSS
 import classes from './Parallax.module.css'
 // JSX
+import Particles from 'react-particles-js'
 import IntroHeader from '../../components/UI/IntroHeader/IntroHeader'
 import SlideDown from './SlideDown/SlideDown'
 import Logo from '../../components/UI/Logo/Logo'
@@ -21,6 +23,7 @@ class parallax extends Component {
 
   constructor(props) {
     super(props)
+    this.isMobile = isMobile()
     this.parallaxContent = React.createRef()
   }
 
@@ -29,6 +32,49 @@ class parallax extends Component {
       <div className={classes.Wrapper}>
         <div className={classes.Container}>
           <div className={classes.Background}>
+            <Particles
+              className={classes.Particles}
+              canvasClassName={classes.Canvas}
+              params={{
+                'particles': {
+                  'number': {
+                    'value': this.isMobile ? 120 : 240,
+                    'density': {
+                      'enable': true
+                    }
+                  },
+                  'size': {
+                    'value': 4,
+                    'random': true,
+                    'anim': {
+                      'speed': 4,
+                      'size_min': 0.6
+                    }
+                  },
+                  'line_linked': {
+                    'enable': false
+                  },
+                  'move': {
+                    'random': true,
+                    'speed': 2,
+                    'direction': 'top',
+                    'out_mode': 'out'
+                  }
+                },
+                'interactivity': {
+                  'modes': {
+                    'bubble': {
+                      'distance': 250,
+                      'duration': 2,
+                      'size': 0,
+                      'opacity': 0
+                    },
+                    'repulse': {
+                      'distance': 600,
+                      'duration': 6
+                    }
+                  }
+                } }} />
             <ImageFadeIn style={{ position: 'absolute' }} draggable='false' src={this.props.image} />
           </div>
           <div className={classes.Overlay}>

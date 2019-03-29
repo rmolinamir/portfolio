@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
-
+// CSS
+import classes from './Code.module.css'
+// JSX
 import Import from '../../../components/AboutMe/Code/Import/Import'
 import Class from '../../../components/AboutMe/Code/Class/Class'
 import Method from '../../../components/AboutMe/Code/Method/Method'
 import Export from '../../../components/AboutMe/Code/Export/Export'
 
-import classes from './Code.module.css'
+const minHeightEquation = (windowWidth = window.innerWidth) => {
+  const minHeight = (
+    1.2263052164879462e+004 * Math.pow(windowWidth, 0) +
+    -4.5231303712208273e+001 * Math.pow(windowWidth, 1) +
+    7.5546487662990325e-002 * Math.pow(windowWidth, 2) +
+    -6.4047963254580177e-005 * Math.pow(windowWidth, 3) +
+    2.8971976289126083e-008 * Math.pow(windowWidth, 4) +
+    -6.6610627926403397e-012 * Math.pow(windowWidth, 5) +
+    6.1148983275028627e-016 * Math.pow(windowWidth, 6)
+  )
+  return minHeight * 1.05
+}
 
 class Code extends Component {
   constructor(props) {
@@ -21,10 +34,11 @@ class Code extends Component {
   }
 
   state = {
-    isInViewport: {}
+    isInViewport: {},
+    minHeight: minHeightEquation()
   }
 
-  isInViewport = (offset = 50) => {
+  isInViewport = (offset = 100) => {
     Object.keys(this.isInViewportElements).forEach(key => {
       if (!this.isInViewportElements[key].current) { return }
       if (window.scrollY > this.isInViewportElements[key].current.offsetTop + offset && !this.state.isInViewport[key]) {
@@ -39,12 +53,20 @@ class Code extends Component {
     })
   }
 
+  recalculateMinHeight = () => {
+    this.setState({
+      minHeight: minHeightEquation()
+    })
+  }
+
   componentDidMount () {
     window.addEventListener('scroll', () => this.isInViewport(100))
+    window.addEventListener('resize', this.recalculateMinHeight)
   }
 
   componentWillUnmount () {
     window.removeEventListener('scroll', () => this.isInViewport(100))
+    window.removeEventListener('resize', this.recalculateMinHeight)
   }
 
   render () {
@@ -78,7 +100,11 @@ class Code extends Component {
     }
     return (
       <div className={classes.Wrapper}>
-        <div className={classes.Container}>
+        <div
+          style={{
+            minHeight: this.state.minHeight
+          }}
+          className={classes.Container}>
           <div ref={this.isInViewportElements.import}>
             {this.state.isInViewport.import && (
               <Import defaultImport={curriculumVitae.import.defaultImport} import={curriculumVitae.import.import} package={curriculumVitae.import.package} />

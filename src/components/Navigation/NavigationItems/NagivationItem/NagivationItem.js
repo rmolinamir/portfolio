@@ -1,30 +1,40 @@
-import React from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
-
-import classes from './NagivationItem.module.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { NavLink, withRouter } from 'react-router-dom'
+// CSS
+import classes from './NagivationItem.module.css'
 
 const navigationItem = (props) => {
-	let navItemClass = [classes.NavigationItem];
-	//if white respective css
-	if (props.color === 'white') {
-		navItemClass.push(classes.NavigationItemWhite);
-	}
-	// If transparent use respective CSS
-	if (props.isNavbarTransparent) {
-		navItemClass.push(classes.Transparent);
-	}
-	return (
-		<li className={navItemClass.join(' ')}>
-			<NavLink
-				exact={true}
-				className={props.className} // Desktop only
-				activeClassName={classes.Active}
-				onClick={props.onClick}
-				to={props.link}>
-				{props.children}
-			</NavLink>
-		</li>
-	);
-};
+  let navItemClass = [classes.NavigationItem]
+  // If white respective CSS.
+  if (props.color === 'white') {
+    navItemClass.push(classes.NavigationItemWhite)
+  }
+  // If transparent use respective CSS.
+  if (props.isNavbarTransparent) {
+    navItemClass.push(classes.Transparent)
+  }
+  return (
+    <li className={navItemClass.join(' ')}>
+      <NavLink
+        exact={true}
+        className={props.className} // Desktop only
+        activeClassName={classes.Active}
+        onClick={props.onClick}
+        to={props.link}>
+        {props.children}
+      </NavLink>
+    </li>
+  )
+}
 
-export default withRouter(navigationItem);
+navigationItem.propTypes = {
+  className: PropTypes.string,
+  link: PropTypes.string,
+  color: PropTypes.string,
+  onClick: PropTypes.func,
+  isNavbarTransparent: PropTypes.bool,
+  children: PropTypes.any
+}
+
+export default withRouter(navigationItem)

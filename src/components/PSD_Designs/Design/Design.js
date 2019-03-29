@@ -1,17 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 // CSS
-import classes from './Design.module.css';
+import classes from './Design.module.css'
 // JSX
-import Modal from 'react-png-modal';
-import Button from '../../UI/Button/Button';
-import Gallery from '../../UI/Gallery/Gallery';
-import Separator from '../../UI/Separator/Separator';
-import { Slider, Slide } from '../../UI/Slider/';
-import ImageFadeIn from '../../UI/ImageFadeIn/ImageFadeIn';
-import Title from '../Title/Title';
-import InfoSection from '../InfoSection/InfoSection';
+import Modal from 'react-png-modal'
+import Button from '../../UI/Button/Button'
+import Gallery from '../../UI/Gallery/Gallery'
+import Separator from '../../UI/Separator/Separator'
+import { Slider, Slide } from '../../UI/Slider/'
+import ImageFadeIn from '../../UI/ImageFadeIn/ImageFadeIn'
+import Title from '../Title/Title'
+import InfoSection from '../InfoSection/InfoSection'
 
 class Design extends Component {
+  static propTypes = {
+    images: PropTypes.array,
+    title: PropTypes.string,
+    company: PropTypes.string,
+    logo: PropTypes.string,
+    order: PropTypes.string,
+    description: PropTypes.string
+  }
+
   state = {
     bIsModalOpen: false
   }
@@ -29,7 +39,7 @@ class Design extends Component {
   }
 
   render() {
-    const slides = this.props.images ? 
+    const slides = this.props.images &&
     (
       this.props.images.map((image, index) => {
         return (
@@ -38,15 +48,14 @@ class Design extends Component {
               <ImageFadeIn noWrapper src={image} />
             </div>
           </Slide>
-        );
+        )
       })
     )
-    : null;
     return (
       <>
         <div className={classes.Container}>
           <div className={classes.Gallery}>
-            <Gallery style={{borderRadius: '15px'}}>
+            <Gallery style={{ borderRadius: '15px' }}>
               <Button
                 type='default'
                 clicked={this.openModal}
@@ -56,7 +65,7 @@ class Design extends Component {
               </Slider>
             </Gallery>
           </div>
-          <div style={{order: this.props.order}} className={classes.Information}>
+          <div style={{ order: this.props.order }} className={classes.Information}>
             <div className={classes.Header}>
               <div className={classes.CategoryContainer}>
                 <small className={classes.Category}>{this.props.company}</small>
@@ -64,7 +73,7 @@ class Design extends Component {
               <Title>{this.props.title}</Title>
             </div>
             <Separator />
-            <InfoSection 
+            <InfoSection
               title={this.props.title}
               logoTitle={this.props.company}
               src={this.props.logo}
@@ -74,27 +83,28 @@ class Design extends Component {
               </div>
             </InfoSection>
           </div>
-          <Modal 
+          <Modal
             transparent
-            open={this.state.bIsModalOpen} 
+            className={classes.Modal}
+            open={this.state.bIsModalOpen}
             closeModal={this.closeModal}>
-            <Slider showOnlyActive disableNav>
+            <Slider style={{ padding: '12px 0' }} showOnlyActive disableNav>
               {this.props.images.map((image, index) => {
                 return (
                   <Slide key={index}>
                     <div className={classes.FullscreenContainer}>
-                      <ImageFadeIn className={classes.FullscreenImage} draggable='false' style={{position: 'relative'}} noWrapper src={image} />
+                      <ImageFadeIn className={classes.FullscreenImage} draggable='false' style={{ position: 'relative' }} noWrapper src={image} />
                     </div>
                   </Slide>
-                );
+                )
               })}
             </Slider>
           </Modal>
         </div>
         <Separator />
       </>
-    );
+    )
   }
 }
 
-export default Design;
+export default Design

@@ -16,6 +16,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-flow: row;
+  justify-content: space-around;
   margin: 0 auto;
   width: 95%;
   box-shadow: -2px 3px 6px rgba(0 ,0, 0, 0.16), 5px 10px 26px rgba(0, 0, 0, 0.53);
@@ -29,11 +30,8 @@
 
 .Portrait {
   box-sizing: border-box;
-  box-shadow: 2.5px 2.5px 10px #333;
-  border-radius: 20px;
-  background: rgba(255,255,255,.5);
   flex: 0 0 25%;
-  max-width: 25%;
+  max-width: 300px;
   display: flex;
   flex-flow: column;
 }
@@ -41,40 +39,59 @@
 .Content {
   position: sticky;
   top: 24px;
+  background: rgba(0,0,0,.66);
+  padding: 12px 6px;
+  box-shadow: 2.5px 2.5px 10px #333;
+  border-radius: 20px;
   left: 0;
+}
+
+.ProfilePicture {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.ProfilePicture img {
+  max-width: unset !important;
+  min-width: unset !important;
+  width: 100% !important;
 }
 
 .Portrait img {
   display: block;
   margin: auto;
-  max-width: 225px;
+  max-width: 140px;
+  min-width: 140px;
   transform: scale(0.9);
+  border: 0;
+  outline: 0;
+  background-color: transparent;
   border-radius: 20px;
-  transition: all 0.25s ease-out;
+  transition: all 100ms ease-out;
   box-shadow: 0 2px 3px #333;
 }
 
-.Portrait img:last-of-type {
-  width: 150px;
-}
-
 .Portrait img:hover {
-  transform: scale(1);
-  box-shadow: 0 10px 17.5px #333;
+  transform: scale(0.925);
+  box-shadow: 0 8px 16px #333;
 }
 
 .Name {
   font-weight: 700;
   font-size: 28px;
   color: #60dcfb;
-  line-height: 2;
+  margin-bottom: 12px;
   text-transform: uppercase;
   text-shadow: 1px 2px 5px #333;
 }
 
 .Title {
   font-weight: 700;
-  line-height: 2;
+  margin-bottom: 12px;
+  font-size: 21px;
+  text-transform: uppercase;
 }
 
 .Download {
