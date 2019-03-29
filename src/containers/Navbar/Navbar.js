@@ -5,21 +5,12 @@ import { connect } from 'react-redux'
 // CSS
 import classes from './Navbar.module.css'
 // JSX
+import ThemeToggler from '../../hoc/Layout/ThemeContext/ThemeToggler/ThemeToggler'
 import NagivationItems from '../../components/Navigation/NavigationItems/NavigationItems'
 import DrawerToggle from '../../components/Navigation/DrawerToggle/DrawerToggle'
 import MobileDrawer from '../../components/Navigation/MobileDrawer/MobileDrawer'
 
 const NavbarContainer = (props) => {
-  /**
-   * Theme toggler.
-   */
-  const onClickHandler = () => {
-    const toggle = props._context && props._context.toggleTheme
-    if (toggle) {
-      toggle()
-    }
-  }
-
   return (
     <>
       <nav className={classes.NavbarContainer} onScroll={props.onScroll}>
@@ -27,7 +18,7 @@ const NavbarContainer = (props) => {
           width={props.width}
           navbarType={props.navbarType}
           isNavbarTransparent={props.isNavbarTransparent} />
-        <span onClick={onClickHandler}>Toggle theme: {props._context && props._context.theme}</span>
+        <ThemeToggler />
       </nav>
       {props.width < 1121 &&
       <>
@@ -47,7 +38,6 @@ const NavbarContainer = (props) => {
 }
 
 NavbarContainer.propTypes = {
-  _context: PropTypes.object,
   onScroll: PropTypes.func,
   width: PropTypes.number,
   navbarType: PropTypes.string,
@@ -215,7 +205,6 @@ class Navbar extends PureComponent {
     return (
       <header className={navbarClasses.join(' ')} ref={this.myNavbar}>
         <NavbarContainer
-          _context={this.props._context}
           isMobile={this.props.isMobile}
           {...this.state} />
       </header>

@@ -1,0 +1,561 @@
+.Wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.Switch {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(211, 239, 255);
+  background-color: rgb(186, 230, 255);
+  box-shadow: 0 0 5px 1px rgb(211, 239, 255);
+  transition: border 1s, background-color 1s;
+}
+
+.Off {
+  border-color: #1F1F1F;
+  background-color: rgb(23, 23, 35);
+}
+
+.Container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.Circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 0%;
+  top: 50%;
+  transform: translate(-0%, -50%);
+  border-radius: 50%;
+  background-color: rgb(255, 233, 183);
+  box-shadow: 0 0 20px 10px rgb(255, 233, 183), 
+  0 0 40px 30px rgb(255, 219, 140), 
+  0 0 90px 50px rgb(255, 209, 109);
+  transition: left 2s, transform 2s, width 2s, height 2s, box-shadow 2s, background-color 2s 0.2s;
+  z-index: 1;
+}
+
+.Circle::before{
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 20px;
+  left: 13%;
+  top: 30%;
+  border-radius: 50%;
+  background-color: rgb(183, 188, 187);
+  box-shadow: 0 0 4px 1px rgb(183, 188, 187), 0 0 10px 6px rgb(192, 198, 197);
+  opacity: 0;
+  transition: opacity 0s;
+}
+
+.Circle::after{
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 60%;
+  top: 75%;
+  border-radius: 50%;
+  background-color: rgb(183, 188, 187);
+  box-shadow: 0 0 3px 1px rgb(183, 188, 187), 0 0 5px 4px rgb(192, 198, 197);
+  opacity: 0;
+  transition: opacity 0s;
+}
+
+.Off .Circle{
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: rgb(237, 242, 241);
+  left: 100%;
+  transform: translate(-100%, -50%);
+  box-shadow: 0 0 20px 3px rgb(244, 247, 246);
+}
+
+.Off .Circle::before{
+  opacity: 1;
+  transition: opacity 2s 0.2s;
+}
+
+.Off .Circle::after{
+  opacity: 1;
+  transition: opacity 2s 0.2s;
+}
+
+.Star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: 10%;
+  top: 50%;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 5px 0px rgb(255,255,255);
+  animation: none;
+  opacity: 0;
+  
+}
+
+.Star::before{
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 1px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 4px 0px rgb(255,255,255);
+  animation: growbrighter 1s linear alternate infinite;
+}
+
+.Star::after{
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 4px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 4px 0px rgb(255,255,255);
+  animation: growbrighter 1s linear alternate infinite;
+}
+
+.Off .Star{
+  opacity: 1;
+  transition: opacity 2s 1.5s;
+}
+
+.Off .Stars .Star:nth-of-type(1){
+  animation: startravel1 15s linear infinite;
+  animation-delay: 0.4s;
+}
+
+.Off .Stars .Star:nth-of-type(2){
+  animation: startravel2 12s linear infinite;
+  animation-delay: 0.2s;
+}
+
+.Off .Stars .Star:nth-of-type(3){
+  animation: startravel3 18s linear infinite;
+  animation-delay: 0s;
+}
+
+@keyframes growbrighter {
+  0%{ box-shadow: 0 0 4px 0px rgb(255,255,255); }
+  100%{ box-shadow: 0 0 15px 0px rgb(255,255,255);}
+}
+
+@keyframes startravel1 {
+  0%{ transform: rotate(65deg) translate(-80px) scale(1.0); }
+  100%{ transform: rotate(-60deg) translate(-80px) scale(1.3); }
+}
+
+@keyframes startravel2 { 
+  0%{ transform: rotate(27deg) translate(-160px) scale(1.6); }
+  100%{ transform: rotate(-25deg) translate(-160px) scale(1.2); } 
+}
+
+@keyframes startravel3 {
+  
+  0%{ transform: rotate(22deg) translate(-200px) scale(1.2); }
+  100%{ transform: rotate(-20deg) translate(-200px) scale(0.7); }
+}
+
+.Cloud:nth-of-type(1){
+  position: absolute;
+  width: 30px;
+  height: 25px; 
+  left: -80px;
+  top: 5px;
+  border-radius: 50%;
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 2s 0.4s;
+  animation: cloudtravel1 22s linear infinite;
+  animation-delay: 5.4s;
+  
+}
+
+.Cloud:nth-of-type(1)::before{
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  left: -55%;
+  top: 70%;
+  transform: translate(100%,-0%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 3;
+}
+
+.Cloud:nth-of-type(1)::after{
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  left: 100%;
+  top: 50%;
+  transform: translate(-70%,-0%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 3;
+}
+
+.Cloud:nth-of-type(1) .Cloudpart:nth-of-type(1){
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 45px;
+  left: -100%;
+  bottom: 0%;
+  transform: translate(40%, -0%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 2;
+}
+
+.Cloud:nth-of-type(1) .Cloudpart:nth-of-type(2){
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 17.5px;
+  left: 100%;
+  bottom: 0%;
+  transform: translate(-50%, -0%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 2;
+}
+
+.Cloud:nth-of-type(1) .Cloudpart:nth-of-type(1)::after{
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-35%,-50%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 3;
+}
+
+.Cloud:nth-of-type(1) .Cloudpart:nth-of-type(2)::before{
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 17.5px;
+  left: -50%;
+  top: 50%;
+  transform: translate(20%,-70%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 3;
+}
+
+
+
+.Cloud:nth-of-type(2){
+  position: absolute;
+  width: 35px;
+  height: 50px;
+  left: -40px;
+  top: 26px;
+  border-radius: 50%;
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 2s 0.4s;
+  animation: cloudtravel2 18s linear infinite;
+  animation-delay: 1.2s;
+}
+
+.Cloud:nth-of-type(2)::before{
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  left: -55%;
+  top: 70%;
+  transform: translate(100%,-30%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 3;
+  
+}
+
+.Cloud:nth-of-type(2)::after{
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-40%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 3;
+}
+
+.Cloud:nth-of-type(2) .Cloudpart:nth-of-type(1){
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 45px;
+  left: -100%;
+  bottom: 0%;
+  transform: translate(50%, -0%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 2;
+}
+
+.Cloud:nth-of-type(2) .Cloudpart:nth-of-type(2){
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 17.5px;
+  left: 100%;
+  bottom: 0%;
+  transform: translate(-50%, -0%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 2;
+}
+
+.Cloud:nth-of-type(2) .Cloudpart:nth-of-type(1)::after{
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-35%,-20%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 3;
+}
+
+.Cloud:nth-of-type(2) .Cloudpart:nth-of-type(2)::before{
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 35px;
+  left: -50%;
+  top: 50%;
+  transform: translate(10%,-40%);
+  border-radius: 50%;
+  background: inherit;
+  z-index: 3;
+}
+
+
+
+.Cloud:nth-of-type(3){
+  position: absolute;
+  width: 50px;
+  height: 17.5px;
+  left: -100px;
+  top: 48px;
+  border-radius: 50%;
+  z-index: 3;
+  opacity: 1;
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+  transition: opacity 2s 0.4s;
+  animation: cloudtravel3 30s linear infinite;
+  animation-delay: 8.6s;
+}
+
+.Cloud:nth-of-type(3)::before{
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  left: -50%;
+  top: 50%;
+  transform: translate(25%, -30%);
+  border-radius: 50%;
+  z-index: 3;
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+}
+
+.Cloud:nth-of-type(3)::after{
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 15px;
+  left: 50%;
+  top: 50%;
+  transform: translate(5%, -60%);
+  border-radius: 50%;
+  z-index: 3;
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+}
+
+.Cloud:nth-of-type(3) .Cloudpart:nth-of-type(1){
+  position: absolute;
+  width: 45px;
+  height: 35px;
+  left: -50%;
+  top: 50%;
+  border-radius: 50%;
+  z-index: 2;
+  transform: translate(0%, -40%);
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+}
+
+.Cloud:nth-of-type(3) .Cloudpart:nth-of-type(1)::before{
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  left: -30%;
+  top: 50%;
+  transform: translate(-0%, -60%);
+  border-radius: 50%;
+  z-index: 3;
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+}
+
+.Cloud:nth-of-type(3) .Cloudpart:nth-of-type(1)::after{
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  left: 0%;
+  top: 50%;
+  transform: translate(-0%, 10%);
+  border-radius: 50%;
+  z-index: 3;
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+}
+
+.Cloud:nth-of-type(3) .Cloudpart:nth-of-type(2){
+  position: absolute;
+  width: 50px;
+  height: 45px;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  z-index: 2;
+  transform: translate(10%, -20%);
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+}
+
+.Cloud:nth-of-type(3) .Cloudpart:nth-of-type(2)::before{
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 15px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 3;
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+}
+
+.Cloud:nth-of-type(3) .Cloudpart:nth-of-type(2)::after{
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 15px;
+  left: 60%;
+  top: 50%;
+  transform: translate(-0%, -40%);
+  border-radius: 50%;
+  z-index: 3;
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+}
+
+.Cloud:nth-of-type(3) .Cloudpart:nth-of-type(3){
+  position: absolute;
+  width: 35px;
+  height: 17.5px;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  z-index: 2;
+  transform: translate(-50%, -10%);
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+}
+
+.Cloud:nth-of-type(3) .Cloudpart:nth-of-type(3)::before{
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 15px;
+  left: -50%;
+  top: 50%;
+  transform: translate(40%, -30%);
+  border-radius: 50%;
+  z-index: 3;
+  background: radial-gradient(rgb(255, 255, 255) 30%, 
+rgb(230, 230, 230));
+}
+
+.Off .Cloud:nth-of-type(1){
+  animation: none;
+  opacity: 0;
+  transition: opacity 1s 0s;
+}
+
+.Off .Cloud:nth-of-type(2){
+  animation: none;
+  opacity: 0;
+  transition: opacity 1s 0s;
+}
+
+.Off .Cloud:nth-of-type(3){
+  animation: none;
+  opacity: 0;
+  transition: opacity 1s 0s;
+}
+
+@keyframes cloudtravel1{
+  0%{ left: -80px; transform: scale(1); }
+  100%{ left: 330px; transform: scale(0.8); }
+}
+
+@keyframes cloudtravel2{
+  0%{ left: -40px; transform: scale(0.6); }
+  100%{ left: 330px; transform: scale(1); }
+}
+
+@keyframes cloudtravel3{
+  0%{ left: -100px; transform: scale(0.7); }
+  100%{ left: 340px; transform: scale(0.65); }
+}
