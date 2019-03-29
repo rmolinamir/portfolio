@@ -1,6 +1,8 @@
 .Wrapper {
   margin: auto;
+  max-width: 1400px;
   padding-top: 15px;
+  margin-top: 70px;
 }
 
 .Container {

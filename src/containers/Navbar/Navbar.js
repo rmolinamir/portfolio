@@ -58,22 +58,21 @@ class Navbar extends PureComponent {
   constructor(props) {
     super(props)
     this.myNavbar = React.createRef()
-    this.state.isMobile = props.isMobile
-  }
-
-  state = {
-    width: window.innerWidth,
-    bIsDrawerOpen: false,
-    navbarTransparent: false,
-    showScrollToTop: false,
-    className: classes.LandingNavbar,
-    // passing reference from constructor
-    navbarType: 'LandingNavbar', // pass navbarType prop to select respective navigation items
-    // Scroll Tracking Functionality if dependant on scroll then pass 'this.trackScrolling'
-    onScroll: null, // No functionality
-    // Passing Is Navbar Transparent functionality, if dependant on scroll then pass 'this.state.navbarTransparent'
-    // if never transparent then pass false or pass nothing, if always transparent then pass true
-    isNavbarTransparent: true
+    this.state = {
+      isMobile: props.isMobile,
+      width: window.innerWidth,
+      bIsDrawerOpen: false,
+      navbarTransparent: window.pageYOffset < 50,
+      showScrollToTop: false,
+      className: classes.LandingNavbar,
+      // passing reference from constructor
+      navbarType: 'LandingNavbar', // pass navbarType prop to select respective navigation items
+      // Scroll Tracking Functionality if dependant on scroll then pass 'this.trackScrolling'
+      onScroll: null, // No functionality
+      // Passing Is Navbar Transparent functionality, if dependant on scroll then pass 'this.state.navbarTransparent'
+      // if never transparent then pass false or pass nothing, if always transparent then pass true
+      isNavbarTransparent: true
+    }
   }
 
   /**
@@ -112,15 +111,9 @@ class Navbar extends PureComponent {
     if (!this.myNavbar.current) {
       return
     }
-    if (window.scrollY > this.myNavbar.current.clientHeight && this.state.isNavbarTransparent) {
-      this.setState({
-        navbarTransparent: false
-      })
-    } else {
-      this.setState({
-        navbarTransparent: true
-      })
-    }
+    this.setState({
+      navbarTransparent: !(window.scrollY > this.myNavbar.current.clientHeight && this.state.isNavbarTransparent)
+    })
   }
 
   handleResize = () => {
@@ -191,9 +184,10 @@ class Navbar extends PureComponent {
   }
 
   render () {
+    console.log(this.state)
     const navbarClasses = [classes.Navbar, this.state.className]
-    if (this.state.isNavbarTransparent) {
-      navbarClasses.push(classes.NavbarTransparent)
+    if (this.state.isNavbarTransparent && this.state.navbarTransparent) {
+      navbarClasses.push(classes.Transparent)
     /**
      * Navbar themes.
      */

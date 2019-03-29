@@ -1,13 +1,13 @@
-import React from 'react';
-import { withRouter, NavLink } from 'react-router-dom';
+import React from 'react'
+import { withRouter, NavLink } from 'react-router-dom'
 // CSS
-import classes from './NavigationItems.module.css';
+import classes from './NavigationItems.module.css'
 // JSX
-import NavigationItem from './NagivationItem/NagivationItem';
-import Separator from './Separator/Separator';
+import NavigationItem from './NagivationItem/NagivationItem'
+import Separator from './Separator/Separator'
 // Logo
-import desktopLogo from '../../../assets/svg/personal-logo.svg';
-import logo from '../../../assets/images/Robert-Molina.png';
+import desktopLogo from '../../../assets/svg/personal-logo.svg'
+import logo from '../../../assets/images/Robert-Molina.png'
 
 const renderNavigationItems = (props) => {
 	switch (props.navbarType) {
@@ -19,20 +19,20 @@ const renderNavigationItems = (props) => {
 						<>
 							<div className={classes.Spacing} />
 							<Separator />
-							<NavigationItem {...props} link="/projects" color="white">
+							<NavigationItem {...props} link='/projects' color='white'>
 								Projects
 							</NavigationItem>
-							<NavigationItem {...props} link="/skills" color="white">
+							<NavigationItem {...props} link='/skills' color='white'>
 								Skills
 							</NavigationItem>
-							<NavigationItem {...props} link="/psd-designs" color="white">
+							<NavigationItem {...props} link='/psd-designs' color='white'>
 								Designs
 							</NavigationItem>
 							<Separator />
 						</>
 					}
 				</>
-			);
+			)
 		case 'MobileDrawer':
 			return (
 				<>
@@ -40,17 +40,17 @@ const renderNavigationItems = (props) => {
 						<img src={logo} draggable='false' alt='' />
 					</div>
 					<Separator />
-					<NavigationItem {...props} link="/">
+					<NavigationItem {...props} link='/'>
 						About Me
 					</NavigationItem>
 					<Separator />
-					<NavigationItem {...props} link="/projects">
+					<NavigationItem {...props} link='/projects'>
 						Projects
 					</NavigationItem>
-					<NavigationItem {...props} link="/skills">
+					<NavigationItem {...props} link='/skills'>
 						Skills
 					</NavigationItem>
-					<NavigationItem {...props} link="/psd-designs">
+					<NavigationItem {...props} link='/psd-designs'>
 						Designs
 					</NavigationItem>
 					<Separator />
@@ -73,7 +73,7 @@ const renderNavigationItems = (props) => {
 						Email Me
 					</a>
 				</>
-			);
+			)
 		default:
 			return (
 				<>
@@ -82,38 +82,38 @@ const renderNavigationItems = (props) => {
 						: (
 							<>
 								<div className={classes.Spacing} />
-								<NavigationItem {...props} link="/">
+								<NavigationItem {...props} link='/'>
 									About Me
 								</NavigationItem>
-								<NavigationItem {...props} link="/projects">
+								<NavigationItem {...props} link='/projects'>
 									Projects
 								</NavigationItem>
-								<NavigationItem {...props} link="/skills">
+								<NavigationItem {...props} link='/skills'>
 									Skills
 								</NavigationItem>
-								<NavigationItem {...props} link="/psd-designs">
+								<NavigationItem {...props} link='/psd-designs'>
 									Designs
 								</NavigationItem>
 							</>
 						)
 					}
 				</>
-			);
+			)
 	}
-};
+}
 
 const nagivationItems = (props) => {
-	return (
-		<>
-			<ul className={classes.NavigationItems}>
-				<div className={classes.SpacingSmall} />
-				<NavLink className={[classes.NavbarLogo, classes.DesktopOnly].join(' ')} to ="/">
-					<img src={desktopLogo} draggable='false' alt='' />
-				</NavLink>
-				{renderNavigationItems(props)}
-			</ul>
-		</>
-	);
-};
+  return (
+    <>
+      <ul className={classes.NavigationItems}>
+        <div className={classes.SpacingSmall} />
+        <NavLink className={[classes.NavbarLogo, classes.DesktopOnly].join(' ')} to='/'>
+          <img src={desktopLogo} draggable='false' alt='' />
+        </NavLink>
+        {renderNavigationItems(props)}
+      </ul>
+    </>
+  )
+}
 
-export default withRouter(nagivationItems);
+export default withRouter(nagivationItems)
