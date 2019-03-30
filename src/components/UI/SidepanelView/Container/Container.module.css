@@ -1,0 +1,28 @@
+
+.Wrapper {
+  background-color: inherit;
+  color: inherit;
+  margin: 0 auto;
+  border-left: 1px solid currentColor;
+  width: calc(100% - 300px);
+  padding-left: 0px;
+  overflow: hidden;
+}
+
+.Container {
+  background-color: inherit;
+  color: inherit;
+  padding: 28px 24px;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+@media (max-width: 920px) {
+  .Wrapper {
+    border-left: 0;
+    width: 100%;
+  }
+  .Container {
+    min-width: 100%;
+  }
+}

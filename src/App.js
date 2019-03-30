@@ -19,6 +19,8 @@ import Projects from './containers/Projects/Projects'
 import Designs from './containers/PSD_Desings/PSD_Desings'
 import Skills from './containers/Skills/Skills'
 
+const CodeLab = React.lazy(() => import('./containers/CodeLab/CodeLab'))
+
 // const AboutMe = React.lazy(() => import('./containers/AboutMe/AboutMe'))
 // const Projects = React.lazy(() => import('./containers/Projects/Projects'))
 // const Designs = React.lazy(() => import('./containers/PSD_Desings/PSD_Desings'))
@@ -42,6 +44,7 @@ class App extends Component {
           {/* Scrolls to the top after a route change */}
           <ScrollToTop />
           <Switch>
+            <Route path='/codelab' render={() => <Suspense fallback={<SpinnerContainer />}><CodeLab /></Suspense>} />
             <Route path='/psd-designs' render={() => <Suspense fallback={<SpinnerContainer />}><Designs /></Suspense>} />
             <Route path='/projects' render={() => <Suspense fallback={<SpinnerContainer />}><Projects /></Suspense>} />
             <Route path='/skills' render={() => <Suspense fallback={<SpinnerContainer />}><Skills /></Suspense>} />

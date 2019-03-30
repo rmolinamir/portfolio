@@ -1,0 +1,47 @@
+.Wrapper {
+  background-color: inherit;
+  color: inherit;
+  position: sticky;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  max-height: 100vh;
+  width: 300px;
+  transform: translateZ(0px);
+  vertical-align: top;
+  z-index: 1;
+  overflow: auto overlay;
+}
+
+.Container {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 28px 24px;
+}
+
+.Header {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (max-width: 920px) {
+  .Wrapper {
+    order: 2;
+    flex-basis: 0px;
+    flex-basis: 0px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    transition: all ease .2s;
+  }
+
+  .Container {
+    padding: 76px 12px 8px;
+  }
+
+  .Wrapper.Open {
+    flex-basis: 100%;
+    border: 1px solid currentColor;
+  }
+}

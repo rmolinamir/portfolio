@@ -1,0 +1,75 @@
+.Toggle,
+.Menu,
+.Header,
+.Wrapper {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  .Wrapper {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    order: 1;
+    top: 70px;
+    right: 12px;
+    width: 130px;
+    height: 56px;
+    margin: 0;
+    z-index: 5;
+    transition: all ease 200ms;
+  }
+
+  .Wrapper.Open {
+    width: 100%;
+    right: 0px;
+  }
+
+  .Toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    border: 0;
+    box-shadow: none;
+    user-select: none;
+    cursor: pointer;
+    order: 1;
+    animation: FadeIn 200ms;
+  }
+
+  .Menu {
+    display: block;
+    margin-left: 12px;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  .Header {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    font-size: 24px;
+    text-transform: uppercase;
+    top: 12px;
+    right: 12px;
+    font-size: 36px;
+  }
+}
+
+@keyframes FadeIn {
+  0% { 
+    opacity: 0; 
+  }
+  66% { 
+    opacity: 0; 
+  }
+  100% { 
+    opacity: 1; 
+  }
+}
