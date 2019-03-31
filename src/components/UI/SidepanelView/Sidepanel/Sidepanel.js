@@ -27,9 +27,6 @@ const sidepanel = (props) => {
           {props.children}
         </div>
       </div>
-      {/* <Toggle
-        show={!bIsOpen}
-        onClick={toggleSidepanel} /> */}
     </>
   )
 }

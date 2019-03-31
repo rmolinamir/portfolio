@@ -4,4 +4,14 @@
   min-height: calc(100vh - 70px);
   background-color: inherit;
   color: inherit;
+  animation: fade-in ease 300ms;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,0 +1,37 @@
+.Wrapper {
+  color: currentColor;
+  padding: 4px 9px;
+  cursor: pointer;
+  /* opacity: .8; */
+  transition: opacity ease 200ms;
+}
+
+.Wrapper:hover,
+.Wrapper:focus {
+  opacity: 1;
+}
+
+.Container {
+  position: relative;
+  white-space: nowrap;
+  font-size: 18px;
+  text-transform: lowercase;
+}
+
+.Item {
+  margin-left: 0.5ch;
+}
+
+.Description {
+  text-transform: initial;
+  position: relative;
+  border-left: 2px solid #66cdaa;
+  margin: 12px 6px 3px 18px;
+  padding: 4px 0px 4px 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.Wrapper.Active {
+  opacity: 1;
+}

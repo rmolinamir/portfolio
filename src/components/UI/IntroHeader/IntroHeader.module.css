@@ -12,7 +12,7 @@
   line-height: 60px;
   margin: 18px auto 24px;
   color: rgb(38, 187, 225);
-  color: transparent;
+  color: inherit;
   background: linear-gradient(to right, #944adb 20%, rgb(38, 187, 225) 40%, rgb(38, 187, 225) 60%, #944adb 80%);
   background-size: 200% auto;
   background-clip: text;

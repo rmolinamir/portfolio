@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import classes from './Toggle.module.css'
 import themes from '../../../../../hoc/Layout/ThemeContext/ThemeContext.module.css'
 // JSX
-import { Icon } from 'react-svg-library'
+import Hamburger from '../../../Hamburger/Hamburger'
 import { withContext } from 'with-context-react'
 import { ThemeContext } from '../../../../../hoc/Layout/ThemeContext/ThemeContext'
 
@@ -21,9 +21,10 @@ const toggle = (props) => {
       ].join(' ')}>
       <div
         className={classes.Toggle}>
-        <Icon
-          size='36px'
-          icon='menu' />
+        <Hamburger
+          animation={6}
+          bIsActive={props.bIsOpen}
+          size={32} />
         <div className={classes.Menu}>
           Menu
         </div>
