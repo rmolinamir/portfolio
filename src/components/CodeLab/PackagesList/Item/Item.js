@@ -8,7 +8,6 @@ import { Icon } from 'react-svg-library'
 const item = (props) => {
   return (
     <li
-      onClick={() => console.log('ping')}
       className={[
         classes.Wrapper,
         props.bIsActive && classes.Active
@@ -26,8 +25,6 @@ const item = (props) => {
 }
 
 item.propTypes = {
-  to: PropTypes.string,
-  onClick: PropTypes.func,
   children: PropTypes.any.isRequired,
   description: PropTypes.any,
   bIsActive: PropTypes.bool

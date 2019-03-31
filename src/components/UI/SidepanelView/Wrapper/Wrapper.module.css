@@ -2,4 +2,12 @@
   display: flex;
   flex-flow: row;
   position: relative;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.Wrapper::before {
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  opacity: 0.2;
 }

@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 // CSS
 import classes from './Wrapper.module.css'
 // JSX
 
 const wrapper = (props) => {
+  const [minWidth, setMinWidth] = useState(window.innerWidth)
+
+  const resizeHandler = () => {
+    setMinWidth(window.innerWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', resizeHandler)
+    return () => {
+      window.removeEventListener('resize', resizeHandler)
+    }
+  }, [])
+
   return (
-    <div className={[
-      classes.Wrapper,
-      props.className
-    ].join(' ')}>
+    <div
+      style={{
+        '--min-width': `${minWidth}px`
+      }}
+      ref={props.reference}
+      className={[
+        classes.Wrapper,
+        props.className
+      ].join(' ')}>
       {props.children}
     </div>
   )
@@ -17,7 +35,8 @@ const wrapper = (props) => {
 
 wrapper.propTypes = {
   children: PropTypes.any,
-  className: PropTypes.string
+  className: PropTypes.string,
+  reference: PropTypes.object
 }
 
 export default wrapper

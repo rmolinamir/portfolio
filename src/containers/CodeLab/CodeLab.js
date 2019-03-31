@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
+import { packagesData } from './packageData'
+import { connect } from 'react-redux'
 // CSS
 import classes from './CodeLab.module.css'
 // JSX
 import { Wrapper, Sidepanel, Container } from '../../components/UI/SidepanelView'
 import List, { Item } from '../../components/CodeLab/PackagesList/PackagesList'
-import { NavLink, Route, withRouter } from 'react-router-dom'
+import { NavLink, Route, Redirect, Switch, withRouter } from 'react-router-dom'
+import Default from './Default/Default'
 
 const Placeholder = (props) => {
   return (
@@ -18,37 +21,74 @@ Placeholder.propTypes = {
 }
 
 const codeLab = (props) => {
+  const myWrapper = useRef(null)
+
+  const onClickHandler = () => {
+    if (props.isMobile && myWrapper && myWrapper.current) {
+      const scrollHeight = myWrapper.current.clientHeight
+      window.scrollTo(0, scrollHeight)
+    }
+  }
+
+  const items = Object.keys(packagesData).map(packageKey => {
+    const codeLabPackage = packagesData[packageKey]
+    return (
+      <Item
+        bIsActive={props.location.pathname === `${props.match.path}/${packageKey}`}
+        key={packageKey}
+        description={codeLabPackage.description}>
+        <NavLink onClick={onClickHandler} to={`${props.match.path}/${packageKey}`}>
+          <code>{packageKey}</code>
+        </NavLink>
+      </Item>
+    )
+  })
+
   return (
-    <Wrapper className={classes.Wrapper}>
-      <Sidepanel>
+    <Wrapper
+      reference={myWrapper}
+      className={classes.Wrapper}>
+      <Sidepanel
+        style={{
+          top: 70
+        }}
+        closeListener={props.location.pathname}>
         <List header='Packages'>
-          <Item description='Collection of pre-styled JSX elements based on the HTML Form Elements. Offers an easy way to collect form data and/or input values.'>
-            <NavLink to='/codelab/react-formalized'>
-              <code>react-formalized</code>
+          <Item
+            bIsActive={props.location.pathname === props.match.path}>
+            <NavLink to='/codelab'>
+              <code>Overview</code>
             </NavLink>
           </Item>
-          <Item>
-            <NavLink to='/codelab/react-png-button'>
-              <code>react-png-button</code>
-            </NavLink>
-          </Item>
-          <Item><code>react-png-modal</code></Item>
-          <Item><code>react-png-tooltip</code></Item>
-          <Item><code>with-context-react</code></Item>
+          {items}
         </List>
       </Sidepanel>
       <Container>
-        Container
-        <Route exact path={props.match.path} render={() => <Placeholder>default</Placeholder>} />
-        <Route path={`${props.match.path}/react-formalized`} render={() => <Placeholder>react-formalized</Placeholder>} />
-        <Route path={`${props.match.path}/react-png-button`} render={() => <Placeholder>react-png-button</Placeholder>} />
+        <Switch>
+          <Route exact path={props.match.path} component={Default} />
+          <Route exact path={`${props.match.path}/react-formalized`} render={() => <Placeholder>react-formalized</Placeholder>} />
+          <Route exact path={`${props.match.path}/react-png-button`} render={() => <Placeholder>react-png-button</Placeholder>} />
+          <Route exact path={`${props.match.path}/react-png-tooltip`} render={() => <Placeholder>react-png-tooltip</Placeholder>} />
+          <Route exact path={`${props.match.path}/react-png-modal`} render={() => <Placeholder>react-png-modal</Placeholder>} />
+          <Route exact path={`${props.match.path}/react-svg-library`} render={() => <Placeholder>react-svg-library</Placeholder>} />
+          <Route exact path={`${props.match.path}/with-context-react`} render={() => <Placeholder>with-context-react</Placeholder>} />
+          <Route exact path={`${props.match.path}/:id`} render={() => <Redirect to={`${props.match.path}`} />} />
+        </Switch>
       </Container>
     </Wrapper>
   )
 }
 
 codeLab.propTypes = {
-  match: PropTypes.object
+  isMobile: PropTypes.bool,
+  match: PropTypes.object,
+  location: PropTypes.object
 }
 
-export default withRouter(codeLab)
+const mapStateToProps = (state) => {
+  return {
+    isMobile: state.mobileReducer.isMobile
+  }
+}
+
+export default connect(mapStateToProps)(withRouter(codeLab))

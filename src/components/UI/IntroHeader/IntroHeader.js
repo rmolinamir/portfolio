@@ -6,7 +6,12 @@ import classes from './IntroHeader.module.css'
 const Header = (props) => {
   return (
     <>
-      <div className={classes.Header}>
+      <div
+        style={props.style}
+        className={[
+          classes.Header,
+          props.className
+        ].join(' ')}>
         {props.children}
       </div>
       {props.intro && (
@@ -20,6 +25,8 @@ const Header = (props) => {
 
 Header.propTypes = {
   children: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  style: PropTypes.object,
   intro: PropTypes.string
 }
 

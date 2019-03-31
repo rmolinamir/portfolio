@@ -10,7 +10,7 @@
   transform: translateZ(0px);
   vertical-align: top;
   z-index: 1;
-  overflow: auto overlay;
+  overflow: hidden;
 }
 
 .Container {
@@ -38,6 +38,7 @@
 
   .Container {
     padding: 76px 18px 8px;
+    min-width: var(--min-width, 100vw);
   }
 
   .Wrapper.Open {
