@@ -5,6 +5,13 @@
   cursor: pointer;
 }
 
+.Wrapper, .Wrapper:before, .Wrapper:after,
+.Wrapper *, .Wrapper *:before, .Wrapper *:after {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+}
+
 .Switch {
   position: relative;
   width: 50px;

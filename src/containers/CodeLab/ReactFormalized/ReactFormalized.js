@@ -261,12 +261,12 @@ const reactFormalized = (props) => {
               minValue='125'
               maxValue='350' />
             <Range
-              indicator
+              indicatorClassName={classes.Indicator}
               value='325'
               minValue='200'
               maxValue='350' />
             <Range
-              indicator
+              indicatorClassName={classes.Indicator}
               step={25}
               value='99' />
             <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
@@ -280,13 +280,13 @@ const reactFormalized = (props) => {
   maxValue='350' />
 
 <Range
-  indicator
+  indicatorClassName={classes.Indicator}
   value='325'
   minValue='200'
   maxValue='350' />
 
 <Range
-  indicator
+  indicatorClassName={classes.Indicator}
   step={25}
   value='99' />`}
             </SyntaxHighlighter>

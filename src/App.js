@@ -25,7 +25,7 @@ import Skills from './containers/Skills/Skills'
 const CodeLab = React.lazy(() => {
   return Promise.all([
     import('./containers/CodeLab/CodeLab'),
-    new Promise(resolve => setTimeout(resolve, 50))
+    new Promise(resolve => setTimeout(resolve, process.env.NODE_ENV === 'development' ? 50 : 1500))
   ]).then(([moduleExports]) => moduleExports)
 })
 const SpinnerContainer = () => <Container className={classes.SpinnerContainer}><Spinner /></Container>

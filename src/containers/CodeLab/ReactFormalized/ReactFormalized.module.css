@@ -73,3 +73,10 @@
   padding-top: 16px;
   padding-bottom: 9px;
 }
+
+.Indicator {
+  text-align: center;
+  width: 40px;
+  margin: 12px;
+  font-weight: bold;
+}

@@ -14,6 +14,14 @@ body {
 
 /* Common */
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
