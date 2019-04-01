@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-formalized": "^1.0.6",
     "react-particles-js": "^2.5.1",
     "react-png-button": "^1.0.4",
     "react-png-modal": "^2.0.1",
@@ -13,6 +14,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "^2.1.8",
     "react-svg-library": "^1.1.0",
+    "react-syntax-highlighter": "^10.2.1",
     "react-typist": "^2.0.5",
     "redux": "^4.0.1",
     "redux-saga": "^1.0.2",

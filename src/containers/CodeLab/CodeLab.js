@@ -9,6 +9,7 @@ import { Wrapper, Sidepanel, Container } from '../../components/UI/SidepanelView
 import List, { Item } from '../../components/CodeLab/PackagesList/PackagesList'
 import { NavLink, Route, Redirect, Switch, withRouter } from 'react-router-dom'
 import Default from './Default/Default'
+import ReactFormalized from './ReactFormalized/ReactFormalized'
 
 const Placeholder = (props) => {
   return (
@@ -66,7 +67,7 @@ const codeLab = (props) => {
       <Container>
         <Switch>
           <Route exact path={props.match.path} component={Default} />
-          <Route exact path={`${props.match.path}/react-formalized`} render={() => <Placeholder>react-formalized</Placeholder>} />
+          <Route exact path={`${props.match.path}/react-formalized`} component={ReactFormalized} />
           <Route exact path={`${props.match.path}/react-png-button`} render={() => <Placeholder>react-png-button</Placeholder>} />
           <Route exact path={`${props.match.path}/react-png-tooltip`} render={() => <Placeholder>react-png-tooltip</Placeholder>} />
           <Route exact path={`${props.match.path}/react-png-modal`} render={() => <Placeholder>react-png-modal</Placeholder>} />
