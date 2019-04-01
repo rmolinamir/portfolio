@@ -51,7 +51,7 @@ const RenderNavigationItems = React.memo((props) => {
             rel='noopener noreferrer'
             target='_blank'
             className={classes.NavLink}>
-            Email Me
+            Contact me
           </a>
         </>
       )

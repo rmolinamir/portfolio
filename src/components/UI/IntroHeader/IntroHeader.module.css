@@ -1,7 +1,12 @@
-.Header {
+.Wrapper {
   display: flex;
-  width: 95%;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: column;
+}
+
+.Header {
+  display: inline;
   text-align: center;
   user-select: none;
   text-shadow: 3px 3px 9px rgba(0,0,0, 0.1);
@@ -11,28 +16,31 @@
   font-weight: 700;
   line-height: 60px;
   margin: 18px auto 24px;
-  color: rgb(38, 187, 225);
-  color: inherit;
-  background: linear-gradient(to right, #944adb 20%, rgb(38, 187, 225) 40%, rgb(38, 187, 225) 60%, #944adb 80%);
+  color: #26bbe1;
+  background: linear-gradient(to right, #944adb 20%, #26bbe1 40%, #26bbe1 60%, #944adb 80%);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradient-text 5s linear infinite;
+  animation: gradient-text 5000ms linear infinite;
 }
 
-@supports (-ms-ime-align:auto) {
+@supports (-webkit-background-clip: text) {
   /* IE Edge 12+ CSS */ 
   .Header {
-    color: rgb(38, 187, 225);
-    -webkit-text-fill-color: rgb(38, 187, 225);
+    color: inherit;
   }
 }
 
-@media only screen and (max-width: 900px) {
+@supports (background-clip: text) {
+  /* IE Edge 12+ CSS */ 
   .Header {
-    display: inline-block;
-    width: 100%;
+    color: inherit;
+  }
+}
+
+@media (max-width: 900px) {
+  .Header {
     font-size: 3em;
   }
 }

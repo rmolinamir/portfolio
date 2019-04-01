@@ -21,9 +21,16 @@
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
+  font-weight: bold;
 }
 
 .Link { 
   color: inherit;
   cursor: pointer;
+  transform: scale(0.95);
+  transition: transform ease 200ms;
+}
+
+.Link:hover {
+  transform: scale(1)
 }

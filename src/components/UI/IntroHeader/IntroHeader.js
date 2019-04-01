@@ -5,7 +5,7 @@ import classes from './IntroHeader.module.css'
 
 const Header = (props) => {
   return (
-    <>
+    <div className={classes.Wrapper}>
       <div
         style={props.style}
         className={[
@@ -19,7 +19,7 @@ const Header = (props) => {
           {props.intro}
         </div>
       )}
-    </>
+    </div>
   )
 }
 

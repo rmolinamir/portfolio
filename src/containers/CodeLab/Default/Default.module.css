@@ -27,8 +27,15 @@
 }
 
 .Card {
-  margin: 24px 12px !important;
-  box-shadow: 0 1px 8px 2px currentColor !important;
-  overflow: hidden !important;
-  border-radius: 0 !important;
+  position: relative;
+  margin: 24px 12px;
+  box-shadow: 0 1px 8px 2px currentColor;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+@media (max-width: 1024px) {
+  .Card {
+    border-radius: 0;
+  }
 }

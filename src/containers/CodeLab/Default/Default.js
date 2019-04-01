@@ -3,7 +3,8 @@ import { packagesData } from '../packageData'
 // CSS
 import classes from './Default.module.css'
 // JSX
-import HoverCard from 'react-png-hovercard'
+// import HoverCard from 'react-png-hovercard'
+import HoverCard from '../../../components/UI/HoverCard/HoverCard'
 import IntroHeader from '../../../components/UI/IntroHeader/IntroHeader'
 import { Front, Back } from '../../../components/CodeLab/PackageCard'
 
@@ -24,7 +25,7 @@ const codeLabDefault = () => {
             {codeLabPackage.description}
           </Back>
         }
-        animationSpeed={500}
+        animationSpeed={600}
         maxWidth={280}
         height={280} />
     )

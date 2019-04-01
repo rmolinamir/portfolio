@@ -26,15 +26,16 @@
 }
 
 .Wrapper span {
-  width: var(--bokeh-size, 10vmin);
-  height: var(--bokeh-size, 10vmin);
-  border-radius: var(--bokeh-size, 10vmin);
+  width: var(--bokeh-size, 15vmin);
+  height: var(--bokeh-size, 15vmin);
+  border-radius: var(--bokeh-size, 15vmin);
   backface-visibility: hidden;
   position: absolute;
   animation-name: move;
   animation-duration: 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  z-index: -1;
 }
 
 .Wrapper span:nth-child(1) {

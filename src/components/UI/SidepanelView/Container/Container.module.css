@@ -39,7 +39,7 @@
   }
 
   .Container {
-    min-width: 100%;
+    min-width: var(--min-width, 100vw);
     padding: 56px 12px 8px;
   }
 }

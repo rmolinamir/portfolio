@@ -19,4 +19,4 @@ packageName.propTypes = {
   children: PropTypes.string.isRequired
 }
 
-export default packageName
+export default React.memo(packageName)

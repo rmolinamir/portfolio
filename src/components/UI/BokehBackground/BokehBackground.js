@@ -47,7 +47,10 @@ const bokehBackground = (props) => {
 
 bokehBackground.propTypes = {
   backgroundColor: PropTypes.string,
-  overlayOpacity: PropTypes.string,
+  overlayOpacity: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   bokehSize: PropTypes.string,
   children: PropTypes.any
 }
