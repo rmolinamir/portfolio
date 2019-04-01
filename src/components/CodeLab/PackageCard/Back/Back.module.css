@@ -1,0 +1,29 @@
+.Wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: space-evenly;
+  justify-content: space-evenly;
+  flex-flow: column;
+  text-align: center;
+  background-color: var(--background-color, inherit);
+  color: #fff;
+  padding: 12px;
+}
+
+.Container {
+  font-weight: bold;
+}
+
+.Links {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Link { 
+  color: inherit;
+  cursor: pointer;
+}

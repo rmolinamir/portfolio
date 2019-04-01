@@ -1,0 +1,29 @@
+.Wrapper {
+  position: relative;
+  padding: 6px 12px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid transparent;
+}
+
+.Wrapper::before,
+.Wrapper::after {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  content: '';
+}
+
+.Wrapper::after {
+  top: 0;
+  left: 0;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+}
+
+.Wrapper::before {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
