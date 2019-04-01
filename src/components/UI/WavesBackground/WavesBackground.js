@@ -4,12 +4,13 @@ import { getRandomColor } from '../../../shared/getRandomColor'
 // CSS
 import classes from './WavesBackground.module.css'
 
-const setInitialState = () => {
+const setInitialState = (props) => {
   const randomNumber = Math.ceil(Math.random() * 10)
   const initialState = {
     style: {
       '--top-background-color': getRandomColor(2.5),
       '--bottom-background-color': getRandomColor(2.5),
+      '--waves-opacity': props.wavesOpacity || 1,
       '--animation-duration': `${randomNumber + 7.5}s`
     }
   }
@@ -17,7 +18,7 @@ const setInitialState = () => {
 }
 
 const wavesBackground = (props) => {
-  const [state] = useState(setInitialState())
+  const [state] = useState(setInitialState(props))
 
   return (
     <div
@@ -39,6 +40,8 @@ const wavesBackground = (props) => {
 wavesBackground.propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
+  // eslint-disable-next-line react/no-unused-prop-types
+  wavesOpacity: PropTypes.number,
   style: PropTypes.object
 }
 

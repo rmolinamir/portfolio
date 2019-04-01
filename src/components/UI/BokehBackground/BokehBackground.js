@@ -62,23 +62,25 @@ const bokehBackground = (props) => {
   })
 
   return (
-    <div
-      style={{
-        '--background-size': settings.backgroundSize && `${settings.backgroundSize}px`,
-        '--background-color': props.backgroundColor || settings.backgroundColor,
-        '--overlay-opacity': settings.overlayOpacity,
-        '--animation-duration': `${settings.animationDuration}s`,
-        '--ball-size': settings.backgroundSize && `${settings.backgroundSize * (settings.sizeToBallRatio)}px`,
-        '--ball-opacity': settings.ballOpacity
-      }}
-      className={classes.Wrapper}>
+    <>
+      <div
+        style={{
+          '--background-size': settings.backgroundSize && `${settings.backgroundSize}px`,
+          '--background-color': props.backgroundColor || settings.backgroundColor,
+          '--overlay-opacity': settings.overlayOpacity,
+          '--animation-duration': `${settings.animationDuration}s`,
+          '--ball-size': settings.backgroundSize && `${settings.backgroundSize * (settings.sizeToBallRatio)}px`,
+          '--ball-opacity': settings.ballOpacity
+        }}
+        className={classes.Wrapper}>
+        {bokehSpans}
+      </div>
       {props.children && (
         <div className={classes.Container}>
           {props.children}
         </div>
       )}
-      {bokehSpans}
-    </div>
+    </>
   )
 }
 
