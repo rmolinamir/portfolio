@@ -15,7 +15,16 @@ const back = (props) => {
     <div
       className={classes.Wrapper}>
       <BokehBackground
-        bokehSize={'49px'}
+        randomColor
+        settings={{
+          backgroundSize: 90,
+          sizeToBallRatio: 1.2,
+          overlayOpacity: 0.25,
+          animationDuration: 12,
+          ballOpacity: 0.66,
+          randomColor: true,
+          randomDelay: true
+        }}
         overlayOpacity={0.2}
         backgroundColor={backgroundColor} />
       <div className={classes.Container}>
