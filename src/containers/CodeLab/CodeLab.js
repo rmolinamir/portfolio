@@ -14,6 +14,7 @@ import ReactPNGButton from './ReactPNGButton/ReactPNGButton'
 import ReactPNGTooltip from './ReactPNGTooltip/ReactPNGTooltip'
 import ReactPNGModal from './ReactPNGModal/ReactPNGModal'
 import ReactSVGLibrary from './ReactSVGLibrary/ReactSVGLibrary'
+import WithContextReact from './WithContextReact/WithContextReact'
 
 const Placeholder = (props) => {
   return (
@@ -76,7 +77,7 @@ const codeLab = (props) => {
           <Route exact path={`${props.match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
           <Route exact path={`${props.match.path}/react-png-modal`} component={ReactPNGModal} />
           <Route exact path={`${props.match.path}/react-svg-library`} component={ReactSVGLibrary} />
-          <Route exact path={`${props.match.path}/with-context-react`} render={() => <Placeholder>with-context-react</Placeholder>} />
+          <Route exact path={`${props.match.path}/with-context-react`} component={WithContextReact} />
           <Route exact path={`${props.match.path}/:id`} render={() => <Redirect to={`${props.match.path}`} />} />
         </Switch>
       </Container>

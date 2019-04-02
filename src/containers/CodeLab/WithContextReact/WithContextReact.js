@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 // CSS
-import classes from './App.module.css'
+import classes from './WithContextReact.module.css'
 // JSX
 import { Provider } from 'react-png-button'
-import Example from './Example/Example'
+import Example from '../../../components/CodeLab/Example/Example'
 import CodeSnippet from './CodeSnippet/CodeSnippet'
 import EX1 from './docs/withContext/withContext'
 import EX2 from './docs/withContext/withContext_WithProvider'
@@ -12,7 +12,7 @@ import EX4 from './docs/_WithContext/_WithContext_WithProvider'
 import EX5 from './docs/withContexts/withContexts'
 import EX6 from './docs/_WithContexts/_WithContexts'
 
-class App extends Component {
+class WithContextReact extends Component {
   render () {
     const ex1 = <><code className={classes.Functional}>withContext</code><code className={classes.Parenthesis}>(</code><code className={classes.Argument}>WrappedComponent</code>, <code className={classes.Argument}>Context</code><code className={classes.Parenthesis}>)</code> - Functional wrapper</>
     const ex2 = <><code className={classes.Functional}>withContext</code><code className={classes.Parenthesis}>(</code><code className={classes.Argument}>WrappedComponent</code>, <code className={classes.Argument}>Context</code>, <code className={classes.Argument}>Provider</code><code className={classes.Parenthesis}>)</code> - Functional wrapper with a Provider</>
@@ -417,4 +417,4 @@ export default class App extends Component {
   }
 }
 
-export default App
+export default WithContextReact

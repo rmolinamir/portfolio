@@ -1,21 +1,24 @@
-.Dark {
-  color: #fff;
-  background-color: #2f2f2f;
-}
-
-.Light {
-  color: #484848;
-  background-color: #fff;
-}
-
 .App {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
   flex-flow: column;
-  max-width: 844px;
   margin: 0 auto;
-  padding: 0px 24px;
+  color: inherit;
+  background-color: inherit;
+  max-width: 1024px;
+  animation: fade-in ease 600ms;
 }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 
 .Title {
   display: flex;
@@ -23,7 +26,7 @@
   position: relative;
   font-size: 56px;
   font-weight: bold;
-  margin: 24px 0;
+  margin: 0 0 24px;
   border-bottom: 1px dashed rgb(206, 212, 222);
 }
 
@@ -68,11 +71,11 @@
 }
 
 .Functional {
-  color: rgb(255, 255, 115);
+  color: rgb(232, 232, 19);
 }
 
 .Parenthesis {
-  color: yellow;
+  color: rgb(232, 232, 19);
 }
 
 .Argument {
