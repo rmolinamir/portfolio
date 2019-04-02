@@ -18,8 +18,8 @@ const reactPNGButton = (props) => {
 
   const onClick = () => {
     window.alert('Open your dev tools if you want to see the printed references!')
-    console.log(buttonRef.current)
-    console.log(logoButtonRef.current)
+    console.warn(buttonRef.current)
+    console.warn(logoButtonRef.current)
     if (props.buttonContext && props.buttonContext.setCustomClassname && props.buttonContext.setGlobalClassName) {
       props.buttonContext.setCustomClassname('primary', classes.Primary)
       props.buttonContext.setGlobalClassName(classes.Button)
@@ -128,7 +128,7 @@ const reactPNGButton = (props) => {
         </div>
         <br />
         <SyntaxHighlighter
-          language='javascript'
+          language='jsx'
           style={bIsLight ? prism : atomDark}>
           {`import React from 'react'
 import Button from 'react-png-button'

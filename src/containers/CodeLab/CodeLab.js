@@ -11,6 +11,8 @@ import { NavLink, Route, Redirect, Switch, withRouter } from 'react-router-dom'
 import Default from './Default/Default'
 import ReactFormalized from './ReactFormalized/ReactFormalized'
 import ReactPNGButton from './ReactPNGButton/ReactPNGButton'
+import ReactPNGTooltip from './ReactPNGTooltip/ReactPNGTooltip'
+import ReactPNGModal from './ReactPNGModal/ReactPNGModal'
 
 const Placeholder = (props) => {
   return (
@@ -70,8 +72,8 @@ const codeLab = (props) => {
           <Route exact path={props.match.path} component={Default} />
           <Route exact path={`${props.match.path}/react-formalized`} component={ReactFormalized} />
           <Route exact path={`${props.match.path}/react-png-button`} component={ReactPNGButton} />
-          <Route exact path={`${props.match.path}/react-png-tooltip`} render={() => <Placeholder>react-png-tooltip</Placeholder>} />
-          <Route exact path={`${props.match.path}/react-png-modal`} render={() => <Placeholder>react-png-modal</Placeholder>} />
+          <Route exact path={`${props.match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
+          <Route exact path={`${props.match.path}/react-png-modal`} component={ReactPNGModal} />
           <Route exact path={`${props.match.path}/react-svg-library`} render={() => <Placeholder>react-svg-library</Placeholder>} />
           <Route exact path={`${props.match.path}/with-context-react`} render={() => <Placeholder>with-context-react</Placeholder>} />
           <Route exact path={`${props.match.path}/:id`} render={() => <Redirect to={`${props.match.path}`} />} />
