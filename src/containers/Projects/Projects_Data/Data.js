@@ -159,12 +159,12 @@ export const projectsData = {
     back: (
       <ProjectBack
         className={classes.PersonalWebsiteBack}
-        header={'Designed using React.js and custom React components for scalability.'}
+        header={'Designed using React.js, the one and only.'}
         featuresList={[
-          'Lazy loading with React.lazy() to load the routes in file chunks.',
-          'Usage of react-redux and redux-saga, because why not?',
+          'Lazy loading with React.lazy to load the code lab route in a chunk.',
+          'Usage of react-redux and redux-saga to detect some things when mounting the app.',
           'Heavily used an OOP design approach for scalability.',
-          'Fully custom CSS and React components.']}>{mapSocialMediaButtons(socialMediaButtons.personalWebsite)}</ProjectBack>
+          'Most componennets are custom made, leaving me more room for change.']}>{mapSocialMediaButtons(socialMediaButtons.personalWebsite)}</ProjectBack>
     )
   },
   myReactBurgerBuilderApp: {
@@ -184,7 +184,7 @@ export const projectsData = {
           'react-router-dom,',
           'react-redux,',
           'redux-thunk and redux-saga,',
-          'React.lazy(), and many, many more things :)',
+          'React.lazy, and many, many more things :)',
           'Shoutout to Academind and all the good folk supporting the community!'
         ]}>{mapSocialMediaButtons(socialMediaButtons.myReactBurgerBuilderApp)}</ProjectBack>
     )
