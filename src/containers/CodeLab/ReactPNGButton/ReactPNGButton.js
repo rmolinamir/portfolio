@@ -175,7 +175,7 @@ export default example`}
       <div className={classes.BlockButtons}>
         <Button button='dark' onClick={onClick}>Click me!</Button>
       </div>
-      <h1>Showcase</h1>
+      <h2 className={classes.Header}>Showcase</h2>
       <br />
       <div className={classes.ButtonsGrid}>
         {buttonsArr.map((button, key) => {
@@ -192,7 +192,7 @@ export default example`}
         })}
       </div>
       <br />
-      <h1>Block Buttons</h1>
+      <h2 className={classes.Header}>Block Buttons</h2>
       <div className={classes.BlockButtons}>
         {blockButtonsArr.map((button, key) => {
           return (
@@ -207,7 +207,7 @@ export default example`}
           )
         })}
       </div>
-      <h1>Logo Buttons</h1>
+      <h2 className={classes.Header}>Logo Buttons</h2>
       <div className={classes.LogoButtonsGrid}>
         {logoButtonsArr.map((button, key) => {
           return (

@@ -92,7 +92,7 @@ const reactFormalized = (props) => {
           blockButton
           button={!theme === 'light' ? 'light' : 'dark'}
           onClick={changeThemeHandler}>Change Theme</Button>
-        <h2 className={classes.Header}>Examples</h2>
+        <h2 className={classes.Header}>Showcase</h2>
         <ul className={classes.List}>
           <li className={classes.Item}><a className={classes.Anchor} href='#elements'>Input Elements</a></li>
           <li className={classes.Item}><a className={classes.Anchor} href='#range-element'>Range Element (Similar to type Range)</a></li>

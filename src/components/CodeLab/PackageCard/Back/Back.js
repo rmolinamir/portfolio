@@ -34,7 +34,7 @@ const back = (props) => {
         <NavLink
           to={props.documentation}
           className={classes.Link}>
-          <div><code>documentation</code></div>
+          <div><code>showcase</code></div>
           <Icon size={'52px'} icon='share-two' />
         </NavLink>
         <a

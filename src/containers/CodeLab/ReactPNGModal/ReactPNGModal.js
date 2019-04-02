@@ -105,7 +105,7 @@ const reactPNGModal = (props) => {
         style={bIsLight ? prism : atomDark}>
         {`background-color: var(--modal-overlay-color, rgba(0,0,0,.7)`}
       </SyntaxHighlighter>
-      <h2 className={classes.Header}>Examples</h2>
+      <h2 className={classes.Header}>Showcase</h2>
       <ul className={classes.List}>
         <li className={classes.Item}><a className={classes.Anchor} href='#default-modal'>Default modal</a></li>
         <li className={classes.Item}><a className={classes.Anchor} href='#big-modal'>Big modal</a></li>

@@ -14,9 +14,109 @@ const reactPNGTooltip = (props) => {
 
   return (
     <>
+      <h1 className={classes.Title}>react-png-tooltip</h1>
+      <h2 className={classes.Header}>Showcase</h2>
+      <div className={classes.App}>
+        <div className={classes.Tooltips}>
+          <div>
+            <Tooltip
+              shouldDisableClick background='indianred'
+              className={classes.IndianredTooltip}>With the clicking functionality disabled!</Tooltip>
+            <div className={classes.Anchor}>
+              <span className={classes.Description}>This one's an indianred tooltip with <code>shouldDisableClick</code> active.</span>
+            </div>
+          </div>
+          <div>
+            <Tooltip
+              shouldDisableHover background='darkblue'
+              className={classes.GoldTooltip}>The icon and the windows can have different colours though!</Tooltip>
+            <div className={classes.Anchor}>
+              <span className={classes.Description}>This tooltip has <code>shouldDisableHover</code> active.</span>
+            </div>
+          </div>
+          <div>
+            <Tooltip>
+              <img src='https://media0.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif?cid=3640f6095c64ef4962526264678e1c1c' alt='' />
+              Accurate representation of me while programming this component.
+              <br />
+              <strong>(This is just to show you anything goes inside the tooltips)</strong>
+            </Tooltip>
+          </div>
+        </div>
+
+        <div className={classes.Tooltips}>
+          <div>
+            <Tooltip>
+              <strong>This is the default color setting for the tooltips.</strong>
+              <br />
+              Absolutely positioned in the center. The tooltip will always render to wherever it has more space.
+              If on mobile it'll tend to be centered inside the viewport.
+            </Tooltip>
+          </div>
+          <div>
+            <Tooltip
+              className={classes.OrangeTooltip}
+              tooltip={<button className={classes.CustomButton}>You can also use your own buttons as props.</button>}>
+              And it still works as you'd expect!
+            </Tooltip>
+          </div>
+          <div>
+            <Tooltip
+              className={classes.OrangeTooltip}
+              background='#ff7043'>
+              <iframe
+                title='rickroll'
+                type='text/html'
+                width='100%'
+                height='400px'
+                src='https://www.youtube.com/embed/DLzxrzFCyOs?autoplay=1'
+                frameBorder='0' />
+            </Tooltip>
+          </div>
+
+          <div>
+            <Tooltip
+              tooltip={<img
+                alt=''
+                className={classes.CatTooltip}
+                src='https://i.chzbgr.com/full/9112752128/h94C6655E/' />}>
+              <img
+                alt=''
+                src='https://boygeniusreport.files.wordpress.com/2016/05/scared-surprised-cat-face.jpg?quality=98&strip=all&w=782' />
+            </Tooltip>
+          </div>
+        </div>
+
+        <div className={classes.Tooltips}>
+          <div>
+            <Tooltip
+              background='skyblue'
+              fill='white'
+              className={classes.DarkTooltip}>Dark Tooltip!</Tooltip>
+            <span style={{ zIndex: -1 }}>This one's a dark tooltip!</span>
+          </div>
+          <div>
+            <Tooltip
+              className={classes.OrangeTooltip}
+              background='#ff7043'>
+              I just don't know what other colors to use!
+              <br />
+              Hope this component will be of any use to you, cheers! If you find any bugs, just let me know at:
+              <br />
+              <strong>
+                <a
+                  style={{ color: 'white' }}
+                  href='https://github.com/rmolinamir'
+                  target='_blank'
+                  rel='noopener noreferrer'>
+                  https://github.com/rmolinamir
+                </a>
+              </strong>
+            </Tooltip>
+          </div>
+        </div>
+      </div>
       <div className={classes.Docs}>
-        <h1 className={classes.Title}>react-png-tooltip</h1>
-        <p>A graphical user interface element that will render when the user hovers over (optional) or clicks an item, a tooltip may appear with information about said item. Hover or click over the icon below!</p>
         <div>
           <span>Try hovering or clicking the icon!</span>
           <Tooltip>
@@ -188,108 +288,6 @@ const example = () => {
 
 export default example`}
         </SyntaxHighlighter>
-        <br />
-        <h2 className={classes.Header}>Showcase</h2>
-      </div>
-      <div className={classes.App}>
-        <div className={classes.Tooltips}>
-          <div>
-            <Tooltip
-              shouldDisableClick background='indianred'
-              className={classes.IndianredTooltip}>With the clicking functionality disabled!</Tooltip>
-            <div className={classes.Anchor}>
-              <span className={classes.Description}>This one's an indianred tooltip with <code>shouldDisableClick</code> active.</span>
-            </div>
-          </div>
-          <div>
-            <Tooltip
-              shouldDisableHover background='darkblue'
-              className={classes.GoldTooltip}>The icon and the windows can have different colours though!</Tooltip>
-            <div className={classes.Anchor}>
-              <span className={classes.Description}>This tooltip has <code>shouldDisableHover</code> active.</span>
-            </div>
-          </div>
-          <div>
-            <Tooltip>
-              <img src='https://media0.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif?cid=3640f6095c64ef4962526264678e1c1c' alt='' />
-              Accurate representation of me while programming this component.
-              <br />
-              <strong>(This is just to show you anything goes inside the tooltips)</strong>
-            </Tooltip>
-          </div>
-        </div>
-
-        <div className={classes.Tooltips}>
-          <div>
-            <Tooltip>
-              <strong>This is the default color setting for the tooltips.</strong>
-              <br />
-              Absolutely positioned in the center. The tooltip will always render to wherever it has more space.
-              If on mobile it'll tend to be centered inside the viewport.
-            </Tooltip>
-          </div>
-          <div>
-            <Tooltip
-              className={classes.OrangeTooltip}
-              tooltip={<button className={classes.CustomButton}>You can also use your own buttons as props.</button>}>
-              And it still works as you'd expect!
-            </Tooltip>
-          </div>
-          <div>
-            <Tooltip
-              className={classes.OrangeTooltip}
-              background='#ff7043'>
-              <iframe
-                title='rickroll'
-                type='text/html'
-                width='100%'
-                height='400px'
-                src='https://www.youtube.com/embed/DLzxrzFCyOs?autoplay=1'
-                frameBorder='0' />
-            </Tooltip>
-          </div>
-
-          <div>
-            <Tooltip
-              tooltip={<img
-                alt=''
-                className={classes.CatTooltip}
-                src='https://i.chzbgr.com/full/9112752128/h94C6655E/' />}>
-              <img
-                alt=''
-                src='https://boygeniusreport.files.wordpress.com/2016/05/scared-surprised-cat-face.jpg?quality=98&strip=all&w=782' />
-            </Tooltip>
-          </div>
-        </div>
-
-        <div className={classes.Tooltips}>
-          <div>
-            <Tooltip
-              background='skyblue'
-              fill='white'
-              className={classes.DarkTooltip}>Dark Tooltip!</Tooltip>
-            <span style={{ zIndex: -1 }}>This one's a dark tooltip!</span>
-          </div>
-          <div>
-            <Tooltip
-              className={classes.OrangeTooltip}
-              background='#ff7043'>
-              I just don't know what other colors to use!
-              <br />
-              Hope this component will be of any use to you, cheers! If you find any bugs, just let me know at:
-              <br />
-              <strong>
-                <a
-                  style={{ color: 'white' }}
-                  href='https://github.com/rmolinamir'
-                  target='_blank'
-                  rel='noopener noreferrer'>
-                  https://github.com/rmolinamir
-                </a>
-              </strong>
-            </Tooltip>
-          </div>
-        </div>
       </div>
     </>
   )
