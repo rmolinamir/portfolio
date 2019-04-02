@@ -25,7 +25,10 @@ const RenderNavigationItems = React.memo((props) => {
           <NavigationItem {...props} link='/projects'>
             Projects
           </NavigationItem>
-          <NavigationItem {...props} link='/codelab'>
+          <NavigationItem
+            {...props}
+            exact={false}
+            link='/codelab'>
             Code Lab
           </NavigationItem>
           <NavigationItem {...props} link='/skills'>
@@ -66,7 +69,10 @@ const RenderNavigationItems = React.memo((props) => {
                 <NavigationItem {...props} link='/projects'>
                   Projects
                 </NavigationItem>
-                <NavigationItem {...props} link='/codelab'>
+                <NavigationItem
+                  {...props}
+                  exact={false}
+                  link='/codelab'>
                   Code Lab
                 </NavigationItem>
                 <NavigationItem {...props} link='/skills'>

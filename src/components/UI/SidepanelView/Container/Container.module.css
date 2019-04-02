@@ -1,11 +1,11 @@
 .Wrapper {
   background-color: inherit;
   color: inherit;
-  margin: 0 auto;
+  margin: 0;
   border-left: 1px solid transparent;
-  width: calc(100% - 300px);
+  max-width: calc(100% - 300px);
+  width: 100%;
   padding-left: 0px;
-  overflow: hidden;
   position: relative;
 }
 
@@ -14,7 +14,7 @@
   top: 0;
   left: 0;
   content: '';
-  width: 100%;
+  width: auto;
   height: 100%;
   border-left: 1px solid currentColor;
   opacity: 0.2;
@@ -30,7 +30,9 @@
 
 @media (max-width: 920px) {
   .Wrapper {
+    overflow-x: hidden;
     border-left: 0;
+    max-width: 100%;
     width: 100%;
   }
 

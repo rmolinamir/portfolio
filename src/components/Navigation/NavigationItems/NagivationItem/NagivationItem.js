@@ -17,7 +17,7 @@ const navigationItem = (props) => {
   return (
     <li className={navItemClass.join(' ')}>
       <NavLink
-        exact={true}
+        exact={props.exact !== undefined ? props.exact : true}
         className={props.className} // Desktop only
         activeClassName={classes.Active}
         onClick={props.onClick}
@@ -30,6 +30,7 @@ const navigationItem = (props) => {
 
 navigationItem.propTypes = {
   className: PropTypes.string,
+  exact: PropTypes.bool,
   link: PropTypes.string,
   color: PropTypes.string,
   onClick: PropTypes.func,

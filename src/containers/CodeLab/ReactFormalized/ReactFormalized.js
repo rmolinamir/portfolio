@@ -85,21 +85,13 @@ const reactFormalized = (props) => {
 
   return (
     <div className={classes.App}>
-      <Button
-        style={{
-          position: 'sticky',
-          top: '0',
-          left: '0',
-          borderRadius: '0',
-          zIndex: '5'
-        }}
-        blockButton
-        button={!theme === 'light' ? 'light' : 'dark'}
-        onClick={changeThemeHandler}>Change Theme</Button>
-      <div style={{
-        margin: '0 36px'
-      }}>
+      <div>
         <h1 className={classes.Title}>react-formalized</h1>
+        <br />
+        <Button
+          blockButton
+          button={!theme === 'light' ? 'light' : 'dark'}
+          onClick={changeThemeHandler}>Change Theme</Button>
         <h2 className={classes.Header}>Examples</h2>
         <ul className={classes.List}>
           <li className={classes.Item}><a className={classes.Anchor} href='#elements'>Input Elements</a></li>
@@ -128,7 +120,7 @@ const reactFormalized = (props) => {
                 maxLength: 10
               }}
               placeholder='Username' />
-            <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 <Input
   validation={{
     required: true,
@@ -143,7 +135,7 @@ const reactFormalized = (props) => {
                 minLength: 3
               }}
               placeholder='Email' />
-            <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 <Input
   type='email'
   validation={{
@@ -169,7 +161,7 @@ const reactFormalized = (props) => {
               }}
               valueType='Password'
               placeholder='Password (with a show/hide toggle)' />
-            <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 <Input
   type='password'
   validation={{
@@ -202,7 +194,7 @@ const reactFormalized = (props) => {
               elementConfig={{
                 maxLength: 2000
               }} />
-            <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 <Input
   type='textarea'
   placeholder='TextArea'
@@ -232,7 +224,7 @@ const reactFormalized = (props) => {
               elementConfig={{
                 maxLength: 150
               }} />
-            <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 <Input
   disabled
   validation={{
@@ -269,7 +261,7 @@ const reactFormalized = (props) => {
               indicatorClassName={classes.Indicator}
               step={25}
               value='99' />
-            <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 <Range
   minValue='100'
   maxValue='350' />
@@ -319,7 +311,7 @@ const reactFormalized = (props) => {
                 '',
                 'Option A',
                 'Obtion B']} />
-            <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 <Select
   placeholder='Select'
   datalist={[
@@ -355,7 +347,7 @@ const reactFormalized = (props) => {
             <Numeric />
             <Numeric value={50} />
             <Numeric shouldNotType value={5} />
-            <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 <Numeric />
 
 <Numeric value={50} />
@@ -391,7 +383,7 @@ const reactFormalized = (props) => {
               <Checkbox label='Bubble F' />
               <Checkbox label='Bubble G' />
             </CheckboxGroup>
-            <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 /**
 * Default Checkboxes
 */
@@ -496,7 +488,7 @@ const reactFormalized = (props) => {
                 type='submit'
                 blockButton button='danger'>Sign up</Button>
             </Form>
-            <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 const onChangeHandler = (formState) => {
   console.log('app onChangeHandler formState', formState)
 }
@@ -615,7 +607,7 @@ const onSubmitHandler = (event, formState) => {
                 type='submit'
                 blockButton button='danger'>Submit</Button>
             </Form>
-            <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 const onChangeHandler = (formState) => {
   console.log('app onChangeHandler formState', formState)
 }
@@ -699,7 +691,7 @@ const onSubmitHandler = (event, formState) => {
                   </Form>
                 </div>
               </Provider>
-              <SyntaxHighlighter language='javascript' style={theme === 'light' ? prism : atomDark}>{`
+              <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
 <Modal
   open={bIsModalOpen}
   closeModal={() => setIsModalOpen(false)}>
@@ -754,4 +746,5 @@ export default withContexts(
   },
   [
     Provider // react-formalized provider
-  ])
+  ]
+)

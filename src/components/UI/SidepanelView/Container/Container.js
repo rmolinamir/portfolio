@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // CSS
 import classes from './Container.module.css'
-// JSX
 
 const container = (props) => {
   return (
