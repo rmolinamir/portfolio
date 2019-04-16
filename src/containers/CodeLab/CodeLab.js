@@ -9,6 +9,7 @@ import { Wrapper, Sidepanel, Container } from '../../components/UI/SidepanelView
 import List, { Item } from '../../components/CodeLab/PackagesList/PackagesList'
 import { NavLink, Route, Redirect, Switch, withRouter } from 'react-router-dom'
 import Default from './Default/Default'
+import HeroSlider from './HeroSlider/HeroSlider'
 import ReactFormalized from './ReactFormalized/ReactFormalized'
 import ReactPNGButton from './ReactPNGButton/ReactPNGButton'
 import ReactPNGTooltip from './ReactPNGTooltip/ReactPNGTooltip'
@@ -72,6 +73,7 @@ const codeLab = (props) => {
       <Container>
         <Switch>
           <Route exact path={props.match.path} component={Default} />
+          <Route exact path={`${props.match.path}/hero-slider`} component={HeroSlider} />
           <Route exact path={`${props.match.path}/react-formalized`} component={ReactFormalized} />
           <Route exact path={`${props.match.path}/react-png-button`} component={ReactPNGButton} />
           <Route exact path={`${props.match.path}/react-png-tooltip`} component={ReactPNGTooltip} />

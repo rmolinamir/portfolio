@@ -1,27 +1,27 @@
-import * as actionTypes from './actionTypes';
+import * as actionTypes from './actionTypes'
 // Worker function
-import { isMobile } from '../../shared/isMobile';
+import { isMobile } from '../../shared/isMobile'
 // Polyfill
-import smoothscroll from 'smoothscroll-polyfill';
+import smoothscroll from 'smoothscroll-polyfill'
 
 // Applies smoothscroll polyfill if on a mobile device.
 if (isMobile()) {
-    smoothscroll.polyfill();
+  smoothscroll.polyfill()
 }
 
 export const mobileActions = {
-    mobileCheck: () => {
-        return {
-            type: actionTypes.MOBILE_CHECK_REDUCER,
-            isMobile: isMobile()
-        }
+  mobileCheck: () => {
+    return {
+      type: actionTypes.MOBILE_CHECK_REDUCER,
+      isMobile: isMobile()
     }
+  }
 }
 
 export const mobileCreators = {
-    mobileCheckInit: () => {
-        return {
-            type: actionTypes.MOBILE_SAGA_INIT
-        }
+  mobileCheckInit: () => {
+    return {
+      type: actionTypes.MOBILE_SAGA_INIT
     }
+  }
 }

@@ -1,19 +1,19 @@
-import * as actionTypes from '../actions/actionTypes';
+import * as actionTypes from '../actions/actionTypes'
 
-import { updateObject } from '../../shared/utility';
+import { updateObject } from '../../shared/utility'
 
 const initialState = {
-    isMobile: null
+  isMobile: null
 }
 
 const mobileReducer = (state = initialState, action) => {
-    switch(action.type) {
-        case actionTypes.MOBILE_CHECK_REDUCER:
-            return updateObject(state, {isMobile: action.isMobile});
-    default: 
-        // do nothing
-    }
-    return state
+  switch (action.type) {
+    case actionTypes.MOBILE_CHECK_REDUCER:
+      return updateObject(state, { isMobile: action.isMobile })
+    default:
+      // do nothing
+  }
+  return state
 }
 
-export default mobileReducer;
+export default mobileReducer

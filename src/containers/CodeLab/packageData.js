@@ -1,4 +1,9 @@
 export const packagesData = {
+  'hero-slider': {
+    description: 'A hero slider component inline with how you would expect most React components to work. Includes autoplay, lazy loaded backgrounds, support for touch swiping and direction to change slides, multiple navs, settings, memoization, event callbacks, among other features.',
+    github: 'https://github.com/rmolinamir/hero-slider',
+    documentation: '/codelab/hero-slider'
+  },
   'react-formalized': {
     description: 'Collection of pre-styled JSX elements based on the HTML Form Elements. Offers an easy way to collect form data and/or input values.',
     github: 'https://github.com/rmolinamir/react-formalized',

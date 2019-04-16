@@ -1,9 +1,9 @@
-import { put } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects'
 
-import { mobileActions } from '../actions/mobile';
+import { mobileActions } from '../actions/mobile'
 
 export const mobileSagas = {
-    mobileCheck: function* () {
-        yield put(mobileActions.mobileCheck())
-    }
+  mobileCheck: function * () {
+    yield put(mobileActions.mobileCheck())
+  }
 }

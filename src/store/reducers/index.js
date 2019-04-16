@@ -1,3 +1,3 @@
-import mobileReducer from './mobile';
+import mobileReducer from './mobile'
 
-export { mobileReducer };
+export { mobileReducer }
