@@ -12,6 +12,7 @@ import ZoomSlider from './Sliders/ZoomSlider/ZoomSlider'
 import SlidesChildrenSlider from './Sliders/SlidesChildrenSlider/SlidesChildrenSlider'
 import NavbarSlider from './Sliders/NavbarSlider/NavbarSlider'
 import ButtonsSlider from './Sliders/ButtonsSlider/ButtonsSlider'
+import AutoplayButtonSlider from './Sliders/AutoplayButtonSlider/AutoplayButtonSlider'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { atomDark, prism } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import Example from '../../../components/CodeLab/Example/Example'
@@ -33,6 +34,7 @@ const heroSlider = (props) => {
           <li className={classes.Item}><a className={classes.Anchor} href='#blend'>Blend Mode Slider</a></li>
           <li className={classes.Item}><a className={classes.Anchor} href='#navbar'>Navbar Slider</a></li>
           <li className={classes.Item}><a className={classes.Anchor} href='#buttons'>Custom Buttons Slider</a></li>
+          <li className={classes.Item}><a className={classes.Anchor} href='#autoplay'>Autoplay Button Slider</a></li>
         </ul>
       </div>
       <div className={classes.Examples}>
@@ -568,6 +570,74 @@ const heroSlider = (props) => {
       backgroundColor: '#8A8A8A',
       maskBackgroundBlendMode: 'luminosity',
       backgroundImage: giauPass,
+      backgroundAnimation: 'fade'
+    }} />
+
+  <Nav />
+</HeroSlider>`}
+            </SyntaxHighlighter>
+          </Example>
+
+          <Example title='Autoplay Button Slider' id='autoplay'>
+            <AutoplayButtonSlider />
+            <SyntaxHighlighter language='jsx' style={theme === 'light' ? prism : atomDark}>{`
+<HeroSlider
+  slidingAnimation='left_to_right'
+  orientation='horizontal'
+  set
+  initialSlide={1}
+  style={{
+    backgroundColor: '#000'
+  }}
+  settings={{
+    slidingDuration: 500,
+    slidingDelay: 100,
+    shouldAutoplay: true,
+    shouldDisplayButtons: false,
+    autoplayDuration: 2000,
+    height: '80vh',
+    color: '#FFF'
+  }}>
+  <Wrapper>
+    <Title>
+      Autoplay Button Slider
+    </Title>
+  </Wrapper>
+  <AutoplayButton />
+
+  <Slide
+    shouldRenderMask
+    background={{
+      backgroundColor: '#8A8A8A',
+      maskBackgroundBlendMode: 'luminosity',
+      backgroundImage: kyoto,
+      backgroundAnimation: 'fade'
+    }} />
+
+  <Slide
+    shouldRenderMask
+    background={{
+      backgroundColor: '#8A8A8A',
+      maskBackgroundBlendMode: 'luminosity',
+      backgroundImage: tenryuJiTemple,
+      backgroundAnimation: 'fade'
+    }} />
+
+  <Slide
+    shouldRenderMask
+    background={{
+      backgroundColor: '#8A8A8A',
+      maskBackgroundBlendMode: 'luminosity',
+      backgroundImage: hakone,
+      backgroundAnimation: 'fade'
+    }} />
+
+  <Slide
+    shouldRenderMask
+    background={{
+      backgroundColor: '#8A8A8A',
+      maskBackgroundBlendMode: 'luminosity',
+      backgroundImage: byodoInTemple,
       backgroundAnimation: 'fade'
     }} />
 

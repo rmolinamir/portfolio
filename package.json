@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "hero-slider": "^1.0.5",
+    "hero-slider": "^1.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-formalized": "^1.1.0",
