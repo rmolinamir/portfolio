@@ -7,19 +7,6 @@ import Class from '../../../components/AboutMe/Code/Class/Class'
 import Method from '../../../components/AboutMe/Code/Method/Method'
 import Export from '../../../components/AboutMe/Code/Export/Export'
 
-const minHeightEquation = (windowWidth = window.innerWidth) => {
-  const minHeight = (
-    1.2263052164879462e+004 * Math.pow(windowWidth, 0) +
-    -4.5231303712208273e+001 * Math.pow(windowWidth, 1) +
-    7.5546487662990325e-002 * Math.pow(windowWidth, 2) +
-    -6.4047963254580177e-005 * Math.pow(windowWidth, 3) +
-    2.8971976289126083e-008 * Math.pow(windowWidth, 4) +
-    -6.6610627926403397e-012 * Math.pow(windowWidth, 5) +
-    6.1148983275028627e-016 * Math.pow(windowWidth, 6)
-  )
-  return minHeight * 1.05
-}
-
 class Code extends Component {
   constructor(props) {
     super(props)
@@ -27,15 +14,14 @@ class Code extends Component {
       import: React.createRef(),
       class: React.createRef(),
       education: React.createRef(),
-      tools: React.createRef(),
+      stack: React.createRef(),
       skills: React.createRef(),
       export: React.createRef()
     }
   }
 
   state = {
-    isInViewport: {},
-    minHeight: minHeightEquation()
+    isInViewport: {}
   }
 
   isInViewport = (offset = 100) => {
@@ -50,12 +36,6 @@ class Code extends Component {
           isInViewport: setStateObject
         })
       }
-    })
-  }
-
-  recalculateMinHeight = () => {
-    this.setState({
-      minHeight: minHeightEquation()
     })
   }
 
@@ -82,16 +62,16 @@ class Code extends Component {
       },
       method: {
         education: {
-          method: 'details',
+          method: 'renderEducation',
           argument: 'Education'
         },
         skills: {
-          method: 'details',
+          method: 'renderSkills',
           argument: 'Skills'
         },
-        tools: {
-          method: 'details',
-          argument: 'Tools'
+        stack: {
+          method: 'renderStack',
+          argument: 'Stack'
         }
       },
       export: {
@@ -101,92 +81,119 @@ class Code extends Component {
     return (
       <div className={classes.Wrapper}>
         <div
-          style={{
-            minHeight: this.state.minHeight
-          }}
           className={classes.Container}>
-          <div ref={this.isInViewportElements.import}>
-            {this.state.isInViewport.import && (
-              <Import defaultImport={curriculumVitae.import.defaultImport} import={curriculumVitae.import.import} package={curriculumVitae.import.package} />
-            )}
+          <div
+            ref={this.isInViewportElements.import}
+            style={{
+              opacity: this.state.isInViewport.import ? 1 : 0
+            }}
+          >
+            <Import
+              shouldStartTyping={this.state.isInViewport.import}
+              defaultImport={curriculumVitae.import.defaultImport}
+              import={curriculumVitae.import.import}
+              package={curriculumVitae.import.package} />
           </div>
-          <div ref={this.isInViewportElements.class}>
-            {this.state.isInViewport.class && (
-              <Class name={curriculumVitae.class.name} extends={curriculumVitae.class.extends}>
-                <div ref={this.isInViewportElements.education}>
-                  {this.state.isInViewport.education && (
-                    <Method method={curriculumVitae.method.education.method} argument={curriculumVitae.method.education.argument}>
-                      <span>
-                        <div style={{ display: 'block', marginLeft: 0 }}>
-                          Major in <span className={classes.String}>Mechanical Engineering</span>, I ended up liking to code more
-                          than I like to build parts nearing the end of my major. I'm very passionate about computer science, with strong
-                          technical, commercial and interpersonal skills, allowing me to work as a team and successfully complete any project.
-                        </div>
-                        <br />
-                        <div style={{ display: 'block', marginLeft: 0 }}>
-                          For more information about my previous projects, you may go to the projects tab down at the bottom.
-                        </div>
-                      </span>
-                    </Method>
-                  )}
-                </div>
-                <div ref={this.isInViewportElements.skills}>
-                  {this.state.isInViewport.skills && (
-                    <Method method={curriculumVitae.method.skills.method} argument={curriculumVitae.method.skills.argument}>
-                      <span>
-                        <div style={{ display: 'block', marginLeft: 0 }}>
-                            I'm adept at Fullstack Development, Backend Procceses, Data Visualization, and Vector Illustration.
-                            I'm also profficient with Data Analytics and Engineering software such as SolidWorks, AutoCAD, and such,
-                            due to my major in Mechanical Engineering.
-                        </div>
-                        <br />
-                        <div style={{ display: 'block', marginLeft: 0 }}>
-                            I program in the Unreal Engine software as a side hobby. If you want more information, you may go
-                            to the skills tab by clicking the link down at the bottom.
-                        </div>
-                      </span>
-                    </Method>
-                  )}
-                </div>
-                <div ref={this.isInViewportElements.tools}>
-                  {this.state.isInViewport.tools && (
-                    <Method method={curriculumVitae.method.tools.method} argument={curriculumVitae.method.tools.argument}>
-                      <span>
-                        <div style={{ display: 'block', marginLeft: 0 }}>
-                            When it comes to frontend development, I find myself using React.js almost entirely (often using Redux,
-                            Saga, Router-DOM, Next.js, etc.).
-                        </div>
-                        <br />
-                        <div style={{ display: 'block', marginLeft: 0 }}>
-                            If I'm doing anything backend related, my go-to software are: MongoDB, Firebase,
-                            Express, Node.js. It all depends on the context.
-                        </div>
-                        <br />
-                        <div style={{ display: 'block', marginLeft: 0 }}>
-                            Nowadays I'm always using Webpack with Babel, and tons of other loaders
-                            (create-react-app for the win though).
-                        </div>
-                        <br />
-                        <div style={{ display: 'block', marginLeft: 0 }}>
-                            Amongst my programming languages, I focus on JavaScript, ES6, Next-Gen JS, HTML, CSS,
-                            jQuery (practically no more jQuery nowadays though), and very rarely Bootstrap 3 & 4 for quick projects.
-                            Aside from JavaScript I have basic knowledge of C# and Java, and a somewhat intermediate knowledge
-                            of  C++ due to the Unreal Engine.
-                        </div>
-                        <br />
-                        <div style={{ display: 'block', marginLeft: 0 }}>
-                            I do hosting and deployments almost entirely through Firebase and/or Heroku. Many people dislike
-                            Firebase, but I find it really useful for understaffed projects, small ones, or projects that need to be done quick.
-                        </div>
-                      </span>
-                    </Method>
-                  )}
-                </div>
-              </Class>
-            )}
+          <div
+            ref={this.isInViewportElements.class}
+            style={{
+              opacity: this.state.isInViewport.class ? 1 : 0
+            }}
+          >
+            <Class
+              shouldStartTyping={this.state.isInViewport.class}
+              name={curriculumVitae.class.name}
+              extends={curriculumVitae.class.extends}
+            >
+              <div ref={this.isInViewportElements.education}>
+                <Method
+                  shouldStartTyping={this.state.isInViewport.education}
+                  method={curriculumVitae.method.education.method}
+                  argument={curriculumVitae.method.education.argument}
+                >
+                  <span>
+                    <div style={{ display: 'block', marginLeft: 0 }}>
+                      Major in <span className={classes.String}>Mechanical Engineering</span>, I ended up liking to code more
+                      than I liked engineering nearing the end of my major, so here I am! I'm very passionate about computer science,
+                      with strong technical, commercial and interpersonal skills, allowing me to work as a team and successfully
+                      complete any project.
+                    </div>
+                    <br />
+                    <div style={{ display: 'block', marginLeft: 0 }}>
+                      For more information about my previous projects, you may go to the projects tab down at the bottom.
+                    </div>
+                  </span>
+                </Method>
+              </div>
+              <div
+                ref={this.isInViewportElements.skills}
+                style={{
+                  opacity: this.state.isInViewport.skills ? 1 : 0
+                }}
+              >
+                <Method
+                  shouldStartTyping={this.state.isInViewport.skills}
+                  method={curriculumVitae.method.skills.method}
+                  argument={curriculumVitae.method.skills.argument}
+                >
+                  <span>
+                    <div style={{ display: 'block', marginLeft: 0 }}>
+                        I'm well versed with Fullstack/Software Development, Data Visualization, and Vector Illustrations.
+                        I'm also proficient with Data Analytics and Engineering software such as SolidWorks, FluidSIM & AutoCAD,
+                        due to my major in Mechanical Engineering.
+                    </div>
+                    <br />
+                    <div style={{ display: 'block', marginLeft: 0 }}>
+                        I program in the Unreal Engine software as a side hobby occasionally. If you want more information, you may go
+                        to the skills tab by clicking the link down at the bottom.
+                    </div>
+                  </span>
+                </Method>
+              </div>
+              <div
+                ref={this.isInViewportElements.stack}
+                style={{
+                  opacity: this.state.isInViewport.stack ? 1 : 0
+                }}
+              >
+                <Method
+                  shouldStartTyping={this.state.isInViewport.stack}
+                  method={curriculumVitae.method.stack.method}
+                  argument={curriculumVitae.method.stack.argument}
+                >
+                  <div style={{ display: 'block', marginLeft: 0 }}>
+                    Some of the tools I commonly use:
+                    <br />
+                    <ul style={{
+                      listStyle: 'circle',
+                      margin: '8px 0 0',
+                      padding: 0,
+                      paddingLeft: '24px'
+                    }}>
+                      <li>React.js</li>
+                      <li>MongoDB</li>
+                      <li>Google's Firebase</li>
+                      <li>Node.js</li>
+                      <li>Express</li>
+                      <li>TypeScript</li>
+                      <li>CSS3/Sass</li>
+                      <li>C++</li>
+                    </ul>
+                  </div>
+                </Method>
+              </div>
+            </Class>
           </div>
-          <div ref={this.isInViewportElements.export}>
-            {this.state.isInViewport.export && <Export export={curriculumVitae.export.export} />}
+          <div
+            ref={this.isInViewportElements.export}
+            style={{
+              opacity: this.state.isInViewport.export ? 1 : 0
+            }}
+          >
+            <Export
+              shouldStartTyping={this.state.isInViewport.export}
+              export={curriculumVitae.export.export}
+            />
           </div>
         </div>
       </div>

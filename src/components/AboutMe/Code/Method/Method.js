@@ -9,17 +9,21 @@ const method = (props) => {
   return (
     <div className={classes.Container}>
       <Typist
+        startDelay={props.shouldStartTyping ? 60000000 : 0}
         avgTypingDelay={0.25}
         stdTypingDelay={5}
         cursor={{ show: false }}>
-        <div className={classes.Method}><span className={classes.Const}>const</span> {props.method} <span style={{ fontSize: '14px' }} className={classes.Const}>=</span> <span> (<span className={classes.Argument}>{props.argument}</span>)</span> <span>=></span> {'{'} </div>
+        <div className={classes.Method}>
+          {/* <span className={classes.Const}>const</span> */}
+          {props.method} <span style={{ fontSize: '14px' }} className={classes.Const}>=</span> <span> (<span className={classes.Argument}>{props.argument}</span>)</span> <span>=></span> {'{'} </div>
       </Typist>
       <div className={classes.Wrapper}>
         <code>
-          <span className={classes.Return}>return {'('}</span> <div className={classes.Content}>{props.children}</div> <span className={classes.Return}>{')'}<span style={{ color: '#FFF' }} /></span>
+          <span className={classes.Return}>return {'('}</span> <div className={classes.Content}>{props.children}</div> <span className={classes.Return}>{');'}<span style={{ color: '#FFF' }} /></span>
         </code>
       </div>
       <Typist
+        startDelay={props.shouldStartTyping ? 60000000 : 0}
         avgTypingDelay={0.25}
         stdTypingDelay={5}
         cursor={{ show: false }}>
@@ -32,6 +36,7 @@ const method = (props) => {
 method.propTypes = {
   method: PropTypes.string,
   argument: PropTypes.string,
+  shouldStartTyping: PropTypes.bool,
   children: PropTypes.any
 }
 
