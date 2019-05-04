@@ -20,7 +20,7 @@
 
 .Logo img {
   object-fit: contain;
-  animation: Logo-spin infinite 20s linear;
+  animation: logo-spin infinite 50s linear;
 }
 
 .Logo span {
@@ -41,7 +41,7 @@
   }
 }
 
-@keyframes Logo-spin {
+@keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }

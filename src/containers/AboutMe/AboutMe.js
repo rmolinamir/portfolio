@@ -27,7 +27,7 @@ const aboutMe = () => {
   const pageContent = (
     <>
       <div className={classes.Container}>
-        <IntroHeader intro='Hey! Thanks for visiting my site. Below is a small introduction about me, where I talk about my education, skills, and what tools/stacks I commonly find myself using. For more detailed information you may check out the other tabs.'>About Me</IntroHeader>
+        <IntroHeader intro='Greetings! Thanks for visiting my site. Below is a small introduction about me, where I talk about my education, skills, and what stack I commonly use. For more detailed information you may check out the other tabs.'>About Me</IntroHeader>
         <div className={classes.Profile}>
           <div className={classes.Portrait}>
             <div className={classes.Content}>
@@ -51,7 +51,10 @@ const aboutMe = () => {
   )
   return (
     <div className={classes.Wrapper}>
-      <Parallax image={parallaxImage} socialMediaButtons={socialMediaButtons}>
+      <Parallax
+        image={parallaxImage}
+        socialMediaButtons={socialMediaButtons}
+      >
         {pageContent}
       </Parallax>
     </div>

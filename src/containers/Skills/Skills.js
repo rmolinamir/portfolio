@@ -10,6 +10,11 @@ import { Icon } from 'react-svg-library'
 class Skills extends Component {
   state = {
     skills: {
+      reactjs: {
+        name: 'React.js',
+        icon: <Icon icon='react.js' />,
+        percentage: '75%'
+      },
       javascript: {
         name: 'JavaScript',
         icon: <Icon icon='javascript' />,
@@ -19,11 +24,6 @@ class Skills extends Component {
         name: 'CSS 3',
         icon: <Icon icon='css' />,
         percentage: '85%'
-      },
-      reactjs: {
-        name: 'React.js',
-        icon: <Icon icon='react.js' />,
-        percentage: '75%'
       },
       nodejs: {
         name: 'Node.js',

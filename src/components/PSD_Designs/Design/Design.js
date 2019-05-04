@@ -95,6 +95,7 @@ class Design extends Component {
             </InfoSection>
           </div>
           <Modal
+            center
             className={classes.Modal}
             open={this.state.bIsModalOpen}
             closeModal={this.closeModal}>
