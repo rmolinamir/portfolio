@@ -51,7 +51,11 @@ class Design extends Component {
         return (
           <Slide key={index}>
             <div>
-              <ImageFadeIn noWrapper src={image} />
+              <ImageFadeIn
+                noWrapper
+                src={image}
+                draggable='false'
+              />
             </div>
           </Slide>
         )
@@ -99,7 +103,10 @@ class Design extends Component {
             className={classes.Modal}
             open={this.state.bIsModalOpen}
             closeModal={this.closeModal}>
-            <Slider style={{ padding: '12px 0' }} showOnlyActive disableNav>
+            <Slider
+              alignItems
+              disableNav
+            >
               {this.props.images.map((image, index) => {
                 return (
                   <Slide key={index}>

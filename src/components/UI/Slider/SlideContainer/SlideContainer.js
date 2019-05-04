@@ -12,7 +12,10 @@ const slideContainer = (props) => {
     containerClasses.push(classes.Hidden)
   }
   return (
-    <div style={props.style} className={containerClasses.join(' ')}>
+    <div
+      style={props.style}
+      className={containerClasses.join(' ')}
+    >
       {props.children}
     </div>
   )

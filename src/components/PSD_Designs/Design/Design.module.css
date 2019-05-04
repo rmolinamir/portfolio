@@ -168,6 +168,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 
 .FullscreenImage {
@@ -181,9 +182,12 @@
   vertical-align: middle;
   border: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 .Modal {
   color: #FFF;
   background-color: transparent;
+  width: 95%;
+  margin: 0 auto;
 }

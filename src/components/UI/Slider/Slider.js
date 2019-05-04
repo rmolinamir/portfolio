@@ -20,7 +20,8 @@ class Slider extends Component {
     showOnlyActive: PropTypes.bool,
     renderOnlyActive: PropTypes.bool,
     disableNav: PropTypes.bool,
-    progressBar: PropTypes.bool
+    progressBar: PropTypes.bool,
+    alignItems: PropTypes.bool
   }
 
   constructor(props) {
@@ -29,26 +30,22 @@ class Slider extends Component {
     this.state = {
       activeSlide: props.activeSlide > 0 ? props.activeSlide : 0,
       style: {
-        transform: 'translateX(0px)'
-      },
-      bOrientationChanged: false
+        transform: 'translateX(0px)',
+        transition: 'transform ease 0ms' // To avoid animations on setup
+      }
     }
   }
 
   setupSlider = () => {
     const sliderWidth = this.mySlider.current.clientWidth // Pointer to the slider's reference width
+    const translateAmount = this.props.activeSlide * sliderWidth
     const style = {
       transition: 'transform ease 0ms', // To avoid animations on setup
-      transform: `translateX(-${(this.props.activeSlide) * sliderWidth}px)`
+      transform: `translateX(-${this.props.activeSlide * sliderWidth}px)`
     }
     this.setState({
-      style: style
-    })
-  }
-
-  setOrientationChanged = () => {
-    this.setState({
-      bOrientationChanged: true
+      style,
+      translateAmount
     })
   }
 
@@ -57,26 +54,37 @@ class Slider extends Component {
     this.setState(prevState => {
       // "Pointer" to the slider's reference width
       const sliderWidth = this.mySlider.current.clientWidth
+      const translateAmount = prevState.activeSlide * sliderWidth
       const style = {
         transition: 'transform ease 0ms', // To avoid animations on setup
-        transform: `translateX(-${(prevState.activeSlide) * sliderWidth}px)`
+        transform: `translateX(-${translateAmount}px)`
       }
       return {
-        style: style,
-        bOrientationChanged: false
+        style,
+        translateAmount
       }
     })
   }
 
   onTranslateHandler = (type, toSlide) => {
+    const { activeSlide } = this.state
     this.setState(prevState => {
       let operator
       // Defining the operator depending on which button was pressed
       switch (type) {
         case 'prev':
+          // If the activeSlide is the first slide, then return.
+          if (activeSlide <= 0) {
+            return
+          }
           operator = -1
           break
         case 'next':
+          // If the activeSlide is the last slide, then return.
+          const amountOfSlides = this.props.children.length
+          if (activeSlide > amountOfSlides) {
+            return
+          }
           operator = +1
           break
         default:
@@ -93,12 +101,165 @@ class Slider extends Component {
        * the amount of children, then it will return and not translate.
        */
       if (nextActiveSlide + 1 > this.props.children.length || isNaN(nextActiveSlide)) { return }
-      const style = { transform: `translateX(-${(nextActiveSlide) * sliderWidth}px)` }
+      const translateAmount = nextActiveSlide * sliderWidth
+      const style = {
+        transform: `translateX(-${translateAmount}px)`
+      }
       return {
         activeSlide: nextActiveSlide,
-        style: style
+        style: style,
+        translateAmount,
+        isTranslating: true
       }
+    /**
+     * During translation, every other possible way of translating
+     * must be disabled to avoid jankiness and bugs.
+     */
+    }, () => {
+      const translatingTimeoutId = setTimeout(() => {
+        this.setState({
+          isTranslating: false
+        })
+      }, 500 * 1.2)
+      this.setState({
+        translatingTimeoutId
+      })
     })
+  }
+
+  initialTouchState = {
+    initialX: undefined,
+    initialY: undefined,
+    currentX: undefined,
+    currentY: undefined,
+    finalX: undefined,
+    finalY: undefined
+  }
+
+  setTouchState = (touchState) => {
+    this.setState({
+      touchState
+    })
+  }
+
+  /**
+   * `onTouchStartHandler` sets the initial coordinates of the touch event.
+   */
+  onTouchStartHandler = (event) => {
+    const {
+      touchState,
+      isTranslating
+    } = this.state
+    if (isTranslating) return
+    const initialX = event.touches[0].clientX
+    const initialY = event.touches[0].clientY
+    this.setTouchState({
+      ...touchState,
+      initialX,
+      initialY
+    })
+  }
+
+  /**
+   * `onTouchMoveHandler` sets the current coordinates of the touch event to the state,
+   * and translated the slider based on the swiped pixels by the user.
+   */
+  onTouchMoveHandler = (event) => {
+    const {
+      activeSlide,
+      touchState,
+      translateAmount,
+      isTranslating
+    } = this.state
+    if (isTranslating) return
+    const currentX = event.touches[0].clientX
+    const currentY = event.touches[0].clientY
+    // Saves the current sliding positions.
+    this.setTouchState({
+      ...touchState,
+      currentX,
+      currentY
+    })
+    /**
+     * Translating the slider by how much pixels the user is swiping smoothly:
+     * If the difference is higher or equal to 25px or if the swiped amount is less
+     * or equal to the window's width, then translate based on swipe.
+     */
+    const diffX = touchState && Number(touchState.initialX) - Number(touchState.currentX)
+    const thresholdToSlide = 25
+    /**
+     * Before actually executing the swipe, we must check if the slider is at the last or first slide,
+     * this way we avoid translating to empty spaces which would look weird.
+     */
+    const amountOfSlides = this.props.children.length
+    if (
+      activeSlide <= 0 &&
+      diffX < 0
+    ) {
+      return
+    } else if (
+      activeSlide >= (amountOfSlides - 1) &&
+      diffX > 0
+    ) {
+      return
+    }
+    /**
+     * **Swiping logic:**
+     */
+    if (
+      Math.abs(diffX) >= thresholdToSlide &&
+      Math.abs(diffX) <= window.innerWidth
+    ) {
+      const newTranslateAmount = translateAmount + diffX
+      const style = {
+        transition: 'transform ease 0ms', // If the smoothness is too high during onTouch, it looks janky.
+        transform: `translateX(-${newTranslateAmount}px)`
+      }
+      this.setState({
+        ...touchState,
+        currentX,
+        currentY,
+        style
+      })
+    }
+  }
+
+  /**
+   * `onTouchEndHandler` determines in which direction **and** sense (vector) the user is sliding.
+   * Animations are then set accordingly depending on which direction the user is dragging and
+   * the slide is changed. Finally the touch state is set back to the initial state, where
+   * everything is undefined.
+   */
+  onTouchEndHandler = () => {
+    const {
+      touchState,
+      isTranslating
+    } = this.state
+    if (isTranslating) return
+    const diffX = touchState && Number(touchState.initialX) - Number(touchState.currentX)
+    /**
+     * If the difference is higher than 50px, then slide.
+     */
+    const thresholdToSlide = 50
+    if (
+      Math.abs(diffX) >= thresholdToSlide
+    ) {
+      // Sliding horizontally.
+      if (diffX > 0) {
+        // Swiped left.
+        this.onTranslateHandler('next')
+      } else {
+        // Swiped right.
+        this.onTranslateHandler('prev')
+      }
+    } else {
+      const { translateAmount } = this.state
+      const style = { transform: `translateX(-${translateAmount}px)` }
+      this.setState({
+        style
+      })
+    }
+    this.setTouchState(this.initialTouchState)
   }
 
   componentDidMount () {
@@ -111,6 +272,7 @@ class Slider extends Component {
   }
 
   render() {
+    console.log('render this.state', this.state)
     let PrevButton
     let NextButton
     if (this.props.buttons) {
@@ -119,16 +281,21 @@ class Slider extends Component {
     }
     // Protection against crashes
     if (!this.props.children) { return <SlideContainer style={this.state.style}>{this.props.children}</SlideContainer> }
+    /**
+     * `children` include the slides and custom buttons if any.
+     */
     const children = (
       this.props.children.length ? (
         Object.keys(this.props.children).map((children, index) => {
           return (
-            <SlideContainer key={index}
+            <SlideContainer
+              key={index}
               showOnlyActive={this.props.showOnlyActive && (
                 this.state.activeSlide === index ? 'show' : 'hide'
               )}
               renderOnlyActive={this.props.renderOnlyActive}
-              style={this.state.style}>
+              style={this.state.style}
+            >
               {/* Only render the current slide if it's active. Otherwise return render null. */}
               {this.props.renderOnlyActive ? (
                 this.state.activeSlide === index && this.props.children[children]
@@ -139,7 +306,7 @@ class Slider extends Component {
                   {React.cloneElement( // Cloning buttons to pass onTranslateHandler
                     PrevButton,
                     {
-                      clicked: () => {
+                      onClick: () => {
                         this.props.buttons.onClick.prev()
                         this.onTranslateHandler('prev')
                       },
@@ -150,7 +317,7 @@ class Slider extends Component {
                   {React.cloneElement( // Cloning buttons to pass onTranslateHandler
                     NextButton,
                     {
-                      clicked: () => {
+                      onClick: () => {
                         this.props.buttons.onClick.next()
                         this.onTranslateHandler('next')
                       },
@@ -165,23 +332,35 @@ class Slider extends Component {
         })
       )
         : (
-          <SlideContainer style={this.state.style}>
+          <SlideContainer
+            style={this.state.style}
+          >
             {this.props.children}
           </SlideContainer>
         )
     )
     const wrapperClasses = [classes.Wrapper]
     // If fade in is desired:
-    if (this.props.fadeIn) {
-      wrapperClasses.push(classes.FadeIn)
-    }
+    if (this.props.fadeIn) wrapperClasses.push(classes.FadeIn)
     // If sticky in is desired:
-    if (this.props.sticky) {
-      wrapperClasses.push(classes.Sticky)
-    }
+    if (this.props.sticky) wrapperClasses.push(classes.Sticky)
     return (
-      <div ref={this.mySlider} className={wrapperClasses.join(' ')} style={this.props.style}>
-        <ReactResizeDetector handleWidth handleHeight onResize={this.setupWidth} />
+      <div
+        ref={this.mySlider}
+        className={wrapperClasses.join(' ')}
+        style={{
+          ...this.props.style,
+          alignItems: this.props.alignItems && 'center'
+        }}
+        onTouchStart={this.onTouchStartHandler}
+        onTouchMove={this.onTouchMoveHandler}
+        onTouchEnd={this.onTouchEndHandler}
+      >
+        <ReactResizeDetector
+          handleWidth
+          handleHeight
+          onResize={this.setupWidth}
+        />
         {children}
         {!(this.props.buttons || !this.props.children.length) && (
           <SliderButtons
