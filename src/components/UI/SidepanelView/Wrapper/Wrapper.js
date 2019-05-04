@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import classes from './Wrapper.module.css'
 // JSX
 
-const wrapper = (props) => {
+const Wrapper = (props) => {
   const [minWidth, setMinWidth] = useState(window.innerWidth)
 
   const resizeHandler = () => {
@@ -33,10 +33,10 @@ const wrapper = (props) => {
   )
 }
 
-wrapper.propTypes = {
+Wrapper.propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
   reference: PropTypes.object
 }
 
-export default wrapper
+export default Wrapper

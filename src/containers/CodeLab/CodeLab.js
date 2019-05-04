@@ -27,7 +27,7 @@ Placeholder.propTypes = {
   children: PropTypes.any
 }
 
-const codeLab = (props) => {
+const CodeLab = (props) => {
   const myWrapper = useRef(null)
 
   const onClickHandler = () => {
@@ -38,12 +38,12 @@ const codeLab = (props) => {
   }
 
   const items = Object.keys(packagesData).map(packageKey => {
-    const codeLabPackage = packagesData[packageKey]
+    const CodeLabPackage = packagesData[packageKey]
     return (
       <Item
         bIsActive={props.location.pathname === `${props.match.path}/${packageKey}`}
         key={packageKey}
-        description={codeLabPackage.description}>
+        description={CodeLabPackage.description}>
         <NavLink onClick={onClickHandler} to={`${props.match.path}/${packageKey}`}>
           <code>{packageKey}</code>
         </NavLink>
@@ -63,7 +63,7 @@ const codeLab = (props) => {
         <List header='Packages'>
           <Item
             bIsActive={props.location.pathname === props.match.path}>
-            <NavLink to='/codelab'>
+            <NavLink to='/CodeLab'>
               <code>Overview</code>
             </NavLink>
           </Item>
@@ -87,7 +87,7 @@ const codeLab = (props) => {
   )
 }
 
-codeLab.propTypes = {
+CodeLab.propTypes = {
   isMobile: PropTypes.bool,
   match: PropTypes.object,
   location: PropTypes.object
@@ -99,4 +99,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(withRouter(codeLab))
+export default connect(mapStateToProps)(withRouter(CodeLab))

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 // CSS
 import classes from './Sidepanel.module.css'
 // JSX
-import ReactResizeDetector from 'react-resize-detector';
+import ReactResizeDetector from 'react-resize-detector'
 import Toggle from './Toggle/Toggle'
 
 const EHandlers = {
@@ -35,7 +35,7 @@ const initialState = {
   sidepanelHeight: 'fit-content'
 }
 
-const sidepanel = (props) => {
+const Sidepanel = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const myContainer = useRef(null)
 
@@ -47,7 +47,7 @@ const sidepanel = (props) => {
     if (props.isMobile) {
       window.scrollTo(0, 0)
     }
-  }, [state.bIsOpen])
+  }, [state.bIsOpen, props.isMobile])
 
   const onResizeHandler = () => {
     if (myContainer && myContainer.current) {
@@ -63,7 +63,7 @@ const sidepanel = (props) => {
     if (props.isMobile) {
       dispatch({ handler: EHandlers.IS_OPEN, bIsOpen: false })
     }
-  }, [props.closeListener])
+  }, [props.closeListener, props.isMobile])
 
   const WrapperClasses = [classes.Wrapper]
   if (state.bIsOpen) {
@@ -94,7 +94,7 @@ const sidepanel = (props) => {
   )
 }
 
-sidepanel.propTypes = {
+Sidepanel.propTypes = {
   children: PropTypes.any,
   style: PropTypes.object,
   isMobile: PropTypes.bool,
@@ -111,4 +111,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(React.memo(sidepanel))
+export default connect(mapStateToProps)(React.memo(Sidepanel))

@@ -15,7 +15,7 @@ const countyClare = 'https://i.imgur.com/idjXzVQ.jpg'
 const craterRock = 'https://i.imgur.com/8DYumaY.jpg'
 const giauPass = 'https://i.imgur.com/8IuucQZ.jpg'
 
-const app = () => {
+const App = () => {
   const nextSlideHandler = React.useRef()
   const previousSlideHandler = React.useRef()
 
@@ -108,4 +108,4 @@ const app = () => {
   )
 }
 
-export default app
+export default App

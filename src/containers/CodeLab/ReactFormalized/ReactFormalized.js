@@ -54,7 +54,7 @@ const darkTheme = {
   }
 }
 
-const reactFormalized = (props) => {
+const ReactFormalized = (props) => {
   const theme = props.themeContext && props.themeContext.theme
   const [bIsModalOpen, setIsModalOpen] = useState(false)
 
@@ -81,7 +81,7 @@ const reactFormalized = (props) => {
         props.inputContext.setTheme(defaultTheme)
       }
     }
-  }, [props.themeContext])
+  }, [props.themeContext, props.inputContext, theme])
 
   return (
     <div className={classes.App}>
@@ -733,13 +733,13 @@ const onSubmitHandler = (event, formState) => {
   )
 }
 
-reactFormalized.propTypes = {
+ReactFormalized.propTypes = {
   themeContext: PropTypes.object,
   inputContext: PropTypes.object
 }
 
 export default withContexts(
-  reactFormalized,
+  ReactFormalized,
   {
     inputContext: Context,
     themeContext: ThemeContext

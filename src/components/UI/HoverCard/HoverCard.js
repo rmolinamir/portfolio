@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import classes from './HoverCard.module.css'
 
 const HoverCardHook = (props) => {
+  const [bIsHover, setHover] = useState(false)
   if (!props.front && !props.back) {
     return null
   }
-  const [bIsHover, setHover] = useState(false)
 
   const backClass = [classes.Content]
   const frontClass = [classes.Content]

@@ -5,10 +5,10 @@ import Typist from 'react-typist'
 import classes from './Export.module.css'
 
 const exportComponent = (props) => {
+  if (!props.shouldStartTyping) return null
   if (props.singleExport) {
     return (
       <Typist
-        startDelay={props.shouldStartTyping ? 60000000 : 0}
         avgTypingDelay={25}
         stdTypingDelay={5}
         cursor={{ show: false }}
@@ -21,7 +21,6 @@ const exportComponent = (props) => {
   }
   return (
     <Typist
-      startDelay={props.shouldStartTyping ? 60000000 : 0}
       avgTypingDelay={25}
       stdTypingDelay={5}
       cursor={{ show: false }}

@@ -10,7 +10,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { atomDark, prism } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { ThemeContext } from '../../../hoc/Layout/ThemeContext/ThemeContext'
 
-const reactPNGButton = (props) => {
+const ReactPNGButton = (props) => {
   const bIsLight = props.themeContext && props.themeContext.theme === 'light'
 
   const buttonRef = useRef()
@@ -31,7 +31,7 @@ const reactPNGButton = (props) => {
       props.buttonContext.setStyle({ width: '100%' })
       props.buttonContext.setCustomClassname('custom', classes.Custom)
     }
-  }, [])
+  }, [props.buttonContext])
 
   const buttonsArr = [
     [<Button reference={buttonRef}>Default</Button>, `<Button reference={buttonRef}>
@@ -226,13 +226,13 @@ export default example`}
   )
 }
 
-reactPNGButton.propTypes = {
+ReactPNGButton.propTypes = {
   buttonContext: PropTypes.object,
   themeContext: PropTypes.object
 }
 
 export default withContexts(
-  reactPNGButton,
+  ReactPNGButton,
   {
     buttonContext: Context,
     themeContext: ThemeContext

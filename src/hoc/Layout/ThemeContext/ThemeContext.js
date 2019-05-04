@@ -42,7 +42,7 @@ const reducer = (state, action) => {
   }
 }
 
-const provider = (props) => {
+const Provider = (props) => {
   const [state, dispatch] = React.useReducer(reducer, initialContext)
 
   const toggleTheme = () => {
@@ -71,8 +71,8 @@ const provider = (props) => {
   )
 }
 
-provider.propTypes = {
+Provider.propTypes = {
   children: PropTypes.any
 }
 
-export default provider
+export default Provider

@@ -6,10 +6,10 @@ import classes from './Import.module.css'
 import Typist from 'react-typist'
 
 const importComponent = (props) => {
+  if (!props.shouldStartTyping) return null
   if (!props.import) {
     return (
       <Typist
-        startDelay={props.shouldStartTyping ? 60000000 : 0}
         avgTypingDelay={25}
         stdTypingDelay={5}
         cursor={{ show: false }}
@@ -22,7 +22,6 @@ const importComponent = (props) => {
   }
   return (
     <Typist
-      startDelay={props.shouldStartTyping ? 60000000 : 0}
       avgTypingDelay={25}
       stdTypingDelay={5}
       cursor={{ show: false }}

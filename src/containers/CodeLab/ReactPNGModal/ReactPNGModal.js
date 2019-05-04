@@ -11,7 +11,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { atomDark, prism } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { ThemeContext } from '../../../hoc/Layout/ThemeContext/ThemeContext'
 
-const reactPNGModal = (props) => {
+const ReactPNGModal = (props) => {
   const bIsLight = props._context && props._context.theme === 'light'
   const themeClassName = props._context && props._context.className
 
@@ -753,8 +753,8 @@ const reactPNGModal = (props) => {
   )
 }
 
-reactPNGModal.propTypes = {
+ReactPNGModal.propTypes = {
   _context: PropTypes.object
 }
 
-export default withContext(reactPNGModal, ThemeContext)
+export default withContext(ReactPNGModal, ThemeContext)

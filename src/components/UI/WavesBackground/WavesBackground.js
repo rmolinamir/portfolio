@@ -17,7 +17,7 @@ const setInitialState = (props) => {
   return initialState
 }
 
-const wavesBackground = (props) => {
+const WavesBackground = (props) => {
   const [state] = useState(setInitialState(props))
 
   return (
@@ -37,7 +37,7 @@ const wavesBackground = (props) => {
   )
 }
 
-wavesBackground.propTypes = {
+WavesBackground.propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
   // eslint-disable-next-line react/no-unused-prop-types
@@ -45,4 +45,4 @@ wavesBackground.propTypes = {
   style: PropTypes.object
 }
 
-export default React.memo(wavesBackground)
+export default React.memo(WavesBackground)
