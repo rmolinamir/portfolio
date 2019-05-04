@@ -14,7 +14,10 @@ const sliderNavButton = (props) => {
   }
 
   return (
-    <button onClick={onClickHandler} className={buttonClasses.join(' ')} />
+    <button
+      className={buttonClasses.join(' ')}
+      onClick={onClickHandler}
+    />
   )
 }
 

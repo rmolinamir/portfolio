@@ -103,15 +103,18 @@ class Design extends Component {
             className={classes.Modal}
             open={this.state.bIsModalOpen}
             closeModal={this.closeModal}>
-            <Slider
-              alignItems
-              disableNav
-            >
+            <Slider alignItems >
               {this.props.images.map((image, index) => {
                 return (
                   <Slide key={index}>
                     <div className={classes.FullscreenContainer}>
-                      <ImageFadeIn className={classes.FullscreenImage} draggable='false' style={{ position: 'relative' }} noWrapper src={image} />
+                      <ImageFadeIn
+                        className={classes.FullscreenImage}
+                        draggable='false'
+                        style={{ position: 'relative' }}
+                        noWrapper
+                        src={image}
+                      />
                     </div>
                   </Slide>
                 )

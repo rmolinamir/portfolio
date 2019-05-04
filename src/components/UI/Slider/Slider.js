@@ -40,12 +40,20 @@ class Slider extends Component {
     const sliderWidth = this.mySlider.current.clientWidth // Pointer to the slider's reference width
     const translateAmount = this.props.activeSlide * sliderWidth
     const style = {
-      transition: 'transform ease 0ms', // To avoid animations on setup
-      transform: `translateX(-${this.props.activeSlide * sliderWidth}px)`
+      transform: `translateX(-${this.props.activeSlide * sliderWidth}px)`,
+      transition: 'transform ease 0ms' // To avoid animations on setup
     }
     this.setState({
       style,
       translateAmount
+      // Then removing the transition set to 0ms
+    }, () => {
+      this.setState({
+        style: {
+          ...style,
+          transition: undefined
+        }
+      })
     })
   }
 
@@ -63,6 +71,18 @@ class Slider extends Component {
         style,
         translateAmount
       }
+    }, () => {
+      const setupTimeoutId = setTimeout(() => {
+        this.setState(prevState => ({
+          style: {
+            ...prevState.style,
+            transition: undefined
+          }
+        }))
+      }, 500 * 1.2)
+      this.setState({
+        setupTimeoutId
+      })
     })
   }
 
@@ -103,6 +123,7 @@ class Slider extends Component {
       if (nextActiveSlide + 1 > this.props.children.length || isNaN(nextActiveSlide)) { return }
       const translateAmount = nextActiveSlide * sliderWidth
       const style = {
+        transition: undefined,
         transform: `translateX(-${translateAmount}px)`
       }
       return {
@@ -265,14 +286,26 @@ class Slider extends Component {
   componentDidMount () {
     /**
      * The carousel needs an initial setup in case there is an active slide from the props higher than 0
+     * So long as it's not less than 0 or higher than the total slides.
      */
     if (this.props.activeSlide > 0 && this.props.activeSlide < this.props.children.length) {
       this.setupSlider()
     }
   }
 
+  /**
+   * Clearing possible timeout ID's.
+   */
+  componentWillUnmount() {
+    const {
+      translatingTimeoutId,
+      setupTimeoutId
+    } = this.state
+    if (translatingTimeoutId) clearTimeout(translatingTimeoutId)
+    if (setupTimeoutId) clearTimeout(setupTimeoutId)
+  }
+
   render() {
-    console.log('render this.state', this.state)
     let PrevButton
     let NextButton
     if (this.props.buttons) {
@@ -367,7 +400,7 @@ class Slider extends Component {
             totalSlides={this.props.children.length}
             activeSlide={this.state.activeSlide}
             onClick={this.onTranslateHandler} />)}
-        {(!this.props.disableNav || this.props.children.length) && (
+        {(!this.props.disableNav || !this.props.children.length) && (
           <SliderNav
             activeSlide={this.state.activeSlide}
             slides={Object.keys(this.props.children)}
