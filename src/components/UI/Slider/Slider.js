@@ -203,11 +203,9 @@ class Slider extends Component {
     })
     /**
      * Translating the slider by how much pixels the user is swiping smoothly:
-     * If the difference is higher or equal to 10px or if the swiped amount is less
-     * or equal to the window's width, then translate based on swipe.
+     * If the difference is equal to the window's width, then translate based on swipe.
      */
     const diffX = touchState && Number(touchState.initialX) - Number(touchState.currentX)
-    const thresholdToSlide = 10
     /**
      * Before actually executing the swipe, we must check if the slider is at the last or first slide,
      * this way we avoid translating to empty spaces which would look weird.
@@ -228,7 +226,6 @@ class Slider extends Component {
      * **Swiping logic:**
      */
     if (
-      Math.abs(diffX) >= thresholdToSlide &&
       Math.abs(diffX) <= window.innerWidth
     ) {
       const newTranslateAmount = translateAmount + diffX
@@ -244,7 +241,7 @@ class Slider extends Component {
       })
     } else {
       const style = {
-        transition: 'transform ease 250ms', // If the smoothness is too high during onTouch, it looks janky.
+        transition: undefined,
         transform: `translateX(-${translateAmount}px)`
       }
       this.setState(prevState => ({
