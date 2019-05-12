@@ -399,6 +399,9 @@ class Slider extends Component {
         onTouchStart={this.onTouchStartHandler}
         onTouchMove={this.onTouchMoveHandler}
         onTouchEnd={this.onTouchEndHandler}
+        onMouseDown={event => console.log(event)}
+        // onMouseMove={this.onTouchMoveHandler}
+        // onMouseUp={this.onTouchEndHandler}
       >
         <ReactResizeDetector
           handleWidth
