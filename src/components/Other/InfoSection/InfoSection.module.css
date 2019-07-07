@@ -74,6 +74,7 @@
   border-color: currentColor;
   vertical-align: middle;
   overflow: hidden;
+  background: white;
 }
 
 .Name {

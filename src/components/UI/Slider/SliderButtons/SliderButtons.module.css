@@ -78,4 +78,9 @@
     width: 10px;
     height: 10px;
   }
+  .HideOnMobile {
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+  }
 }

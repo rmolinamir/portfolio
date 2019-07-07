@@ -16,7 +16,7 @@ import Spinner from './components/UI/Spinner/Spinner'
 
 import AboutMe from './containers/AboutMe/AboutMe'
 import Projects from './containers/Projects/Projects'
-import Designs from './containers/PSD_Desings/PSD_Desings'
+import Other from './containers/Other/Other'
 import Skills from './containers/Skills/Skills'
 
 /**
@@ -48,7 +48,7 @@ class App extends Component {
           <ScrollToTop />
           <Switch>
             <Route path='/codelab' render={() => <Suspense fallback={<SpinnerContainer />}><CodeLab /></Suspense>} />
-            <Route path='/psd-designs' component={Designs} />
+            <Route path='/other' component={Other} />
             <Route path='/projects' component={Projects} />
             <Route path='/skills' component={Skills} />
             <Route path='/' exact component={AboutMe} />

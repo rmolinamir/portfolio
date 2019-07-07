@@ -25,17 +25,17 @@ const RenderNavigationItems = React.memo((props) => {
           <NavigationItem {...props} link='/projects'>
             Projects
           </NavigationItem>
+          <NavigationItem {...props} link='/skills'>
+            Skills
+          </NavigationItem>
           <NavigationItem
             {...props}
             exact={false}
             link='/codelab'>
             Code Lab
           </NavigationItem>
-          <NavigationItem {...props} link='/skills'>
-            Skills
-          </NavigationItem>
-          <NavigationItem {...props} link='/psd-designs'>
-            Designs
+          <NavigationItem {...props} link='/other'>
+            Other
           </NavigationItem>
           <Separator />
           <a href='https://github.com/rmolinamir'
@@ -66,8 +66,8 @@ const RenderNavigationItems = React.memo((props) => {
             (
               <>
                 <div className={classes.Spacing} />
-                <NavigationItem {...props} link='/projects'>
-                  Projects
+                <NavigationItem {...props} link='/other'>
+                  Other
                 </NavigationItem>
                 <NavigationItem
                   {...props}
@@ -78,8 +78,8 @@ const RenderNavigationItems = React.memo((props) => {
                 <NavigationItem {...props} link='/skills'>
                   Skills
                 </NavigationItem>
-                <NavigationItem {...props} link='/psd-designs'>
-                  Designs
+                <NavigationItem {...props} link='/projects'>
+                  Projects
                 </NavigationItem>
                 <NavigationItem {...props} link='/'>
                   About Me

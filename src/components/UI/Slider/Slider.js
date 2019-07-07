@@ -21,7 +21,12 @@ class Slider extends Component {
     renderOnlyActive: PropTypes.bool,
     disableNav: PropTypes.bool,
     progressBar: PropTypes.bool,
-    alignItems: PropTypes.bool
+    alignItems: PropTypes.bool,
+    shouldRenderButtonsOnMobile: PropTypes.bool
+  }
+
+  static defaultProps = {
+    shouldRenderButtonsOnMobile: true
   }
 
   constructor(props) {
@@ -93,9 +98,11 @@ class Slider extends Component {
       // Defining the operator depending on which button was pressed
       switch (type) {
         case 'prev':
-          // If the activeSlide is the first slide, then return.
+          // If the activeSlide is the first slide, then the operator is 0.
           if (activeSlide <= 0) {
-            return
+            operator = 0
+            break
+            // return
           }
           operator = -1
           break
@@ -399,7 +406,6 @@ class Slider extends Component {
         onTouchStart={this.onTouchStartHandler}
         onTouchMove={this.onTouchMoveHandler}
         onTouchEnd={this.onTouchEndHandler}
-        onMouseDown={event => console.log(event)}
         // onMouseMove={this.onTouchMoveHandler}
         // onMouseUp={this.onTouchEndHandler}
       >
@@ -411,6 +417,7 @@ class Slider extends Component {
         {children}
         {!(this.props.buttons || !this.props.children.length) && (
           <SliderButtons
+            shouldRenderButtonsOnMobile={this.props.shouldRenderButtonsOnMobile}
             totalSlides={this.props.children.length}
             activeSlide={this.state.activeSlide}
             onClick={this.onTranslateHandler} />)}

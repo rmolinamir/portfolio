@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // CSS
-import classes from './Design.module.css'
+import classes from './Other.module.css'
 // JSX
 import Modal from 'react-png-modal'
 import Button from 'react-png-button'
@@ -9,7 +9,7 @@ import { withContext } from 'with-context-react'
 import { ThemeContext } from '../../../hoc/Layout/ThemeContext/ThemeContext'
 import Gallery from '../../UI/Gallery/Gallery'
 import Separator from '../../UI/Separator/Separator'
-import { Slider, Slide } from '../../UI/Slider/'
+import { Slider, Slide } from '../../UI/Slider'
 import ImageFadeIn from '../../UI/ImageFadeIn/ImageFadeIn'
 import Title from '../Title/Title'
 import InfoSection from '../InfoSection/InfoSection'
@@ -92,7 +92,7 @@ class Design extends Component {
               title={this.props.title}
               logoTitle={this.props.company}
               src={this.props.logo}
-              header='About the design'>
+              header='About the project'>
               <div>
                 <p>{this.props.description}</p>
               </div>

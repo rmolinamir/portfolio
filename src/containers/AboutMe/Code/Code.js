@@ -113,14 +113,15 @@ class Code extends Component {
                 >
                   <span>
                     <div style={{ display: 'block', marginLeft: 0 }}>
-                      Major in <span className={classes.String}>Mechanical Engineering</span>, I ended up liking to code more
-                      than I liked engineering nearing the end of my major, so here I am! I'm very passionate about computer science,
-                      with strong technical, commercial and interpersonal skills, allowing me to work as a team and successfully
-                      complete any project.
+                      I'm a <span className={classes.String}>Mechanical Engineering</span> graduate who ended up loving programming more
+                      than the engineering aspect after about 2 years while working in the field. Currently, I'm part of the tech team at <span className={classes.String}>Bridge for Billions</span> as a
+                      React.js Software Developer, collaborating in the development of the frontend application.
                     </div>
                     <br />
                     <div style={{ display: 'block', marginLeft: 0 }}>
-                      For more information about my previous projects, you may go to the projects tab down at the bottom.
+                      I'm very passionate about computer science,
+                      with strong technical, commercial and interpersonal skills, allowing me to work as a team and successfully
+                      complete any project. For more information about my previous projects, you may visit the projects tab down at the bottom.
                     </div>
                   </span>
                 </Method>
@@ -138,14 +139,14 @@ class Code extends Component {
                 >
                   <span>
                     <div style={{ display: 'block', marginLeft: 0 }}>
-                        I'm well versed with Fullstack/Software Development, Data Visualization, and Vector Illustrations.
-                        I'm also proficient with Data Analytics and Engineering software such as SolidWorks, FluidSIM & AutoCAD,
-                        due to my major in Mechanical Engineering.
+                        I'm well versed with <span className={classes.String}>Fullstack/Software Development</span>, <span className={classes.String}>Data Visualization</span>, and <span className={classes.String}>Vector Illustrations</span>.
+                        I'm also proficient with <span className={classes.String}>Data Analytics</span> and Engineering software such as <span className={classes.String}>SolidWorks</span>, <span className={classes.String}>FluidSIM</span> & <span className={classes.String}>AutoCAD</span>,
+                        due to my bachelor in Mechanical Engineering.
                     </div>
                     <br />
                     <div style={{ display: 'block', marginLeft: 0 }}>
-                        I program in the Unreal Engine software as a side hobby occasionally. If you want more information, you may go
-                        to the skills tab by clicking the link down at the bottom.
+                        I program in the <span className={classes.String}>Unreal Engine</span> software as a side hobby or a few other pet projects occasionally. If you want
+                        more information, you may go to the skills tab by clicking the link down at the bottom.
                     </div>
                   </span>
                 </Method>
@@ -165,7 +166,6 @@ class Code extends Component {
                     Some of the tools I commonly use:
                     <br />
                     <ul style={{
-                      listStyle: 'circle',
                       margin: '8px 0 0',
                       padding: 0,
                       paddingLeft: '24px'

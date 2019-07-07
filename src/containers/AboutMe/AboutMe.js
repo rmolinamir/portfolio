@@ -27,7 +27,7 @@ const aboutMe = () => {
   const pageContent = (
     <>
       <div className={classes.Container}>
-        <IntroHeader intro='Greetings! Thanks for visiting my site. Below is a small introduction about me, where I talk about my education, skills, and what stack I commonly use. For more detailed information you may check out the other tabs.'>About Me</IntroHeader>
+        <IntroHeader intro='Hi! Thanks for visiting my personal website. Below is a small introduction about me, where I talk about my education, skills, and stacks that I commonly use. For more detailed information you may check out the other tabs.'>About Me</IntroHeader>
         <div className={classes.Profile}>
           <div className={classes.Portrait}>
             <div className={classes.Content}>

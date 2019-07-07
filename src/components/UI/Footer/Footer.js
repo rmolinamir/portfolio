@@ -37,10 +37,10 @@ const footer = () => {
         </div>
       </div>
       <div className={classes.NavLinks}>
-        <NavLink activeClassName={classes.active} className={classes.NavLink} to='/projects'><span className={classes.Link}>Projects</span></NavLink>
+        <NavLink activeClassName={classes.active} className={classes.NavLink} to='/other'><span className={classes.Link}>Other</span></NavLink>
         <NavLink activeClassName={classes.active} className={classes.NavLink} to='/codelab'><span className={classes.Link}>Code Lab</span></NavLink>
         <NavLink activeClassName={classes.active} className={classes.NavLink} to='/skills'><span className={classes.Link}>Skills</span></NavLink>
-        <NavLink activeClassName={classes.active} className={classes.NavLink} to='/psd-designs'><span className={classes.Link}>Designs</span></NavLink>
+        <NavLink activeClassName={classes.active} className={classes.NavLink} to='/projects'><span className={classes.Link}>Projects</span></NavLink>
         <NavLink exact activeClassName={classes.active} className={classes.NavLink} to='/'><span className={classes.Link}>About Me</span></NavLink>
         <a href='https://github.com/rmolinamir' target='_blank' rel='noopener noreferrer' className={classes.NavLink}><span className={classes.Link}>Github</span></a>
       </div>

@@ -34,7 +34,7 @@
 
 .AboutMeNavbar {
   background-color: inherit;
-  color: #FFF !important;
+  color: currentColor !important;
 }
 
 .LightTheme {
