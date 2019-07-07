@@ -9,7 +9,6 @@ const SliderButtons = props => {
   const isMobile = useMemo(() => getIsMobile(), [])
   const prevClasses = [classes.Prev]
   const nextClasses = [classes.Next]
-  console.log('hiding buttons', isMobile)
   if (isMobile && props.shouldRenderButtonsOnMobile) {
     nextClasses.push(classes.HideOnMobile)
     prevClasses.push(classes.HideOnMobile)
