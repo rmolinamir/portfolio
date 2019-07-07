@@ -54,7 +54,7 @@ const code = () => {
             <span>React.js - HTML, CSS, JavaScript, ES6, Next-Gen JS, Babel, Webpack, Loaders. - jQuery, Bootstrap 3 & 4, - Node.js, Express.js, - MongoDB, Firebase - Git, Heroku.</span>
           </Method>
         </Class>
-        <Export export={curriculumVitae.export.export}/>
+        <Export export={curriculumVitae.export.export} />
       </div>
     </div>
   )

@@ -1,10 +1,10 @@
 import React from 'react'
 // data
-import { designsData } from './PSD_Desings_Data/Desings_Data'
+import { designsData } from './Data'
 // CSS
-import classes from './PSD_Desings.module.css'
+import classes from './Other.module.css'
 // JSX
-import Design from '../../components/PSD_Designs/Design/Design'
+import Other from '../../components/Other/Other/Other'
 import IntroHeader from '../../components/UI/IntroHeader/IntroHeader'
 import Container from '../../components/UI/Container/Container'
 import Separator from '../../components/UI/Separator/Separator'
@@ -13,12 +13,15 @@ const designs = () => {
   return (
     <div
       className={classes.Wrapper}>
-      <IntroHeader intro="Over time I've had to use Adobe Photoshop and similar softwares to improve images or do certain design arts such as flyers and promotional photos for apps. Here is a small collection of what I've done in the past.">My Designs</IntroHeader>
+      <IntroHeader
+        intro="Over time I had opportunities to be part of different small projects that aren't related to programming, but interesting nonetheless. These projects include using Adobe Photoshop and similar Software to improve images or do certain design arts such as flyers and promotional photos for apps, etc. Here is a small collection of what I've done in the past.">
+        Other
+      </IntroHeader>
       <Container>
         <Separator />
         {Object.values(designsData).map((design, index) => {
           return (
-            <Design
+            <Other
               key={index}
               order={index % 2 ? '-1' : null}
               title={design.title}
