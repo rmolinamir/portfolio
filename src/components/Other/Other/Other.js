@@ -14,14 +14,14 @@ import ImageFadeIn from '../../UI/ImageFadeIn/ImageFadeIn'
 import Title from '../Title/Title'
 import InfoSection from '../InfoSection/InfoSection'
 
-class Design extends Component {
+class Other extends Component {
   static propTypes = {
     images: PropTypes.array,
     title: PropTypes.string,
     company: PropTypes.string,
     logo: PropTypes.string,
     order: PropTypes.string,
-    description: PropTypes.string,
+    description: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     _context: PropTypes.object
   }
 
@@ -94,7 +94,7 @@ class Design extends Component {
               src={this.props.logo}
               header='About the project'>
               <div>
-                <p>{this.props.description}</p>
+                <div>{this.props.description}</div>
               </div>
             </InfoSection>
           </div>
@@ -128,4 +128,4 @@ class Design extends Component {
   }
 }
 
-export default withContext(Design, ThemeContext)
+export default withContext(Other, ThemeContext)
