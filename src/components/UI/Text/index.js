@@ -96,17 +96,14 @@ const StyledH2 = styled(H2)`
 
 const StyledH3 = styled(H3)`
   &&& {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.6;
     font-weight: 300;
     @media (max-width: ${({ theme }) => theme.screenMd}) {
-      font-size: 22px;
+      font-size: 18px;
     }
     @media (max-width: ${({ theme }) => theme.screenSm}) {
-      font-size: 20px;
-    }
-    @media (max-width: ${({ theme }) => theme.screenXs}) {
-      font-size: 18px;
+      font-size: 16px;
     }
     ${({ css }) => css};
     * {

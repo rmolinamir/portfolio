@@ -6,12 +6,12 @@ import { withTheme } from 'styled-components';
 // Dependencies
 import { mainTheme } from 'static/theme';
 
-const defaultColor = mainTheme.whiteColor;
-const defaultBackgroundColor = mainTheme.lightDarkColor;
+const defaultColor = mainTheme.lightDarkColor;
+const defaultBackgroundColor = mainTheme.whiteColor;
 const defaultOpacity = 1;
 const defaultBoxShadow = undefined;
 const defaultTransform = undefined;
-const defaultPosition = 'fixed';
+const defaultPosition = 'relative';
 const defaultCss = undefined;
 
 const initialContext = {

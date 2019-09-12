@@ -3,8 +3,8 @@ import React, { Suspense } from 'react';
 import styled, { ThemeProvider, css } from 'styled-components';
 
 // Styling
-import 'styles/index.scss';
-import { mainTheme } from 'styles';
+import 'static/theme/index.scss';
+import { mainTheme } from 'static/theme';
 
 // Components
 import { CSSTransition } from 'react-transition-group';
@@ -12,9 +12,6 @@ import { Helmet } from 'react-helmet';
 import LazyImport from 'components/Util/LazyImport';
 import Loader from 'components/UI/Loader';
 import LogoLoader from 'components/UI/LogoLoader';
-
-// Styles
-import 'static/theme/index.scss';
 
 const LOADER_DELAY = 1000;
 const LOADER_DEV_DELAY = 500;
@@ -25,6 +22,7 @@ const App = () => {
 
   React.useEffect(() => {
     document.body.style.overflowX = 'hidden';
+    document.getElementById('root').style.transition = 'margin 0.5s';
     return () => { document.body.style.overflowX = 'visible'; };
   }, []);
 
@@ -36,7 +34,7 @@ const App = () => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>
-            Denma | Software Development Company
+            Robert Molina | Software Developer
           </title>
         </Helmet>
           <Suspense

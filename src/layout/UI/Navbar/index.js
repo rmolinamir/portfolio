@@ -50,37 +50,34 @@ const Navbar = props => {
 
   return (
     <>
-      <Spacing />
-      <HideOnScroll>
-        <StyledAppBar
-          position={position}
-          color={color}
-          backgroundColor={backgroundColor}
-          opacity={opacity}
-          boxShadow={boxShadow}
-          transform={transform}
-          styledCss={styledCss}
-        >
-          <Toolbar>
-            <LinkComponent {...logoWrapperProps}>
-              <a role="button">
-                {navbarLogo}
-              </a>
-            </LinkComponent>
-            <div className="spacing" />
-            {renderNavLinks(links, LinkComponent)}
-            <StyledIconButton
-              color="inherit"
-              aria-label="Menu"
-              onClick={() => setDrawerOpen(!isDrawerOpen)}
-              className="menu-button"
-              shouldRenderDrawerIcon={shouldRenderDrawerIcon}
-            >
-              <MenuIcon />
-            </StyledIconButton>
-          </Toolbar>
-        </StyledAppBar>
-      </HideOnScroll>
+      <StyledAppBar
+        position={position}
+        color={color}
+        backgroundColor={backgroundColor}
+        opacity={opacity}
+        boxShadow={boxShadow}
+        transform={transform}
+        styledCss={styledCss}
+      >
+        <Toolbar>
+          <LinkComponent {...logoWrapperProps}>
+            <a role="button">
+              {navbarLogo}
+            </a>
+          </LinkComponent>
+          <div className="spacing" />
+          {renderNavLinks(links, LinkComponent)}
+          <StyledIconButton
+            color="inherit"
+            aria-label="Menu"
+            onClick={() => setDrawerOpen(!isDrawerOpen)}
+            className="menu-button"
+            shouldRenderDrawerIcon={shouldRenderDrawerIcon}
+          >
+            <MenuIcon />
+          </StyledIconButton>
+        </Toolbar>
+      </StyledAppBar>
       <Drawer
         anchor="right"
         open={isDrawerOpen}
@@ -113,6 +110,9 @@ const StyledAppBar = styled(({ color, backgroundColor, opacity, boxShadow, trans
     ${props => (props.styledCss && props.styledCss)}
     transition: all ease 150ms;
     transition-property: color, background-color, opacity, transform;
+    &, & > div {
+      min-height: 84px;
+    }
 
     a:any-link, a:-webkit-any-link {
       color: unset;
