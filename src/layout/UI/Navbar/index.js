@@ -8,15 +8,20 @@ import GithubIcon from 'components/SVG/Icons/Github';
 import LinkedInIcon from 'components/SVG/Icons/LinkedIn';
 import ContactIcon from '@material-ui/icons/Mail';
 import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 // Components
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { IconAnchor } from './components';
 import Home from './Home';
+import Drawer from './Drawer';
 
 // Dependencies
 import Provider, { NavbarContext as Context } from './context';
+
+// LinkComponents
+import { getShouldRenderDrawerIcon, renderNavLinks } from './links';
 
 // Navbar React Context exports
 export const NavbarContext = Context;
@@ -26,7 +31,17 @@ const CONTACT_HREF = 'mailto:name@mydomain.com';
 const GITHUB_HREF = 'https://github.com/rmolinamir';
 const LINKEDIN_HREF = 'https://www.linkedin.com/in/rmolinamir/';
 
-export default function Navbar() {
+export default function Navbar(props) {
+  const {
+    links,
+    logoWrapperProps = {
+      href: '/'
+    },
+    drawerLogo,
+    linkComponent: LinkComponent,
+  } = props;
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+
   // Styling context
   const {
     colorState: [color],
@@ -38,35 +53,58 @@ export default function Navbar() {
     cssState: [styledCss],
   } = useContext(NavbarContext);
 
+  // Will only render the burger icon to the right if necessary
+  const shouldRenderDrawerIcon = getShouldRenderDrawerIcon(links);
+
   return (
-    <StyledAppBar
-      position={position}
-      color={color}
-      backgroundColor={backgroundColor}
-      opacity={opacity}
-      boxShadow={boxShadow}
-      transform={transform}
-      styledCss={styledCss}
-    >
-      <Toolbar>
-        <Home />
-        <div className="spacing" />
-        {[
-          { key: 'contact', href: CONTACT_HREF, icon: ContactIcon, blank: false },
-          { key: 'github', href: GITHUB_HREF, icon: GithubIcon, blank: true },
-          { key: 'linkedin', href: LINKEDIN_HREF, icon: LinkedInIcon, blank: true },
-        ].map(({ key, href, icon: Icon, blank }) => (
-          <IconAnchor
-            key={key}
-            href={href}
-            target={blank ? 'blank' : null}
-            rel="noopener noreferer"
+    <>
+      <StyledAppBar
+        position={position}
+        color={color}
+        backgroundColor={backgroundColor}
+        opacity={opacity}
+        boxShadow={boxShadow}
+        transform={transform}
+        styledCss={styledCss}
+      >
+        <Toolbar>
+          <Home />
+          <div className="spacing" />
+          {[
+            { key: 'contact', href: CONTACT_HREF, icon: ContactIcon, blank: false },
+            { key: 'github', href: GITHUB_HREF, icon: GithubIcon, blank: true },
+            { key: 'linkedin', href: LINKEDIN_HREF, icon: LinkedInIcon, blank: true },
+          ].map(({ key, href, icon: Icon, blank }) => (
+            <IconAnchor
+              key={key}
+              href={href}
+              target={blank ? 'blank' : null}
+              rel="noopener noreferer"
+            >
+              <Icon />
+            </IconAnchor>
+          ))}
+          <StyledIconButton
+            color="inherit"
+            aria-label="Menu"
+            onClick={() => setDrawerOpen(!isDrawerOpen)}
+            className="menu-button"
+            shouldRenderDrawerIcon={shouldRenderDrawerIcon}
           >
-            <Icon />
-          </IconAnchor>
-        ))}
-      </Toolbar>
-    </StyledAppBar>
+            <MenuIcon />
+          </StyledIconButton>
+        </Toolbar>
+        <Drawer
+          anchor="right"
+          open={isDrawerOpen}
+          closeDrawer={() => setDrawerOpen(false)}
+          logo={drawerLogo}
+          logoWrapperProps={logoWrapperProps}
+          links={links}
+          linkComponent={LinkComponent}
+        />
+      </StyledAppBar>
+    </>
   );
 }
 
@@ -132,3 +170,30 @@ const StyledAppBar = styled(({ color, backgroundColor, opacity, boxShadow, trans
     ${props => (props.styledCss && props.styledCss)};
   }
 `;
+
+const StyledIconButton = styled(({ shouldRenderDrawerIcon, ...rest }) => <IconButton {...rest} />)`
+  ${({ theme, shouldRenderDrawerIcon }) => css`
+    &&& {
+      @media (min-width: ${theme.screenLg}) {
+        display: ${shouldRenderDrawerIcon ? 'inline-flex' : 'none'};
+      }
+
+      @media (min-width: 0px) and (max-width: ${theme.screenLg}) {
+        display: inline-flex;
+      }
+    }
+  `}
+`;
+
+Navbar.propTypes = {
+  links: PropTypes.instanceOf(Array).isRequired,
+  logoWrapperProps: PropTypes.instanceOf(Object),
+  drawerLogo: PropTypes.node,
+  linkComponent: PropTypes.func,
+};
+
+Navbar.defaultProps = {
+  logoWrapperProps: undefined,
+  drawerLogo: null,
+  linkComponent: null,
+};
