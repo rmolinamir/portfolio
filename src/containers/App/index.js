@@ -22,7 +22,7 @@ const App = () => {
 
   React.useEffect(() => {
     document.body.style.overflowX = 'hidden';
-    document.getElementById('root').style.transition = 'margin 0.5s';
+    document.getElementById('root').style.transition = 'margin 500ms';
     return () => { document.body.style.overflowX = 'visible'; };
   }, []);
 

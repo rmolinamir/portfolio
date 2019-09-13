@@ -5,75 +5,29 @@ import { Switch, Route, withRouter, Link } from 'react-router-dom';
 
 // Components
 import RoutesWrapper from 'layout/UI/RoutesWrapper';
-import { NavbarLogo } from 'components/UI';
 
 import Homepage from 'containers/Homepage';
 
 // Icons
-import InfoIcon from '@material-ui/icons/Info';
 import ContactIcon from '@material-ui/icons/Mail';
-import NewEnterprisesIcon from '@material-ui/icons/Business';
-import ExistingAppsIcons from '@material-ui/icons/Apps';
-
-const navbarLogo = (
-  <NavbarLogo
-    alt="Denma Home"
-    title="Denma Home"
-    focusable="false"
-  />
-);
 
 const links = [
   {
-    key: 'what_we_do',
+    key: 'contact',
     type: 'button',
     color: 'inherit',
-    title: 'What we do',
-    caption: 'An overview of how we work alongside our clients.',
-    icon: <InfoIcon />,
-    // wrapper: props => (
-    //   <Link
-    //     to="/what-we-do"
-    //     {...props}
-    //   />
-    // ),
-    wrapperProps: {
-      to: '/what-we-do'
-    },
-  },
-  {
-    key: 'about us',
-    type: 'button',
-    color: 'inherit',
-    title: 'About us',
-    caption: 'Who we are',
-    icon: <ExistingAppsIcons />,
-    wrapper: Link,
-    wrapperProps: {
-      to: '/about-us'
-    },
-  },
-  {
-    key: 'why_us',
-    type: 'button',
-    color: 'inherit',
-    title: 'Why us?',
-    caption: 'Why us? caption',
-    icon: <NewEnterprisesIcon />,
-    wrapperProps: {
-      to: '/why-us'
-    },
-  },
-  {
-    key: 'contact_us',
-    type: 'button',
-    color: 'inherit',
-    title: 'Contact us',
-    caption: 'Say hello, get in touch with us!',
+    title: 'Contact',
+    caption: 'Say hello, get in touch!',
     icon: <ContactIcon />,
-    wrapperProps: {
-      to: '/contact-us'
-    },
+    wrapper: props => (
+      // {props.children} will contain the content of the anchor.
+      // eslint-disable-next-line
+      <a
+        {...props}
+        role="button"
+        href="mailto:rmolinamir@gmail.com"
+      />
+    )
   }
 ];
 
@@ -90,8 +44,6 @@ const Routes = props => {
   return (
     <RoutesWrapper
       // Navbar props
-      navbarLogo={navbarLogo}
-      drawerLogo={navbarLogo}
       links={links}
       linkComponent={Link}
       logoWrapperProps={{
@@ -100,7 +52,7 @@ const Routes = props => {
     >
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route path="/hello-world" render={() => <div>Hello world!</div>} />
+        <Route path="/licenses" render={() => <div>lICENSES</div>} />
       </Switch>
     </RoutesWrapper>
   );

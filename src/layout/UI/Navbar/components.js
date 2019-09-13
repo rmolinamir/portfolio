@@ -1,27 +1,10 @@
 // Libraries
-import React from 'react';
 import styled from 'styled-components';
 
 // Components
 import RawDivider from '@material-ui/core/Divider';
 import Logo from 'components/SVG/Logos/DenmaHorizontal_NM';
 import { H6 } from 'components/UI/Text';
-
-const NavbarLogo = () => (
-  <StyledLogo
-    alt="Denma Home"
-    title="Denma Home"
-    focusable="false"
-  />
-);
-
-const DrawerLogo = () => (
-  <StyledDrawerLogo
-    alt="Denma Home"
-    title="Denma Home"
-    focusable="false"
-  />
-);
 
 const Spacing = styled.div`
   background: transparent;
@@ -89,9 +72,46 @@ const DrawerList = styled.div`
   }
 `;
 
+const IconAnchor = styled.a`
+  display: flex;
+  align-items: center;
+  position: relative;
+  outline: none !important;
+  &, &::before {
+    transition: all 200ms ease;
+  }
+  ::before {
+    position: absolute;
+    content: '';
+    background-color: ${({ theme }) => theme.primary};
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+  padding: 30px 12px;
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+  /* Hover effects */
+  &:hover::before {
+    height: 100%;
+  }
+  @media (max-width: ${({ theme }) => theme.screenMd}) {
+    &:hover {
+      padding: 30px 14px;
+    }
+  }
+  &:hover {
+    padding: 30px 16px;
+  }
+`;
+
 export {
-  NavbarLogo,
-  // DrawerLogo,
+  IconAnchor,
   Spacing,
   Header,
   Divider,

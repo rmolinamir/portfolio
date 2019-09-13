@@ -1,4 +1,6 @@
 // Libraries
+import Container from './Container';
+import Divider from './Divider';
 import DropdownMenu from './DropdownMenu';
 import Fab from './Fab';
 import Image from './Image';
@@ -11,6 +13,8 @@ import * as Text from './Text';
 import * as Animations from './Animations';
 
 export {
+  Container,
+  Divider,
   DropdownMenu,
   Fab,
   Image,

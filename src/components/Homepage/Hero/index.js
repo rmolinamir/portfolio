@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 // Components
 import { Row, Col } from 'components/Layout';
+import { Animations } from 'components/UI';
 import { H3 } from 'components/UI/Text';
 
 // Assets
@@ -17,22 +18,25 @@ export default function Homepage() {
         alignItems="flex-start"
         spacing={5}
       >
-        <Col
+        <Animations.PopIn
+          wrapper={Col}
           justifyContent="center"
         >
           <Hello>
             <span>Hello,</span>
           </Hello>
-        </Col>
-        <Col
+        </Animations.PopIn>
+        <Animations.PopIn
+          wrapper={Col}
           md={9}
           justifyContent="center"
+          animationDelayMultiplier={2}
         >
           <H3>
             I’m a <strong>Full Stack Developer, Designer & Engineer</strong> with an expertise in
             building powerful and scalable PWA, native apps, and UX design.
           </H3>
-        </Col>
+        </Animations.PopIn>
       </Container>
     </Wrapper>
   );
@@ -41,7 +45,7 @@ export default function Homepage() {
 const Wrapper = styled.main`
   display: flex;
   align-items: center;
-  padding: 24px 12px;
+  padding: 0px 12px 24px;
   font-size: 14px;
   font-size: 0.875rem;
   min-height: 300px;
@@ -53,8 +57,8 @@ const Wrapper = styled.main`
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 50px;
-    left: 40px;
+    top: 25px;
+    left: 85px;
     background-repeat: no-repeat;
     background-size: auto;
     transform: scale(1.75) rotate(-5deg);

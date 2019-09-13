@@ -6,8 +6,8 @@ export default function Navbar() {
   return (
     <StyledNav>
       <ul>
-        <li><a href="#tldr">TL;DR</a></li>
         <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#tldr">TL;DR</a></li>
         <li><a href="#technologies">Technologies</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#open-source">Open Source</a></li>
@@ -27,6 +27,7 @@ const StyledNav = styled.nav`
     border-bottom: 1px solid #EAEAEA;
     background: #FEFEFE;
     padding: 0 18px;
+    z-index: 5;
     ul {
       min-height: 70px;
       display: flex;
@@ -36,6 +37,7 @@ const StyledNav = styled.nav`
         display: inline-flex;
         cursor: pointer;
         list-style: none;
+        white-space: nowrap;
         a {
           position: relative;
           padding: 26px 18px;
@@ -64,6 +66,22 @@ const StyledNav = styled.nav`
           background: ${({ theme }) => theme.primary};
         }
       }
+      @media (max-width: ${({ theme }) => theme.screenMd}) {
+        min-height: 50px;
+        li {
+          a {
+            padding: 24px 18px;
+          }
+        }
+      }
     }
+    /* overflow-x scroll, but hide scrollbar */
+    &::-webkit-scrollbar {
+      width: 0px !important;
+      height: 0px !important;
+    };
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    overflow-x: scroll;
   }
 `;

@@ -99,11 +99,12 @@ const StyledH3 = styled(H3)`
     font-size: 22px;
     line-height: 1.6;
     font-weight: 300;
+    color: ${({ theme, color }) => (color ? theme[color] : undefined)};
     @media (max-width: ${({ theme }) => theme.screenMd}) {
-      font-size: 18px;
+      font-size: 19px;
     }
     @media (max-width: ${({ theme }) => theme.screenSm}) {
-      font-size: 16px;
+      font-size: 17px;
     }
     ${({ css }) => css};
     * {
@@ -130,7 +131,7 @@ const StyledH6 = styled(H6)`
 
 const StyledP = styled(P)`
   &&& {
-    font-size: 16px;
+    font-size: 15px;
     ${({ css }) => css};
     /* TODO: screen size changes */
   }
@@ -138,7 +139,7 @@ const StyledP = styled(P)`
 
 const StyledCaption = styled(Caption)`
   &&& {
-    font-size: 16px;
+    font-size: 15px;
     ${({ css }) => css};
     color: ${({ theme, color }) => theme[color] || theme.secondary};
     /* TODO: screen size changes */
