@@ -1,5 +1,6 @@
 // Libraries
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Switch, Route, withRouter, Link } from 'react-router-dom';
 
@@ -9,26 +10,47 @@ import RoutesWrapper from 'layout/UI/RoutesWrapper';
 import Homepage from 'containers/Homepage';
 
 // Icons
+import HomeIcon from '@material-ui/icons/Home';
 import ContactIcon from '@material-ui/icons/Mail';
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  .MuiButton-label {
+    font-weight: 700;
+    margin-right: 1ch;
+  }
+`;
 
 const links = [
   {
-    key: 'contact',
+    key: 'home',
     type: 'button',
     color: 'inherit',
-    title: 'Contact',
-    caption: 'Say hello, get in touch!',
-    icon: <ContactIcon />,
+    title: 'Home',
+    caption: 'Back to the landing page!',
+    icon: <HomeIcon />,
+    isDrawerOnly: true,
     wrapper: props => (
-      // {props.children} will contain the content of the anchor.
-      // eslint-disable-next-line
-      <a
+      <StyledLink
+        to="/"
         {...props}
-        role="button"
-        href="mailto:rmolinamir@gmail.com"
       />
     )
-  }
+  },
+  {
+    key: 'codelab',
+    type: 'button',
+    color: 'inherit',
+    title: 'Code Lab',
+    caption: 'Come check out my open source contributions!',
+    icon: <ContactIcon />,
+    wrapper: props => (
+      <StyledLink
+        to="code-lab"
+        {...props}
+      />
+    )
+  },
 ];
 
 const Routes = props => {

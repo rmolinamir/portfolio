@@ -62,9 +62,8 @@ const StyledLink = styled(Link)`
     .motto {
       font-size: 12px;
     }
-    @media (min-width: 600px) {
-      padding-left: 16px;
-      padding-right: 72px;
+    @media (max-width: ${({ theme }) => theme.screenSm}) {
+      display: none;
     }
     padding-left: 16px;
     padding-right: 16px;

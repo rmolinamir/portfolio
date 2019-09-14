@@ -32,14 +32,14 @@ const Item = props => {
       <StyledListItemText
         primary={(
           <StyledListTitle
-            color="whiteColor"
+            color="baseFontColor"
           >
             {title}
           </StyledListTitle>
         )}
         secondary={(
           <StyledListCaption
-            color="whiteColor"
+            color="baseFontColor"
             gutterBottom
           >
             {caption}

@@ -66,10 +66,12 @@ export default function Navbar(props) {
         boxShadow={boxShadow}
         transform={transform}
         styledCss={styledCss}
+        id="main-app-bar"
       >
         <Toolbar>
           <Home />
           <div className="spacing" />
+          {renderNavLinks(links)}
           {[
             { key: 'contact', href: CONTACT_HREF, icon: ContactIcon, blank: false },
             { key: 'github', href: GITHUB_HREF, icon: GithubIcon, blank: true },

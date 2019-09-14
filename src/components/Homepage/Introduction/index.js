@@ -7,8 +7,8 @@ import { H3, P } from 'components/UI/Text';
 
 export default function Introduction() {
   return (
-    <Container>
-      <H3 color="primary" id="introduction"><strong>Introduction</strong></H3>
+    <Container id="introduction">
+      <H3 color="primary"><strong>Introduction</strong></H3>
       <br />
       <P>
         My career started with a major in mechanical engineering, and have been programming professionally for over 3

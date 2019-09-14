@@ -7,8 +7,8 @@ import { H3, P } from 'components/UI/Text';
 
 export default function TLDR() {
   return (
-    <Container id="tldr">
-      <H3 color="primary"><strong>TL;DR</strong></H3>
+    <Container id="technologies">
+      <H3 color="primary"><strong>Technologies</strong></H3>
       <br />
       <P>Technologies: </P>
       <P>Work: </P>

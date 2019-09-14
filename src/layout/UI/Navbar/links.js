@@ -42,7 +42,8 @@ const renderNavLinks = (navLinks = [], LinkComponent) => navLinks.map((link, ind
     case 'list': {
       // TODO: DropdownMenu support with LinkComponent
       // Placeholder before implementing dropdown
-      const { key, color, header, items } = link;
+      const { key, color, header, items, isDrawerOnly } = link;
+      if (isDrawerOnly) return null;
       return header && (
         <DropdownMenu
           key={key}
@@ -61,7 +62,9 @@ const renderNavLinks = (navLinks = [], LinkComponent) => navLinks.map((link, ind
         title,
         wrapper: ButtonLinkComponent,
         wrapperProps,
+        isDrawerOnly,
       } = link;
+      if (isDrawerOnly) return null;
       const Wrapper = ButtonLinkComponent || LinkComponent;
       const navLink = (
         <Button
@@ -144,6 +147,7 @@ const renderDrawerLinks = (navLinks = [], listItemProps = {}, LinkComponent) => 
             caption={caption}
             wrapper={wrapper}
             wrapperProps={wrapperProps}
+            {...listItemProps}
           />
           <Divider />
         </React.Fragment>

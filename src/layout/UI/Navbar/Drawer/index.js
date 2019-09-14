@@ -6,9 +6,18 @@ import styled from 'styled-components';
 // Components
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@material-ui/icons/Cancel';
 import { DrawerList, Divider } from '../components';
 import { renderDrawerLinks } from '../links';
+import DrawerHeader from './DrawerHeader';
+
+const DrawerNav = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 2px;
+  height: 84px;
+`;
 
 const NavbarDrawer = props => {
   const {
@@ -21,37 +30,27 @@ const NavbarDrawer = props => {
     ...rest
   } = props;
 
-  const drawerLogo = (
-    <a role="button">
-      {logo}
-    </a>
-  );
-
   const fullList = (
     <DrawerList>
-      {logo && (
-        <React.Fragment>
-          <LogoWrapper>
-            {LinkComponent ? (
-              <LinkComponent {...logoWrapperProps}>
-                {drawerLogo}
-              </LinkComponent>
-            ) : drawerLogo}
-            <IconButton
-              color="inherit"
-              aria-label="Menu"
-              onClick={closeDrawer}
-            >
-              <MenuIcon />
-            </IconButton>
-          </LogoWrapper>
-          <Divider />
-        </React.Fragment>
-      )}
+      <DrawerNav>
+        <DrawerHeader />
+        <IconButton
+          color="inherit"
+          aria-label="Menu"
+          onClick={closeDrawer}
+          style={{
+            margin: 5,
+            float: 'right',
+          }}
+        >
+          <MenuIcon />
+        </IconButton>
+      </DrawerNav>
+      <Divider />
       {renderDrawerLinks(
         links,
         {
-          closeDrawer
+          onClick: closeDrawer
         },
         LinkComponent
       )}
@@ -97,34 +96,10 @@ const StyledDrawer = styled(Drawer)`
       background-color: ${props => props.theme.lightDarkColor};
     }
     * {
-      color: ${props => props.theme.whiteColor};
+      color: ${props => props.theme.baseFontColor};
     }
     .drawer-container {
       background-color: ${props => props.theme.lightDarkColor};
-    }
-  }
-`;
-
-const LogoWrapper = styled.div`
-  &&& {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 18px 0;
-
-    button:hover {
-      text-decoration: none;
-      background-color: rgba(255, 255, 255, 0.08);
-    }
-
-    button {
-      padding: 3px;
-      margin: 0 0 0 24px;
-    }
-
-    button svg {
-      width: 35px;
-      height: 35px;
     }
   }
 `;

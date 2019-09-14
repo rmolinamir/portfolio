@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 // Components
 import RawDivider from '@material-ui/core/Divider';
-import Logo from 'components/SVG/Logos/DenmaHorizontal_NM';
 import { H6 } from 'components/UI/Text';
 
 const Spacing = styled.div`
@@ -16,27 +15,6 @@ const Spacing = styled.div`
     min-height: 48px;
   }
   min-height: 56px;
-`;
-
-const StyledLogo = styled(Logo)`
-    width: 100%;
-    height: auto;
-    max-width: 225px;
-    cursor: pointer;
-    @media (max-width: 600px) {
-      max-width: 150px !important;
-    }
-`;
-
-const StyledDrawerLogo = styled(StyledLogo)`
-  max-width: 125px;
-  @media (min-width: 600px) {
-    max-width: 225px !important;
-  }
-
-  @media (min-width: 0px) and (orientation: landscape) {
-    max-width: 150px;
-  }
 `;
 
 const Header = styled(H6)`
@@ -57,7 +35,7 @@ const Header = styled(H6)`
 
 const Divider = styled(RawDivider)`
   &&& {
-    background-color: ${props => props.theme.whiteColor};
+    background-color: ${props => props.theme.baseFontColor};
     opacity: 0.12;
   }
 `;
