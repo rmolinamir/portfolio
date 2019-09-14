@@ -61,13 +61,14 @@ Item.propTypes = {
   icon: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   caption: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
+  href: PropTypes.string,
   linkComponent: PropTypes.func,
   wrapper: PropTypes.func,
   wrapperProps: PropTypes.instanceOf(Object),
 };
 
 Item.defaultProps = {
+  href: undefined,
   linkComponent: undefined,
   wrapper: undefined,
   wrapperProps: undefined,

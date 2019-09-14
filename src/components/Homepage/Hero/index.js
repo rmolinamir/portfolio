@@ -14,13 +14,11 @@ export default function Homepage() {
   return (
     <Wrapper>
       <Container
-        justifyItems="center"
         alignItems="flex-start"
         spacing={5}
       >
         <Animations.PopIn
           wrapper={Col}
-          justifyContent="center"
         >
           <Hello>
             <span>Hello,</span>
@@ -29,7 +27,6 @@ export default function Homepage() {
         <Animations.PopIn
           wrapper={Col}
           md={9}
-          justifyContent="center"
           animationDelayMultiplier={2}
         >
           <H3>

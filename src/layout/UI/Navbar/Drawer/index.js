@@ -21,7 +21,6 @@ const DrawerNav = styled.nav`
 
 const NavbarDrawer = props => {
   const {
-    logo,
     logoWrapperProps, // Defaults to root address.
     open,
     closeDrawer,
@@ -77,7 +76,6 @@ const NavbarDrawer = props => {
 };
 
 NavbarDrawer.propTypes = {
-  logo: PropTypes.node.isRequired,
   open: PropTypes.bool.isRequired,
   closeDrawer: PropTypes.func.isRequired,
   links: PropTypes.instanceOf(Array).isRequired,
