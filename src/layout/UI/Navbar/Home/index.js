@@ -25,7 +25,7 @@ const StyledLink = styled(Link)`
     overflow: hidden;
     box-sizing: content-box;
     &, &::before, .caption {
-      transition: all 500ms;
+      transition: all 200ms;
     }
     ::before {
       content: '';
@@ -34,12 +34,7 @@ const StyledLink = styled(Link)`
       left: 0;
       width: 0;
       height: 0;
-      border-bottom-right-radius: 90%;
-
-      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7abcff+0,60abf8+44,4096ee+100 */
       background: ${({ theme }) => theme.primary}; /* Old browsers */
-      background: linear-gradient(165deg,  ${({ theme }) => theme.primary} 0%, ${({ theme }) => theme.whiteColor} 75%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
       z-index: -1;
       pointer-events: none;
     }
