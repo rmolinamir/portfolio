@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 // Libraries
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
@@ -56,7 +57,32 @@ export default function Navbar() {
   }, []);
 
   const setActiveElementOnScroll = () => {
+    // scrollDirection will access the RECT object properties based on the direction
+    // that the user is scrolling to determine the active element in the Navbar,
     const newScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollDirection = newScrollTop >= lastScrollTop ? 'bottom' : 'top';
+    // Horizontal scroll of the Navbar when it overflows.
+    if (navbarRef.current && newScrollTop !== lastScrollTop) {
+      const topAnchorEl = document.getElementById(links[0].id);
+      const { offsetTop } = topAnchorEl;
+      const totalEffectiveHeight = document.body.clientHeight - window.innerHeight - offsetTop;
+      const currentHeight = window.pageYOffset - offsetTop;
+      const percent = (currentHeight) / (totalEffectiveHeight);
+      const newNavbarScrollLeft = navbarRef.current.clientWidth * percent;
+      switch (scrollDirection) {
+        case 'bottom':
+          if (newNavbarScrollLeft > navbarRef.current.scrollLeft) {
+            navbarRef.current.scrollLeft = newNavbarScrollLeft;
+          }
+          break;
+        case 'top':
+          if (newNavbarScrollLeft < navbarRef.current.scrollLeft) {
+            navbarRef.current.scrollLeft = newNavbarScrollLeft;
+          }
+          break;
+        default: // Do nothing.
+      }
+    }
     let inViewElements = Object.values(elementsInView.current);
     const maxValueOfintersectionRatio = (
       Math.max(...inViewElements.map(entry => (entry ? entry.intersectionRatio : 0)), 0)
@@ -66,24 +92,11 @@ export default function Navbar() {
     ));
     if (inViewElements.length === 1) {
       setActiveNavLink(inViewElements[0].target);
-      return;
-    }
-    switch (newScrollTop > lastScrollTop) {
-      // Scrolling to the bottom.
-      case true: {
-        const activeElement = inViewElements.reduce((prev, current) => (
-          (prev.bottom > current.bottom) ? prev : current
-        ));
-        setActiveNavLink(activeElement.target);
-      }
-        break;
-     // Scrolling to the top.
-      default: {
-        const activeElement = inViewElements.reduce((prev, current) => (
-          (prev.top > current.top) ? prev : current
-        ));
-        setActiveNavLink(activeElement.target);
-      }
+    } else if (scrollDirection) {
+      const activeElement = inViewElements.reduce((prev, current) => (
+        (prev[scrollDirection] > current[scrollDirection]) ? prev : current
+      ), inViewElements[0]);
+      if (activeElement) setActiveNavLink(activeElement.target);
     }
     lastScrollTop = newScrollTop;
   };
@@ -105,8 +118,6 @@ export default function Navbar() {
     };
   }, []);
 
-  console.log('activeNavLink', activeNavLink);
-
   return (
     <StyledNav
       ref={navbarRef}
@@ -117,8 +128,8 @@ export default function Navbar() {
             key={id}
           >
             <a
-              className={activeNavLink.id === id ? 'active' : undefined}
               role="button"
+              className={activeNavLink.id === id ? 'active' : undefined}
               onClick={() => scrollToElementOnClick(id)}
             >
               {text}
@@ -163,18 +174,24 @@ const StyledNav = styled.nav`
           content: '';
           position: absolute;
           bottom: -1px;
-          left: 0;
-          width: 100%;
-          height: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 3px;
           opacity: 0;
           display: block;
-          transition: all 0.3s;
+        }
+        a, a::before {
+          transition: all 300ms;
         }
         a:hover::before, a.active::before {
           width: 100%;
           height: 3px;
           opacity: 1;
           background: ${({ theme }) => theme.primary};
+        }
+        a:hover, a.active {
+          color: ${({ theme }) => theme.primary};
         }
       }
       @media (max-width: ${({ theme }) => theme.screenMd}) {
