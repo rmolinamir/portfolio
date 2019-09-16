@@ -6,8 +6,8 @@ import styled from 'styled-components';
 const links = [
   { id: 'introduction', text: 'Introduction' },
   { id: 'tldr', text: 'TL;DR' },
-  { id: 'technologies', text: 'Technologies' },
   { id: 'work', text: 'Work' },
+  { id: 'technologies', text: 'Technologies' },
   { id: 'open-source', text: 'Open Source' },
   { id: 'education', text: 'Education' },
   { id: 'interests', text: 'Interests' },

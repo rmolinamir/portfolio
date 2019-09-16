@@ -22,9 +22,9 @@ const Homepage = () => (
     <Divider />
     <TLDR />
     <Divider />
-    <Technologies />
-    <Divider />
     <Work />
+    <Divider />
+    <Technologies />
     <Divider />
     <OpenSource />
     <Divider />

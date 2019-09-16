@@ -6,6 +6,7 @@ const Divider = styled.div`
   height: 1px;
   max-height: 1px;
   background-color: ${({ theme }) => theme.dividerColor};
+  margin: ${({ margin }) => margin};
 `;
 
 export default Divider;
