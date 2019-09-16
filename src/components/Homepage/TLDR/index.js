@@ -31,7 +31,7 @@ export default function TLDR() {
       </P>
       <P>
         <span role="img" aria-labelledby="interests">❤️</span> <strong>Enjoy</strong> spending my free time
-        carrying out personal projects, a bit of dungeons and dragons, keeping myself healthy, et al
+        carrying out personal projects, a bit of dungeons and dragons, exercise, et al
       </P>
       <P>
         <StyledAnchor
