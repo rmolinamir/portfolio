@@ -26,7 +26,7 @@ export default function TLDR() {
         maintenance of various projects over the years
       </P>
       <P>
-        <span role="img" aria-labelledby="education">🎓</span> <strong>Mechanical engineer</strong> graduate since 2017,
+        <span role="img" aria-labelledby="education">🎓</span> <strong>Mechanical engineer graduate</strong> since 2017,
         did a study of a model for the prediction of the properties of a welding cord for steels
       </P>
       <P>
