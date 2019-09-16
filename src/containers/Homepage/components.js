@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import Particles from 'react-particles-js';
 import Typography from '@material-ui/core/Typography';
 import PageWrapper from 'layout/UI/PageWrapper';
-import ResponsiveLogo from 'components/SVG/Logos/ResponsiveLogo';
 
 export const StyledPageWrapper = styled(PageWrapper)`
   color: ${props => props.theme.lightDarkColor};
@@ -41,15 +40,6 @@ export const LogoContainer = styled.div`
     padding: 0 0 24px;
     cursor: pointer;
     pointer-events: auto;
-  }
-`;
-
-export const StyledLogo = styled(ResponsiveLogo)`
-  margin: 72px auto;
-  width: 75%;
-
-  @media (max-width: ${({ theme }) => theme.screenXl}) {
-    margin: 12px auto 24px;
   }
 `;
 
