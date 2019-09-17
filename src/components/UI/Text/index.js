@@ -24,6 +24,12 @@ const H3 = ({ children, ...rest }) => (
   </Typography>
 );
 
+const H4 = ({ children, ...rest }) => (
+  <Typography variant="h4" {...rest}>
+    {children}
+  </Typography>
+);
+
 const H6 = ({ children, ...rest }) => (
   <Typography variant="h6" {...rest}>
     {children}
@@ -115,6 +121,27 @@ const StyledH3 = styled(H3)`
   }
 `;
 
+const StyledH4 = styled(H3)`
+  &&& {
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: ${({ theme, color }) => (color ? theme[color] : undefined)};
+    @media (max-width: ${({ theme }) => theme.screenMd}) {
+      font-size: 16px;
+    }
+    @media (max-width: ${({ theme }) => theme.screenSm}) {
+      font-size: 15px;
+    }
+    ${({ css }) => css};
+    * {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+  }
+`;
+
 const StyledH6 = styled(H6)`
   &&& {
     ${({ css }) => css};
@@ -167,6 +194,7 @@ const propTypes = {
 H1.propTypes = propTypes;
 H2.propTypes = propTypes;
 H3.propTypes = propTypes;
+H4.propTypes = propTypes;
 H6.propTypes = propTypes;
 P.propTypes = propTypes;
 Caption.propTypes = propTypes;
@@ -176,6 +204,7 @@ export {
   StyledH1 as H1,
   StyledH2 as H2,
   StyledH3 as H3,
+  StyledH4 as H4,
   StyledH6 as H6,
   StyledP as P,
   StyledSpan as Span,

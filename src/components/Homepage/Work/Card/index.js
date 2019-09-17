@@ -11,7 +11,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Image } from 'components/UI';
 
 export default function Card(props) {
-  const { company, date, role, location, logo, importantResponsabilities, responsabilities } = props;
+  const { company, date, role, location, logo, logoRadius, importantResponsabilities, responsabilities } = props;
   const [expanded, setExpanded] = useState(false);
 
   function handleExpandClick() {
@@ -24,6 +24,12 @@ export default function Card(props) {
         <div className="logo">
           <Image
             src={logo}
+            draggable="false"
+            style={{
+              height: '100%',
+              width: '100%',
+              borderRadius: logoRadius || '15px',
+            }}
           />
         </div>
         <div className="details">
@@ -73,6 +79,11 @@ Card.propTypes = {
   logo: PropTypes.string.isRequired,
   importantResponsabilities: PropTypes.instanceOf(Array).isRequired,
   responsabilities: PropTypes.instanceOf(Array).isRequired,
+  logoRadius: PropTypes.string,
+};
+
+Card.defaultProps = {
+  logoRadius: undefined,
 };
 
 const WorkExperience = styled.div`
@@ -82,8 +93,17 @@ const WorkExperience = styled.div`
     width: 45px;
     height: 45px;
     margin-right: 1ch;
+    @media (max-width: ${({ theme }) => theme.screenSm}) {
+    margin-right: 2ch;
+    }
   }
   .details {
+    @media (max-width: ${({ theme }) => theme.screenSm}) {
+      > div {
+        flex-flow: column;
+        align-items: flex-start;
+      }
+    }
     flex: 1;
   }
 `;
