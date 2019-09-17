@@ -23,7 +23,7 @@ const workExperience = [
     logo: bridgeForBillionsLogo,
     importantResponsabilities: [
       'Backend development of the REST API built with the Django REST Framework and Python.',
-      'Frontend development of the PWA built with React.js and related technologies such as React-Redux.',
+      'Front-end development of the PWA built with React.js and related technologies such as React-Redux.',
     ],
     responsabilities: [
       'Identifying areas for improvements in our existing software and subsequently developing or spearheading these improvements.',
@@ -42,7 +42,7 @@ const workExperience = [
     location: 'Sunrise, FL',
     logo: servifyLogo,
     importantResponsabilities: [
-      'Frontend development using React.js, React-Redux, Redux-Saga, and Next.js.',
+      'Front-end development using React.js, React-Redux, Redux-Saga, and Next.js.',
       'Backend development of the REST API built with Google\'s Firebase and Node.js technologies.'
     ],
     responsabilities: [
@@ -67,7 +67,7 @@ const workExperience = [
       'Automated notifications, such as emails.',
       'Image uploads and image deletion built with the Cloudinary API.',
       'Product submissions, editions and deletions.',
-      'Frontend responsive design and development.',
+      'Front-end responsive design and development.',
     ],
   },
   {
