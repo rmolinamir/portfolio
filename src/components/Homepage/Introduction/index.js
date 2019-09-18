@@ -13,7 +13,7 @@ export default function Introduction() {
       <br />
       <P>
         My career started with a major in mechanical engineering, and have been programming professionally for over {amountOfYears} years
-        in a variety of technologies and languages, including Python, JavaScript (andTypeScript), C++, and databases including
+        in a variety of technologies and languages, including Python, JavaScript (and TypeScript), C++, and databases including
         relational SQL databases such as Django REST Framework, as well as No-SQL databases such as MongoDB.
       </P>
       <br />

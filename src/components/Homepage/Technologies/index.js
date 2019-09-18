@@ -23,56 +23,148 @@ const proficiencies = [
 
 const technologiesList = [
   {
-    key: 'front-end',
-    name: 'Front-end',
+    key: 'apis',
+    name: 'APIs',
     list: [
-      { name: 'JavaScript', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'Django Browsable Api', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: '3rd Party Auth (Ex. Facebook, Google, Twitter)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Discogs', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'Google APIs (Auth, Cloud Hosting, Firebase, Firestore, Maps)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Immutable.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'normalizr', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Mapbox', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Moment.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Postman', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Stripe', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'YouTube', proficiency: PROFICIENCY_RECREATIONAL },
     ]
   },
   {
     key: 'back-end',
     name: 'Back-end',
     list: [
-      { name: 'Django Browsable API', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'JavaScript', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'React.js', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
+      { name: 'C++', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'Django REST Framework', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Express', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Node.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Passport', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Python', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+    ]
+  },
+  {
+    key: 'bundlers-parsers',
+    name: 'Bundlers & Parsers',
+    list: [
+      { name: 'Babel', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Grunt', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Gulp', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'NPM', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Webpack 4', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+    ]
+  },
+  {
+    key: 'databases',
+    name: 'Databases',
+    list: [
+      { name: 'GraphQL', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'MongoDB', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'MySQL', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'PostgreSQL', proficiency: PROFICIENCY_RECREATIONAL },
     ]
   },
   {
     key: 'design',
     name: 'Design',
     list: [
-      { name: 'JavaScript', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'Django Browsable Api', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Adobe PhotoShop', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Adobe XD', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'InVision', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'SolidWorks', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Sketch', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'Zeplin', proficiency: PROFICIENCY_RECREATIONAL },
     ]
   },
   {
-    key: 'apis',
-    name: 'APIs',
+    key: 'front-end',
+    name: 'Front-end',
     list: [
+      { name: 'Bootstrap', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'CSS', proficiency: PROFICIENCY_EXPERT },
+      { name: 'Django Browsable API', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'JavaScript', proficiency: PROFICIENCY_EXPERT },
+      { name: 'Java/Kotlin', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'jQuery', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'HTML', proficiency: PROFICIENCY_EXPERT },
+      { name: 'Node.js View Engines (Ex. Handlebars, EJS, etc.)', proficiency: PROFICIENCY_EXPERT },
+      { name: 'Next.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'LESS', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
-      { name: 'Django Browsable Api', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Redux', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Redux Saga', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'SASS/SCSS', proficiency: PROFICIENCY_EXPERT },
+      { name: 'Styled-Components', proficiency: PROFICIENCY_EXPERT },
+      { name: 'TypeScript', proficiency: PROFICIENCY_EXPERT },
+    ]
+  },
+  {
+    key: 'infrastructure-devops',
+    name: 'Infrastructure / DevOps',
+    list: [
+      { name: 'AWS (EC2)', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Google Cloud Hosting', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Firebase Hosting', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Heroku', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Vagrant', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'VirtualBox', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+    ]
+  },
+  {
+    key: 'infrastructure-devops',
+    name: 'Testing & Maintenance',
+    list: [
+      { name: 'Codacy', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'CodeFactor', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Jest', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Enzyme', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'ESLint', proficiency: PROFICIENCY_EXPERT },
+      { name: 'TSLint (deprecated)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+    ]
+  },
+  {
+    key: 'text-editors-ides',
+    name: 'Text Editors & IDEs',
+    list: [
+      { name: 'Android Studio', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'PyCharm', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Sublime Text', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Visual Studio', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'VSCode', proficiency: PROFICIENCY_EXPERT },
+    ]
+  },
+  {
+    key: 'version-control',
+    name: 'Management',
+    list: [
+      { name: 'Google Hangouts', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Slack', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Trello', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+    ]
+  },
+  {
+    key: 'version-control',
+    name: 'Version Control',
+    list: [
+      { name: 'Bitbucket', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'Git', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'GitHub', proficiency: PROFICIENCY_EXPERT },
+      { name: 'Github Desktop App', proficiency: PROFICIENCY_EXPERT },
+    ]
+  },
+  {
+    key: 'others',
+    name: 'Others',
+    list: [
+      { name: 'Microsoft Excel (Data Analysis, Dynamic Dashboards, etc.)', proficiency: PROFICIENCY_EXPERT },
+      { name: 'Unreal Engine 4', proficiency: PROFICIENCY_RECREATIONAL },
     ]
   },
 ];
@@ -86,7 +178,7 @@ export default function Technologies() {
         These tools have helped me perform my responsabilities, build PWAs, native applications & APIs.
       </SectionCaption>
       <StyledCaption>
-        <span>Proficiency or expertise:</span>
+        <span>Proficiency or usage:</span>
         {proficiencies.map(({ proficiency, name, }) => (
           <span
             key={name}

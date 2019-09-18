@@ -35,7 +35,7 @@ export default function List(props) {
 
 List.propTypes = {
   list: PropTypes.instanceOf(Array).isRequired,
-}
+};
 
 const StyledList = styled.ul`
   list-style: none;
