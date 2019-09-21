@@ -15,9 +15,9 @@ export default function List(props) {
   const { list } = props;
   return (
     <StyledList>
-      {list.map(({ key, name, proficiency }) => (
+      {list.map(({ name, proficiency }) => (
         <StyledItem
-          key={key}
+          key={name}
         >
           <span className="checkbox">
             <StyledCheckbox

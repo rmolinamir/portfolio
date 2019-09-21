@@ -118,7 +118,7 @@ const technologiesList = [
     ]
   },
   {
-    key: 'infrastructure-devops',
+    key: 'testing-maintenance',
     name: 'Testing & Maintenance',
     list: [
       { name: 'Codacy', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
@@ -141,7 +141,7 @@ const technologiesList = [
     ]
   },
   {
-    key: 'version-control',
+    key: 'management',
     name: 'Management',
     list: [
       { name: 'Google Hangouts', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
