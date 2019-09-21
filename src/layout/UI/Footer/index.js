@@ -12,7 +12,7 @@ const Footer = props => (
     <div>
       <div>
         All original code is <strong>Copyright © {currentYear} Robert Molina</strong> & licensed under
-        a <Link to="/licences">MIT& GPL licenses</Link>.
+        a <Link to="/licences">MIT & GPL licenses</Link>.
       </div>
       <div>
         All original written text and images found on this website are <strong>Copyright © {currentYear} Robert Molina</strong> and

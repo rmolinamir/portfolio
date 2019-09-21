@@ -9,7 +9,6 @@ const Fab = props => (
   <StyledFab {...props} />
 );
 
-
 const StyledFab = styled(RawFab)`
   &&& {
     display: inline-block;
