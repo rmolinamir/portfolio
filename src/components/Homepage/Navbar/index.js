@@ -68,7 +68,7 @@ export default function Navbar() {
       const totalEffectiveHeight = document.body.clientHeight - window.innerHeight - offsetTop;
       const currentHeight = window.pageYOffset - offsetTop;
       const percent = (currentHeight) / (totalEffectiveHeight);
-      const newNavbarScrollLeft = navbarRef.current.clientWidth * percent;
+      const newNavbarScrollLeft = (navbarRef.current.scrollWidth - navbarRef.current.clientWidth) * percent;
       switch (scrollDirection) {
         case 'bottom':
           if (newNavbarScrollLeft > navbarRef.current.scrollLeft) {
