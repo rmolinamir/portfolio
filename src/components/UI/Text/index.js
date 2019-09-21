@@ -81,7 +81,7 @@ const StyledH2 = styled(H2)`
     font-size: 34px;
     line-height: 1.7;
     font-weight: 400;
-    ${({ css }) => css};
+    color: ${({ theme, color }) => (color ? theme[color] : undefined)};
     @media (max-width: ${({ theme }) => theme.screenMd}) {
       font-size: 28px;
     }
@@ -121,7 +121,7 @@ const StyledH3 = styled(H3)`
   }
 `;
 
-const StyledH4 = styled(H3)`
+const StyledH4 = styled(H4)`
   &&& {
     font-size: 17px;
     line-height: 1.6;

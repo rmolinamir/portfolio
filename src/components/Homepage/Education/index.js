@@ -3,6 +3,7 @@ import React from 'react';
 
 // Assets
 import ujapLogo from 'static/images/homepage/ujap.jpg';
+import pdfDownloadLink from 'utils/pdfDownloadLink';
 
 // Components
 import { Container, Divider } from 'components/UI';
@@ -22,7 +23,7 @@ const education = [
       {
         caption: 'Successfully carried out a study of a \'Model for the Prediction of the Behavior of the Resistance to the Traction of a Welding Cord (SMAW) affected by a defect for an AISI 1010\' steel.',
         description: 'I was part of a team that developed a predictive model of the tensile strength of welding cords for AISI 1010 steels. This ambitious project required strong teamwork skills and high technical capacity. There was good teamwork, contributing to group discussions and taking the initiative to set tasks when the next stage of the project was not clear.',
-        cite: 'https://drive.google.com/file/d/15bEpE77LztNaNu2fn2wRtPsXeKzHSCu9/view',
+        cite: pdfDownloadLink,
       },
     ],
   },

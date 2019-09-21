@@ -2,8 +2,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Assets
+import pdfDownloadLink from 'utils/pdfDownloadLink';
+
 // Components
-import { Container, Fab } from 'components/UI';
+import { Container, Fab, Animations } from 'components/UI';
 import { Row, Col } from 'components/Layout';
 import { H3 } from 'components/UI/Text';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -21,44 +24,46 @@ export default function Resume() {
         website. Keep in mind that it&apos;s in PDF format, if you need it in any other format(s), do let me know.
       </SectionCaption>
       <br />
-      <FabContainer>
-        <a
-          href="https://drive.google.com/file/d/15bEpE77LztNaNu2fn2wRtPsXeKzHSCu9/view"
-          target="blank"
-          rel="noopener noreferrer"
-        >
-          <Fab
-            color="whiteColor"
-            backgroundColor="primary"
+      <Animations.PopIn>
+        <FabContainer>
+          <a
+            href={pdfDownloadLink}
+            target="blank"
+            rel="noopener noreferrer"
           >
-            <div className="fab-text">
-              <Row
-                alignItems="center"
-                alignContent="center"
-              >
-                <Col
-                  xs={3}
+            <Fab
+              color="whiteColor"
+              backgroundColor="primary"
+            >
+              <div className="fab-text">
+                <Row
+                  alignItems="center"
+                  alignContent="center"
                 >
-                  <ListItemAvatar>
-                    <Avatar>
-                      <DownloadIcon />
-                    </Avatar>
-                  </ListItemAvatar>
-                </Col>
-                <Col
-                  xs={9}
-                >
-                  <ListItemText
-                    primary={(
-                      <strong>Preview &  Download</strong>
-                    )}
-                  />
-                </Col>
-              </Row>
-            </div>
-          </Fab>
-        </a>
-      </FabContainer>
+                  <Col
+                    xs={3}
+                  >
+                    <ListItemAvatar>
+                      <Avatar>
+                        <DownloadIcon />
+                      </Avatar>
+                    </ListItemAvatar>
+                  </Col>
+                  <Col
+                    xs={9}
+                  >
+                    <ListItemText
+                      primary={(
+                        <strong>Preview &  Download</strong>
+                      )}
+                    />
+                  </Col>
+                </Row>
+              </div>
+            </Fab>
+          </a>
+        </FabContainer>
+      </Animations.PopIn>
     </Container>
   );
 }

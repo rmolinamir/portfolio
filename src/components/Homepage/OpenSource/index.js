@@ -10,7 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import LinkIcon from '@material-ui/icons/InfoOutlined';
-import { Container } from 'components/UI';
+import { Container, Animations } from 'components/UI';
 import { H3 } from 'components/UI/Text';
 import SectionCaption from '../SectionCaption';
 
@@ -64,23 +64,28 @@ export default function OpenSource() {
       </SectionCaption>
       <br />
       <StyledList>
-        {repositories.map(({ name, description, href, isRouterDom = true }) => {
+        {repositories.map(({ name, description, href, isRouterDom = true }, index) => {
           const item = (
-            <ListItem
-              button
+            <Animations.PopIn
+              key={name}
+              animationDelayMultiplier={index / 3}
             >
-              <ListItemAvatar>
-                <Avatar>
-                  <LinkIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary={(
-                  <strong>{name}</strong>
-                )}
-                secondary={description}
-              />
-            </ListItem>
+              <ListItem
+                button
+              >
+                <ListItemAvatar>
+                  <Avatar>
+                    <LinkIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={(
+                    <strong>{name}</strong>
+                  )}
+                  secondary={description}
+                />
+              </ListItem>
+            </Animations.PopIn>
           );
           if (isRouterDom) {
             return (

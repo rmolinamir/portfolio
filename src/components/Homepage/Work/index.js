@@ -8,7 +8,7 @@ import bonpreuFoodsLogo from 'static/images/homepage/bonpreu-foods.png';
 import unileverLogo from 'static/images/homepage/unilever.jpg';
 
 // Components
-import { Container, Divider } from 'components/UI';
+import { Container, Divider, Animations } from 'components/UI';
 import { H3 } from 'components/UI/Text';
 import SectionCaption from '../SectionCaption';
 import Card from './Card';
@@ -109,15 +109,18 @@ export default function Work() {
           ({ key, ...rest }, index) => {
             const isLast = index === workExperience.length - 1;
             return (
-              <React.Fragment
+              <Animations.PopIn
+                animationDelayMultiplier={index}
                 key={key}
               >
-                <Card {...rest} />
-                {/* Do not render divider on the last item. */}
-                {!isLast && (
-                  <Divider margin="4px 0 16px" />
-                )}
-              </React.Fragment>
+                <div>
+                  <Card {...rest} />
+                  {/* Do not render divider on the last item. */}
+                  {!isLast && (
+                    <Divider margin="4px 0 16px" />
+                  )}
+                </div>
+              </Animations.PopIn>
             );
           }
         )}

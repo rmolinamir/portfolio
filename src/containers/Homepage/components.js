@@ -2,7 +2,6 @@
 import styled from 'styled-components';
 
 // Components
-import Particles from 'react-particles-js';
 import Typography from '@material-ui/core/Typography';
 import PageWrapper from 'layout/UI/PageWrapper';
 
@@ -41,12 +40,6 @@ export const LogoContainer = styled.div`
     cursor: pointer;
     pointer-events: auto;
   }
-`;
-
-export const StyledParticles = styled(Particles)`
-  width: 100%;
-  height: 100%;
-  z-index: 0;
 `;
 
 export const StyledHeroValueProposition = styled(Typography)`

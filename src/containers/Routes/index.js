@@ -2,12 +2,13 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Switch, Route, withRouter, Link } from 'react-router-dom';
+import { Switch, Route, withRouter, Link, Redirect } from 'react-router-dom';
 
 // Components
 import RoutesWrapper from 'layout/UI/RoutesWrapper';
 
 import Homepage from 'containers/Homepage';
+import Licenses from 'containers/Licenses';
 
 // Icons
 import HomeIcon from '@material-ui/icons/Home';
@@ -42,7 +43,7 @@ const links = [
     type: 'button',
     color: 'inherit',
     title: 'Code Lab',
-    caption: 'Come check out my open source contributions!',
+    caption: 'Come check out my open source packages!',
     icon: <ContactIcon />,
     wrapper: props => (
       <StyledLink
@@ -74,7 +75,8 @@ const Routes = props => {
     >
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route path="/licenses" render={() => <div>lICENSES</div>} />
+        <Route path="/licenses" component={Licenses} />
+        <Redirect to="/" />
       </Switch>
     </RoutesWrapper>
   );
@@ -83,22 +85,5 @@ const Routes = props => {
 Routes.propTypes = {
   location: PropTypes.instanceOf(Object).isRequired
 };
-
-// const StyledRoutesWrapper = styled.section`
-//   display: flex;
-//   flex-flow: column;
-//   width: 100%;
-//   min-height: 100%;
-//   animation: fade-in 300ms ease 0ms;
-
-//   @keyframes fade-in {
-//     0% {
-//       opacity: 0;
-//     }
-//     100% {
-//       opacity: 1;
-//     }
-//   }
-// `;
 
 export default withRouter(Routes);

@@ -3,7 +3,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 // Components
-import { Container } from 'components/UI';
+import { Container, Animations } from 'components/UI';
 import { H3 } from 'components/UI/Text';
 import CheckboxIcon from 'components/SVG/Icons/Checkbox';
 import SectionCaption from '../SectionCaption';
@@ -195,14 +195,20 @@ export default function Technologies() {
       </StyledCaption>
       <br />
       <GlobalList>
-        {technologiesList.map(({ key, name, list }) => (
+        {technologiesList.map(({ key, name, list }, index) => (
           <li
             key={key}
           >
-            <div className="list-header"><strong>{name}</strong></div>
-            <List
-              list={list}
-            />
+            <Animations.PopIn
+              animationDelayMultiplier={index / 2}
+            >
+              <div>
+                <div className="list-header"><strong>{name}</strong></div>
+                <List
+                  list={list}
+                />
+              </div>
+            </Animations.PopIn>
           </li>
         ))}
       </GlobalList>

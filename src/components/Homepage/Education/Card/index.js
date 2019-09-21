@@ -4,46 +4,56 @@ import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
 // Components
-import { Image } from 'components/UI';
+import { Image, Animations } from 'components/UI';
 
 export default function Card(props) {
   const { university, date, degree, location, logo, logoRadius, accomplishments } = props;
 
   return (
     <>
-      <WorkExperience>
-        <div className="logo">
-          <Image
-            src={logo}
-            draggable="false"
-            style={{
-              height: '100%',
-              width: '100%',
-              borderRadius: logoRadius || '15px',
-            }}
-          />
-        </div>
-        <div className="details">
-          <SpacedBetween>
-            <div><strong>{university}</strong></div>
-            <div><strong>{date}</strong></div>
-          </SpacedBetween>
-          <SpacedBetween>
-            <div><i>{degree}</i></div>
-            <div><i>{location}</i></div>
-          </SpacedBetween>
-        </div>
-      </WorkExperience>
-      <List>
-        {accomplishments.map((({ caption, description, cite }, index) => (
-          <li key={index}>
-            <span>{caption}</span>
-            <StyledBlockquote cite={cite}>
-              {description}
-            </StyledBlockquote>
-          </li>
-        )))}
-      </List>
+      <Animations.PopIn>
+        <WorkExperience>
+          <div className="logo">
+            <Image
+              src={logo}
+              draggable="false"
+              style={{
+                height: '100%',
+                width: '100%',
+                borderRadius: logoRadius || '15px',
+              }}
+            />
+          </div>
+          <div className="details">
+            <SpacedBetween>
+              <div><strong>{university}</strong></div>
+              <div><strong>{date}</strong></div>
+            </SpacedBetween>
+            <SpacedBetween>
+              <div><i>{degree}</i></div>
+              <div><i>{location}</i></div>
+            </SpacedBetween>
+          </div>
+        </WorkExperience>
+      </Animations.PopIn>
+      <Animations.PopIn
+        animationDelayMultiplier={2}
+      >
+        <List>
+          {accomplishments.map((({ caption, description, cite }, index) => (
+            <li key={index}>
+              <span>{caption}</span>
+              <Animations.PopIn
+                animationDelayMultiplier={3}
+              >
+                <StyledBlockquote cite={cite}>
+                  {description}
+                </StyledBlockquote>
+              </Animations.PopIn>
+            </li>
+          )))}
+        </List>
+      </Animations.PopIn>
     </>
   );
 }

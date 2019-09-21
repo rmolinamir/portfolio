@@ -3,9 +3,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Components
-import { Container } from 'components/UI';
-import { H3, P } from 'components/UI/Text';
+import { Container, Animations } from 'components/UI';
+import { H3 } from 'components/UI/Text';
 import SectionCaption from '../SectionCaption';
+
+const interests = [
+  'Meeting new people;',
+  'contributing to open source libraries;',
+  'Reddit;',
+  'Dungeons and Dragons;',
+  'RPG games;',
+  'traveling;',
+  'jogging;',
+  'The Office;',
+  'building PCs;',
+];
 
 export default function Interests() {
   return (
@@ -18,15 +30,16 @@ export default function Interests() {
       </SectionCaption>
       <br />
       <List>
-        <li>Meeting new people;</li>
-        <li>contributing to open source libraries;</li>
-        <li>Reddit;</li>
-        <li>Dungeons and Dragons;</li>
-        <li>RPG games;</li>
-        <li>traveling;</li>
-        <li>jogging;</li>
-        <li>The Office;</li>
-        <li>building PCs;</li>
+        {interests.map((interest, index) => (
+          <Animations.PopIn
+            key={index}
+            animationDelayMultiplier={index / 2}
+          >
+            <li>
+              {interest}
+            </li>
+          </Animations.PopIn>
+        ))}
       </List>
     </Container>
   );
