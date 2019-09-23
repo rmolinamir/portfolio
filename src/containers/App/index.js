@@ -1,6 +1,6 @@
 // Libraries
 import React, { Suspense } from 'react';
-import styled, { ThemeProvider, css } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
 // Styling
 import 'static/theme/index.scss';
@@ -13,8 +13,8 @@ import LazyImport from 'components/Util/LazyImport';
 import Loader from 'components/UI/Loader';
 import LogoLoader from 'components/UI/LogoLoader';
 
-const LOADER_DELAY = 1000;
-const LOADER_DEV_DELAY = 500;
+const LOADER_DELAY = 750;
+const LOADER_DEV_DELAY = 750;
 const RESOLVED_CALLBACK_DELAY = process.env.NODE_ENV === 'development' ? LOADER_DEV_DELAY : LOADER_DELAY;
 
 const App = () => {
@@ -47,8 +47,8 @@ const App = () => {
                 onExited={() => setIsLoading(false)}
               >
                 <Loaders>
-                  <StyledLoader size={256} />
-                  <StyledLogoLoader />
+                  <LogoLoader />
+                  <InfinityLoader loader="infinity" size={128} />
                 </Loaders>
               </CSSTransition>
             )}
@@ -92,26 +92,25 @@ const Wrapper = styled.section`
   }
 `;
 
-const loaderCss = css`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
-
 const Loaders = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
   min-height: 100vh;
+  @media (min-width: ${({ theme }) => theme.screenXl}) {
+    min-height: calc(100vh - 140px);
+  }
+  display: flex;
+  align-item: center;
+  justify-content: center;
+  flex-flow: column;
 `;
 
-const StyledLoader = styled(Loader)`
-  ${loaderCss};
-`;
-
-const StyledLogoLoader = styled(LogoLoader)`
-  ${loaderCss};
+const InfinityLoader = styled(Loader)`
+  margin: 18px 0;
+  svg {
+    max-width: 33%;
+  }
 `;
 
 export default App;

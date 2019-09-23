@@ -54,7 +54,8 @@ const Homepage = () => (
 );
 
 const Wrapper = styled.div`
-  max-width: ${({ theme }) => theme.screenMd};
+  max-width: ${({ theme }) => theme.screenLg};
+  margin: 0 auto;
 `;
 
 const License = styled.code`
