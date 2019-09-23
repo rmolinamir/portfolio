@@ -90,14 +90,8 @@ NavbarDrawer.defaultProps = {
 
 const StyledDrawer = styled(Drawer)`
   &&& {
-    > *:not(:first-of-type) {
-      background-color: ${props => props.theme.darkColor};
-    }
     * {
       color: ${props => props.theme.baseFontColor};
-    }
-    .drawer-container {
-      background-color: ${props => props.theme.darkColor};
     }
   }
 `;

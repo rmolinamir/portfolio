@@ -17,7 +17,7 @@ const RESOLVED_CALLBACK_DELAY = process.env.NODE_ENV === 'development' ? LOADER_
 const App = () => {
   useEffect(() => {
     document.body.style.overflowX = 'hidden';
-    document.getElementById('root').style.transition = 'margin 500ms, max-width 250ms';
+    document.getElementById('root').style.transition = 'margin 500ms, padding 500ms, max-width 250ms';
     return () => { document.body.style.overflowX = 'visible'; };
   }, []);
 

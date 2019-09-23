@@ -1,5 +1,5 @@
 // Libraries
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import styled from 'styled-components';
 
 // Components
@@ -9,18 +9,11 @@ import Loader from 'components/UI/Loader';
 import LogoLoader from 'components/UI/LogoLoader';
 
 const LOADER_DELAY = 2500;
-const LOADER_DEV_DELAY = 2500;
+const LOADER_DEV_DELAY = 250;
 const RESOLVED_CALLBACK_DELAY = process.env.NODE_ENV === 'development' ? LOADER_DEV_DELAY : LOADER_DELAY;
 
 const CodeLabLoader = () => {
   const [isLoading, setIsLoading] = React.useState(true);
-
-  useEffect(() => {
-    document.body.style.overflowX = 'hidden';
-    return () => {
-      document.body.style.overflowX = 'visible';
-    };
-  }, []);
 
   return (
     <Suspense
