@@ -14,7 +14,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ArrowRightIcon from '@material-ui/icons/ArrowRightTwoTone';
 
 export default function SideDrawer(props) {
   const { projectsData } = props;
@@ -36,16 +35,6 @@ export default function SideDrawer(props) {
     <>
       <StyledSideDrawer
         variant="permanent"
-        // className={clsx(classes.drawer, {
-        //   [classes.drawerOpen]: open,
-        //   [classes.drawerClose]: !open,
-        // })}
-        // classes={{
-        //   paper: clsx({
-        //     [classes.drawerOpen]: open,
-        //     [classes.drawerClose]: !open,
-        //   }),
-        // }}
         open={open}
       >
         <div

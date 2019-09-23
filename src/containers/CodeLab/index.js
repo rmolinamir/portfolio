@@ -14,7 +14,7 @@ const CodeLab = withTheme(props => {
   const [width, setWidth] = useState(undefined);
 
   const onResize = useCallback(() => {
-    setWidth(window.innerWidth);
+    setWidth(document.body.clientWidth);
   }, [setWidth]);
 
   const { theme } = props;
@@ -44,7 +44,7 @@ const CodeLab = withTheme(props => {
         projectsData={projectsData}
       />
       <Divider />
-      <Container>
+      <Container style={{ minHeight: '100vh' }}>
         Code Lab
       </Container>
     </>
