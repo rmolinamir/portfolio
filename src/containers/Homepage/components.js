@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import PageWrapper from 'layout/UI/PageWrapper';
 
 export const StyledPageWrapper = styled(PageWrapper)`
-  color: ${props => props.theme.lightDarkColor};
+  color: ${props => props.theme.darkColor};
   background-color: transparent;
 `;
 

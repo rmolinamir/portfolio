@@ -6,7 +6,7 @@ import { withTheme } from 'styled-components';
 // Dependencies
 import { mainTheme } from 'static/theme';
 
-const defaultColor = mainTheme.lightDarkColor;
+const defaultColor = mainTheme.darkColor;
 const defaultBackgroundColor = mainTheme.whiteColor;
 const defaultOpacity = 1;
 const defaultBoxShadow = undefined;
