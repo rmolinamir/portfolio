@@ -7,8 +7,12 @@ import { Switch, Route, withRouter, Link, Redirect } from 'react-router-dom';
 // Components
 import RoutesWrapper from 'layout/UI/RoutesWrapper';
 
+// Routes
 import Homepage from 'containers/Homepage';
 import Licenses from 'containers/Licenses';
+
+// Lazy Route
+import CodeLab from 'containers/CodeLab/loader';
 
 // Icons
 import HomeIcon from '@material-ui/icons/Home';
@@ -75,6 +79,7 @@ const Routes = props => {
     >
       <Switch>
         <Route exact path="/" component={Homepage} />
+        <Route path="/code-lab" component={CodeLab} />
         <Route path="/licenses" component={Licenses} />
         <Redirect to="/" />
       </Switch>

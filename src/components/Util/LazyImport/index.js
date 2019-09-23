@@ -1,5 +1,5 @@
 // Libraries
-import React, { lazy } from 'react';
+import React, { lazy, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 /**
@@ -15,17 +15,21 @@ const LazyImport = props => {
     shouldRender
   } = props;
 
-  const Component = lazy(() => Promise.all([
-    importedComponent,
-    new Promise(resolve => {
-      if (resolvedCallback) {
-        setTimeout(() => {
-          resolvedCallback('It works.');
-        }, resolvedCallbackDelay);
-      }
-      setTimeout(resolve, process.env.NODE_ENV === 'development' ? devDelay : delay);
-    })
-  ]).then(([moduleExports]) => moduleExports));
+  // It will only be fetched once.
+  const Component = useCallback(
+    lazy(() => Promise.all([
+      importedComponent,
+      new Promise(resolve => {
+        if (resolvedCallback) {
+          setTimeout(() => {
+            resolvedCallback('It works.');
+          }, resolvedCallbackDelay);
+        }
+        setTimeout(resolve, process.env.NODE_ENV === 'development' ? devDelay : delay);
+      })
+    ]).then(([moduleExports]) => moduleExports)),
+    [],
+  );
 
   return shouldRender ? <Component /> : null;
 };

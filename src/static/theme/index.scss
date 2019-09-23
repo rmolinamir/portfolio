@@ -31,10 +31,10 @@ body,
 
 #root {
   background: #fff;
-  max-width: 1200px;
   min-height: 100%;
+  max-width: $root-max-width;
   box-shadow: $base-box-shadow;
-  margin: 60px auto 80px;
+  margin: $root-margin;
 }
 
 body *:not(svg) {
