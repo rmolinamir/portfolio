@@ -1,8 +1,7 @@
 // Libraries
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { withTheme } from 'styled-components';
-import { withResizeDetector } from 'react-resize-detector';
 
 // Dependencies
 import projectsData from 'containers/CodeLab/projectsData';
@@ -11,13 +10,19 @@ import projectsData from 'containers/CodeLab/projectsData';
 import { Divider, Container } from 'components/UI';
 import SideDrawer from 'components/CodeLab/SideDrawer';
 
-const CodeLab = withResizeDetector(withTheme(props => {
-  const { theme, width } = props;
+const CodeLab = withTheme(props => {
+  const [width, setWidth] = useState(undefined);
+
+  const onResize = useCallback(() => {
+    setWidth(window.innerWidth);
+  }, [setWidth]);
+
+  const { theme } = props;
 
   // Remove page margins while on CodeLab
   useEffect(() => {
     document.getElementById('root').style.margin = '0 auto';
-    document.getElementById('root').style.maxWidth = `${window.innerWidth - +(String(theme.codeLabSideDrawerClosedWidth).replace('px', ''))}px`;
+    document.getElementById('root').style.maxWidth = `${width - +(String(theme.codeLabSideDrawerClosedWidth).replace('px', ''))}px`;
     document.getElementById('root').style.paddingLeft = theme.codeLabSideDrawerClosedWidth;
     return () => {
       document.getElementById('root').style.margin = theme.rootMargin;
@@ -25,6 +30,13 @@ const CodeLab = withResizeDetector(withTheme(props => {
       document.getElementById('root').style.paddingLeft = null;
     };
   }, [theme, width]);
+
+  useEffect(() => {
+    window.addEventListener('resize', onResize, { passive: true, capture: true });
+    return () => {
+      window.removeEventListener('resize', onResize, { passive: true, capture: true });
+    };
+  }, [onResize]);
 
   return (
     <>
@@ -37,7 +49,7 @@ const CodeLab = withResizeDetector(withTheme(props => {
       </Container>
     </>
   );
-}));
+});
 
 CodeLab.propTypes = {
   theme: PropTypes.instanceOf(Object).isRequired,
