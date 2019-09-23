@@ -13,10 +13,11 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import ArrowRightIcon from '@material-ui/icons/ArrowRightTwoTone';
 
-export default function SideDrawer() {
+export default function SideDrawer(props) {
+  const { projectsData } = props;
   const [open, setOpen] = useState(false);
 
   const handleDrawer = () => {
@@ -57,19 +58,14 @@ export default function SideDrawer() {
         </div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+          <ListItem button>
+            <ListItemIcon><DashboardIcon /></ListItemIcon>
+            <ListItemText primary="Dashboard" />
+          </ListItem>
+          {projectsData.map(({ name, icon: Icon }) => (
+            <ListItem button key={name}>
+              <ListItemIcon><Icon /></ListItemIcon>
+              <ListItemText primary={name} />
             </ListItem>
           ))}
         </List>
@@ -78,6 +74,10 @@ export default function SideDrawer() {
     </>
   );
 }
+
+SideDrawer.propTypes = {
+  projectsData: PropTypes.instanceOf(Array).isRequired,
+};
 
 const StyledSideDrawer = styled(Drawer)`
   &&& {

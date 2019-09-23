@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import { withTheme } from 'styled-components';
 import { withResizeDetector } from 'react-resize-detector';
 
+// Dependencies
+import projectsData from 'containers/CodeLab/projectsData';
+
 // Components
 import { Divider, Container } from 'components/UI';
 import SideDrawer from 'components/CodeLab/SideDrawer';
@@ -25,7 +28,9 @@ const CodeLab = withResizeDetector(withTheme(props => {
 
   return (
     <>
-      <SideDrawer />
+      <SideDrawer
+        projectsData={projectsData}
+      />
       <Divider />
       <Container>
         Code Lab
