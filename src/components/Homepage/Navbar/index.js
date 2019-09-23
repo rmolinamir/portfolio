@@ -90,12 +90,30 @@ export default function Navbar() {
     inViewElements = inViewElements.filter(entry => entry && (
       entry.intersectionRatio === maxValueOfintersectionRatio
     ));
+    // Choosing the active navbar element:
+    // If the array of inView elements is 1, set the only visible element.
     if (inViewElements.length === 1) {
       setActiveNavLink(inViewElements[0].target);
     } else if (scrollDirection) {
-      const activeElement = inViewElements.reduce((prev, current) => (
-        (prev[scrollDirection] > current[scrollDirection]) ? prev : current
-      ), inViewElements[0]);
+      const activeElement = inViewElements.reduce((prev, current) => {
+        if (!prev) return current;
+        const prevTargetRect = prev.target.getBoundingClientRect()[scrollDirection];
+        const currentTargetRect = current.target.getBoundingClientRect()[scrollDirection];
+        // If scrolling to the top, select the element closest to the top.
+        if (scrollDirection === 'top') {
+          return (
+            (prevTargetRect <= currentTargetRect) ?
+              prev :
+              current
+          );
+        }
+        // Otherwise, select the element closest to the bottom.
+        return (
+          (prevTargetRect >= currentTargetRect) ?
+            prev :
+            current
+        );
+      }, null);
       if (activeElement) setActiveNavLink(activeElement.target);
     }
     lastScrollTop = newScrollTop;
