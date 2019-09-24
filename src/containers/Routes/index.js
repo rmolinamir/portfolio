@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Switch, Route, withRouter, Link, Redirect } from 'react-router-dom';
+import { Switch, Route, withRouter, NavLink, Redirect } from 'react-router-dom';
 
 // Components
 import RoutesWrapper from 'layout/UI/RoutesWrapper';
@@ -16,9 +16,9 @@ import CodeLab from 'containers/CodeLab/loader';
 
 // Icons
 import HomeIcon from '@material-ui/icons/Home';
-import ContactIcon from '@material-ui/icons/Mail';
+import CodeLabIcon from '@material-ui/icons/Code';
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   text-decoration: none;
   .MuiButton-label {
     font-weight: 700;
@@ -37,8 +37,9 @@ const links = [
     isDrawerOnly: true,
     wrapper: props => (
       <StyledLink
-        to="/"
         {...props}
+        to="/"
+        exact
       />
     )
   },
@@ -48,11 +49,12 @@ const links = [
     color: 'inherit',
     title: 'Code Lab',
     caption: 'Come check out my open source packages!',
-    icon: <ContactIcon />,
+    icon: <CodeLabIcon />,
     wrapper: props => (
       <StyledLink
-        to="code-lab"
         {...props}
+        to="/code-lab"
+        exact
       />
     )
   },
@@ -72,7 +74,7 @@ const Routes = props => {
     <RoutesWrapper
       // Navbar props
       links={links}
-      linkComponent={Link}
+      linkComponent={NavLink}
       logoWrapperProps={{
         to: '/'
       }}

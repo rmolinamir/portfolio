@@ -91,7 +91,14 @@ NavbarDrawer.defaultProps = {
 const StyledDrawer = styled(Drawer)`
   &&& {
     * {
-      color: ${props => props.theme.baseFontColor};
+      color: ${({ theme }) => theme.baseFontColor};
+    }
+    a.active {
+      .MuiSvgIcon-root,
+      .MuiTypography-subtitle1 {
+        fill: ${({ theme }) => theme.primary} !important;
+        color: ${({ theme }) => theme.primary} !important;
+      }
     }
   }
 `;

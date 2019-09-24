@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 // Components
+import { NavLink } from 'react-router-dom';
 import { Divider } from 'components/UI';
 import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -21,10 +22,6 @@ export default function SideDrawer(props) {
 
   const handleDrawer = () => {
     setOpen(state => !state);
-  };
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
   };
 
   const handleDrawerClose = () => {
@@ -47,15 +44,28 @@ export default function SideDrawer(props) {
         </div>
         <Divider />
         <List>
-          <ListItem button>
-            <ListItemIcon><DashboardIcon /></ListItemIcon>
-            <ListItemText primary="Dashboard" />
-          </ListItem>
-          {projectsData.map(({ name, icon: Icon }) => (
-            <ListItem button key={name}>
-              <ListItemIcon><Icon /></ListItemIcon>
-              <ListItemText primary={name} />
+          <NavLink
+            exact
+            to="/code-lab"
+            onClick={handleDrawerClose}
+          >
+            <ListItem button>
+              <ListItemIcon><DashboardIcon /></ListItemIcon>
+              <ListItemText primary="Dashboard" />
             </ListItem>
+          </NavLink>
+          {projectsData.map(({ name, icon: Icon, href }) => (
+            <NavLink
+              key={name}
+              exact
+              to={href}
+              onClick={handleDrawerClose}
+            >
+              <ListItem button>
+                <ListItemIcon><Icon /></ListItemIcon>
+                <ListItemText primary={name} />
+              </ListItem>
+            </NavLink>
           ))}
         </List>
       </StyledSideDrawer>
@@ -70,6 +80,10 @@ SideDrawer.propTypes = {
 
 const StyledSideDrawer = styled(Drawer)`
   &&& {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
     .MuiPaper-root {
       width: ${({ open, theme }) => (open ? '240px' : theme.codeLabSideDrawerClosedWidth )};
       transition: max-width ease 250ms;

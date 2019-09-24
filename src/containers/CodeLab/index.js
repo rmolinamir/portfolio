@@ -7,11 +7,17 @@ import { withTheme } from 'styled-components';
 import projectsData from 'containers/CodeLab/projectsData';
 
 // Components
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { Divider, Container } from 'components/UI';
 import SideDrawer from 'components/CodeLab/SideDrawer';
 
-const CodeLab = withTheme(props => {
-  const [width, setWidth] = useState(undefined);
+// Routes
+import {
+  Homepage,
+} from 'components/CodeLab';
+
+function CodeLab(props) {
+  const [width, setWidth] = useState(document.body.clientWidth);
 
   const onResize = useCallback(() => {
     setWidth(document.body.clientWidth);
@@ -22,7 +28,9 @@ const CodeLab = withTheme(props => {
   // Remove page margins while on CodeLab
   useEffect(() => {
     document.getElementById('root').style.margin = '0 auto';
-    document.getElementById('root').style.maxWidth = `${width - +(String(theme.codeLabSideDrawerClosedWidth).replace('px', ''))}px`;
+    // Parsing codeLabSideDrawerClosedWidth
+    const maxWidth = `${width - +(String(theme.codeLabSideDrawerClosedWidth).replace('px', ''))}px`;
+    document.getElementById('root').style.maxWidth = maxWidth;
     document.getElementById('root').style.paddingLeft = theme.codeLabSideDrawerClosedWidth;
     return () => {
       document.getElementById('root').style.margin = theme.rootMargin;
@@ -45,15 +53,24 @@ const CodeLab = withTheme(props => {
       />
       <Divider />
       <Container style={{ minHeight: '100vh' }}>
-        Code Lab
+        <Switch>
+          <Route exact path={props.match.path} component={Homepage} />
+          {/* <Route exact path={`${props.match.path}/hero-slider`} component={HeroSlider} />
+          <Route exact path={`${props.match.path}/react-formalized`} component={ReactFormalized} />
+          <Route exact path={`${props.match.path}/react-png-button`} component={ReactPNGButton} />
+          <Route exact path={`${props.match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
+          <Route exact path={`${props.match.path}/react-png-modal`} component={ReactPNGModal} />
+          <Route exact path={`${props.match.path}/react-svg-library`} component={ReactSVGLibrary} />
+          <Route exact path={`${props.match.path}/with-context-react`} component={WithContextReact} /> */}
+        </Switch>
       </Container>
     </>
   );
-});
+}
 
 CodeLab.propTypes = {
   theme: PropTypes.instanceOf(Object).isRequired,
-  width: PropTypes.number.isRequired,
+  match: PropTypes.instanceOf(Object).isRequired,
 };
 
-export default CodeLab;
+export default withRouter(withTheme(CodeLab));

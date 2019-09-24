@@ -53,8 +53,7 @@ const PopIn = props => {
       }}
       className={classNames}
       {...{
-        innerRef: WrapperComponent ? ref : null,
-        ref: !WrapperComponent ? ref : null,
+        ref: WrapperComponent ? ref : null,
       }}
     >
       <CSSTransition
