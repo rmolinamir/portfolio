@@ -17,23 +17,26 @@ export default function Homepage() {
         alignItems="flex-start"
         spacing={5}
       >
-        <Animations.PopIn
-          wrapper={Col}
-        >
-          <Hello>
-            <span>Hello,</span>
-          </Hello>
-        </Animations.PopIn>
-        <Animations.PopIn
+        <Col>
+          <Animations.PopIn>
+            <Hello>
+              <span>Hello,</span>
+            </Hello>
+          </Animations.PopIn>
+        </Col>
+        <Col
           wrapper={Col}
           md={9}
-          animationDelayMultiplier={2}
         >
-          <H3>
-            I’m a <strong>Full Stack Developer, Designer & Engineer</strong> with an expertise in
-            building powerful and scalable PWA, native apps, and UX design.
-          </H3>
-        </Animations.PopIn>
+          <Animations.PopIn
+            animationDelayMultiplier={2}
+          >
+            <H3>
+              I’m a <strong>Full Stack Developer, Designer & Engineer</strong> with an expertise in
+              building powerful and scalable PWA, native apps, and UX design.
+            </H3>
+          </Animations.PopIn>
+        </Col>
       </Container>
     </Wrapper>
   );

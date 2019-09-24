@@ -52,9 +52,10 @@ const PopIn = props => {
         opacity: !firstInView && 0,
       }}
       className={classNames}
-      {...{
-        ref: WrapperComponent ? ref : null,
-      }}
+      ref={ref}
+      // {...{
+      //   ref,
+      // }}
     >
       <CSSTransition
         in={shouldPopOutOnExit ? inView : firstInView}
