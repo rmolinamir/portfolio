@@ -52,18 +52,16 @@ function CodeLab(props) {
         projectsData={projectsData}
       />
       <Divider />
-      <Container style={{ minHeight: '100vh' }}>
-        <Switch>
-          <Route exact path={props.match.path} component={Homepage} />
-          {/* <Route exact path={`${props.match.path}/hero-slider`} component={HeroSlider} />
-          <Route exact path={`${props.match.path}/react-formalized`} component={ReactFormalized} />
-          <Route exact path={`${props.match.path}/react-png-button`} component={ReactPNGButton} />
-          <Route exact path={`${props.match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
-          <Route exact path={`${props.match.path}/react-png-modal`} component={ReactPNGModal} />
-          <Route exact path={`${props.match.path}/react-svg-library`} component={ReactSVGLibrary} />
-          <Route exact path={`${props.match.path}/with-context-react`} component={WithContextReact} /> */}
-        </Switch>
-      </Container>
+      <Switch>
+        <Route exact path={props.match.path} component={Homepage} />
+        {/* <Route exact path={`${props.match.path}/hero-slider`} component={HeroSlider} />
+        <Route exact path={`${props.match.path}/react-formalized`} component={ReactFormalized} />
+        <Route exact path={`${props.match.path}/react-png-button`} component={ReactPNGButton} />
+        <Route exact path={`${props.match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
+        <Route exact path={`${props.match.path}/react-png-modal`} component={ReactPNGModal} />
+        <Route exact path={`${props.match.path}/react-svg-library`} component={ReactSVGLibrary} />
+        <Route exact path={`${props.match.path}/with-context-react`} component={WithContextReact} /> */}
+      </Switch>
     </>
   );
 }
