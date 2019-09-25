@@ -53,7 +53,7 @@ const links = [
     wrapper: props => (
       <StyledLink
         {...props}
-        to="/code-lab"
+        to="/codelab"
         exact
       />
     )
@@ -81,7 +81,7 @@ const Routes = props => {
     >
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route path="/code-lab" component={CodeLab} />
+        <Route path="/codelab" component={CodeLab} />
         <Route path="/licenses" component={Licenses} />
         <Redirect to="/" />
       </Switch>

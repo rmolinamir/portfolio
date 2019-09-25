@@ -15,7 +15,7 @@ export default function Card(props) {
   const [expanded, setExpanded] = useState(false);
 
   function handleExpandClick() {
-    setExpanded(!expanded);
+    setExpanded(state => !state);
   }
 
   return (

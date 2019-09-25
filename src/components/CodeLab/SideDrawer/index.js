@@ -47,7 +47,7 @@ export default function SideDrawer(props) {
         <List>
           <NavLink
             exact
-            to="/code-lab"
+            to="/codelab"
             onClick={handleDrawerClose}
           >
             <ListItem button>

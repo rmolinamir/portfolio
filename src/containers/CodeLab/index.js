@@ -14,6 +14,7 @@ import SideDrawer from 'components/CodeLab/SideDrawer';
 // Routes
 import {
   Homepage,
+  HeroSlider,
 } from 'components/CodeLab';
 
 function CodeLab(props) {
@@ -23,7 +24,7 @@ function CodeLab(props) {
     setWidth(document.body.clientWidth);
   }, [setWidth]);
 
-  const { theme } = props;
+  const { theme, match } = props;
 
   // Remove page margins while on CodeLab
   useEffect(() => {
@@ -53,14 +54,15 @@ function CodeLab(props) {
       />
       <Divider />
       <Switch>
-        <Route exact path={props.match.path} component={Homepage} />
-        {/* <Route exact path={`${props.match.path}/hero-slider`} component={HeroSlider} />
-        <Route exact path={`${props.match.path}/react-formalized`} component={ReactFormalized} />
-        <Route exact path={`${props.match.path}/react-png-button`} component={ReactPNGButton} />
-        <Route exact path={`${props.match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
-        <Route exact path={`${props.match.path}/react-png-modal`} component={ReactPNGModal} />
-        <Route exact path={`${props.match.path}/react-svg-library`} component={ReactSVGLibrary} />
-        <Route exact path={`${props.match.path}/with-context-react`} component={WithContextReact} /> */}
+        <Route exact path={match.path} component={Homepage} />
+        <Route exact path={`${match.path}/hero-slider`} component={HeroSlider} />
+        {/*
+        <Route exact path={`${match.path}/react-formalized`} component={ReactFormalized} />
+        <Route exact path={`${match.path}/react-png-button`} component={ReactPNGButton} />
+        <Route exact path={`${match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
+        <Route exact path={`${match.path}/react-png-modal`} component={ReactPNGModal} />
+        <Route exact path={`${match.path}/react-svg-library`} component={ReactSVGLibrary} />
+        <Route exact path={`${match.path}/with-context-react`} component={WithContextReact} /> */}
       </Switch>
     </>
   );
