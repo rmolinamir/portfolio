@@ -37,7 +37,8 @@ export default function SideDrawer(props) {
         <div
           className="rm-toolbar"
         >
-          <div className="spacing" />
+          <div className="rm-toolbar-header">Packages</div>
+          <div className="rm-toolbar-spacing" />
           <IconButton onClick={handleDrawer}>
             {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
@@ -80,33 +81,75 @@ SideDrawer.propTypes = {
 
 const StyledSideDrawer = styled(Drawer)`
   &&& {
+    /* Disabling anchor default CSS */
     a {
       text-decoration: none;
       color: inherit;
     }
+    /* Drawer */
     .MuiPaper-root {
-      width: ${({ open, theme }) => (open ? '240px' : theme.codeLabSideDrawerClosedWidth )};
+      width: ${({ open, theme }) => (open ? '240px' : theme.codeLabSideDrawerClosedWidth)};
       transition: max-width ease 250ms;
       transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
       overflow-x: hidden;
     }
-    .MuiListItemIcon-root {
-      min-width: 42px;
-    }
-    .MuiListItemText-root {
-      white-space: nowrap;
-    }
+    /* Top Toolbar CSS */
     .rm-toolbar {
       display: flex;
       padding: 6px 8px;
+      position: relative;
+      .rm-toolbar-header {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        opacity: ${({ open }) => (open ? 1 : 0)};
+        color: ${({ theme }) => theme.primary};
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: opacity ease-in 250ms;
+      }
       .MuiIconButton-root {
         padding: 8px;
       }
-      .spacing {
+      .rm-toolbar-spacing {
         flex: ${({ open }) => (open ? 1 : 0)};
         transition: flex ease 250ms;
       }
       transition: all ease 250ms;
+    }
+    /* NavLink Icons */
+    .MuiListItemIcon-root {
+      min-width: 42px;
+    }
+    /* NavLink Text */
+    .MuiListItemText-root {
+      white-space: nowrap;
+    }
+    /* NavLink Transitions */
+    .MuiListItemText-root,
+    .MuiListItemIcon-root {
+      transition: all ease-in 250ms;
+    }
+    /* NavLink Active/Hover effects */
+    .MuiList-root {
+      a {
+        .MuiButtonBase-root:hover {
+          .MuiListItemIcon-root {
+            color: ${({ theme }) => theme.secondary};
+          }
+        }
+      }
+      a.active {
+        .MuiButtonBase-root {
+          .MuiListItemIcon-root {
+            color: ${({ theme }) => theme.primary};
+          }
+          .MuiListItemText-root * {
+            font-weight: bold;
+          }
+        }
+      }
     }
   }
 `;

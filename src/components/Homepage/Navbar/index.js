@@ -206,10 +206,20 @@ const StyledNav = styled.nav`
           width: 100%;
           height: 3px;
           opacity: 1;
+        }
+        /* Active/Hover effects are primary color */
+        a.active::before {
           background: ${({ theme }) => theme.primary};
         }
-        a:hover, a.active {
+        a.active {
           color: ${({ theme }) => theme.primary};
+        }
+        /* Active/Hover effects are secondary color */
+        a:hover::before {
+          background: ${({ theme }) => theme.secondary};
+        }
+        a:hover {
+          color: ${({ theme }) => theme.secondary};
         }
       }
       @media (max-width: ${({ theme }) => theme.screenMd}) {
