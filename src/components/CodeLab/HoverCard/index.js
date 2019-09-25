@@ -4,6 +4,11 @@ import PropTypes from 'prop-types';
 
 // Components
 import { Wrapper } from './styled-components';
+import CardFront from './ProjectCard/Front';
+import CardBack from './ProjectCard/Back';
+
+export const Front = CardFront;
+export const Back = CardBack;
 
 export default function HoverCard(props) {
   const {
@@ -51,14 +56,13 @@ export default function HoverCard(props) {
 
   return (
     <Wrapper
-      tabIndex={0}
       className={className}
       style={{
-        ...style,
         maxWidth,
         height,
         borderRadius,
         margin,
+        ...style,
       }}
       onClick={onClickHandler}
       onMouseOver={visible}
@@ -81,14 +85,14 @@ export default function HoverCard(props) {
 }
 
 HoverCard.propTypes = {
-  front: PropTypes.oneOfType(
+  front: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.func,
-  ).isRequired,
-  back: PropTypes.oneOfType(
+  ]).isRequired,
+  back: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.func,
-  ).isRequired,
+  ]).isRequired,
   style: PropTypes.instanceOf(Object),
   className: PropTypes.string,
   maxWidth: PropTypes.number,

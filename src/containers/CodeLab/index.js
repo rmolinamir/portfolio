@@ -8,7 +8,7 @@ import projectsData from 'containers/CodeLab/projectsData';
 
 // Components
 import { Route, Switch, withRouter } from 'react-router-dom';
-import { Divider, Container } from 'components/UI';
+import { Divider } from 'components/UI';
 import SideDrawer from 'components/CodeLab/SideDrawer';
 
 // Routes

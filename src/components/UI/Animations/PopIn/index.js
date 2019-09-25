@@ -29,6 +29,7 @@ const PopIn = props => {
     // Children MUST be one wrapper element at most
     style,
     children,
+    className,
     ...rest
   } = props;
   const [ref, firstInView, inView] = useElementInViewport();
@@ -51,11 +52,8 @@ const PopIn = props => {
         ...style,
         opacity: !firstInView && 0,
       }}
-      className={classNames}
+      className={className}
       ref={ref}
-      // {...{
-      //   ref,
-      // }}
     >
       <CSSTransition
         in={shouldPopOutOnExit ? inView : firstInView}
@@ -76,6 +74,7 @@ const PopIn = props => {
 PopIn.propTypes = {
   children: PropTypes.node.isRequired,
   style: PropTypes.instanceOf(Object),
+  className: PropTypes.string,
   wrapper: PropTypes.func,
   shouldPopOutOnExit: PropTypes.bool,
   animationMultiplier: PropTypes.number,
@@ -90,6 +89,7 @@ PopIn.propTypes = {
 PopIn.defaultProps = {
   style: undefined,
   wrapper: undefined,
+  className: undefined,
   shouldPopOutOnExit: undefined,
   animationMultiplier: undefined,
   animationDelayMultiplier: undefined,

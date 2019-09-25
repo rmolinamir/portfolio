@@ -1,4 +1,4 @@
-const elementPageOffset = el => {
+export default function elementPageOffset(el) {
   if (
     !el ||
     typeof window === 'undefined' ||
@@ -25,6 +25,4 @@ const elementPageOffset = el => {
     top,
     width,
   };
-};
-
-export default elementPageOffset;
+}

@@ -28,7 +28,7 @@ const Wrapper = styled.div`
       visibility: visible;
       opacity: 1;
       transform: scale(1);
-      animation: ${noPointerEventsOnMount} ${({ animationSpeed }) => animationSpeed || '250ms'} ease forwards;
+      animation: ${noPointerEventsOnMount} ${({ animationSpeed }) => `${animationSpeed}ms` || '250ms'} ease forwards;
     }
 
     .not-visible {
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
       width: 100%;
       border-radius: inherit;
       overflow: hidden;
-      transition: all var(--animation-speed, 250ms) ease;
+      transition: all ${({ animationSpeed }) => `${animationSpeed}ms` || '250ms'} ease;
     }
   }
 `;
