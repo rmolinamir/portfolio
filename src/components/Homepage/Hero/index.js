@@ -30,7 +30,7 @@ export default function Homepage() {
           >
             <H3>
               I’m a <strong>Full Stack Developer, Designer & Engineer</strong> with an expertise in
-              building powerful and scalable PWAs, native apps, and UX design.
+              building powerful and scalable PWAs, native apps, and UX/UI designs.
             </H3>
           </Animations.PopIn>
         </Col>
