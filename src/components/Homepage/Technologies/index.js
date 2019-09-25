@@ -123,7 +123,7 @@ const technologiesList = [
     list: [
       { name: 'Codacy', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'CodeFactor', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'Jest', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Jest', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'Enzyme', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'ESLint', proficiency: PROFICIENCY_EXPERT },
       { name: 'TSLint (deprecated)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
@@ -163,6 +163,9 @@ const technologiesList = [
     key: 'others',
     name: 'Others',
     list: [
+      { name: 'AutoCAD', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'FluidSIM', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'MATLAB', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Microsoft Excel (Data Analysis, Dynamic Dashboards, etc.)', proficiency: PROFICIENCY_EXPERT },
       { name: 'Unreal Engine 4', proficiency: PROFICIENCY_RECREATIONAL },
     ]
