@@ -20,6 +20,7 @@ const Item = props => {
     wrapperProps,
     ...rest
   } = props;
+  console.log('LinkComponent', LinkComponent);
   const Wrapper = ItemWrapperComponent || LinkComponent;
   const navLink = (
     <StyledListItem
@@ -62,7 +63,10 @@ Item.propTypes = {
   title: PropTypes.string.isRequired,
   caption: PropTypes.string.isRequired,
   href: PropTypes.string,
-  linkComponent: PropTypes.func,
+  linkComponent: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.instanceOf(Object),
+  ]),
   wrapper: PropTypes.func,
   wrapperProps: PropTypes.instanceOf(Object),
 };

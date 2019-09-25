@@ -191,7 +191,10 @@ Navbar.propTypes = {
   links: PropTypes.instanceOf(Array).isRequired,
   logoWrapperProps: PropTypes.instanceOf(Object),
   drawerLogo: PropTypes.node,
-  linkComponent: PropTypes.func,
+  linkComponent: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.instanceOf(Object),
+  ]),
 };
 
 Navbar.defaultProps = {

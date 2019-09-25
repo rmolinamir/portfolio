@@ -80,7 +80,10 @@ NavbarDrawer.propTypes = {
   closeDrawer: PropTypes.func.isRequired,
   links: PropTypes.instanceOf(Array).isRequired,
   logoWrapperProps: PropTypes.instanceOf(Object),
-  linkComponent: PropTypes.func,
+  linkComponent: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.instanceOf(Object),
+  ]),
 };
 
 NavbarDrawer.defaultProps = {

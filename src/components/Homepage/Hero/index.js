@@ -24,10 +24,7 @@ export default function Homepage() {
             </Hello>
           </Animations.PopIn>
         </Col>
-        <Col
-          wrapper={Col}
-          md={9}
-        >
+        <Col md={9}>
           <Animations.PopIn
             animationDelayMultiplier={2}
           >
