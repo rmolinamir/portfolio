@@ -19,6 +19,14 @@ const StyledHoverCard = styled(HoverCard)`
   border-radius: 2px;
 `;
 
+const RowWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  > div {
+    max-width: 1450px;
+  }
+`;
+
 const StyledCol = styled(Col)`
   display: flex;
   justify-content: center;
@@ -74,14 +82,16 @@ export default function Homepage() {
         over or touch on the cards to visit their respective documentation, or their GiHub repositories.
       </SectionCaption>
       <br />
-      <Row
-        direction="row"
-        justify="center"
-        alignItems="center"
-        spacing={3}
-      >
-        {codeLabProjects}
-      </Row>
+      <RowWrapper>
+        <Row
+          direction="row"
+          justify="center"
+          alignItems="center"
+          spacing={3}
+        >
+          {codeLabProjects}
+        </Row>
+      </RowWrapper>
     </Container>
   );
 }
