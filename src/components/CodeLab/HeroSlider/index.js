@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 // Components
 import { Row, Col } from 'components/Layout';
-import { Container, Animations, Divider } from 'components/UI';
+import { Container, Divider } from 'components/UI';
 import { H3 } from 'components/UI/Text';
 import {
   DocList,
@@ -14,11 +14,15 @@ import Example from 'components/CodeLab/Example';
 import SectionCaption from '../SectionCaption';
 import {
   BasicSlider,
+  VerticalSlider,
+  ZoomSlider,
 } from './Sliders';
 
 // Dependencies
 import {
   basicSlider,
+  verticalSlider,
+  zoomSlider,
 } from './examplesLiterals';
 
 export default function HeroSlider() {
@@ -47,7 +51,19 @@ export default function HeroSlider() {
             title: 'Basic Slider',
             code: basicSlider,
             children: <BasicSlider />
-          }
+          },
+          {
+            id: 'vertical',
+            title: 'Vertical Slider',
+            code: verticalSlider,
+            children: <VerticalSlider />
+          },
+          {
+            id: 'zoom',
+            title: 'Zoom Slider',
+            code: zoomSlider,
+            children: <ZoomSlider />
+          },
         ].map(({ id, children, ...exampleProps }) => (
           <Example
             key={id}

@@ -42,6 +42,7 @@ export default function BasicSlider() {
           width: '100%',
           height: '100%',
           backgroundColor: 'rgba(0, 0, 0, 0.33)',
+          textAlign: 'center',
         }}
       >
         <H1>
