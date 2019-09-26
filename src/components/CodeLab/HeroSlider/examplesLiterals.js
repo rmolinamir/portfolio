@@ -613,6 +613,7 @@ const StyledNav = styled.nav\`
 \`;
 
 function FakeNavbar(props) {
+  const { children } = props;
   return (
     <StyledNav>
       <span className="fake-navbar-title">Fake Navbar</span>
@@ -621,16 +622,20 @@ function FakeNavbar(props) {
         <span>Link A</span>
         <span>Link B</span>
       </div>
-      {props.children}
+      {children}
     </StyledNav>
   );
 }
 
 FakeNavbar.propTypes = {
   children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]).isRequired,
+    PropTypes.node,
+    PropTypes.func,
+  ]),
+};
+
+FakeNavbar.defaultProps = {
+  children: null,
 };
 
 export default function NavbarSlider() {
