@@ -24,6 +24,11 @@ const StyledLink = styled(NavLink)`
     font-weight: 700;
     margin-right: 1ch;
   }
+  &.active {
+    .MuiButton-label {
+      color: ${({ theme }) => theme.primary};
+    }
+  }
 `;
 
 const links = [
@@ -54,7 +59,6 @@ const links = [
       <StyledLink
         {...props}
         to="/codelab"
-        exact
       />
     )
   },
