@@ -239,5 +239,6 @@ const StyledNav = styled.nav`
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
     overflow-x: scroll;
+    overflow-y: hidden;
   }
 `;

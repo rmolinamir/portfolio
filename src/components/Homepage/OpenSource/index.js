@@ -24,32 +24,27 @@ const repositories = [
   {
     name: 'react-formalized',
     description: 'Collection of pre-styled JSX elements based on the HTML Form Elements. Offers an easy way to collect form data and/or input values.',
-    href: 'https://github.com/rmolinamir/react-formalized',
-    isRouterDom: false, // true by default
+    href: '/codelab/react-formalized',
   },
   {
     name: 'hero-slider',
     description: 'A hero slider component for React.js. Includes autoplay, lazy loaded backgrounds, support for touch swiping and direction to change slides, event callbacks, among other features.',
-    href: 'https://github.com/rmolinamir/hero-slider',
-    isRouterDom: false, // true by default
+    href: '/codelab/hero-slider',
   },
   {
     name: 'react-png-tooltip',
     description: 'A graphical user interface element that will render when the user hovers over or clicks an item.',
-    href: 'https://github.com/rmolinamir/react-png-tooltip',
-    isRouterDom: false, // true by default
+    href: '/codelab/react-png-tooltip',
   },
   {
     name: 'react-svg-library',
     description: 'Scalable Vector Graphics (SVG) icons library for React.js',
-    href: 'https://github.com/rmolinamir/react-svg-library',
-    isRouterDom: false, // true by default
+    href: '/codelab/react-svg-library',
   },
   {
     name: 'react-png-button',
     description: 'Flexible preset collection of multiple buttons to quickly build applications. Highly scalable due to usage of the new useContext hook API which allows the developer to modify all of the buttons CSS globally or specifically.',
-    href: 'https://github.com/rmolinamir/react-png-button',
-    isRouterDom: false, // true by default
+    href: '/codelab/react-png-button',
   },
 ];
 
