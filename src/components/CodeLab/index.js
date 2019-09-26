@@ -3,6 +3,7 @@ import HeroSlider from './HeroSlider';
 import ReactFormalized from './ReactFormalized';
 import ReactPNGButton from './ReactPNGButton';
 import ReactPNGTooltip from './ReactPNGTooltip';
+import ReactPNGModal from './ReactPNGModal';
 
 export {
   Homepage,
@@ -10,4 +11,5 @@ export {
   ReactFormalized,
   ReactPNGButton,
   ReactPNGTooltip,
+  ReactPNGModal,
 };

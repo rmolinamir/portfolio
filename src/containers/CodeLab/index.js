@@ -18,6 +18,7 @@ import {
   ReactFormalized,
   ReactPNGButton,
   ReactPNGTooltip,
+  ReactPNGModal,
 } from 'components/CodeLab';
 
 function CodeLab(props) {
@@ -62,9 +63,9 @@ function CodeLab(props) {
         <Route exact path={`${match.path}/react-formalized`} component={ReactFormalized} />
         <Route exact path={`${match.path}/react-png-button`} component={ReactPNGButton} />
         <Route exact path={`${match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
+        <Route exact path={`${match.path}/react-png-modal`} component={ReactPNGModal} />
         {/*
         <Route exact path={`${match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
-        <Route exact path={`${match.path}/react-png-modal`} component={ReactPNGModal} />
         <Route exact path={`${match.path}/react-svg-library`} component={ReactSVGLibrary} />
         <Route exact path={`${match.path}/with-context-react`} component={WithContextReact} /> */}
         <Redirect to="/" />
