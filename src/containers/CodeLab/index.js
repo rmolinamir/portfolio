@@ -15,6 +15,7 @@ import SideDrawer from 'components/CodeLab/SideDrawer';
 import {
   Homepage,
   HeroSlider,
+  ReactFormalized,
 } from 'components/CodeLab';
 
 function CodeLab(props) {
@@ -56,8 +57,8 @@ function CodeLab(props) {
       <Switch>
         <Route exact path={match.path} component={Homepage} />
         <Route exact path={`${match.path}/hero-slider`} component={HeroSlider} />
-        {/*
         <Route exact path={`${match.path}/react-formalized`} component={ReactFormalized} />
+        {/*
         <Route exact path={`${match.path}/react-png-button`} component={ReactPNGButton} />
         <Route exact path={`${match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
         <Route exact path={`${match.path}/react-png-modal`} component={ReactPNGModal} />
