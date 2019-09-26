@@ -18,33 +18,38 @@ const Wrapper = styled.div`
     border-bottom: 1px dashed ${({ theme }) => theme.dividerColor};
     border-top: 1px dashed ${({ theme }) => theme.dividerColor};
     padding: 24px 0 12px;
-    .rm-example-title {
-      display: flex;
-      justify-content: center;
-      text-transform: uppercase;
-      position: relative;
-      text-align: center;
-      font-weight: bold;
-      margin: 0;
-    }
-    .rm-example-container {
-      width: 100%;
-      margin: 12px auto;
-    }
     .rm-example-collapse-code {
       position: sticky;
       top: 0;
       padding: 9px 3px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       background-color: ${({ theme }) => theme.whiteColor};
+    }
+    .rm-example-title {
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+      position: relative;
+      font-weight: bold;
+      text-align: left;
+      padding-right: 1rem;
+      margin: 0;
+    }
+    .rm-example-container {
+      width: 100%;
+      margin: 12px auto;
     }
     .rm-example-collapse-button {
       /* background-color: ${({ theme }) => theme.whiteColor}; */
       background-color: ${({ theme }) => theme.primary};
       color: ${({ theme }) => theme.whiteColor};
-      height: 36px;
-      width: 36px;
+      &, * {
+        height: 36px;
+        width: 36px;
+        min-width: 36px;
+      }
     }
     /* Collapse min-height */
     .MuiCollapse-container {

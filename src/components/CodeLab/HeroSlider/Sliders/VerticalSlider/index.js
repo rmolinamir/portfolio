@@ -29,7 +29,7 @@ const StyledOverlayContainer = styled(OverlayContainer)`
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
     h1, h2 {
-      padding: 0 36px;
+      margin: 0 36px;
     }
   }
 `;
