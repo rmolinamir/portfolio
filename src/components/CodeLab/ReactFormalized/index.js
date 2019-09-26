@@ -10,6 +10,28 @@ import {
 } from 'components/CodeLab/styled-components';
 import Example from 'components/CodeLab/Example';
 import SectionCaption from '../SectionCaption';
+import {
+  InputElements,
+  RangeElement,
+  SelectElement,
+  NumericElement,
+  CheckboxElements,
+  FormElement,
+  CheckboxGroupForm,
+  SignInModal,
+} from './Elements';
+
+// Dependencies
+import {
+  inputElements,
+  rangeElement,
+  selectElement,
+  numericElement,
+  checkboxElements,
+  formElement,
+  checkboxGroupForm,
+  signInModal,
+} from './examplesLiterals';
 
 export default function ReactFormalized() {
   return (
@@ -27,18 +49,60 @@ export default function ReactFormalized() {
         <li><a href="#numeric-element">Numeric Element</a></li>
         <li><a href="#checkbox-elements">Checkbox Elements (Similar to type Checkbox, Radio)</a></li>
         <li><a href="#form-element">Form Element</a></li>
-        <li><a href="#checkbox-form-example">CheckboxGroup with Form Element example</a></li>
-        <li><a href="#sign-in-example">Sign in modal example</a></li>
+        <li><a href="#checkbox-form">Checkbox Group Form</a></li>
+        <li><a href="#sign-in">Sign in modal example</a></li>
       </DocList>
       <Divider />
       <br />
-      {/* <Examples>
+      <Examples>
         {[
           {
-            id: 'basic',
-            title: 'Basic Slider',
-            code: basicSlider,
-            children: <BasicSlider />
+            id: 'elements',
+            title: 'Input Elements',
+            code: inputElements,
+            children: <InputElements />
+          },
+          {
+            id: 'range-element',
+            title: 'Range Element',
+            code: rangeElement,
+            children: <RangeElement />
+          },
+          {
+            id: 'select-element',
+            title: 'Select Element',
+            code: selectElement,
+            children: <SelectElement />
+          },
+          {
+            id: 'numeric-element',
+            title: 'Numeric Element',
+            code: numericElement,
+            children: <NumericElement />
+          },
+          {
+            id: 'checkbox-elements',
+            title: 'Checkbox Elements',
+            code: checkboxElements,
+            children: <CheckboxElements />
+          },
+          {
+            id: 'form-element',
+            title: 'Form Element',
+            code: formElement,
+            children: <FormElement />
+          },
+          {
+            id: 'checkbox-form',
+            title: 'Checkbox Group Form',
+            code: checkboxGroupForm,
+            children: <CheckboxGroupForm />
+          },
+          {
+            id: 'sign-in',
+            title: 'Sign in modal example',
+            code: signInModal,
+            children: <SignInModal />
           },
         ].map(({ id, children, ...exampleProps }) => (
           <Example
@@ -49,7 +113,7 @@ export default function ReactFormalized() {
             {children}
           </Example>
         ))}
-      </Examples> */}
+      </Examples>
     </Container>
   );
 }
