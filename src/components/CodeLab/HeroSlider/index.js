@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Components
-import { Container, Divider } from 'components/UI';
+import { Container, Divider, Animations } from 'components/UI';
 import { H3 } from 'components/UI/Text';
 import {
   DocList,
@@ -33,6 +33,57 @@ import {
   autoplayButtonSlider,
 } from './examplesLiterals';
 
+const appendix = [
+  {
+    id: 'basic',
+    title: 'Basic Slider',
+    code: basicSlider,
+    children: <BasicSlider />
+  },
+  {
+    id: 'vertical',
+    title: 'Vertical Slider',
+    code: verticalSlider,
+    children: <VerticalSlider />
+  },
+  {
+    id: 'zoom',
+    title: 'Zoom Slider',
+    code: zoomSlider,
+    children: <ZoomSlider />
+  },
+  {
+    id: 'respective',
+    title: 'Respective content to each Slide component',
+    code: childrenSlider,
+    children: <ChildrenSlider />
+  },
+  {
+    id: 'blend',
+    title: 'Blend Mode Slider',
+    code: blendModeSlider,
+    children: <BlendModeSlider />
+  },
+  {
+    id: 'navbar',
+    title: 'Navbar Slider',
+    code: navbarSlider,
+    children: <NavbarSlider />
+  },
+  {
+    id: 'buttons',
+    title: 'Custom Buttons Slider',
+    code: buttonsSlider,
+    children: <ButtonsSlider />
+  },
+  {
+    id: 'autoplay',
+    title: 'Autoplay Button Slider',
+    code: autoplayButtonSlider,
+    children: <AutoplayButtonSlider />
+  },
+];
+
 export default function HeroSlider() {
   return (
     <Container>
@@ -43,68 +94,19 @@ export default function HeroSlider() {
       <Divider />
       <br />
       <DocList>
-        <li><a href="#basic">Basic Slider</a></li>
-        <li><a href="#vertical">Vertical Slider</a></li>
-        <li><a href="#zoom">Zoom Slider</a></li>
-        <li><a href="#respective">Respective content to each Slide component</a></li>
-        <li><a href="#blend">Blend Mode Slider</a></li>
-        <li><a href="#navbar">Navbar Slider</a></li>
-        <li><a href="#buttons">Custom Buttons Slider</a></li>
-        <li><a href="#autoplay">Autoplay Button Slider</a></li>
+        {appendix.map(({ id, title }, index) => (
+          <Animations.PopIn
+            key={id}
+            animationDelayMultiplier={index / 2}
+          >
+            <li><a href={`#${id}`}>{title}</a></li>
+          </Animations.PopIn>
+        ))}
       </DocList>
       <Divider />
       <br />
       <Examples>
-        {[
-          {
-            id: 'basic',
-            title: 'Basic Slider',
-            code: basicSlider,
-            children: <BasicSlider />
-          },
-          {
-            id: 'vertical',
-            title: 'Vertical Slider',
-            code: verticalSlider,
-            children: <VerticalSlider />
-          },
-          {
-            id: 'zoom',
-            title: 'Zoom Slider',
-            code: zoomSlider,
-            children: <ZoomSlider />
-          },
-          {
-            id: 'respective',
-            title: 'Respective content to each Slide component',
-            code: childrenSlider,
-            children: <ChildrenSlider />
-          },
-          {
-            id: 'blend',
-            title: 'Blend Mode Slider',
-            code: blendModeSlider,
-            children: <BlendModeSlider />
-          },
-          {
-            id: 'navbar',
-            title: 'Navbar Slider',
-            code: navbarSlider,
-            children: <NavbarSlider />
-          },
-          {
-            id: 'buttons',
-            title: 'Custom Buttons Slider',
-            code: buttonsSlider,
-            children: <ButtonsSlider />
-          },
-          {
-            id: 'autoplay',
-            title: 'Autoplay Button Slider',
-            code: autoplayButtonSlider,
-            children: <AutoplayButtonSlider />
-          },
-        ].map(({ id, children, ...exampleProps }) => (
+        {appendix.map(({ id, children, ...exampleProps }) => (
           <Example
             key={id}
             id={id}

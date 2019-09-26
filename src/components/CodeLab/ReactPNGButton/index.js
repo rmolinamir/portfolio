@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Components
-import { Container, Divider } from 'components/UI';
+import { Container, Divider, Animations } from 'components/UI';
 import { H3 } from 'components/UI/Text';
 import {
   DocList,
@@ -11,54 +11,78 @@ import {
 import Example from 'components/CodeLab/Example';
 import SectionCaption from '../SectionCaption';
 import {
-  // InputElements,
-  // RangeElement,
-  // SelectElement,
-  // NumericElement,
-  // CheckboxElements,
-  // FormElement,
-  // CheckboxGroupForm,
-  // SignInModal,
+  RegularButtons,
+  BlockButtons,
+  LogoButtons,
+  ContextButtons,
+  CustomButtons,
 } from './Buttons';
 
 // Dependencies
-// import {
-//   inputElements,
-//   rangeElement,
-//   selectElement,
-//   numericElement,
-//   checkboxElements,
-//   formElement,
-//   checkboxGroupForm,
-//   signInModal,
-// } from './examplesLiterals';
+import {
+  regularButtons,
+  blockButtons,
+  logoButtons,
+  contextButtons,
+  customButtons,
+} from './examplesLiterals';
+
+const appendix = [
+  {
+    id: 'regular',
+    title: 'Regular Buttons',
+    code: regularButtons,
+    children: <RegularButtons />,
+  },
+  {
+    id: 'block',
+    title: 'Block Buttons',
+    code: blockButtons,
+    children: <BlockButtons />,
+  },
+  {
+    id: 'logo',
+    title: 'Logo Buttons',
+    code: logoButtons,
+    children: <LogoButtons />,
+  },
+  {
+    id: 'css-context',
+    title: 'CSS Context Buttons',
+    code: contextButtons,
+    children: <ContextButtons />,
+  },
+  {
+    id: 'custom',
+    title: 'Styled Customized Buttons',
+    code: customButtons,
+    children: <CustomButtons />,
+  },
+];
 
 export default function ReactPNGButton() {
   return (
     <Container>
       <H3 color="primary"><strong><code>react-png-button</code></strong></H3>
       <SectionCaption>
-        An easy way to collect form data and/or input values.
+        Flexible preset collection of multiple buttons to quickly build applications.
       </SectionCaption>
       <Divider />
       <br />
       <DocList>
-        <li><a href="#regular">Regular Buttons</a></li>
-        <li><a href="#Block">Block Buttons</a></li>
-        <li><a href="#logo">Logo Buttons</a></li>
-        <li><a href="#css-context">CSS Context Buttons</a></li>
+        {appendix.map(({ id, title }, index) => (
+          <Animations.PopIn
+            key={id}
+            animationDelayMultiplier={index / 2}
+          >
+            <li><a href={`#${id}`}>{title}</a></li>
+          </Animations.PopIn>
+        ))}
       </DocList>
       <Divider />
       <br />
-      {/* <Examples>
-        {[
-          {
-            id: 'regular',
-            title: 'Regular Buttons',
-            code: inputElements,
-            children: <InputElements />
-          },
-        ].map(({ id, children, ...exampleProps }) => (
+      <Examples>
+        {appendix.map(({ id, children, ...exampleProps }) => (
           <Example
             key={id}
             id={id}
@@ -67,7 +91,7 @@ export default function ReactPNGButton() {
             {children}
           </Example>
         ))}
-      </Examples> */}
+      </Examples>
     </Container>
   );
 }

@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Components
-import { Container, Divider } from 'components/UI';
+import { Container, Divider, Animations } from 'components/UI';
 import { H3 } from 'components/UI/Text';
 import {
   DocList,
@@ -33,6 +33,57 @@ import {
   signInModal,
 } from './examplesLiterals';
 
+const appendix = [
+  {
+    id: 'elements',
+    title: 'Input Elements',
+    code: inputElements,
+    children: <InputElements />
+  },
+  {
+    id: 'range-element',
+    title: 'Range Element',
+    code: rangeElement,
+    children: <RangeElement />
+  },
+  {
+    id: 'select-element',
+    title: 'Select Element',
+    code: selectElement,
+    children: <SelectElement />
+  },
+  {
+    id: 'numeric-element',
+    title: 'Numeric Element',
+    code: numericElement,
+    children: <NumericElement />
+  },
+  {
+    id: 'checkbox-elements',
+    title: 'Checkbox Elements',
+    code: checkboxElements,
+    children: <CheckboxElements />
+  },
+  {
+    id: 'form-element',
+    title: 'Form Element',
+    code: formElement,
+    children: <FormElement />
+  },
+  {
+    id: 'checkbox-form',
+    title: 'Checkbox Group Form',
+    code: checkboxGroupForm,
+    children: <CheckboxGroupForm />
+  },
+  {
+    id: 'sign-in',
+    title: 'Sign in modal example',
+    code: signInModal,
+    children: <SignInModal />
+  },
+];
+
 export default function ReactFormalized() {
   return (
     <Container>
@@ -43,68 +94,19 @@ export default function ReactFormalized() {
       <Divider />
       <br />
       <DocList>
-        <li><a href="#elements">Input Elements</a></li>
-        <li><a href="#range-element">Range Element (Similar to type Range)</a></li>
-        <li><a href="#select-element">Select Element</a></li>
-        <li><a href="#numeric-element">Numeric Element</a></li>
-        <li><a href="#checkbox-elements">Checkbox Elements (Similar to type Checkbox, Radio)</a></li>
-        <li><a href="#form-element">Form Element</a></li>
-        <li><a href="#checkbox-form">Checkbox Group Form</a></li>
-        <li><a href="#sign-in">Sign in modal example</a></li>
+        {appendix.map(({ id, title }, index) => (
+          <Animations.PopIn
+            key={id}
+            animationDelayMultiplier={index / 2}
+          >
+            <li><a href={`#${id}`}>{title}</a></li>
+          </Animations.PopIn>
+        ))}
       </DocList>
       <Divider />
       <br />
       <Examples>
-        {[
-          {
-            id: 'elements',
-            title: 'Input Elements',
-            code: inputElements,
-            children: <InputElements />
-          },
-          {
-            id: 'range-element',
-            title: 'Range Element',
-            code: rangeElement,
-            children: <RangeElement />
-          },
-          {
-            id: 'select-element',
-            title: 'Select Element',
-            code: selectElement,
-            children: <SelectElement />
-          },
-          {
-            id: 'numeric-element',
-            title: 'Numeric Element',
-            code: numericElement,
-            children: <NumericElement />
-          },
-          {
-            id: 'checkbox-elements',
-            title: 'Checkbox Elements',
-            code: checkboxElements,
-            children: <CheckboxElements />
-          },
-          {
-            id: 'form-element',
-            title: 'Form Element',
-            code: formElement,
-            children: <FormElement />
-          },
-          {
-            id: 'checkbox-form',
-            title: 'Checkbox Group Form',
-            code: checkboxGroupForm,
-            children: <CheckboxGroupForm />
-          },
-          {
-            id: 'sign-in',
-            title: 'Sign in modal example',
-            code: signInModal,
-            children: <SignInModal />
-          },
-        ].map(({ id, children, ...exampleProps }) => (
+        {appendix.map(({ id, children, ...exampleProps }) => (
           <Example
             key={id}
             id={id}

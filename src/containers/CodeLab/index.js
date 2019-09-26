@@ -7,7 +7,7 @@ import { withTheme } from 'styled-components';
 import projectsData from 'containers/CodeLab/projectsData';
 
 // Components
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { Divider } from 'components/UI';
 import SideDrawer from 'components/CodeLab/SideDrawer';
 
@@ -65,6 +65,7 @@ function CodeLab(props) {
         <Route exact path={`${match.path}/react-png-modal`} component={ReactPNGModal} />
         <Route exact path={`${match.path}/react-svg-library`} component={ReactSVGLibrary} />
         <Route exact path={`${match.path}/with-context-react`} component={WithContextReact} /> */}
+        <Redirect to="/" />
       </Switch>
     </>
   );
