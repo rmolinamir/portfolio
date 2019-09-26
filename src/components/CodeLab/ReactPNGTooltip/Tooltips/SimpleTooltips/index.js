@@ -25,6 +25,15 @@ const StyledRow = styled(Row)`
     color: #FFF;
     fill: #FFF;
   }
+  .rm-dark-tooltip {
+    background-color: #333;
+    color: #FFF;
+    fill: #FFF;
+  }
+  .rm-tooltip {
+    background-color: ${({ theme }) => theme.terciary};
+    color: ${({ theme }) => theme.whiteColor};
+  }
 `;
 
 const StyledCol = styled(Col)`
@@ -42,16 +51,6 @@ const StyledCol = styled(Col)`
       code {
         font-weight: bold;
       }
-    }
-    .rm-dark-tooltip {
-      background-color: #333;
-      color: #FFF;
-      fill: #FFF;
-    }
-    .rm-tooltip {
-      background-color: ${({ theme }) => theme.terciary};
-      color: ${({ theme }) => theme.whiteColor};
-      /* fill: #FFF; */
     }
   }
 `;

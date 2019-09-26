@@ -1,7 +1,7 @@
 import SimpleTooltips from './SimpleTooltips';
-// import CustomTooltips from './CustomTooltips';
+import CustomTooltips from './CustomTooltips';
 
 export {
   SimpleTooltips,
-  // CustomTooltips,
+  CustomTooltips,
 };

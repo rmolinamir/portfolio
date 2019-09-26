@@ -12,11 +12,13 @@ import Example from 'components/CodeLab/Example';
 import SectionCaption from '../SectionCaption';
 import {
   SimpleTooltips,
+  CustomTooltips,
 } from './Tooltips';
 
 // Dependencies
 import {
   simpleTooltips,
+  customTooltips,
 } from './examplesLiterals';
 
 const appendix = [
@@ -29,8 +31,8 @@ const appendix = [
   {
     id: 'custom',
     title: 'Custom Tooltips',
-    // code: blockButtons,
-    // children: <BlockButtons />,
+    code: customTooltips,
+    children: <CustomTooltips />,
   },
 ];
 
