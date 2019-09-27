@@ -4,6 +4,7 @@ import ReactFormalized from './ReactFormalized';
 import ReactPNGButton from './ReactPNGButton';
 import ReactPNGTooltip from './ReactPNGTooltip';
 import ReactPNGModal from './ReactPNGModal';
+import ReactSVGLibrary from './ReactSVGLibrary';
 
 export {
   Homepage,
@@ -12,4 +13,5 @@ export {
   ReactPNGButton,
   ReactPNGTooltip,
   ReactPNGModal,
+  ReactSVGLibrary,
 };
