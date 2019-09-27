@@ -20,7 +20,6 @@ const Item = props => {
     wrapperProps,
     ...rest
   } = props;
-  console.log('LinkComponent', LinkComponent);
   const Wrapper = ItemWrapperComponent || LinkComponent;
   const navLink = (
     <StyledListItem

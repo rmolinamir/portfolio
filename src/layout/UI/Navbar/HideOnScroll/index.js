@@ -37,10 +37,6 @@ export default function HideOnScroll(props) {
   }
 }
 
-const Wrapper = styled.div`
-
-`;
-
 HideOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
 };
