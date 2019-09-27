@@ -9,7 +9,7 @@ import HeroSlider, {
   Nav,
   OverlayContainer,
 } from 'hero-slider';
-import { H1, H2 } from 'components/UI/Text';
+import { H2, H3 } from 'components/UI/Text';
 
 // Assets
 import hallstatt from './backgrounds/Hallstatt - Austria.jpg';
@@ -28,7 +28,7 @@ const StyledOverlayContainer = styled(OverlayContainer)`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    h2, h3 {
       margin: 0 36px;
     }
   }
@@ -48,17 +48,17 @@ export default function ZoomSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: true,
         autoplayDuration: 5000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
       <StyledOverlayContainer>
-        <H1>
-          Zoom Slider
-        </H1>
         <H2>
+          Zoom Slider
+        </H2>
+        <H3>
           Slides&apos; backgroundAnimation prop set to &apos;zoom&apos; (you may have to
           reload the page if it&apos;s already over)
-        </H2>
+        </H3>
       </StyledOverlayContainer>
 
       <Slide

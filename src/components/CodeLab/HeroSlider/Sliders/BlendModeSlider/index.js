@@ -9,7 +9,7 @@ import HeroSlider, {
   ButtonsNav,
   OverlayContainer,
 } from 'hero-slider';
-import { H1, H2 } from 'components/UI/Text';
+import { H2, H3 } from 'components/UI/Text';
 
 // Assets
 import rockyWaterfall from './backgrounds/Rocky Waterfall.jpg';
@@ -28,7 +28,7 @@ const StyledOverlayContainer = styled(OverlayContainer)`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    h2, h3 {
       margin: 0 36px;
     }
   }
@@ -50,19 +50,19 @@ export default function BlendModeSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: true,
         autoplayDuration: 8000,
-        height: '80vh'
+        height: '90vmin'
       }}
     >
       <StyledOverlayContainer>
-        <H1>
+        <H2>
           Blend Mode Slider
-        </H1>
-        <H2>
+        </H2>
+        <H3>
           Slides&apos; and masks&apos; background blend mode set to luminosity
-        </H2>
-        <H2>
+        </H3>
+        <H3>
           Slides&apos; shouldRenderMask prop set to true
-        </H2>
+        </H3>
       </StyledOverlayContainer>
 
       <Slide

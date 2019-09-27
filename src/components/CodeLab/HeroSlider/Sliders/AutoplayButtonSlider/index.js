@@ -9,7 +9,7 @@ import HeroSlider, {
   AutoplayButton,
   OverlayContainer,
 } from 'hero-slider';
-import { H1 } from 'components/UI/Text';
+import { H2 } from 'components/UI/Text';
 
 // Assets
 import kyoto from '../NavbarSlider/backgrounds/Kyoto - Japan.jpg';
@@ -28,7 +28,7 @@ const StyledOverlayContainer = styled(OverlayContainer)`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    h2, h3 {
       margin: 0 36px;
     }
   }
@@ -50,13 +50,13 @@ export default function AutoplayButtonSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: false,
         autoplayDuration: 2000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
       <StyledOverlayContainer>
-        <H1>
+        <H2>
           Autoplay Button Slider
-        </H1>
+        </H2>
       </StyledOverlayContainer>
       <AutoplayButton />
 

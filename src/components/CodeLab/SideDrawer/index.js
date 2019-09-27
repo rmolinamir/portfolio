@@ -151,5 +151,13 @@ const StyledSideDrawer = styled(Drawer)`
         }
       }
     }
+    @media (max-width: ${({ theme }) => theme.screenMd}) {
+      z-index: ${({ open }) => (open ? 1200 : 0)};
+      /*
+        z-index transition delay during the closing animation to avoid
+        "jumpy" animations
+      */
+      transition: ${({ open }) => !open && 'z-index 0ms ease 250ms'};
+    }
   }
 `;

@@ -7,7 +7,7 @@ import HeroSlider, {
   Nav,
   OverlayContainer,
 } from 'hero-slider';
-import { H1, H2 } from 'components/UI/Text';
+import { H2, H3 } from 'components/UI/Text';
 
 // Assets
 import bogliasco from './backgrounds/Bogliasco - Italy.jpg';
@@ -30,7 +30,7 @@ export default function BasicSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: true,
         autoplayDuration: 5000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
       <OverlayContainer
@@ -45,35 +45,39 @@ export default function BasicSlider() {
           textAlign: 'center',
         }}
       >
-        <H1>
-          Basic Slider
-        </H1>
         <H2>
-          Slides&apos; background attachment set to fixed
+          Basic Slider
         </H2>
+        <H3>
+          Slides&apos; background attachment set to fixed
+        </H3>
       </OverlayContainer>
       <Slide
         background={{
           backgroundImage: giauPass,
           backgroundAttachment: 'fixed',
+          backgroundPosition: 'center center',
         }}
       />
       <Slide
         background={{
           backgroundImage: bogliasco,
           backgroundAttachment: 'fixed',
+          backgroundPosition: 'center center',
         }}
       />
       <Slide
         background={{
           backgroundImage: countyClare,
           backgroundAttachment: 'fixed',
+          backgroundPosition: 'center center',
         }}
       />
       <Slide
         background={{
           backgroundImage: craterRock,
           backgroundAttachment: 'fixed',
+          backgroundPosition: 'center center',
         }}
       />
       <Nav />
@@ -93,7 +97,7 @@ import HeroSlider, {
   SideNav,
   OverlayContainer,
 } from 'hero-slider';
-import { H1, H2 } from 'components/UI/Text';
+import { H2, H3 } from 'components/UI/Text';
 
 // Assets
 import salta from './backgrounds/Salta - Argentina.jpg';
@@ -112,7 +116,7 @@ const StyledOverlayContainer = styled(OverlayContainer)\`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    H2, H3 {
       margin: 0 36px;
     }
   }
@@ -133,16 +137,16 @@ export default function VerticalSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: true,
         autoplayDuration: 8000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
       <StyledOverlayContainer>
-        <H1>
-          Vertical Slider
-        </H1>
         <H2>
-          Try switching to a display that supports touch, then swipe vertically
+          Vertical Slider
         </H2>
+        <H3>
+          Try switching to a display that supports touch, then swipe vertically
+        </H3>
       </StyledOverlayContainer>
 
       <Slide
@@ -150,7 +154,8 @@ export default function VerticalSlider() {
         background={{
           backgroundAttachment: 'fixed',
           backgroundColor: '#6D9B98',
-          backgroundImage: salta
+          backgroundImage: salta,
+          backgroundPosition: 'center center',
         }}
       />
 
@@ -159,7 +164,8 @@ export default function VerticalSlider() {
         background={{
           backgroundAttachment: 'fixed',
           backgroundColor: '#8A8A8A',
-          backgroundImage: scharbeutz
+          backgroundImage: scharbeutz,
+          backgroundPosition: 'center center',
         }}
       />
 
@@ -168,7 +174,8 @@ export default function VerticalSlider() {
         background={{
           backgroundAttachment: 'fixed',
           backgroundColor: '#EA2329',
-          backgroundImage: selvaDiValGardena
+          backgroundImage: selvaDiValGardena,
+          backgroundPosition: 'center center',
         }}
       />
 
@@ -177,7 +184,8 @@ export default function VerticalSlider() {
         background={{
           backgroundAttachment: 'fixed',
           backgroundColor: '#2D7791',
-          backgroundImage: seoraksanMountains
+          backgroundImage: seoraksanMountains,
+          backgroundPosition: 'center center',
         }}
       />
 
@@ -213,7 +221,7 @@ import HeroSlider, {
   Nav,
   OverlayContainer,
 } from 'hero-slider';
-import { H1, H2 } from 'components/UI/Text';
+import { H2, H3 } from 'components/UI/Text';
 
 // Assets
 import hallstatt from './backgrounds/Hallstatt - Austria.jpg';
@@ -232,7 +240,7 @@ const StyledOverlayContainer = styled(OverlayContainer)\`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    H2, H3 {
       margin: 0 36px;
     }
   }
@@ -252,17 +260,17 @@ export default function ZoomSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: true,
         autoplayDuration: 5000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
       <StyledOverlayContainer>
-        <H1>
-          Zoom Slider
-        </H1>
         <H2>
+          Zoom Slider
+        </H2>
+        <H3>
           Slides&apos; backgroundAnimation prop set to &apos;zoom&apos; (you may have to
           reload the page if it&apos;s already over)
-        </H2>
+        </H3>
       </StyledOverlayContainer>
 
       <Slide
@@ -320,7 +328,7 @@ import HeroSlider, {
   Slide,
   SideNav,
 } from 'hero-slider';
-import { H1 } from 'components/UI/Text';
+import { H2 } from 'components/UI/Text';
 
 // Assets
 import salta from '../VerticalSlider/backgrounds/Salta - Argentina.jpg';
@@ -339,7 +347,7 @@ const Wrapper = styled.div\`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    H2, H3 {
       margin: 0 36px;
     }
   }
@@ -360,7 +368,7 @@ export default function ChildrenSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: true,
         autoplayDuration: 8000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
 
@@ -370,9 +378,9 @@ export default function ChildrenSlider() {
         }}
       >
         <Wrapper>
-          <H1>
+          <H2>
             Salta - Argentina
-          </H1>
+          </H2>
         </Wrapper>
       </Slide>
 
@@ -382,9 +390,9 @@ export default function ChildrenSlider() {
         }}
       >
         <Wrapper>
-          <H1>
+          <H2>
             Scharbeutz - Germany
-          </H1>
+          </H2>
         </Wrapper>
       </Slide>
 
@@ -394,9 +402,9 @@ export default function ChildrenSlider() {
         }}
       >
         <Wrapper>
-          <H1>
+          <H2>
             Selva Di Val Gardena - Italy
-          </H1>
+          </H2>
         </Wrapper>
       </Slide>
 
@@ -406,9 +414,9 @@ export default function ChildrenSlider() {
         }}
       >
         <Wrapper>
-          <H1>
+          <H2>
           Seoraksan Mountains - South Korea
-          </H1>
+          </H2>
         </Wrapper>
       </Slide>
 
@@ -434,7 +442,7 @@ import HeroSlider, {
   ButtonsNav,
   OverlayContainer,
 } from 'hero-slider';
-import { H1, H2 } from 'components/UI/Text';
+import { H2, H3 } from 'components/UI/Text';
 
 // Assets
 import rockyWaterfall from './backgrounds/Rocky Waterfall.jpg';
@@ -453,7 +461,7 @@ const StyledOverlayContainer = styled(OverlayContainer)\`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    H2, H3 {
       margin: 0 36px;
     }
   }
@@ -475,19 +483,19 @@ export default function BlendModeSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: true,
         autoplayDuration: 8000,
-        height: '80vh'
+        height: '90vmin'
       }}
     >
       <StyledOverlayContainer>
-        <H1>
+        <H2>
           Blend Mode Slider
-        </H1>
-        <H2>
+        </H2>
+        <H3>
           Slides&apos; and masks&apos; background blend mode set to luminosity
-        </H2>
-        <H2>
+        </H3>
+        <H3>
           Slides&apos; shouldRenderMask prop set to true
-        </H2>
+        </H3>
       </StyledOverlayContainer>
 
       <Slide
@@ -557,7 +565,7 @@ import HeroSlider, {
   MenuNav,
   OverlayContainer,
 } from 'hero-slider';
-import { H1, H2 } from 'components/UI/Text';
+import { H2, H3 } from 'components/UI/Text';
 
 // Assets
 import kyoto from './backgrounds/Kyoto - Japan.jpg';
@@ -576,7 +584,7 @@ const StyledOverlayContainer = styled(OverlayContainer)\`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    H2, H3 {
       margin: 0 36px;
     }
   }
@@ -653,17 +661,17 @@ export default function NavbarSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: false,
         autoplayDuration: 8000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
       <FakeNavbar />
       <StyledOverlayContainer>
-        <H1>
-          Navbar Slider
-        </H1>
         <H2>
-          Cool stuff.
+          Navbar Slider
         </H2>
+        <H3>
+          Cool stuff.
+        </H3>
       </StyledOverlayContainer>
 
       <Slide
@@ -718,7 +726,7 @@ import HeroSlider, {
   OverlayContainer,
 } from 'hero-slider';
 import Button from 'react-png-button';
-import { H1, H2 } from 'components/UI/Text';
+import { H2, H3 } from 'components/UI/Text';
 
 // Assets
 import bogliasco from '../BasicSlider/backgrounds/Bogliasco - Italy.jpg';
@@ -737,7 +745,7 @@ const StyledOverlayContainer = styled(OverlayContainer)\`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    H2, H3 {
       margin: 0 36px;
     }
   }
@@ -763,16 +771,16 @@ export default function ButtonsSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: false,
         autoplayDuration: 8000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
       <StyledOverlayContainer>
-        <H1>
-          Custom Buttons Slider
-        </H1>
         <H2>
-          Custom Navigation Buttons set up by passing React mutable ref objects as props
+          Custom Buttons Slider
         </H2>
+        <H3>
+          Custom Navigation Buttons set up by passing React mutable ref objects as props
+        </H3>
         <div>
           <Button
             style={{
@@ -854,7 +862,7 @@ import HeroSlider, {
   AutoplayButton,
   OverlayContainer,
 } from 'hero-slider';
-import { H1 } from 'components/UI/Text';
+import { H2 } from 'components/UI/Text';
 
 // Assets
 import kyoto from '../NavbarSlider/backgrounds/Kyoto - Japan.jpg';
@@ -873,7 +881,7 @@ const StyledOverlayContainer = styled(OverlayContainer)\`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    H2, H3 {
       margin: 0 36px;
     }
   }
@@ -895,13 +903,13 @@ export default function AutoplayButtonSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: false,
         autoplayDuration: 2000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
       <StyledOverlayContainer>
-        <H1>
+        <H2>
           Autoplay Button Slider
-        </H1>
+        </H2>
       </StyledOverlayContainer>
       <AutoplayButton />
 

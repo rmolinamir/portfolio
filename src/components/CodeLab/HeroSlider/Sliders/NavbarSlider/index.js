@@ -9,7 +9,7 @@ import HeroSlider, {
   MenuNav,
   OverlayContainer,
 } from 'hero-slider';
-import { H1, H2 } from 'components/UI/Text';
+import { H2, H3 } from 'components/UI/Text';
 
 // Assets
 import kyoto from './backgrounds/Kyoto - Japan.jpg';
@@ -28,7 +28,7 @@ const StyledOverlayContainer = styled(OverlayContainer)`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    h2, h3 {
       margin: 0 36px;
     }
   }
@@ -105,17 +105,17 @@ export default function NavbarSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: false,
         autoplayDuration: 8000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
       <FakeNavbar />
       <StyledOverlayContainer>
-        <H1>
-          Navbar Slider
-        </H1>
         <H2>
-          Cool stuff.
+          Navbar Slider
         </H2>
+        <H3>
+          Cool stuff.
+        </H3>
       </StyledOverlayContainer>
 
       <Slide
