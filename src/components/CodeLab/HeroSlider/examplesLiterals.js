@@ -1,4 +1,4 @@
-export const basicSlider = `// Libraries
+export const basicSlider = () => `// Libraries
 import React from 'react';
 
 // Components
@@ -82,7 +82,7 @@ export default function BasicSlider() {
 }
 `;
 
-export const verticalSlider = `// Libraries
+export const verticalSlider = () => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -202,7 +202,7 @@ export default function VerticalSlider() {
 }
 `;
 
-export const zoomSlider = `// Libraries
+export const zoomSlider = () => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -311,7 +311,7 @@ export default function ZoomSlider() {
 }
 `;
 
-export const childrenSlider = `// Libraries
+export const childrenSlider = () => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -423,7 +423,7 @@ export default function ChildrenSlider() {
 }
 `;
 
-export const blendModeSlider = `// Libraries
+export const blendModeSlider = () => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -546,7 +546,7 @@ export default function BlendModeSlider() {
 }
 `;
 
-export const navbarSlider = `// Libraries
+export const navbarSlider = () => `// Libraries
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -707,7 +707,7 @@ export default function NavbarSlider() {
 }
 `;
 
-export const buttonsSlider = `// Libraries
+export const buttonsSlider = () => `// Libraries
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 
@@ -843,7 +843,7 @@ export default function ButtonsSlider() {
 }
 `;
 
-export const autoplayButtonSlider = `// Libraries
+export const autoplayButtonSlider = () => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 

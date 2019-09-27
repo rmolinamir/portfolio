@@ -1,4 +1,4 @@
-export const inputElements = `// Libraries
+export const inputElements = () => `// Libraries
 import React from 'react';
 
 // Components
@@ -86,7 +86,7 @@ export default function InputElements() {
 }
 `;
 
-export const rangeElement = `// Libraries
+export const rangeElement = () => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -134,7 +134,7 @@ export default function RangeElement() {
 }
 `;
 
-export const selectElement = `// Libraries
+export const selectElement = () => `// Libraries
 import React from 'react';
 
 // Components
@@ -189,7 +189,7 @@ export default function SelectElement() {
 }
 `;
 
-export const numericElement = `// Libraries
+export const numericElement = () => `// Libraries
 import React from 'react';
 
 // Components
@@ -209,7 +209,7 @@ export default function NumericElement() {
 }
 `;
 
-export const checkboxElements = `// Libraries
+export const checkboxElements = () => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -304,7 +304,7 @@ export default function CheckboxElements() {
 }
 `;
 
-export const formElement = `// Libraries
+export const formElement = theme => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -321,8 +321,8 @@ const StyledButton = styled(Button)\`
     display: block;
     width: 100%;
     padding: 12px 18px;
-    color: \${({ theme }) => theme.whiteColor};
-    background-color: \${({ theme }) => theme.primary};
+    color: ${theme.whiteColor};
+    background-color: ${theme.primary};
   }
 \`;
 
@@ -421,7 +421,7 @@ export default function FormElements() {
 }
 `;
 
-export const checkboxGroupForm = `// Libraries
+export const checkboxGroupForm = theme => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -438,8 +438,8 @@ const StyledButton = styled(Button)\`
     display: block;
     width: 100%;
     padding: 12px 18px;
-    color: \${({ theme }) => theme.whiteColor};
-    background-color: \${({ theme }) => theme.primary};
+    color: ${theme.whiteColor};
+    background-color: ${theme.primary};
   }
 \`;
 
@@ -494,7 +494,7 @@ export default function CheckboxGroupForm() {
 }
 `;
 
-export const signInModal = `// Libraries
+export const signInModal = theme => `// Libraries
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -511,8 +511,8 @@ const StyledButton = styled(Button)\`
     display: block;
     width: 100%;
     padding: 12px 18px;
-    color: ${({ theme }) => theme.whiteColor};
-    background-color: ${({ theme }) => theme.primary};
+    color: ${theme.whiteColor};
+    background-color: ${theme.primary};
   }
 \`;
 

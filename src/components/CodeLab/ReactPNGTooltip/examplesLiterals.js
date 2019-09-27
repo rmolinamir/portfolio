@@ -1,4 +1,4 @@
-export const simpleTooltips = `// Libraries
+export const simpleTooltips = theme => `// Libraries
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
@@ -31,8 +31,8 @@ const StyledRow = styled(Row)\`
     fill: #FFF;
   }
   .rm-tooltip {
-    background-color: \${({ theme }) => theme.terciary};
-    color: \${({ theme }) => theme.whiteColor};
+    background-color: ${theme.terciary};
+    color: ${theme.whiteColor};
   }
 \`;
 
@@ -225,7 +225,7 @@ SimpleTooltips.propTypes = {
 export default SimpleTooltips;
 `;
 
-export const customTooltips = `// Libraries
+export const customTooltips = theme => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -238,9 +238,9 @@ import Button from '@material-ui/core/Button';
 
 const StyledRow = styled(Row)\`
   .rm-primary-tooltip {
-    background-color: \${({ theme }) => theme.primary};
-    color: \${({ theme }) => theme.whiteColor};
-    fill: \${({ theme }) => theme.whiteColor};
+    background-color: ${theme.primary};
+    color: ${theme.whiteColor};
+    fill: ${theme.whiteColor};
   }
   .rm-tooltips-cat-tooltip {
     cursor: pointer;

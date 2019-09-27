@@ -219,7 +219,11 @@ const SimpleTooltips = withTheme(props => {
 });
 
 SimpleTooltips.propTypes = {
-  theme: PropTypes.instanceOf(Object).isRequired,
+  theme: PropTypes.instanceOf(Object),
+};
+
+SimpleTooltips.defaultProps = {
+  theme: {},
 };
 
 export default SimpleTooltips;

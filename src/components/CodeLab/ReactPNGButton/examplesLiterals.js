@@ -1,4 +1,4 @@
-export const regularButtons = `// Libraries
+export const regularButtons = theme => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -29,7 +29,7 @@ const Grid = styled.div\`
     align-items: center;
   }
 
-  @media (max-width: \${({ theme }) => theme.screenMd}) {
+  @media (max-width: ${theme.screenMd}) {
     & {
       grid-template-columns: repeat(1,1fr);
     }
@@ -127,7 +127,7 @@ export default function RegularButtons() {
 }
 `;
 
-export const blockButtons = `// Libraries
+export const blockButtons = () => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -252,7 +252,7 @@ export default function BlockButtons() {
 }
 `;
 
-export const logoButtons = `// Libraries
+export const logoButtons = () => `// Libraries
 import React from 'react';
 import styled from 'styled-components';
 
@@ -361,7 +361,7 @@ export default function BlockButtons() {
 }
 `;
 
-export const contextButtons = `// Libraries
+export const contextButtons = () => `// Libraries
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -467,7 +467,7 @@ export default styled(BlockButtons)\`
 \`;
 `;
 
-export const customButtons = `// Libraries
+export const customButtons = theme => `// Libraries
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -570,13 +570,13 @@ export default styled(CustomButtons)\`
     }
 
     &[button="custom"] {
-      color: \${({ theme }) => theme.whiteColor};
-      background-color: \${({ theme }) => theme.primary};
+      color: ${theme.whiteColor};
+      background-color: ${theme.primary};
       border-radius: 0;
       width: 180px;
       height: 180px;
       &:hover {
-        background-color: \${({ theme }) => theme.secondary};
+        background-color: ${theme.secondary};
       }
     }
   }

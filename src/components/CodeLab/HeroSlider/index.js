@@ -106,10 +106,11 @@ export default function HeroSlider() {
       <Divider />
       <br />
       <Examples>
-        {appendix.map(({ id, children, ...exampleProps }) => (
+        {appendix.map(({ id, children, code, ...exampleProps }) => (
           <Example
             key={id}
             id={id}
+            code={code()}
             {...exampleProps}
           >
             {children}

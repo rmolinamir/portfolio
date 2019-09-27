@@ -1,5 +1,7 @@
 // Libraries
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withTheme } from 'styled-components';
 
 // Components
 import { Container, Divider, Animations } from 'components/UI';
@@ -36,7 +38,8 @@ const appendix = [
   },
 ];
 
-export default function ReactPNGTooltip() {
+function ReactPNGTooltip(props) {
+  const { theme } = props;
   return (
     <Container>
       <H3 color="primary"><strong><code>react-png-tooltip</code></strong></H3>
@@ -58,10 +61,11 @@ export default function ReactPNGTooltip() {
       <Divider />
       <br />
       <Examples>
-        {appendix.map(({ id, children, ...exampleProps }) => (
+        {appendix.map(({ id, children, code, ...exampleProps }) => (
           <Example
             key={id}
             id={id}
+            code={code(theme)}
             {...exampleProps}
           >
             {children}
@@ -71,3 +75,9 @@ export default function ReactPNGTooltip() {
     </Container>
   );
 }
+
+ReactPNGTooltip.propTypes = {
+  theme: PropTypes.instanceOf(Object).isRequired,
+};
+
+export default withTheme(ReactPNGTooltip);
