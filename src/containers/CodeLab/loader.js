@@ -8,8 +8,8 @@ import LazyImport from 'components/Util/LazyImport';
 import Loader from 'components/UI/Loader';
 import LogoLoader from 'components/UI/LogoLoader';
 
-const LOADER_DELAY = 2500;
-const LOADER_DEV_DELAY = 250;
+const LOADER_DELAY = 1500;
+const LOADER_DEV_DELAY = 1500;
 const RESOLVED_CALLBACK_DELAY = process.env.NODE_ENV === 'development' ? LOADER_DEV_DELAY : LOADER_DELAY;
 
 const CodeLabLoader = () => {
