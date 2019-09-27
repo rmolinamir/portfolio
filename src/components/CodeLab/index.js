@@ -5,6 +5,7 @@ import ReactPNGButton from './ReactPNGButton';
 import ReactPNGTooltip from './ReactPNGTooltip';
 import ReactPNGModal from './ReactPNGModal';
 import ReactSVGLibrary from './ReactSVGLibrary';
+import WithContextReact from './WithContextReact';
 
 export {
   Homepage,
@@ -14,4 +15,5 @@ export {
   ReactPNGTooltip,
   ReactPNGModal,
   ReactSVGLibrary,
+  WithContextReact,
 };
