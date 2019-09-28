@@ -7,7 +7,7 @@ import HeroSlider, {
   Nav,
   OverlayContainer,
 } from 'hero-slider';
-import { H1, H2 } from 'components/UI/Text';
+import { H2, H3 } from 'components/UI/Text';
 
 // Assets
 import bogliasco from './backgrounds/Bogliasco - Italy.jpg';
@@ -30,7 +30,7 @@ export default function BasicSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: true,
         autoplayDuration: 5000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
       <OverlayContainer
@@ -45,35 +45,39 @@ export default function BasicSlider() {
           textAlign: 'center',
         }}
       >
-        <H1>
-          Basic Slider
-        </H1>
         <H2>
-          Slides&apos; background attachment set to fixed
+          Basic Slider
         </H2>
+        <H3>
+          Slides&apos; background attachment set to fixed
+        </H3>
       </OverlayContainer>
       <Slide
         background={{
           backgroundImage: giauPass,
           backgroundAttachment: 'fixed',
+          backgroundPosition: 'center center',
         }}
       />
       <Slide
         background={{
           backgroundImage: bogliasco,
           backgroundAttachment: 'fixed',
+          backgroundPosition: 'center center',
         }}
       />
       <Slide
         background={{
           backgroundImage: countyClare,
           backgroundAttachment: 'fixed',
+          backgroundPosition: 'center center',
         }}
       />
       <Slide
         background={{
           backgroundImage: craterRock,
           backgroundAttachment: 'fixed',
+          backgroundPosition: 'center center',
         }}
       />
       <Nav />

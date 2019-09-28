@@ -285,7 +285,7 @@ class Advanced extends Component {
           <br />
         </StyledCol>
         <StyledCol>
-          <Button onClick={this.changeReactFormalizedContext}>Click to change style of the buttons!</Button>
+          <Button onClick={this.changeReactFormalizedContext}>Click to change the theme of the form elements!</Button>
         </StyledCol>
         <StyledCol>
           <Button onClick={this.revertReactFormalizedContext}>Click this button to revert the changes.</Button>
@@ -304,7 +304,7 @@ class Advanced extends Component {
           </div>
         </StyledCol>
         <StyledCol>
-          <Button onClick={this.changeReactPngContext}>Click to change style of the buttons!</Button>
+          <Button onClick={this.changeReactPngContext}>Click to change the style of the buttons!</Button>
         </StyledCol>
         <StyledCol>
           <Button onClick={this.revertReactPngContext}>Click this button to revert the changes.</Button>

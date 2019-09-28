@@ -7,7 +7,7 @@ import HeroSlider, {
   Slide,
   SideNav,
 } from 'hero-slider';
-import { H1 } from 'components/UI/Text';
+import { H2 } from 'components/UI/Text';
 
 // Assets
 import salta from '../VerticalSlider/backgrounds/Salta - Argentina.jpg';
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.33);
     text-align: center;
-    h1, h2 {
+    h2, h3 {
       margin: 0 36px;
     }
   }
@@ -47,7 +47,7 @@ export default function ChildrenSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: true,
         autoplayDuration: 8000,
-        height: '80vh',
+        height: '90vmin',
       }}
     >
 
@@ -57,9 +57,9 @@ export default function ChildrenSlider() {
         }}
       >
         <Wrapper>
-          <H1>
+          <H2>
             Salta - Argentina
-          </H1>
+          </H2>
         </Wrapper>
       </Slide>
 
@@ -69,9 +69,9 @@ export default function ChildrenSlider() {
         }}
       >
         <Wrapper>
-          <H1>
+          <H2>
             Scharbeutz - Germany
-          </H1>
+          </H2>
         </Wrapper>
       </Slide>
 
@@ -81,9 +81,9 @@ export default function ChildrenSlider() {
         }}
       >
         <Wrapper>
-          <H1>
+          <H2>
             Selva Di Val Gardena - Italy
-          </H1>
+          </H2>
         </Wrapper>
       </Slide>
 
@@ -93,9 +93,9 @@ export default function ChildrenSlider() {
         }}
       >
         <Wrapper>
-          <H1>
+          <H2>
           Seoraksan Mountains - South Korea
-          </H1>
+          </H2>
         </Wrapper>
       </Slide>
 

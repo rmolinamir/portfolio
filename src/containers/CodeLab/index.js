@@ -39,11 +39,13 @@ function CodeLab(props) {
     const maxWidth = `${width - +(String(theme.codeLabSideDrawerClosedWidth).replace('px', ''))}px`;
     document.getElementById('root').style.maxWidth = maxWidth;
     document.getElementById('root').style.paddingLeft = theme.codeLabSideDrawerClosedWidth;
+    document.getElementById('main-app-bar').style.borderLeft = '1px solid rgba(0, 0, 0, 0.12)';
     return () => {
       document.getElementById('root').style.margin = theme.rootMargin;
       document.getElementById('root').style.maxWidth = theme.rootMaxWidth;
       document.getElementById('root').style.paddingLeft = null;
-    };
+      document.getElementById('main-app-bar').style.borderLeft = null;
+  };
   }, [theme, width]);
 
   useEffect(() => {

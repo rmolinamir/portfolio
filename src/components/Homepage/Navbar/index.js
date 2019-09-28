@@ -166,6 +166,7 @@ const StyledNav = styled.nav`
     border-top: 1px solid #EAEAEA;
     border-bottom: 1px solid #EAEAEA;
     background: #FEFEFE;
+    background: rgba(254, 254, 254, 0.95);
     padding: 0 18px;
     z-index: 5;
     ul {
