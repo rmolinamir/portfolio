@@ -10,6 +10,9 @@ import { mainTheme } from 'static/theme';
 import { Helmet } from 'react-helmet';
 import Routes from 'containers/Routes';
 
+// Dependencies
+import googleSiteTag from 'services/gtag';
+
 const LOADER_DELAY = 750;
 const LOADER_DEV_DELAY = 750;
 const RESOLVED_CALLBACK_DELAY = process.env.NODE_ENV === 'development' ? LOADER_DEV_DELAY : LOADER_DELAY;
@@ -31,6 +34,22 @@ const App = () => {
           <title>
             Robert Molina | Software Developer
           </title>
+          {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+          {/* Only applied when in a production ENV. */}
+          {process.env.NODE_ENV === 'production' && (
+            <>
+              <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleSiteTag}`} />
+              <script>
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+
+                  gtag('config', '${googleSiteTag}');
+                `}
+              </script>
+            </>
+          )}
         </Helmet>
           <Routes />
       </Wrapper>

@@ -67,8 +67,8 @@ const technologiesList = [
     list: [
       { name: 'GraphQL', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'MongoDB', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'MySQL', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'PostgreSQL', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'SQLite', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
     ]
   },
   {
