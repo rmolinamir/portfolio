@@ -35,21 +35,16 @@ const App = () => {
             Robert Molina | Software Developer
           </title>
           {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-          {/* Only applied when in a production ENV. */}
-          {process.env.NODE_ENV === 'production' && (
-            <>
-              <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleSiteTag}`} />
-              <script>
-                {`
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleSiteTag}`} />
+            <script>
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-                  gtag('config', '${googleSiteTag}');
-                `}
-              </script>
-            </>
-          )}
+                gtag('config', '${googleSiteTag}');
+              `}
+            </script>
         </Helmet>
           <Routes />
       </Wrapper>

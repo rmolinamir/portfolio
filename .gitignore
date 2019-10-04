@@ -11,9 +11,6 @@
 # production
 /build
 
-# google tag
-/src/services/gtag.js
-
 # misc
 .DS_Store
 .env.local
