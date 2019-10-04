@@ -35,16 +35,16 @@ const App = () => {
             Robert Molina | Software Developer
           </title>
           {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleSiteTag}`} />
-            <script>
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', '${googleSiteTag}');
-              `}
-            </script>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleSiteTag}`} />
+          <script>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${googleSiteTag}');
+            `}
+          </script>
+          {/* <!-- End Google Analytics --> */}
         </Helmet>
           <Routes />
       </Wrapper>
