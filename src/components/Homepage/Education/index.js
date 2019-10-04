@@ -34,9 +34,9 @@ export default function Education() {
     <Container id="education">
       <H3 color="primary"><strong>Education</strong></H3>
       <SectionCaption>
-        Over the years I have worked for growing start-ups and billion-dollar companies. Each role and project has given
-        me a unique view on how to connect and collaborate with colleagues from whom I&apos;ve learned much. My roles
-        and responsibilities in each of them are listed below.
+        My career started with a major in mechanical engineering. When it comes to programming, I focused mostly in
+        applications using SolidWorks, AutoCAD, MATLAB, and Python for data analysis. My thesis project was
+        heavily based on data analysis models, and mathematical scripting languages.
       </SectionCaption>
       <br />
       <div
