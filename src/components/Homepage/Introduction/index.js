@@ -15,19 +15,20 @@ export default function Introduction() {
         <P>
           My career started with a major in mechanical engineering. I have been programming professionally for over {amountOfYears} years
           in a variety of technologies and languages, including Python, JavaScript (and TypeScript), C++, databases including
-          relational SQL databases such as SQLite, as well as No-SQL databases such as MongoDB, and a few others.
+          relational SQL databases such as PostgreSQL, as well as No-SQL databases such as MongoDB, GraphQL, ORMs such as Django & Prisma,
+          and a few others.
         </P>
         <br />
         <P>
           I have been working with Python, JavaScript, and TypeScript almost exclusively since early 2018, focusing on REST API
           development, data management, and data analysis using back-end technologies such as the Django REST Framework
-          and MEN stacks, as well as front-end applications built using frameworks such as React.js.
+          and ME(R)N stacks, as well as front-end applications built using frameworks such as React.js.
         </P>
         <br />
         <P>
           I have invested a great deal of time and energy learning and increasing my knowledge to gain an in-depth understanding
-          of core programming concepts, and I&apos;d like to share that to you. I&apos;ve certainly got a passion for programming
-          for multiple reasons, and I&apos;d like to share that enthusiasm with you as well.
+          of core programming concepts. I&apos;ve certainly got a passion for programming, and I like to share that enthusiasm with
+          anyone.
         </P>
       </Container>
     </Animations.PopIn>

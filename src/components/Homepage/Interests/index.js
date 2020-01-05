@@ -8,15 +8,16 @@ import { H3 } from 'components/UI/Text';
 import SectionCaption from '../SectionCaption';
 
 const interests = [
-  'Meeting new people;',
-  'contributing to open source libraries;',
+  'Tech stacks;',
+  'Open source contributions;',
   'Reddit;',
   'Dungeons and Dragons;',
-  'RPG games;',
-  'traveling;',
-  'jogging;',
+  'RPGs;',
+  'Travelling;',
+  'Jogging;',
+  'Nature and campgrounds;',
   'The Office;',
-  'building PCs;',
+  'Building PCs;',
 ];
 
 export default function Interests() {
