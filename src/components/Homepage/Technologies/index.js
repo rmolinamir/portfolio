@@ -45,6 +45,10 @@ const technologiesList = [
       { name: 'C++', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'Django REST Framework', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Express', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'GraphQL', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'GraphQL - Python', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'Graphene - Django', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'Prisma', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'Node.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Passport', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Python', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
@@ -54,6 +58,7 @@ const technologiesList = [
     key: 'bundlers-parsers',
     name: 'Bundlers & Parsers',
     list: [
+      { name: 'Apollo GraphQL CodeGen and Typings Generator', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'Babel', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Grunt', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Gulp', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
@@ -65,10 +70,9 @@ const technologiesList = [
     key: 'databases',
     name: 'Databases',
     list: [
-      { name: 'GraphQL', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'MongoDB', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'PostgreSQL', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'SQLite', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'PostgreSQL', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'SQLite', proficiency: PROFICIENCY_RECREATIONAL },
     ]
   },
   {
@@ -77,9 +81,8 @@ const technologiesList = [
     list: [
       { name: 'Adobe PhotoShop', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Adobe XD', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Figma', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'InVision', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'SolidWorks', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
-      { name: 'Sketch', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'Zeplin', proficiency: PROFICIENCY_RECREATIONAL },
     ]
   },
@@ -87,6 +90,7 @@ const technologiesList = [
     key: 'front-end',
     name: 'Front-end',
     list: [
+      { name: 'Apollo (GraphQL Client)', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Bootstrap', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'CSS', proficiency: PROFICIENCY_EXPERT },
       { name: 'Django Browsable API', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
@@ -109,8 +113,8 @@ const technologiesList = [
     key: 'infrastructure-devops',
     name: 'Infrastructure / DevOps',
     list: [
-      { name: 'AWS (EC2)', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
-      { name: 'Google Cloud Hosting', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'AWS (EC2 & Buckets)', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Google Cloud Hosting', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'Firebase Hosting', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Heroku', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Vagrant', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
@@ -123,8 +127,8 @@ const technologiesList = [
     list: [
       { name: 'Codacy', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'CodeFactor', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'Jest', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'Enzyme', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Jest', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Enzyme', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'ESLint', proficiency: PROFICIENCY_EXPERT },
       { name: 'TSLint (deprecated)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
     ]
@@ -167,6 +171,7 @@ const technologiesList = [
       { name: 'FluidSIM', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'MATLAB', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Microsoft Excel (Data Analysis, Dynamic Dashboards, etc.)', proficiency: PROFICIENCY_EXPERT },
+      { name: 'SolidWorks', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Unreal Engine 4', proficiency: PROFICIENCY_RECREATIONAL },
     ]
   },
