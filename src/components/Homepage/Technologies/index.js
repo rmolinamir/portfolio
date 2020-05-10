@@ -26,16 +26,36 @@ const technologiesList = [
     key: 'apis',
     name: 'APIs',
     list: [
-      { name: '3rd Party Auth (Ex. Facebook, Google, Twitter)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: '3rd Party Authentication (e.g. Facebook, Google, Twitter)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Discogs', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'DOMO', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Google APIs (Auth, Cloud Hosting, Firebase, Firestore, Maps)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Immutable.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'normalizr', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Mailchimp', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Mapbox', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Moment.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Postman', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Serverless Framework', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Stripe', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'YouTube', proficiency: PROFICIENCY_RECREATIONAL },
+    ]
+  },
+  {
+    key: 'aws',
+    name: 'AWS',
+    list: [
+      { name: 'AWS Amplify', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'AWS CDK', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'AWS CloudWatch', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'AWS DynamoDB', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'AWS EventBridge', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'AWS IoT', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'AWS Kinesis', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'AWS Lambda', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'AWS RDS (PostgreSQL, AuroraDB, et al)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'AWS S3', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'AWS SQS', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
     ]
   },
   {
@@ -45,12 +65,11 @@ const technologiesList = [
       { name: 'C++', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'Django REST Framework', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Express', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'GraphQL', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'GraphQL', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'GraphQL - Python', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'Graphene - Django', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'Prisma', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'Prisma', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Node.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'Passport', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Python', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
     ]
   },
@@ -58,11 +77,12 @@ const technologiesList = [
     key: 'bundlers-parsers',
     name: 'Bundlers & Parsers',
     list: [
-      { name: 'Apollo GraphQL CodeGen and Typings Generator', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'Apollo GraphQL CodeGen and Typings Generator', proficiency: PROFICIENCY_ADVANCED_PRODUCTION   },
       { name: 'Babel', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Grunt', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Gulp', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'NPM', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'TypeScript Compiler', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Webpack 4', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
     ]
   },
@@ -70,7 +90,9 @@ const technologiesList = [
     key: 'databases',
     name: 'Databases',
     list: [
+      { name: 'AuroraDB', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'MongoDB', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'MySQL', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'PostgreSQL', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'SQLite', proficiency: PROFICIENCY_RECREATIONAL },
     ]
@@ -90,15 +112,16 @@ const technologiesList = [
     key: 'front-end',
     name: 'Front-end',
     list: [
-      { name: 'Apollo (GraphQL Client)', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Apollo (GraphQL Client)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Bootstrap', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'CSS', proficiency: PROFICIENCY_EXPERT },
       { name: 'Django Browsable API', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Google Apps Script', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'JavaScript', proficiency: PROFICIENCY_EXPERT },
       { name: 'Java/Kotlin', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'jQuery', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'HTML', proficiency: PROFICIENCY_EXPERT },
-      { name: 'Node.js View Engines (Ex. Handlebars, EJS, etc.)', proficiency: PROFICIENCY_EXPERT },
+      { name: 'Node.js View Engines (e.g. Handlebars, EJS, etc.)', proficiency: PROFICIENCY_EXPERT },
       { name: 'Next.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'LESS', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'React.js', proficiency: PROFICIENCY_EXPERT },
@@ -113,8 +136,8 @@ const technologiesList = [
     key: 'infrastructure-devops',
     name: 'Infrastructure / DevOps',
     list: [
-      { name: 'AWS (EC2 & Buckets)', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Google Cloud Hosting', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'Docker', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Firebase Hosting', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Heroku', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Vagrant', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
@@ -125,11 +148,13 @@ const technologiesList = [
     key: 'testing-maintenance',
     name: 'Testing & Maintenance',
     list: [
+      { name: 'Chai', proficiency: PROFICIENCY_EXPERT },
       { name: 'Codacy', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'CodeFactor', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'Jest', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'Enzyme', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'ESLint', proficiency: PROFICIENCY_EXPERT },
+      { name: 'Enzyme', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Jest', proficiency: PROFICIENCY_EXPERT },
+      { name: 'Mocha', proficiency: PROFICIENCY_EXPERT },
       { name: 'TSLint (deprecated)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
     ]
   },
@@ -149,6 +174,8 @@ const technologiesList = [
     name: 'Management',
     list: [
       { name: 'Google Hangouts', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'JIRA', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Microsoft Teams', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Slack', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Trello', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
     ]
@@ -157,10 +184,11 @@ const technologiesList = [
     key: 'version-control',
     name: 'Version Control',
     list: [
-      { name: 'Bitbucket', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'Bitbucket', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Git', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'GitHub', proficiency: PROFICIENCY_EXPERT },
       { name: 'Github Desktop App', proficiency: PROFICIENCY_EXPERT },
+      { name: 'Sourcetree', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
     ]
   },
   {

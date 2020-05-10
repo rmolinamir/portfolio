@@ -2,6 +2,7 @@
 import React from 'react';
 
 // Assets
+import olympusatLogo from 'static/images/homepage/olympusat.png';
 import bridgeForBillionsLogo from 'static/images/homepage/bridge-for-billions.png';
 import servifyLogo from 'static/images/homepage/servify.png';
 import bonpreuFoodsLogo from 'static/images/homepage/bonpreu-foods.png';
@@ -15,20 +16,44 @@ import Card from './Card';
 
 const workExperience = [
   {
+    key: 'olympusat',
+    company: 'Olympusat',
+    date: 'Feb. 2020 – Present',
+    role: 'Backend Software Engineer',
+    location: 'West Palm Beach, FL',
+    logo: olympusatLogo,
+    importantResponsabilities: [
+      'Design, implement, and maintain REST and GraphQL APIs.',
+      'Implement distributed applications using Serverless Framework, AWS CDK or AWS SAM.',
+      'Design event-driven applications using AWS tools such as Cloud Watch Events, IoT, SNS, SQS and Kinesis.',
+    ],
+    responsabilities: [
+      'Design and maintain data persistence storages using AWS RDS (PostgreSQL, MySQL, Aurora DB), AWS DynamoDB, MongoDB.',
+      'Maintain and troubleshoot existing code.',
+      'Collaborate with other departments to identify or understand business requirements.',
+      'Design and implement applications using containers.',
+      'Troubleshoot existing services.',
+      'Create or extend JSON schema documents to enhance the validation of current and new processes.',
+      'Write utility scripts to solve business needs.',
+      'Create NPM modules that can be used by the rest of the team.',
+      <i>Perform other duties and projects as assigned.</i>,
+    ],
+  },
+  {
     key: 'bridge',
     company: 'Bridge for Billions',
-    date: 'Apr. 2019 – Present',
+    date: 'Apr. 2019 – Feb. 2020',
     role: 'Full Stack Developer',
     location: 'Remote',
     logo: bridgeForBillionsLogo,
     importantResponsabilities: [
       'Backend development of the REST API built with the Django REST Framework and Python.',
       'Front-end development of the PWA built with React.js and related technologies such as React-Redux.',
+      'Unit testing and reviewing our new additions.',
     ],
     responsabilities: [
       'Identifying areas for improvements in our existing software and subsequently developing or spearheading these improvements.',
       'Writing efficient, maintainable, and readable code for new or existing features.',
-      'Testing and reviewing our new additions.',
       'Determining the operational practicality of our current and/or future features.',
       'Maintaining and upgrading our existing software.',
       'Working closely with other developers, UI/UX designers, et al.',
@@ -37,13 +62,14 @@ const workExperience = [
   {
     key: 'servify',
     company: 'Servify',
-    date: 'Sep. 2018 – Mar. 2019',
+    date: 'Sep. 2018 – Apr. 2019',
     role: 'Full Stack Developer',
     location: 'Sunrise, FL',
     logo: servifyLogo,
     importantResponsabilities: [
       'Front-end development using React.js, React-Redux, Redux-Saga, and Next.js.',
-      'Backend development of the REST API built with Google\'s Firebase and Node.js technologies.'
+      'Backend development of the REST API built with Google\'s Firebase and Node.js technologies.',
+      'Publish–subscribe pattern implementation.',
     ],
     responsabilities: [
       'Development of the database built with Google\'s Firestore framework',
@@ -59,11 +85,11 @@ const workExperience = [
     logoRadius: '0px',
     importantResponsabilities: [
       'Backend development built with Express.js, Node.js, and MongoDB (MEN stack)',
-      'Payments and automated payments (subscriptions) power by the Stripe API.'
+      'Payments and automated payments (subscriptions) power by the Stripe API.',
+      'Authentication engine.',
     ],
     responsabilities: [
       'AJAX responses to provide a real-time e-commerce shopping cart and other real-time updates using the Express framework.',
-      'Authentication with passport.js.',
       'Automated notifications, such as emails.',
       'Image uploads and image deletion built with the Cloudinary API.',
       'Product submissions, editions and deletions.',
@@ -80,12 +106,12 @@ const workExperience = [
     logoRadius: '0px',
     importantResponsabilities: [
       'Carry out the control and updates of the indicators of Unilever operations, such as OEE',
-      'Control of Expenses of the daily operations of the plant.'
+      'Control of Expenses of the daily operations of the plant.',
+      'Analysis of indicators and trends for the upper management of the plant.',
     ],
     responsabilities: [
       'Report to management the directions of production levels, operating costs and the',
       'Recording of events that occur in the production lines.',
-      'Analysis of indicators and trends for the management of the plant.',
     ],
   },
 ];

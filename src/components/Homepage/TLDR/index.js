@@ -9,9 +9,9 @@ import pdfDownloadLink from 'utils/pdfDownloadLink';
 import { Container, Animations } from 'components/UI';
 import { H3, P } from 'components/UI/Text';
 
+const amountOfYears = new Date().getFullYear() - 2017;
 
 export default function TLDR() {
-  const amountOfYears = new Date().getFullYear() - 2017;
   return (
     <StyledContainer id="tldr">
       <H3 color="primary"><strong>TL;DR</strong></H3>
@@ -24,7 +24,7 @@ export default function TLDR() {
           </P>
           <P>
             <span role="img" aria-labelledby="technologies">📈</span> <strong>Staying current</strong> with the latest
-            trends in technologies, languages, and best programming practices
+            trends in various technologies, languages, and best programming practices
           </P>
           <P>
             <span role="img" aria-labelledby="technologies">🌎</span> <strong>Open source</strong> collaborations and
@@ -32,11 +32,11 @@ export default function TLDR() {
           </P>
           <P>
             <span role="img" aria-labelledby="education">🎓</span> <strong>Mechanical engineer graduate</strong> since 2017,
-            did a study of a model for the prediction of the properties of a welding cord for steels
+            carried out a study of a model for the prediction of the properties of a welding cord for AISI/SAE steels
           </P>
           <P>
             <span role="img" aria-labelledby="interests">❤️</span> <strong>Enjoy</strong> spending my free time
-            carrying out personal projects, a bit of dungeons and dragons, exercise, et al
+            carrying out personal projects, dungeons and dragons, exercising, and others
           </P>
           <P>
             <StyledAnchor

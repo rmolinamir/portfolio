@@ -14,15 +14,14 @@ export default function Introduction() {
         <br />
         <P>
           My career started with a major in mechanical engineering. I have been programming professionally for over {amountOfYears} years
-          in a variety of technologies and languages, including Python, JavaScript (and TypeScript), C++, databases including
-          relational SQL databases such as PostgreSQL, as well as No-SQL databases such as MongoDB, GraphQL, ORMs such as Django & Prisma,
-          and a few others.
+          in a variety of technologies and languages, including Python, JavaScript (and TypeScript), C++, relational databases,
+          document-oriented databases, ORMs such as TypeORM, Django, and much more.
         </P>
         <br />
         <P>
-          I have been working with Python, JavaScript, and TypeScript almost exclusively since early 2018, focusing on REST API
-          development, data management, and data analysis using back-end technologies such as the Django REST Framework
-          and ME(R)N stacks, as well as front-end applications built using frameworks such as React.js.
+          I have been working with TypeScript, JavaScript, and Python almost exclusively since early 2018, focusing on GraphQL and
+          REST API development, data management, and data analysis using many back-end technologies such as AWS, Serverless Framework,
+          Express, Django, as well as front-end applications built using great frameworks such as React.js.
         </P>
         <br />
         <P>

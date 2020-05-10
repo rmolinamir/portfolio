@@ -18,7 +18,13 @@ const repositories = [
   {
     name: 'typescript-cheatsheet',
     description: 'A set of TypeScript related notes used for quick reference. The cheatsheet contains references to types, classes, decorators, and many other TypeScript related subjects.',
-    href: 'https://github.com/rmolinamir/typescript-cheatsheet',
+    href: 'https://github.com/rmolinamir/typescript-cheatsheet#readme',
+    isRouterDom: false, // true by default
+  },
+  {
+    name: 'algorithms-and-data-structures',
+    description: 'Algorithms and Data Structures Compendium.',
+    href: 'https://github.com/rmolinamir/algorithms-and-data-structures#readme',
     isRouterDom: false, // true by default
   },
   {
