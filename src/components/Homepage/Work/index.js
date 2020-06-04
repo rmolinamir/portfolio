@@ -23,9 +23,9 @@ const workExperience = [
     location: 'West Palm Beach, FL',
     logo: olympusatLogo,
     importantResponsabilities: [
-      'Design, implement, and maintain REST and GraphQL APIs.',
-      'Implement distributed applications using Serverless Framework, AWS CDK or AWS SAM.',
-      'Design event-driven applications using AWS tools such as Cloud Watch Events, IoT, SNS, SQS and Kinesis.',
+      'Design, implement and maintain REST and GraphQL APIs.',
+      'Implement distributed applications using Serverless Framework, AWS CDK, or AWS SAM.',
+      'Design event-driven applications using AWS tools such as Cloud Watch Events, IoT, SNS, SQS, and Kinesis.',
     ],
     responsabilities: [
       'Design and maintain data persistence storages using AWS RDS (PostgreSQL, MySQL, Aurora DB), AWS DynamoDB, MongoDB.',
@@ -36,7 +36,7 @@ const workExperience = [
       'Create or extend JSON schema documents to enhance the validation of current and new processes.',
       'Write utility scripts to solve business needs.',
       'Create NPM modules that can be used by the rest of the team.',
-      <i>Perform other duties and projects as assigned.</i>,
+      'Perform other duties and projects as assigned.',
     ],
   },
   {
@@ -80,7 +80,7 @@ const workExperience = [
     company: 'Bonpreu Foods',
     date: 'Jun. 2018 – Sept. 2018',
     role: 'Full Stack Developer',
-    location: 'Sunrise, FL',
+    location: 'Fort Lauderdale, FL',
     logo: bonpreuFoodsLogo,
     logoRadius: '0px',
     importantResponsabilities: [
@@ -92,7 +92,7 @@ const workExperience = [
       'AJAX responses to provide a real-time e-commerce shopping cart and other real-time updates using the Express framework.',
       'Automated notifications, such as emails.',
       'Image uploads and image deletion built with the Cloudinary API.',
-      'Product submissions, editions and deletions.',
+      'Product submissions, editions, and deletions.',
       'Front-end responsive design and development.',
     ],
   },
