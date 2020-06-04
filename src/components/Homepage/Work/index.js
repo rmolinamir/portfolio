@@ -64,7 +64,7 @@ const workExperience = [
     company: 'Servify',
     date: 'Sep. 2018 – Apr. 2019',
     role: 'Full Stack Developer',
-    location: 'Sunrise, FL',
+    location: 'Remote',
     logo: servifyLogo,
     importantResponsabilities: [
       'Front-end development using React.js, React-Redux, Redux-Saga, and Next.js.',
