@@ -29,7 +29,7 @@ export default function Homepage() {
             animationDelayMultiplier={2}
           >
             <H3>
-              I’m a <strong>Full Stack Developer, Designer, & Engineer</strong> with an expertise in
+              I’m a <strong>Full Stack Developer, Designer, & Engineer</strong> with expertise in
               building powerful and scalable backend APIs, progressive web apps, native apps, UX/UI, et al.
             </H3>
           </Animations.PopIn>
