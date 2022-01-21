@@ -14,20 +14,19 @@ export default function Introduction() {
         <br />
         <P>
           My career started with a major in mechanical engineering. I have been programming professionally for over {amountOfYears} years
-          in a variety of technologies and languages, including Python, JavaScript (and TypeScript), C++, relational databases,
-          document-oriented databases, ORMs such as TypeORM, Django, and much more.
+          in a variety of technologies and languages, including TypeScript, Solidity, C#, Python, relational databases,
+          document-oriented databases, ORMs, frameworks, and much more.
         </P>
         <br />
         <P>
-          I have been working with TypeScript, JavaScript, and Python almost exclusively since early 2018, focusing on GraphQL and
-          REST API development, data management, and data analysis using many back-end technologies such as AWS, Serverless Framework,
-          Express, Django, as well as front-end applications built using great frameworks such as React.js.
+          My current interest is in software architecture, backend development, and the blockchain space. My background includes developing web
+          apps using TypeScript, React, Next.js, among other frontend oriented frameworks, and backend APIs using a variety of languages, technologies,
+          and backend oriented frameworks such as Express and NodeJS.
         </P>
         <br />
         <P>
-          I have invested a great deal of time and energy learning and increasing my knowledge to gain an in-depth understanding
-          of core programming concepts. I&apos;ve certainly got a passion for programming, and I like to share that enthusiasm with
-          anyone.
+          As a Software Engineer, I design and develop highly scalable, secure and reliable software systems. I focus on the core domain
+          of the application and create the services that map most closely to the concerns of the domain experts.
         </P>
       </Container>
     </Animations.PopIn>
