@@ -30,7 +30,7 @@ export default function Homepage() {
           >
             <H3>
               I’m a <strong>Software Engineer</strong> with extensive hands-on software design & development expertise across
-              a wide range of technologies by focusing on the value it delivers to the business.
+              a wide range of technologies while focusing on the value it delivers to the business.
             </H3>
           </Animations.PopIn>
         </Col>
