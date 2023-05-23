@@ -49,6 +49,7 @@
     "eslint": "^8.41.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-react": "^7.32.2",
+    "firebase-tools": "^12.2.0",
     "node-sass": "^9.0.0",
     "sass-extract": "^2.1.0",
     "sass-extract-js": "^0.4.0",
