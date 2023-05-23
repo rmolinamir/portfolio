@@ -1,10 +1,9 @@
-import React, { useState, memo } from 'react';
 import PropTypes from 'prop-types';
+import React, { memo, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 
 const FadeScaleIn = memo(({ children, style, ...rest }) => {
-  // state
   const [loaded, setLoaded] = useState(false);
   const [ref, inView] = useInView({
     /* Optional options */
