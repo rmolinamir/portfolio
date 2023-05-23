@@ -1,9 +1,8 @@
-// Libraries
-import styled from 'styled-components';
 
-// Components
+
 import Typography from '@material-ui/core/Typography';
 import PageWrapper from 'layout/UI/PageWrapper';
+import styled from 'styled-components';
 
 export const StyledPageWrapper = styled(PageWrapper)`
   color: ${props => props.theme.darkColor};

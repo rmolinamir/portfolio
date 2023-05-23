@@ -1,11 +1,8 @@
-// Libraries
-import React from 'react';
+import BokehBackground from 'components/UI/BokehBackground';
+import WavesBackground from 'components/UI/WavesBackground';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-// Components
-import BokehBackground from 'components/UI/BokehBackground';
-import WavesBackground from 'components/UI/WavesBackground';
 import Name from '../Name';
 
 const browser = (agent => {

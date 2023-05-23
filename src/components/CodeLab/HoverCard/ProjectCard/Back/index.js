@@ -1,16 +1,10 @@
-// Libraries
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-// Dependencies
-import getRandomColor from 'utils/getRandomColor';
-
-// Components
-import { Icon } from 'react-svg-library';
-import { Link } from 'react-router-dom';
-import { P } from 'components/UI/Text';
 import BokehBackground from 'components/UI/BokehBackground';
+import { P } from 'components/UI/Text';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { Icon } from 'react-svg-library';
+import styled from 'styled-components';
+import getRandomColor from 'utils/getRandomColor';
 
 const Wrapper = styled.div`
   &&& {

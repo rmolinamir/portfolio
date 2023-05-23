@@ -1,10 +1,6 @@
-// Libraries
-import React from 'react';
+import { Animations, Image } from 'components/UI';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-
-// Components
-import { Image, Animations } from 'components/UI';
 
 export default function Card(props) {
   const { university, date, degree, location, logo, logoRadius, accomplishments } = props;

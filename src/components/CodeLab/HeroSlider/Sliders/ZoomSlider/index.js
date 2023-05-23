@@ -1,17 +1,12 @@
-// Libraries
-import React from 'react';
-import styled from 'styled-components';
-
-// Components
+import { H2, H3 } from 'components/UI/Text';
 import HeroSlider, {
-  Slide,
   ButtonsNav,
   Nav,
   OverlayContainer,
+  Slide
 } from 'hero-slider';
-import { H2, H3 } from 'components/UI/Text';
+import styled from 'styled-components';
 
-// Assets
 import hallstatt from './backgrounds/Hallstatt - Austria.jpg';
 import hvitserkur from './backgrounds/Hvitserkur - Iceland.jpg';
 import jacksonville from './backgrounds/Jacksonville - United States.jpg';

@@ -1,21 +1,12 @@
-// Libraries
-import React from 'react';
+import { H2, H3 } from 'components/UI/Text';
+import HeroSlider, { MenuNav, OverlayContainer, Slide } from 'hero-slider';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-// Components
-import HeroSlider, {
-  Slide,
-  MenuNav,
-  OverlayContainer,
-} from 'hero-slider';
-import { H2, H3 } from 'components/UI/Text';
-
-// Assets
+import byodoInTemple from './backgrounds/Byodo-In Temple - Kaneohe - United States.jpg';
+import hakone from './backgrounds/Hakone - Japan.jpg';
 import kyoto from './backgrounds/Kyoto - Japan.jpg';
 import tenryuJiTemple from './backgrounds/Tenryu-ji Temple - Kyōto-shi - Japan.jpg';
-import hakone from './backgrounds/Hakone - Japan.jpg';
-import byodoInTemple from './backgrounds/Byodo-In Temple - Kaneohe - United States.jpg';
 
 const StyledOverlayContainer = styled(OverlayContainer)`
   &&& {

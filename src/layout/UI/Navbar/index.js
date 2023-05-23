@@ -1,25 +1,21 @@
-// Libraries
-import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
 
+
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import Toolbar from '@material-ui/core/Toolbar';
+import ContactIcon from '@material-ui/icons/Mail';
+import MenuIcon from '@material-ui/icons/Menu';
 // Icons
 import GithubIcon from 'components/SVG/Icons/Github';
 import LinkedInIcon from 'components/SVG/Icons/LinkedIn';
-import ContactIcon from '@material-ui/icons/Mail';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react';
+import styled, { css } from 'styled-components';
 
-// Components
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import { IconAnchor } from './components';
-import Home from './Home';
-import Drawer from './Drawer';
-
-// Dependencies
 import Provider, { NavbarContext as Context } from './context';
-
+import Drawer from './Drawer';
+import Home from './Home';
 // LinkComponents
 import { getShouldRenderDrawerIcon, renderNavLinks } from './links';
 

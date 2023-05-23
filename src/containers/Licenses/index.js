@@ -1,14 +1,11 @@
-// Libraries
-import React from 'react';
+
+import { Container, Divider } from 'components/UI';
+import { H2, H3, P } from 'components/UI/Text';
 import styled from 'styled-components';
 
-// Components
-import { H2, H3, P } from 'components/UI/Text';
-import { Divider, Container } from 'components/UI';
-
+import gplLicense from './GPL';
 // Licenses
 import mitLicense from './MIT';
-import gplLicense from './GPL';
 
 const currentYear = (new Date()).getFullYear();
 

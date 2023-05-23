@@ -1,13 +1,12 @@
-// Libraries
-import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
 
-// Components
+
 import Button from '@material-ui/core/Button';
+import ListItemText from '@material-ui/core/ListItemText';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
 
 const DropdownMenu = props => {
   const {

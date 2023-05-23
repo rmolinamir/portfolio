@@ -1,4 +1,3 @@
-// Libraries
 import styled, { keyframes } from 'styled-components';
 
 const noPointerEventsOnMount = keyframes`
@@ -17,6 +16,7 @@ const Wrapper = styled.div`
     position: relative;
     width: 100%;
     overflow: hidden;
+
     .aesthetics {
       background-color: inherit;
       margin: 8px 4px;

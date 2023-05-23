@@ -1,9 +1,8 @@
-// Libraries
-import React from 'react';
-import PropTypes from 'prop-types';
 
-// Dependencies
+
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // Wrap the navbar inside HideOnScroll to hide it when the user
 // scrolls down.

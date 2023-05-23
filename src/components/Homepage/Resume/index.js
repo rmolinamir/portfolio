@@ -1,18 +1,13 @@
-// Libraries
-import React from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from '@material-ui/core/ListItemText';
+import DownloadIcon from '@material-ui/icons/CloudDownload';
+import { Col, Row } from 'components/Layout';
+import { Animations, Container, Fab } from 'components/UI';
+import { H3 } from 'components/UI/Text';
 import styled from 'styled-components';
-
-// Assets
 import pdfDownloadLink from 'utils/pdfDownloadLink';
 
-// Components
-import { Container, Fab, Animations } from 'components/UI';
-import { Row, Col } from 'components/Layout';
-import { H3 } from 'components/UI/Text';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
-import DownloadIcon from '@material-ui/icons/CloudDownload';
 import SectionCaption from '../SectionCaption';
 
 export default function Resume() {
@@ -20,8 +15,9 @@ export default function Resume() {
     <Container id="resume">
       <H3 color="primary"><strong>Resume</strong></H3>
       <SectionCaption>
-        By clicking the button below, you may download my Resume which is an overview of the information in my personal
-        website. Keep in mind that it&apos;s in PDF format, if you need it in any other format(s), do let me know.
+        Feel free to download my resume by clicking the button below.
+        It provides an overview of the information available on my personal website.
+        The resume is in PDF format, but if you need it in any other format, please let me know.
       </SectionCaption>
       <br />
       <Animations.PopIn>

@@ -1,12 +1,7 @@
-// Libraries
-import React from 'react';
-import styled from 'styled-components';
 
-// Components
-import {
-  Checkbox,
-  CheckboxGroup,
-} from 'react-formalized';
+
+import { Checkbox, CheckboxGroup } from 'react-formalized';
+import styled from 'styled-components';
 
 const StyledDiv = styled.div`
   padding: 16px 0px 9px;

@@ -1,11 +1,10 @@
+import CheckboxElements from './CheckboxElements';
+import CheckboxGroupForm from './CheckboxGroupForm';
+import FormElement from './FormElement';
 import InputElements from './InputElements';
+import NumericElement from './NumericElement';
 import RangeElement from './RangeElement';
 import SelectElement from './SelectElement';
-import NumericElement from './NumericElement';
-import CheckboxElements from './CheckboxElements';
-import FormElement from './FormElement';
-import CheckboxGroupForm from './CheckboxGroupForm';
-import SignInModal from './SignInModal';
 
 export {
   InputElements,
@@ -15,5 +14,4 @@ export {
   CheckboxElements,
   FormElement,
   CheckboxGroupForm,
-  SignInModal,
 };

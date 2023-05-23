@@ -1,9 +1,7 @@
-// Libraries
-import React from 'react';
-import styled, { css } from 'styled-components';
 
-// Components
+
 import Grid from '@material-ui/core/Grid';
+import styled, { css } from 'styled-components';
 
 const StyledRow = styled(({ height, styledCss, ...rest }) => (
   <Grid

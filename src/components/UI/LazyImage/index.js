@@ -1,10 +1,8 @@
-// Libraries
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-// Components
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import LazyLoad from 'react-lazyload';
+import styled from 'styled-components';
 
 const StyledImage = styled.img`
   width: ${props => props.width || '100%'};

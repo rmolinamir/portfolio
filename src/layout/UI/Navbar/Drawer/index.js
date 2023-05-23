@@ -1,13 +1,12 @@
-// Libraries
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-// Components
+
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Cancel';
-import { DrawerList, Divider } from '../components';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+import { Divider, DrawerList } from '../components';
 import { renderDrawerLinks } from '../links';
 import DrawerHeader from './DrawerHeader';
 

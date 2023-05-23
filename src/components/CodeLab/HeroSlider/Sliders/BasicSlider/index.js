@@ -1,15 +1,6 @@
-// Libraries
-import React from 'react';
-
-// Components
-import HeroSlider, {
-  Slide,
-  Nav,
-  OverlayContainer,
-} from 'hero-slider';
 import { H2, H3 } from 'components/UI/Text';
+import HeroSlider, { Nav, OverlayContainer, Slide } from 'hero-slider';
 
-// Assets
 import bogliasco from './backgrounds/Bogliasco - Italy.jpg';
 import countyClare from './backgrounds/County Clare - Ireland.jpg';
 import craterRock from './backgrounds/Crater Rock - United States.jpg';

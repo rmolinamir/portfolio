@@ -1,11 +1,9 @@
-// Libraries
-import React from 'react';
+
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
-// Components
-import InfinityLoader from './Loaders/InfinityLoader';
 import EclipseLoader from './Loaders/EclipseLoader';
+import InfinityLoader from './Loaders/InfinityLoader';
 
 const LoaderColor = css`${props => props.theme.primary || 'inherit'}`;
 

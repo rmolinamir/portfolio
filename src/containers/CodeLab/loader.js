@@ -1,12 +1,10 @@
-// Libraries
-import React, { Suspense } from 'react';
-import styled from 'styled-components';
 
-// Components
-import { CSSTransition } from 'react-transition-group';
-import LazyImport from 'components/Util/LazyImport';
 import Loader from 'components/UI/Loader';
 import LogoLoader from 'components/UI/LogoLoader';
+import LazyImport from 'components/Util/LazyImport';
+import React, { Suspense } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import styled from 'styled-components';
 
 const LOADER_DELAY = 1500;
 const LOADER_DEV_DELAY = 1500;

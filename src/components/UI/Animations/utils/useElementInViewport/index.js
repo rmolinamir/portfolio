@@ -1,6 +1,6 @@
-// Libraries
-import{ useInView } from 'react-intersection-observer';
+
 import { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export default function useElementInViewport(options) {
   const [ref, inView] = useInView(options);

@@ -1,7 +1,4 @@
-export const inputElements = () => `// Libraries
-import React from 'react';
-
-// Components
+export const inputElements = () => `import React from 'react';
 import {
   Input,
 } from 'react-formalized';
@@ -86,11 +83,8 @@ export default function InputElements() {
 }
 `;
 
-export const rangeElement = () => `// Libraries
-import React from 'react';
+export const rangeElement = () => `import React from 'react';
 import styled from 'styled-components';
-
-// Components
 import {
   Range,
 } from 'react-formalized';
@@ -134,10 +128,9 @@ export default function RangeElement() {
 }
 `;
 
-export const selectElement = () => `// Libraries
-import React from 'react';
+export const selectElement = () => `import React from 'react';
 
-// Components
+
 import {
   Select,
 } from 'react-formalized';
@@ -189,10 +182,7 @@ export default function SelectElement() {
 }
 `;
 
-export const numericElement = () => `// Libraries
-import React from 'react';
-
-// Components
+export const numericElement = () => `import React from 'react';
 import {
   Numeric,
 } from 'react-formalized';
@@ -209,11 +199,8 @@ export default function NumericElement() {
 }
 `;
 
-export const checkboxElements = () => `// Libraries
-import React from 'react';
+export const checkboxElements = () => `import React from 'react';
 import styled from 'styled-components';
-
-// Components
 import {
   Checkbox,
   CheckboxGroup,
@@ -304,11 +291,8 @@ export default function CheckboxElements() {
 }
 `;
 
-export const formElement = theme => `// Libraries
-import React from 'react';
+export const formElement = theme => `import React from 'react';
 import styled from 'styled-components';
-
-// Components
 import {
   Form,
   Input,
@@ -421,11 +405,8 @@ export default function FormElements() {
 }
 `;
 
-export const checkboxGroupForm = theme => `// Libraries
-import React from 'react';
+export const checkboxGroupForm = theme => `import React from 'react';
 import styled from 'styled-components';
-
-// Components
 import {
   Form,
   Checkbox,
@@ -494,11 +475,10 @@ export default function CheckboxGroupForm() {
 }
 `;
 
-export const signInModal = theme => `// Libraries
+export const signInModal = theme => `
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-// Components
 import {
   Form,
   Input,

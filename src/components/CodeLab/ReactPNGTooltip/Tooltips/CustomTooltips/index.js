@@ -1,13 +1,10 @@
-// Libraries
-import React from 'react';
-import styled from 'styled-components';
 
-// Components
-import Tooltip from 'react-png-tooltip';
-import { Row, Col } from 'components/Layout';
-import { H4 } from 'components/UI/Text';
-import { Animations } from 'components/UI';
 import Button from '@material-ui/core/Button';
+import { Col, Row } from 'components/Layout';
+import { Animations } from 'components/UI';
+import { H4 } from 'components/UI/Text';
+import Tooltip from 'react-png-tooltip';
+import styled from 'styled-components';
 
 const StyledRow = styled(Row)`
   .rm-primary-tooltip {

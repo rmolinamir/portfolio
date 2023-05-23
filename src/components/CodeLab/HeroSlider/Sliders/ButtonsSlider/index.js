@@ -1,17 +1,9 @@
-// Libraries
+import { H2, H3 } from 'components/UI/Text';
+import HeroSlider, { Nav, OverlayContainer, Slide } from 'hero-slider';
 import React, { useRef } from 'react';
+import Button from 'react-png-button';
 import styled from 'styled-components';
 
-// Components
-import HeroSlider, {
-  Slide,
-  Nav,
-  OverlayContainer,
-} from 'hero-slider';
-import Button from 'react-png-button';
-import { H2, H3 } from 'components/UI/Text';
-
-// Assets
 import bogliasco from '../BasicSlider/backgrounds/Bogliasco - Italy.jpg';
 import countyClare from '../BasicSlider/backgrounds/County Clare - Ireland.jpg';
 import craterRock from '../BasicSlider/backgrounds/Crater Rock - United States.jpg';

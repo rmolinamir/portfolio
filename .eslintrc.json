@@ -5,7 +5,6 @@
     "browser": true,
     "es6": true
   },
-  "parser": "babel-eslint",
   "extends": [
     "react-app",
     "airbnb"
@@ -28,6 +27,7 @@
     "react/no-did-update-set-state": "error",
     "react/no-did-mount-set-state": "error",
     "react/jsx-wrap-multilines": "error",
+    "react/react-in-jsx-scope": "off",
     "array-bracket-spacing": [
       "error",
       "never"

@@ -1,23 +1,20 @@
-// Libraries
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-// Components
-import { NavLink } from 'react-router-dom';
-import { Divider } from 'components/UI';
 import Drawer from '@material-ui/core/Drawer';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import { Divider } from 'components/UI';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 export default function SideDrawer(props) {
-  const { projectsData } = props;
+  const { content } = props;
   const [open, setOpen] = useState(false);
 
   const handleDrawer = () => {
@@ -55,7 +52,7 @@ export default function SideDrawer(props) {
               <ListItemText primary="Dashboard" />
             </ListItem>
           </NavLink>
-          {projectsData.map(({ name, icon: Icon, href }) => (
+          {content.map(({ name, icon: Icon, href }) => (
             <NavLink
               key={name}
               exact
@@ -76,7 +73,7 @@ export default function SideDrawer(props) {
 }
 
 SideDrawer.propTypes = {
-  projectsData: PropTypes.instanceOf(Array).isRequired,
+  content: PropTypes.instanceOf(Array).isRequired,
 };
 
 const StyledSideDrawer = styled(Drawer)`

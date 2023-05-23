@@ -1,9 +1,7 @@
-// Libraries
-import React from 'react';
-import styled from 'styled-components';
 
-// Components
+
 import RawFab from '@material-ui/core/Fab';
+import styled from 'styled-components';
 
 const Fab = props => (
   <StyledFab {...props} />

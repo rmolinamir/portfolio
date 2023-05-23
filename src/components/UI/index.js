@@ -1,4 +1,5 @@
-// Libraries
+
+import * as Animations from './Animations';
 import Container from './Container';
 import Divider from './Divider';
 import DropdownMenu from './DropdownMenu';
@@ -8,7 +9,6 @@ import LazyImage from './LazyImage';
 import Loader from './Loader';
 import LogoLoader from './LogoLoader';
 import * as Text from './Text';
-import * as Animations from './Animations';
 
 export {
   Container,

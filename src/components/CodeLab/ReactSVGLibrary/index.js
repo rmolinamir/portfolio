@@ -1,31 +1,24 @@
-// Libraries
-import React from 'react';
-
-// Components
-import { Container, Divider, Animations } from 'components/UI';
-import { H3 } from 'components/UI/Text';
-import {
-  DocList,
-  Examples,
-} from 'components/CodeLab/styled-components';
 import Example from 'components/CodeLab/Example';
+import { DocList, Examples } from 'components/CodeLab/styled-components';
+import { Animations, Container, Divider } from 'components/UI';
+import { H3 } from 'components/UI/Text';
+
+import AppendixItem from '../AppendixItem';
 import SectionCaption from '../SectionCaption';
 import {
-  Underlines,
-  CustomizedUnderlines,
-  RandomUnderlines,
-  RatingsAPI,
-  Icons,
-} from './SVGs';
-
-// Dependencies
-import {
-  underlines,
   customizedUnderlines,
+  icons,
   randomUnderlines,
   ratingsAPI,
-  icons,
-} from './examplesLiterals';
+  underlines
+} from './examples';
+import {
+  CustomizedUnderlines,
+  Icons,
+  RandomUnderlines,
+  RatingsAPI,
+  Underlines
+} from './SVGs';
 
 const appendix = [
   {
@@ -75,7 +68,7 @@ export default function ReactSVGLibrary() {
             key={id}
             animationDelayMultiplier={index / 2}
           >
-            <li><a href={`#${id}`}>{title}</a></li>
+            <AppendixItem id={id} title={title} />
           </Animations.PopIn>
         ))}
       </DocList>

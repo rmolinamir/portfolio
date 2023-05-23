@@ -1,39 +1,30 @@
-// Libraries
-import React from 'react';
+import Example from 'components/CodeLab/Example';
+import { DocList, Examples } from 'components/CodeLab/styled-components';
+import { Animations, Container, Divider } from 'components/UI';
+import { H3 } from 'components/UI/Text';
 import PropTypes from 'prop-types';
 import { withTheme } from 'styled-components';
 
-// Components
-import { Container, Divider, Animations } from 'components/UI';
-import { H3 } from 'components/UI/Text';
-import {
-  DocList,
-  Examples,
-} from 'components/CodeLab/styled-components';
-import Example from 'components/CodeLab/Example';
+import AppendixItem from '../AppendixItem';
 import SectionCaption from '../SectionCaption';
 import {
-  InputElements,
-  RangeElement,
-  SelectElement,
-  NumericElement,
   CheckboxElements,
-  FormElement,
   CheckboxGroupForm,
-  SignInModal,
+  FormElement,
+  InputElements,
+  NumericElement,
+  RangeElement,
+  SelectElement
 } from './Elements';
-
-// Dependencies
 import {
-  inputElements,
-  rangeElement,
-  selectElement,
-  numericElement,
   checkboxElements,
-  formElement,
   checkboxGroupForm,
-  signInModal,
-} from './examplesLiterals';
+  formElement,
+  inputElements,
+  numericElement,
+  rangeElement,
+  selectElement
+} from './examples';
 
 const appendix = [
   {
@@ -77,13 +68,7 @@ const appendix = [
     title: 'Checkbox Group Form',
     code: checkboxGroupForm,
     children: <CheckboxGroupForm />
-  },
-  {
-    id: 'sign-in',
-    title: 'Sign in modal example',
-    code: signInModal,
-    children: <SignInModal />
-  },
+  }
 ];
 
 function ReactFormalized(props) {
@@ -102,7 +87,8 @@ function ReactFormalized(props) {
             key={id}
             animationDelayMultiplier={index / 2}
           >
-            <li><a href={`#${id}`}>{title}</a></li>
+            <AppendixItem id={id} title={title} />
+            {/* <li>< href={`#${id}`}>{title}</a></li> */}
           </Animations.PopIn>
         ))}
       </DocList>

@@ -1,14 +1,8 @@
-// Libraries
-import React from 'react';
-import styled from 'styled-components';
-
-// Components
-import { Row, Col } from 'components/Layout';
+import { Col, Row } from 'components/Layout';
 import { Animations } from 'components/UI';
 import { H3 } from 'components/UI/Text';
-
-// Assets
 import signatureBackground from 'static/images/homepage/signature.png';
+import styled from 'styled-components';
 
 export default function Homepage() {
   return (
@@ -29,8 +23,9 @@ export default function Homepage() {
             animationDelayMultiplier={2}
           >
             <H3>
-              I’m a <strong>Software Engineer</strong> with extensive hands-on software design & development expertise across
-              a wide range of technologies while focusing on the value it delivers to the business.
+              I’m a <strong>Software Engineer</strong> specializing in backend development, leveraging
+              Domain-Driven Design (DDD) principles to build systems with a ubiquitous language that fosters
+              effective communication between technical and business stakeholders.
             </H3>
           </Animations.PopIn>
         </Col>

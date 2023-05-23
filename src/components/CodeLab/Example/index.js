@@ -1,16 +1,13 @@
-// Libraries
-import React, { useState } from 'react';
-import propTypes from 'prop-types';
-import styled from 'styled-components';
-
-// Components
-import Collapse from '@material-ui/core/Collapse';
 import Button from '@material-ui/core/Button';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { H3 } from 'components/UI/Text';
+import Collapse from '@material-ui/core/Collapse';
 import Fab from '@material-ui/core/Fab';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { H3 } from 'components/UI/Text';
+import propTypes from 'prop-types';
+import React, { useState } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   &&& {
@@ -123,7 +120,7 @@ export default function Example(props) {
           <Fab
             aria-label="show"
             className="rm-example-collapse-button"
-            onClick={handleExpandClick}
+            onClick={() => handleExpandClick()}
           >
             <StyledExpandMoreIcon isExpanded={expanded} />
           </Fab>
@@ -143,7 +140,7 @@ export default function Example(props) {
         className="rm-example-button-to-top"
         variant="outlined"
         color="secondary"
-        onClick={handleScrollToTop}
+        onClick={() => handleScrollToTop()}
       >
         Back to top
       </Button>

@@ -1,10 +1,6 @@
-// Libraries
-import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-// Components
 import { Underline } from 'react-svg-library';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   & {

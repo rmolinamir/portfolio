@@ -1,6 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-// Libraries
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 const links = [

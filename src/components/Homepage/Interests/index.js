@@ -1,19 +1,16 @@
-// Libraries
-import React from 'react';
+import { Animations, Container } from 'components/UI';
+import { H3 } from 'components/UI/Text';
 import styled from 'styled-components';
 
-// Components
-import { Container, Animations } from 'components/UI';
-import { H3 } from 'components/UI/Text';
 import SectionCaption from '../SectionCaption';
 
 const interests = [
-  'Software architecture;',
-  'Tech stacks;',
-  'Open source;',
-  'Dungeons and Dragons;',
-  'Travelling;',
-  'Nature and campgrounds;',
+  'Software architecture and design',
+  'Cutting-edge tech stacks and frameworks',
+  'Contributing to open source projects',
+  'Engaging with Dungeons and Dragons',
+  'Embarking on thrilling journeys and travels',
+  'Appreciating the beauty of nature and outdoor adventures'
 ];
 
 export default function Interests() {
@@ -21,9 +18,9 @@ export default function Interests() {
     <Container id="interests">
       <H3 color="primary"><strong>Interests</strong></H3>
       <SectionCaption>
-        Interests are a good way to express who you are and what you like, they offer a good chance to bond with other
-        people in one way or another. Essentially, they are an excellent way to break the ice. That said, feel free to
-        have a chat with me anytime about any of the following:
+        Interests provide a unique opportunity to express yourself and connect with others.
+        They serve as a great conversation starter and allow for meaningful connections.
+        I&apos;m passionate about various topics, and I invite you to chat with me about any of the following:
       </SectionCaption>
       <br />
       <List>

@@ -1,10 +1,6 @@
-// Libraries
-import React from 'react';
 
-// Components
-import {
-  Numeric,
-} from 'react-formalized';
+
+import { Numeric } from 'react-formalized';
 
 export default function NumericElement() {
   return (

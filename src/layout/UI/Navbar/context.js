@@ -1,10 +1,8 @@
-// Libraries
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { withTheme } from 'styled-components';
 
-// Dependencies
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { mainTheme } from 'static/theme';
+import { withTheme } from 'styled-components';
 
 const defaultColor = mainTheme.darkColor;
 const defaultBackgroundColor = mainTheme.whiteColor;

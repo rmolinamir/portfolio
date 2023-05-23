@@ -1,10 +1,8 @@
-// Libraries
-import React from 'react';
+
+
+import CheckboxIcon from 'components/SVG/Icons/Checkbox';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-// Components
-import CheckboxIcon from 'components/SVG/Icons/Checkbox';
 
 export const PROFICIENCY_RECREATIONAL = 'recreational';
 export const PROFICIENCY_LIMITED_PRODUCTION = 'limited';

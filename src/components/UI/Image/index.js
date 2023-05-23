@@ -1,8 +1,6 @@
-// Libraries
-import React from 'react';
+
 import styled from 'styled-components';
 
-// Components
 import LazyImage from '../LazyImage';
 
 const Image = props => (

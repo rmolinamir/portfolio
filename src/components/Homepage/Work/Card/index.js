@@ -1,17 +1,14 @@
-// Libraries
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
-
-// Components
-import Collapse from '@material-ui/core/Collapse';
 import CardActions from '@material-ui/core/CardActions';
+import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Image } from 'components/UI';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import styled, { keyframes } from 'styled-components';
 
 export default function Card(props) {
-  const { company, date, role, location, logo, logoRadius, importantResponsabilities, responsabilities } = props;
+  const { company, date, role, location, logo, logoRadius, responsibilities: { primary, secondary } } = props;
   const [expanded, setExpanded] = useState(false);
 
   function handleExpandClick() {
@@ -44,9 +41,9 @@ export default function Card(props) {
         </div>
       </WorkExperience>
       <List>
-        {importantResponsabilities.map((responsability, index) => <li key={index}>{responsability}</li>)}
+        {primary.map((responsability, index) => <li key={index}>{responsability}</li>)}
         <Collapse in={expanded} timeout="auto" unmountOnExit>
-          {responsabilities.map((responsability, index) => <li key={index}>{responsability}</li>)}
+          {secondary.map((responsability, index) => <li key={index}>{responsability}</li>)}
         </Collapse>
       </List>
       <CardActions
@@ -57,7 +54,7 @@ export default function Card(props) {
         }}
       >
         <StyledIconButton
-          onClick={handleExpandClick}
+          onClick={() => handleExpandClick()}
           aria-label="see more"
           aria-expanded={expanded}
         >
@@ -77,8 +74,7 @@ Card.propTypes = {
   role: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
-  importantResponsabilities: PropTypes.instanceOf(Array).isRequired,
-  responsabilities: PropTypes.instanceOf(Array).isRequired,
+  responsibilities: PropTypes.instanceOf(Object).isRequired,
   logoRadius: PropTypes.string,
 };
 

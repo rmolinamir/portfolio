@@ -1,27 +1,17 @@
-// Libraries
-import React, { useState, useEffect, useCallback } from 'react';
-import PropTypes from 'prop-types';
-import { withTheme } from 'styled-components';
-
-// Dependencies
-import projectsData from 'containers/CodeLab/projectsData';
-
-// Components
-import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
-import { Divider } from 'components/UI';
-import SideDrawer from 'components/CodeLab/SideDrawer';
-
-// Routes
 import {
-  Homepage,
   HeroSlider,
+  Homepage,
   ReactFormalized,
-  ReactPNGButton,
   ReactPNGTooltip,
-  ReactPNGModal,
-  ReactSVGLibrary,
-  WithContextReact,
+  ReactSVGLibrary
 } from 'components/CodeLab';
+import SideDrawer from 'components/CodeLab/SideDrawer';
+import { Divider } from 'components/UI';
+import content from 'containers/CodeLab/content';
+import PropTypes from 'prop-types';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import { withTheme } from 'styled-components';
 
 function CodeLab(props) {
   const [width, setWidth] = useState(document.body.clientWidth);
@@ -51,25 +41,20 @@ function CodeLab(props) {
   useEffect(() => {
     window.addEventListener('resize', onResize, { passive: true, capture: true });
     return () => {
-      window.removeEventListener('resize', onResize, { passive: true, capture: true });
+      window.removeEventListener('resize', onResize, { capture: true });
     };
   }, [onResize]);
 
   return (
     <>
-      <SideDrawer
-        projectsData={projectsData}
-      />
+      <SideDrawer content={content} />
       <Divider />
       <Switch>
         <Route exact path={match.path} component={Homepage} />
         <Route exact path={`${match.path}/hero-slider`} component={HeroSlider} />
         <Route exact path={`${match.path}/react-formalized`} component={ReactFormalized} />
-        <Route exact path={`${match.path}/react-png-button`} component={ReactPNGButton} />
         <Route exact path={`${match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
-        <Route exact path={`${match.path}/react-png-modal`} component={ReactPNGModal} />
         <Route exact path={`${match.path}/react-svg-library`} component={ReactSVGLibrary} />
-        <Route exact path={`${match.path}/with-context-react`} component={WithContextReact} />
         <Redirect to="/" />
       </Switch>
     </>

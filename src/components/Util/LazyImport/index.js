@@ -1,6 +1,6 @@
-// Libraries
-import React, { lazy, useCallback } from 'react';
+
 import PropTypes from 'prop-types';
+import React, { lazy, useCallback } from 'react';
 
 /**
  * After the lazy imported component loads, delay the promise to increase smoothness.

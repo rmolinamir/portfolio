@@ -1,21 +1,16 @@
-// Libraries
-import React from 'react';
-import styled from 'styled-components';
-
-// Components
+import { H2, H3 } from 'components/UI/Text';
 import HeroSlider, {
-  Slide,
-  SideNav,
   ButtonsNav,
   OverlayContainer,
+  SideNav,
+  Slide
 } from 'hero-slider';
-import { H2, H3 } from 'components/UI/Text';
+import styled from 'styled-components';
 
-// Assets
-import rockyWaterfall from './backgrounds/Rocky Waterfall.jpg';
+import mountainView from './backgrounds/MountainView.jpg';
 import palauPacificOcean from './backgrounds/Palau - Pacific Ocean.jpg';
 import queposCostaRica from './backgrounds/Quepos - Costa Rica.jpg';
-import mountainView from './backgrounds/MountainView.jpg';
+import rockyWaterfall from './backgrounds/Rocky Waterfall.jpg';
 
 const StyledOverlayContainer = styled(OverlayContainer)`
   &&& {

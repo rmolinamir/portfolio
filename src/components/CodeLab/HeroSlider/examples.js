@@ -1,7 +1,4 @@
-export const basicSlider = () => `// Libraries
-import React from 'react';
-
-// Components
+export const basicSlider = () => `import React from 'react';
 import HeroSlider, {
   Slide,
   Nav,
@@ -9,7 +6,6 @@ import HeroSlider, {
 } from 'hero-slider';
 import { H2, H3 } from 'components/UI/Text';
 
-// Assets
 import bogliasco from './backgrounds/Bogliasco - Italy.jpg';
 import countyClare from './backgrounds/County Clare - Ireland.jpg';
 import craterRock from './backgrounds/Crater Rock - United States.jpg';
@@ -86,11 +82,9 @@ export default function BasicSlider() {
 }
 `;
 
-export const verticalSlider = () => `// Libraries
-import React from 'react';
+export const verticalSlider = () => `import React from 'react';
 import styled from 'styled-components';
 
-// Components
 import HeroSlider, {
   Slide,
   Nav,
@@ -99,7 +93,6 @@ import HeroSlider, {
 } from 'hero-slider';
 import { H2, H3 } from 'components/UI/Text';
 
-// Assets
 import salta from './backgrounds/Salta - Argentina.jpg';
 import scharbeutz from './backgrounds/Scharbeutz - Germany.jpg';
 import selvaDiValGardena from './backgrounds/Selva Di Val Gardena - Italy.jpg';
@@ -210,11 +203,9 @@ export default function VerticalSlider() {
 }
 `;
 
-export const zoomSlider = () => `// Libraries
-import React from 'react';
+export const zoomSlider = () => `import React from 'react';
 import styled from 'styled-components';
 
-// Components
 import HeroSlider, {
   Slide,
   ButtonsNav,
@@ -223,7 +214,6 @@ import HeroSlider, {
 } from 'hero-slider';
 import { H2, H3 } from 'components/UI/Text';
 
-// Assets
 import hallstatt from './backgrounds/Hallstatt - Austria.jpg';
 import hvitserkur from './backgrounds/Hvitserkur - Iceland.jpg';
 import jacksonville from './backgrounds/Jacksonville - United States.jpg';
@@ -319,18 +309,15 @@ export default function ZoomSlider() {
 }
 `;
 
-export const childrenSlider = () => `// Libraries
-import React from 'react';
+export const childrenSlider = () => `import React from 'react';
 import styled from 'styled-components';
 
-// Components
 import HeroSlider, {
   Slide,
   SideNav,
 } from 'hero-slider';
 import { H2 } from 'components/UI/Text';
 
-// Assets
 import salta from '../VerticalSlider/backgrounds/Salta - Argentina.jpg';
 import scharbeutz from '../VerticalSlider/backgrounds/Scharbeutz - Germany.jpg';
 import selvaDiValGardena from '../VerticalSlider/backgrounds/Selva Di Val Gardena - Italy.jpg';
@@ -431,11 +418,8 @@ export default function ChildrenSlider() {
 }
 `;
 
-export const blendModeSlider = () => `// Libraries
-import React from 'react';
+export const blendModeSlider = () => `import React from 'react';
 import styled from 'styled-components';
-
-// Components
 import HeroSlider, {
   Slide,
   SideNav,
@@ -444,7 +428,6 @@ import HeroSlider, {
 } from 'hero-slider';
 import { H2, H3 } from 'components/UI/Text';
 
-// Assets
 import rockyWaterfall from './backgrounds/Rocky Waterfall.jpg';
 import palauPacificOcean from './backgrounds/Palau - Pacific Ocean.jpg';
 import queposCostaRica from './backgrounds/Quepos - Costa Rica.jpg';
@@ -554,12 +537,11 @@ export default function BlendModeSlider() {
 }
 `;
 
-export const navbarSlider = () => `// Libraries
-import React from 'react';
+export const navbarSlider = () => `import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-// Components
+
 import HeroSlider, {
   Slide,
   MenuNav,
@@ -567,7 +549,6 @@ import HeroSlider, {
 } from 'hero-slider';
 import { H2, H3 } from 'components/UI/Text';
 
-// Assets
 import kyoto from './backgrounds/Kyoto - Japan.jpg';
 import tenryuJiTemple from './backgrounds/Tenryu-ji Temple - Kyōto-shi - Japan.jpg';
 import hakone from './backgrounds/Hakone - Japan.jpg';
@@ -715,11 +696,10 @@ export default function NavbarSlider() {
 }
 `;
 
-export const buttonsSlider = () => `// Libraries
+export const buttonsSlider = () => `
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 
-// Components
 import HeroSlider, {
   Slide,
   Nav,
@@ -728,7 +708,6 @@ import HeroSlider, {
 import Button from 'react-png-button';
 import { H2, H3 } from 'components/UI/Text';
 
-// Assets
 import bogliasco from '../BasicSlider/backgrounds/Bogliasco - Italy.jpg';
 import countyClare from '../BasicSlider/backgrounds/County Clare - Ireland.jpg';
 import craterRock from '../BasicSlider/backgrounds/Crater Rock - United States.jpg';
@@ -851,11 +830,8 @@ export default function ButtonsSlider() {
 }
 `;
 
-export const autoplayButtonSlider = () => `// Libraries
-import React from 'react';
+export const autoplayButtonSlider = () => `import React from 'react';
 import styled from 'styled-components';
-
-// Components
 import HeroSlider, {
   Slide,
   Nav,
@@ -864,7 +840,6 @@ import HeroSlider, {
 } from 'hero-slider';
 import { H2 } from 'components/UI/Text';
 
-// Assets
 import kyoto from '../NavbarSlider/backgrounds/Kyoto - Japan.jpg';
 import tenryuJiTemple from '../NavbarSlider/backgrounds/Tenryu-ji Temple - Kyōto-shi - Japan.jpg';
 import hakone from '../NavbarSlider/backgrounds/Hakone - Japan.jpg';

@@ -1,19 +1,26 @@
-// Libraries
-import React from 'react';
-import PropTypes from 'prop-types';
+import './BokehBackground.css';
 
-// Dependencies
+import PropTypes from 'prop-types';
 import getRandomColor from 'utils/getRandomColor';
 
-// CSS
-import './BokehBackground.css';
+const bokehSizes = [
+  5.0584339767,
+  9.9476437847,
+  9.9280821187,
+  12.9354933279,
+  13.0438930631,
+  7.2284753955,
+  8.7301327174,
+  14.2688250746,
+  7.6739022424,
+  5.357814429
+];
 
 /**
  * Based on:
  * **`Bokeh effect (CSS)](https://codepen.io/Mamboleoo/pen/BxMQYQ)`**
  * **`A PEN BY Louis Hoebregts](https://codepen.io/Mamboleoo/)`**
  */
-
 export default function BokehBackground(props) {
   const {
     className,
@@ -21,29 +28,6 @@ export default function BokehBackground(props) {
     settings,
     children,
   } = props;
-
-  const bokehSizes = [
-    5.0584339767,
-    9.9476437847,
-    9.9280821187,
-    12.9354933279,
-    13.0438930631,
-    7.2284753955,
-    8.7301327174,
-    14.2688250746,
-    7.6739022424,
-    5.357814429,
-    5.261473207,
-    13.0328656209,
-    11.74188621,
-    11.9335646773,
-    6.4282406645,
-    7.0524887051,
-    10.6038519068,
-    13.3155790605,
-    13.4019088734,
-    12.0204575474
-  ];
 
   const styles = {
     backgroundSize: undefined,

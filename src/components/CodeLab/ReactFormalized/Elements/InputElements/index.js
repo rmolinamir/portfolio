@@ -1,10 +1,6 @@
-// Libraries
-import React from 'react';
 
-// Components
-import {
-  Input,
-} from 'react-formalized';
+
+import { Input } from 'react-formalized';
 
 export default function InputElements() {
   return (

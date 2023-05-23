@@ -1,11 +1,7 @@
-// Libraries
-import React from 'react';
-import styled from 'styled-components';
 
-// Components
-import {
-  Range,
-} from 'react-formalized';
+
+import { Range } from 'react-formalized';
+import styled from 'styled-components';
 
 const StyledIndicatorRange = styled(({ className, ...rest }) => <Range indicatorClassName={className} {...rest} />)`
   text-align: center;

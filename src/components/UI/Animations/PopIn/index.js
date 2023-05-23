@@ -1,13 +1,10 @@
 
-// Libraries
-import React, { useMemo } from 'react';
-import styled, { css } from 'styled-components';
+
 import PropTypes from 'prop-types';
-
-// Components
+import React, { useMemo } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import styled, { css } from 'styled-components';
 
-// Dependencies
 import useElementInViewport from '../utils/useElementInViewport';
 
 const ANIMATION_TIMEOUT = 1000;

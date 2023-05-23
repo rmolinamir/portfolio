@@ -1,13 +1,11 @@
-// Libraries
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-// Components
+
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Subtitle, Caption } from 'components/UI/Text';
+import { Caption, Subtitle } from 'components/UI/Text';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Item = props => {
   const {

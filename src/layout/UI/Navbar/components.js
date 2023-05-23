@@ -1,9 +1,8 @@
-// Libraries
-import styled from 'styled-components';
 
-// Components
+
 import RawDivider from '@material-ui/core/Divider';
 import { H6 } from 'components/UI/Text';
+import styled from 'styled-components';
 
 const Spacing = styled.div`
   background: transparent;

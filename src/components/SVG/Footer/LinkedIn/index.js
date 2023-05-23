@@ -1,5 +1,5 @@
-// Libraries
-import React from 'react';
+
+
 
 const LinkedIn = () => (
   <svg

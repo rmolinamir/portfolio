@@ -1,8 +1,4 @@
-// Libraries
-import React from 'react';
-
-// Components
-import { Container, Animations } from 'components/UI';
+import { Animations, Container } from 'components/UI';
 import { H3, P } from 'components/UI/Text';
 
 export default function Introduction() {
@@ -13,20 +9,26 @@ export default function Introduction() {
         <H3 color="primary"><strong>Introduction</strong></H3>
         <br />
         <P>
-          My career started with a major in mechanical engineering. I have been programming professionally for over {amountOfYears} years
-          in a variety of technologies and languages, including TypeScript, C#, Python, relational databases,
-          document-oriented databases, ORMs, frameworks, and much more.
+          I began my career with a major in mechanical engineering, but my passion for programming led me
+          to transition into the software development field. For over {amountOfYears} years, I have been
+          honing my skills as a professional software engineer, specializing in backend development. I have
+          a deep understanding of technologies and languages such as TypeScript, C#, Python, and a range of
+          backend frameworks.
         </P>
         <br />
         <P>
-          As a Software Engineer, I design and develop highly scalable, secure and reliable software systems. I focus on the core domain
-          of the application and create the services that map most closely to the concerns of the domain experts.
+          As a Software Engineer, my focus lies in designing and developing highly scalable, secure, and
+          reliable backend systems. I prioritize the core domain of the application and build services that
+          closely align with the concerns of domain experts. My expertise encompasses software architecture,
+          fullstack development, and domain-driven design.
         </P>
         <br />
         <P>
-          My current interests are software architecture, backend development, domain-driven design, event sourcing, and most recently the blockchain space. My background includes developing web
-          apps using TypeScript, React, Next.js, among other frontend oriented frameworks, and backend APIs using a variety of languages, technologies,
-          and backend oriented frameworks such as Node.js, Express, NestJS, .NET, et al.
+          Throughout my career, I have successfully developed web applications using TypeScript, React, Next.js, and other frontend frameworks. However, my true passion lies in backend development, where I have worked with a variety of languages, technologies, and frameworks, including Node.js, Express, NestJS, and .NET, among others.
+        </P>
+        <br />
+        <P>
+          I am continuously driven to expand my knowledge and skills in the backend realm, staying up-to-date with the latest advancements and industry trends. I am excited about the opportunities to create robust and innovative backend solutions that empower businesses and drive their success.
         </P>
       </Container>
     </Animations.PopIn>

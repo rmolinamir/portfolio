@@ -1,15 +1,8 @@
-// Libraries
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-
-// Dependencies
 import 'polyfills';
 
-// Components
 import App from 'containers/App';
+import { render } from 'react-dom';
 
-// Dependencies
 import * as serviceWorker from './serviceWorker';
 
 // If you want your app to work offline and load faster, you can change
@@ -17,9 +10,8 @@ import * as serviceWorker from './serviceWorker';
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById('root')
-);
+render(<App />, document.getElementById('root'));
+
+// TODO: Enable after upgrading react-router-dom.
+// const root = createRoot(document.getElementById('root')); // createRoot(container!) if you use TypeScript
+// root.render(<App />);

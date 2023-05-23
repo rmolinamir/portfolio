@@ -1,13 +1,7 @@
-// Libraries
-import React from 'react';
-import styled from 'styled-components';
-
-// Assets
-import pdfDownloadLink from 'utils/pdfDownloadLink';
-
-// Components
-import { Container, Animations } from 'components/UI';
+import { Animations, Container } from 'components/UI';
 import { H3, P } from 'components/UI/Text';
+import styled from 'styled-components';
+import pdfDownloadLink from 'utils/pdfDownloadLink';
 
 const amountOfYears = new Date().getFullYear() - 2017;
 
@@ -36,7 +30,7 @@ export default function TLDR() {
           </P>
           <P>
             <span role="img" aria-labelledby="interests">❤️</span> <strong>Enjoy</strong> spending my free time
-            carrying out personal projects, dungeons and dragons, exercising, and others
+            working on personal projects, dungeons and dragons, exercising, and more geeky stuff
           </P>
           <P>
             <StyledAnchor
@@ -44,7 +38,7 @@ export default function TLDR() {
               target="blank"
               rel="noopener noreferrer"
             >
-              <span role="img" aria-labelledby="technologies">📄</span> <strong>Preview and download</strong> my resume here
+              <span role="img" aria-labelledby="technologies">📄</span> <strong>Preview or download</strong> my resume here
             </StyledAnchor>
           </P>
         </div>

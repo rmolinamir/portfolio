@@ -1,13 +1,10 @@
-// Libraries
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
 
-// Components
-import Tooltip from 'react-png-tooltip';
-import { Row, Col } from 'components/Layout';
-import { H4 } from 'components/UI/Text';
+import { Col, Row } from 'components/Layout';
 import { Animations } from 'components/UI';
+import { H4 } from 'components/UI/Text';
+import PropTypes from 'prop-types';
+import Tooltip from 'react-png-tooltip';
+import styled, { withTheme } from 'styled-components';
 
 const StyledRow = styled(Row)`
   .rm-indianred-tooltip {

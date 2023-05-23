@@ -1,21 +1,16 @@
-// Libraries
-import React from 'react';
+import { H2 } from 'components/UI/Text';
+import HeroSlider, {
+  AutoplayButton,
+  Nav,
+  OverlayContainer,
+  Slide
+} from 'hero-slider';
 import styled from 'styled-components';
 
-// Components
-import HeroSlider, {
-  Slide,
-  Nav,
-  AutoplayButton,
-  OverlayContainer,
-} from 'hero-slider';
-import { H2 } from 'components/UI/Text';
-
-// Assets
+import byodoInTemple from '../NavbarSlider/backgrounds/Byodo-In Temple - Kaneohe - United States.jpg';
+import hakone from '../NavbarSlider/backgrounds/Hakone - Japan.jpg';
 import kyoto from '../NavbarSlider/backgrounds/Kyoto - Japan.jpg';
 import tenryuJiTemple from '../NavbarSlider/backgrounds/Tenryu-ji Temple - Kyōto-shi - Japan.jpg';
-import hakone from '../NavbarSlider/backgrounds/Hakone - Japan.jpg';
-import byodoInTemple from '../NavbarSlider/backgrounds/Byodo-In Temple - Kaneohe - United States.jpg';
 
 const StyledOverlayContainer = styled(OverlayContainer)`
   &&& {

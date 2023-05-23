@@ -1,27 +1,14 @@
-// Libraries
-import React from 'react';
+import Example from 'components/CodeLab/Example';
+import { DocList, Examples } from 'components/CodeLab/styled-components';
+import { Animations, Container, Divider } from 'components/UI';
+import { H3 } from 'components/UI/Text';
 import PropTypes from 'prop-types';
 import { withTheme } from 'styled-components';
 
-// Components
-import { Container, Divider, Animations } from 'components/UI';
-import { H3 } from 'components/UI/Text';
-import {
-  DocList,
-  Examples,
-} from 'components/CodeLab/styled-components';
-import Example from 'components/CodeLab/Example';
+import AppendixItem from '../AppendixItem';
 import SectionCaption from '../SectionCaption';
-import {
-  SimpleTooltips,
-  CustomTooltips,
-} from './Tooltips';
-
-// Dependencies
-import {
-  simpleTooltips,
-  customTooltips,
-} from './examplesLiterals';
+import { customTooltips, simpleTooltips } from './examples';
+import { CustomTooltips, SimpleTooltips } from './Tooltips';
 
 const appendix = [
   {
@@ -54,7 +41,7 @@ function ReactPNGTooltip(props) {
             key={id}
             animationDelayMultiplier={index / 2}
           >
-            <li><a href={`#${id}`}>{title}</a></li>
+            <AppendixItem id={id} title={title} />
           </Animations.PopIn>
         ))}
       </DocList>

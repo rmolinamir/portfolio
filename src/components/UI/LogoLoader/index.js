@@ -1,9 +1,7 @@
-// Libraries
-import React from 'react';
+
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
-// Components
 import Logo from './LogoNoSpacing';
 
 const LoaderColor = css`${props => props.theme.primary || 'inherit'}`;

@@ -1,14 +1,7 @@
-// Libraries
-import React from 'react';
-import styled from 'styled-components';
 
-// Components
-import {
-  Form,
-  Checkbox,
-  CheckboxGroup,
-} from 'react-formalized';
 import Button from '@material-ui/core/Button';
+import { Checkbox, CheckboxGroup, Form } from 'react-formalized';
+import styled from 'styled-components';
 
 const StyledButton = styled(Button)`
   &&& {

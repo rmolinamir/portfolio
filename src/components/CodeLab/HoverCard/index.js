@@ -1,11 +1,9 @@
-// Libraries
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
-// Components
-import { Wrapper } from './styled-components';
-import CardFront from './ProjectCard/Front';
 import CardBack from './ProjectCard/Back';
+import CardFront from './ProjectCard/Front';
+import { Wrapper } from './styled-components';
 
 export const Front = CardFront;
 export const Back = CardBack;
@@ -22,10 +20,10 @@ export default function HoverCard(props) {
     margin,
     animationSpeed,
   } = props;
+
   const [isHover, setHover] = useState(false);
-  if (!front && !back) {
-    return null;
-  }
+
+  if (!front && !back) return null;
 
   const backClass = ['content'];
   const frontClass = ['content'];

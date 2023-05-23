@@ -1,15 +1,7 @@
-// Libraries
-import React from 'react';
+import { H2 } from 'components/UI/Text';
+import HeroSlider, { SideNav, Slide } from 'hero-slider';
 import styled from 'styled-components';
 
-// Components
-import HeroSlider, {
-  Slide,
-  SideNav,
-} from 'hero-slider';
-import { H2 } from 'components/UI/Text';
-
-// Assets
 import salta from '../VerticalSlider/backgrounds/Salta - Argentina.jpg';
 import scharbeutz from '../VerticalSlider/backgrounds/Scharbeutz - Germany.jpg';
 import selvaDiValGardena from '../VerticalSlider/backgrounds/Selva Di Val Gardena - Italy.jpg';

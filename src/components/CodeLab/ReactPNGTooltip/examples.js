@@ -1,9 +1,6 @@
-export const simpleTooltips = theme => `// Libraries
-import React from 'react';
+export const simpleTooltips = theme => `import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
-
-// Components
 import Tooltip from 'react-png-tooltip';
 import { Row, Col } from 'components/Layout';
 import { H4 } from 'components/UI/Text';
@@ -225,11 +222,8 @@ SimpleTooltips.propTypes = {
 export default SimpleTooltips;
 `;
 
-export const customTooltips = theme => `// Libraries
-import React from 'react';
+export const customTooltips = theme => `import React from 'react';
 import styled from 'styled-components';
-
-// Components
 import Tooltip from 'react-png-tooltip';
 import { Row, Col } from 'components/Layout';
 import { H4 } from 'components/UI/Text';

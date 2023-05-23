@@ -1,15 +1,7 @@
-// Libraries
-import React from 'react';
+import { Footer, Navbar, NavbarProvider } from 'layout/UI';
 import PropTypes from 'prop-types';
 
-// Components
-import {
-  Footer,
-  Navbar,
-  NavbarProvider,
-} from 'layout/UI';
-
-const RoutesWrapper = props => {
+function RoutesWrapper(props) {
   const { children, ...rest } = props;
 
   return (
@@ -19,7 +11,7 @@ const RoutesWrapper = props => {
       <Footer />
     </NavbarProvider>
   );
-};
+}
 
 RoutesWrapper.propTypes = {
   children: PropTypes.node.isRequired

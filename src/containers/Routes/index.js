@@ -1,22 +1,13 @@
-// Libraries
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { Switch, Route, withRouter, NavLink, Redirect } from 'react-router-dom';
-
-// Components
-import RoutesWrapper from 'layout/UI/RoutesWrapper';
-
-// Routes
+import CodeLabIcon from '@material-ui/icons/Code';
+import HomeIcon from '@material-ui/icons/Home';
+import CodeLab from 'containers/CodeLab/loader';
 import Homepage from 'containers/Homepage';
 import Licenses from 'containers/Licenses';
-
-// Lazy Route
-import CodeLab from 'containers/CodeLab/loader';
-
-// Icons
-import HomeIcon from '@material-ui/icons/Home';
-import CodeLabIcon from '@material-ui/icons/Code';
+import RoutesWrapper from 'layout/UI/RoutesWrapper';
+import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import { NavLink, Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import styled from 'styled-components';
 
 const StyledLink = styled(NavLink)`
   text-decoration: none;
@@ -52,8 +43,8 @@ const links = [
     key: 'codelab',
     type: 'button',
     color: 'inherit',
-    title: 'Code Lab',
-    caption: 'Come check out my open source packages!',
+    title: 'CodeLab',
+    caption: 'Come and explore some of my frontend packages!',
     icon: <CodeLabIcon />,
     wrapper: props => (
       <StyledLink
@@ -64,7 +55,7 @@ const links = [
   },
 ];
 
-const Routes = props => {
+function Routes(props) {
   const { location } = props;
 
   /**
@@ -76,7 +67,6 @@ const Routes = props => {
 
   return (
     <RoutesWrapper
-      // Navbar props
       links={links}
       linkComponent={NavLink}
       logoWrapperProps={{
@@ -91,7 +81,7 @@ const Routes = props => {
       </Switch>
     </RoutesWrapper>
   );
-};
+}
 
 Routes.propTypes = {
   location: PropTypes.instanceOf(Object).isRequired

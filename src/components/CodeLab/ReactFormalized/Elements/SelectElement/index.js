@@ -1,10 +1,6 @@
-// Libraries
-import React from 'react';
 
-// Components
-import {
-  Select,
-} from 'react-formalized';
+
+import { Select } from 'react-formalized';
 
 export default function SelectElement() {
   return (

@@ -1,23 +1,18 @@
-// Libraries
+import 'static/theme/index.scss';
+
+import Routes from 'containers/Routes';
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { BrowserRouter } from 'react-router-dom';
+import googleSiteTag from 'services/gtag';
+import { mainTheme } from 'static/theme';
 import styled, { ThemeProvider } from 'styled-components';
 
-// Styling
-import 'static/theme/index.scss';
-import { mainTheme } from 'static/theme';
-
-// Components
-import { Helmet } from 'react-helmet';
-import Routes from 'containers/Routes';
-
-// Dependencies
-import googleSiteTag from 'services/gtag';
-
-const LOADER_DELAY = 750;
-const LOADER_DEV_DELAY = 750;
+const LOADER_DELAY = 50;
+const LOADER_DEV_DELAY = 50;
 const RESOLVED_CALLBACK_DELAY = process.env.NODE_ENV === 'development' ? LOADER_DEV_DELAY : LOADER_DELAY;
 
-const App = () => {
+function App() {
   useEffect(() => {
     document.body.style.overflowX = 'hidden';
     document.getElementById('root').style.transition = 'margin 500ms, padding 500ms, max-width 250ms';
@@ -25,32 +20,32 @@ const App = () => {
   }, []);
 
   return (
-    <ThemeProvider theme={mainTheme}>
-      <Wrapper
-        animationDuration={RESOLVED_CALLBACK_DELAY}
-      >
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>
-            Robert Molina | Software Developer
-          </title>
-          {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleSiteTag}`} />
-          <script>
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${googleSiteTag}');
-            `}
-          </script>
-          {/* <!-- End Google Analytics --> */}
-        </Helmet>
-          <Routes />
-      </Wrapper>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={mainTheme}>
+        <Wrapper animationDuration={RESOLVED_CALLBACK_DELAY}>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>
+              Robert Molina | Software Engineer
+            </title>
+            {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleSiteTag}`} />
+            <script>
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${googleSiteTag}');
+              `}
+            </script>
+            {/* <!-- End Google Analytics --> */}
+          </Helmet>
+            <Routes />
+        </Wrapper>
+      </ThemeProvider>
+    </BrowserRouter>
   );
-};
+}
 
 const Wrapper = styled.section`
   &&& {

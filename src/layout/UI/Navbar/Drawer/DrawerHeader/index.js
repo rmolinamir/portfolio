@@ -1,9 +1,7 @@
-// Libraries
-import React from 'react';
-import styled from 'styled-components';
 
-// Components
+
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export default function DrawerHeader() {
   return (

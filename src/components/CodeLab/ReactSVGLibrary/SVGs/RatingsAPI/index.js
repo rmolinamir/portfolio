@@ -1,15 +1,10 @@
-// Libraries
-import React from 'react';
-import styled from 'styled-components';
 
-// Dependencies
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
-// Components
-import { Icon } from 'react-svg-library';
+import { Col, Row } from 'components/Layout';
 import Tooltip from 'react-png-tooltip';
-import { Row, Col } from 'components/Layout';
+import { Icon } from 'react-svg-library';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import styled from 'styled-components';
 
 const AtomDarkTooltip = styled(Tooltip)`
   background: rgb(29, 31, 33);

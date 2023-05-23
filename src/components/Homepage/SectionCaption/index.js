@@ -1,6 +1,5 @@
-// Libraries
-import styled from 'styled-components';
 import { H4 } from 'components/UI/Text';
+import styled from 'styled-components';
 
 const SectionCaption = styled(H4)`
   max-width: 700px;

@@ -1,12 +1,9 @@
-// Libraries
-import React from 'react';
-import PropTypes from 'prop-types';
-
-// Dependencies
-import getRandomColor from 'utils/getRandomColor';
 
 // CSS
 import './WavesBackground.css';
+
+import PropTypes from 'prop-types';
+import getRandomColor from 'utils/getRandomColor';
 
 function setCSSVars({ wavesOpacity }) {
   const randomNumber = Math.ceil(Math.random() * 10);

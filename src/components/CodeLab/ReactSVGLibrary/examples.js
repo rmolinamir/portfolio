@@ -1,11 +1,6 @@
-export const underlines = `// Libraries
-import React from 'react';
+export const underlines = `import React from 'react';
 import styled from 'styled-components';
-
-// Dependencies
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
-// Components
 import { Underline } from 'react-svg-library';
 import Tooltip from 'react-png-tooltip';
 import { Row, Col } from 'components/Layout';
@@ -152,14 +147,13 @@ export default function Underlines() {
 }
 `;
 
-export const customizedUnderlines = `// Libraries
-import React from 'react';
+export const customizedUnderlines = `import React from 'react';
 import styled from 'styled-components';
 
-// Dependencies
+
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-// Components
+
 import { Underline } from 'react-svg-library';
 import Tooltip from 'react-png-tooltip';
 import { Row, Col } from 'components/Layout';
@@ -316,14 +310,9 @@ export default function CustomizedUnderlines() {
 }
 `;
 
-export const randomUnderlines = `// Libraries
-import React from 'react';
+export const randomUnderlines = `import React from 'react';
 import styled from 'styled-components';
-
-// Dependencies
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
-// Components
 import { Underline } from 'react-svg-library';
 import Tooltip from 'react-png-tooltip';
 import { Row, Col } from 'components/Layout';
@@ -404,14 +393,9 @@ export default function CustomizedUnderlines() {
 }
 `;
 
-export const ratingsAPI = `// Libraries
-import React from 'react';
+export const ratingsAPI = `import React from 'react';
 import styled from 'styled-components';
-
-// Dependencies
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
-// Components
 import { Icon } from 'react-svg-library';
 import Tooltip from 'react-png-tooltip';
 import { Row, Col } from 'components/Layout';
@@ -610,14 +594,9 @@ export default function RatingsAPI() {
 }
 `;
 
-export const icons = `// Libraries
-import React from 'react';
+export const icons = `import React from 'react';
 import styled from 'styled-components';
-
-// Dependencies
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
-// Components
 import { Icon } from 'react-svg-library';
 import Tooltip from 'react-png-tooltip';
 import { Row, Col } from 'components/Layout';

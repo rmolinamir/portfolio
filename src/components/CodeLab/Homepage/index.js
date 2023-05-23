@@ -1,16 +1,12 @@
-// Libraries
+import { Col, Row } from 'components/Layout';
+import { Animations, Container } from 'components/UI';
+import { H3 } from 'components/UI/Text';
+import projectsData from 'containers/CodeLab/content';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 
-// Dependencies
-import projectsData from 'containers/CodeLab/projectsData';
-
-// Components
-import { Row, Col } from 'components/Layout';
-import { Container, Animations } from 'components/UI';
-import { H3 } from 'components/UI/Text';
+import HoverCard, { Back, Front } from '../HoverCard';
 import SectionCaption from '../SectionCaption';
-import HoverCard, { Front, Back } from '../HoverCard';
 
 const StyledHoverCard = styled(HoverCard)`
   position: relative;
@@ -19,7 +15,7 @@ const StyledHoverCard = styled(HoverCard)`
   border-radius: 2px;
 `;
 
-const RowWrapper = styled.div`
+const Grid = styled.div`
   display: flex;
   justify-content: center;
   > div {
@@ -50,39 +46,36 @@ export default function Homepage() {
         xs={12}
       >
         <div className="col-container">
-          <Animations.PopIn
-            animationDelayMultiplier={(index + 1) / 2}
-          >
-              <StyledHoverCard
-                front={(
-                  <Front>{name}</Front>
-                )}
-                back={(
-                  <Back
-                    github={github}
-                    documentationHref={href}
-                  >
-                    {description}
-                  </Back>
-                )}
-                animationSpeed={400}
-                maxWidth={330}
-                height={330}
-              />
+          <Animations.PopIn animationDelayMultiplier={(index + 1) / 2}>
+            <StyledHoverCard
+              front={(<Front>{name}</Front>)}
+              back={(
+                <Back
+                  github={github}
+                  documentationHref={href}
+                >
+                  {description}
+                </Back>
+              )}
+              animationSpeed={200}
+              maxWidth={300}
+              height={300}
+            />
           </Animations.PopIn>
         </div>
       </StyledCol>
     );
   }), []);
+
   return (
     <Container>
       <H3 color="primary"><strong>Projects</strong></H3>
       <SectionCaption>
-        These are all of my open source projects that I&apos;ve built so far. To see these in more detail, you may hover
-        over or touch on the cards to visit their respective documentation, or their GiHub repositories.
+        Here are some of my open-source frontend projects that I&apos;ve built.
+        Hover over or click on the cards below to explore their respective GitHub repositories for more details.
       </SectionCaption>
       <br />
-      <RowWrapper>
+      <Grid>
         <Row
           direction="row"
           justify="center"
@@ -91,7 +84,7 @@ export default function Homepage() {
         >
           {codeLabProjects}
         </Row>
-      </RowWrapper>
+      </Grid>
     </Container>
   );
 }

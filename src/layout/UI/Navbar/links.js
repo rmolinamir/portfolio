@@ -1,14 +1,12 @@
-// Libraries
-import React, { useContext } from 'react';
 
-// Components
+
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import ListItem from 'layout/UI/Navbar/Drawer/ListItem';
 import { DropdownMenu } from 'components/UI';
-import { Header, Divider } from './components';
+import ListItem from 'layout/UI/Navbar/Drawer/ListItem';
+import React, { useContext } from 'react';
 
-// Dependencies
+import { Divider, Header } from './components';
 import { NavbarContext } from './context';
 
 const getShouldRenderDrawerIcon = (navLinks = []) => navLinks.find(link => {
