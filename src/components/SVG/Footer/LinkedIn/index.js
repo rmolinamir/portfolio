@@ -1,14 +1,12 @@
-
-
-
-const LinkedIn = () => (
-  <svg
+function LinkedIn() {
+  return (
+<svg
     x="0px"
     y="0px"
     width="438.536px"
     height="438.535px"
     viewBox="0 0 438.536 438.535"
-  >
+>
     <g>
       <g>
         <rect x="5.424" y="145.895" width="94.216" height="282.932" />
@@ -25,7 +23,8 @@ const LinkedIn = () => (
         />
       </g>
     </g>
-  </svg>
+</svg>
 );
+}
 
 export default LinkedIn;

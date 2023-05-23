@@ -1,4 +1,3 @@
-
 import Education from 'components/Homepage/Education';
 import Hero from 'components/Homepage/Hero';
 import Interests from 'components/Homepage/Interests';
@@ -11,8 +10,9 @@ import TLDR from 'components/Homepage/TLDR';
 import Work from 'components/Homepage/Work';
 import { Divider } from 'components/UI';
 
-const Homepage = () => (
-  <div>
+function Homepage() {
+  return (
+<div>
     <Hero />
     <Navbar />
     <Introduction />
@@ -30,7 +30,8 @@ const Homepage = () => (
     <Interests />
     <Divider />
     <Resume />
-  </div>
+</div>
 );
+}
 
 export default Homepage;

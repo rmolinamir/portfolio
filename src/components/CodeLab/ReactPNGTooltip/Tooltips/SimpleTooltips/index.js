@@ -1,4 +1,3 @@
-
 import { Col, Row } from 'components/Layout';
 import { Animations } from 'components/UI';
 import { H4 } from 'components/UI/Text';

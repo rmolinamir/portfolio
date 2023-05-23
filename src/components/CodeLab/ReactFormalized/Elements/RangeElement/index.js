@@ -1,5 +1,3 @@
-
-
 import { Range } from 'react-formalized';
 import styled from 'styled-components';
 

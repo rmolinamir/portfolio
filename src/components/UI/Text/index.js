@@ -1,56 +1,70 @@
-
-
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const H1 = ({ children, ...rest }) => (
-  <Typography variant="h1" {...rest}>
+function H1({ children, ...rest }) {
+  return (
+<Typography variant="h1" {...rest}>
     {children}
-  </Typography>
+</Typography>
 );
+}
 
-const H2 = ({ children, ...rest }) => (
-  <Typography variant="h2" {...rest}>
+function H2({ children, ...rest }) {
+  return (
+<Typography variant="h2" {...rest}>
     {children}
-  </Typography>
+</Typography>
 );
+}
 
-const H3 = ({ children, ...rest }) => (
-  <Typography variant="h3" {...rest}>
+function H3({ children, ...rest }) {
+  return (
+<Typography variant="h3" {...rest}>
     {children}
-  </Typography>
+</Typography>
 );
+}
 
-const H4 = ({ children, ...rest }) => (
-  <Typography variant="h4" {...rest}>
+function H4({ children, ...rest }) {
+  return (
+<Typography variant="h4" {...rest}>
     {children}
-  </Typography>
+</Typography>
 );
+}
 
-const H6 = ({ children, ...rest }) => (
-  <Typography variant="h6" {...rest}>
+function H6({ children, ...rest }) {
+  return (
+<Typography variant="h6" {...rest}>
     {children}
-  </Typography>
+</Typography>
 );
+}
 
-const P = ({ children, ...rest }) => (
-  <Typography variant="body1" {...rest}>
+function P({ children, ...rest }) {
+  return (
+<Typography variant="body1" {...rest}>
     {children}
-  </Typography>
+</Typography>
 );
+}
 
-const Caption = ({ children, ...rest }) => (
-  <Typography variant="caption" {...rest}>
+function Caption({ children, ...rest }) {
+  return (
+<Typography variant="caption" {...rest}>
     {children}
-  </Typography>
+</Typography>
 );
+}
 
-const Subtitle = ({ children, ...rest }) => (
-  <Typography variant="subtitle1" {...rest}>
+function Subtitle({ children, ...rest }) {
+  return (
+<Typography variant="subtitle1" {...rest}>
     {children}
-  </Typography>
+</Typography>
 );
+}
 
 const StyledH1 = styled(H1)`
   &&& {

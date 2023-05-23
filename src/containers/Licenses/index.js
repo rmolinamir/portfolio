@@ -1,4 +1,3 @@
-
 import { Container, Divider } from 'components/UI';
 import { H2, H3, P } from 'components/UI/Text';
 import styled from 'styled-components';
@@ -9,8 +8,9 @@ import mitLicense from './MIT';
 
 const currentYear = (new Date()).getFullYear();
 
-const Homepage = () => (
-  <>
+function Homepage() {
+  return (
+<>
     <Divider />
     <Wrapper>
       <Container>
@@ -47,8 +47,9 @@ const Homepage = () => (
         </License>
       </Container>
     </Wrapper>
-  </>
+</>
 );
+}
 
 const Wrapper = styled.div`
   max-width: ${({ theme }) => theme.screenLg};

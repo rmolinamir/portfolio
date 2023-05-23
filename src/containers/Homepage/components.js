@@ -1,5 +1,3 @@
-
-
 import Typography from '@material-ui/core/Typography';
 import PageWrapper from 'layout/UI/PageWrapper';
 import styled from 'styled-components';

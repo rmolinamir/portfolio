@@ -1,5 +1,3 @@
-
-
 import { Numeric } from 'react-formalized';
 
 export default function NumericElement() {

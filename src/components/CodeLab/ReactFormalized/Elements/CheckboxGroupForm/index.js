@@ -1,4 +1,3 @@
-
 import Button from '@material-ui/core/Button';
 import { Checkbox, CheckboxGroup, Form } from 'react-formalized';
 import styled from 'styled-components';
@@ -30,11 +29,10 @@ export default function CheckboxGroupForm() {
   };
 
   return (
-    <>
-      <Form
+    <Form
         onChange={onChangeHandler}
         onSubmit={onSubmitHandler}
-      >
+    >
         <StyledDiv>Which ice cream flavours do you like?</StyledDiv>
         <CheckboxGroup
           identifier="favoritePet"
@@ -58,7 +56,6 @@ export default function CheckboxGroupForm() {
         <StyledButton type="submit">
           Sign up
         </StyledButton>
-      </Form>
-    </>
+    </Form>
   );
 }

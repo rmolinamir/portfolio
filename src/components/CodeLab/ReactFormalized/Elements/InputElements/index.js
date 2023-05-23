@@ -1,5 +1,3 @@
-
-
 import { Input } from 'react-formalized';
 
 export default function InputElements() {

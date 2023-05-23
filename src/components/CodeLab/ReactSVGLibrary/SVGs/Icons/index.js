@@ -1,4 +1,3 @@
-
 import { Col, Row } from 'components/Layout';
 import Tooltip from 'react-png-tooltip';
 import { Icon } from 'react-svg-library';

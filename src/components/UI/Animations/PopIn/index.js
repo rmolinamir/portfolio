@@ -1,5 +1,3 @@
-
-
 import PropTypes from 'prop-types';
 import React, { useMemo } from 'react';
 import { CSSTransition } from 'react-transition-group';
@@ -10,7 +8,7 @@ import useElementInViewport from '../utils/useElementInViewport';
 const ANIMATION_TIMEOUT = 1000;
 const POP_IN_DEFAULT_CLASS = 'pop-in';
 
-const PopIn = props => {
+function PopIn(props) {
   const {
     // Functionality
     wrapper: WrapperComponent,
@@ -60,13 +58,11 @@ const PopIn = props => {
         onExited={onExited}
         unmountOnExit={unmountOnExit}
       >
-        <>
-          {children}
-        </>
+        {children}
       </CSSTransition>
     </Wrapper>
   );
-};
+}
 
 PopIn.propTypes = {
   children: PropTypes.node.isRequired,

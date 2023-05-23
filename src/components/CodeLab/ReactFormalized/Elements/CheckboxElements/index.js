@@ -1,5 +1,3 @@
-
-
 import { Checkbox, CheckboxGroup } from 'react-formalized';
 import styled from 'styled-components';
 

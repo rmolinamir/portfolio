@@ -1,11 +1,9 @@
-
-
 import RawFab from '@material-ui/core/Fab';
 import styled from 'styled-components';
 
-const Fab = props => (
-  <StyledFab {...props} />
-);
+function Fab(props) {
+  return <StyledFab {...props} />;
+}
 
 const StyledFab = styled(({ color, backgroundColor, ...rest }) => <RawFab {...rest} />)`
   &&& {

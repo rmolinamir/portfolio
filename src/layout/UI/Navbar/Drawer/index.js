@@ -1,5 +1,3 @@
-
-
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Cancel';
@@ -18,7 +16,7 @@ const DrawerNav = styled.nav`
   height: 84px;
 `;
 
-const NavbarDrawer = props => {
+function NavbarDrawer(props) {
   const {
     logoWrapperProps, // Defaults to root address.
     open,
@@ -72,7 +70,7 @@ const NavbarDrawer = props => {
       </div>
     </StyledDrawer>
   );
-};
+}
 
 NavbarDrawer.propTypes = {
   open: PropTypes.bool.isRequired,

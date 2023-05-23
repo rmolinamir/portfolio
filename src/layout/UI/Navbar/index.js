@@ -1,5 +1,3 @@
-
-
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -53,8 +51,7 @@ export default function Navbar(props) {
   const shouldRenderDrawerIcon = getShouldRenderDrawerIcon(links);
 
   return (
-    <>
-      <StyledAppBar
+    <StyledAppBar
         position={position}
         color={color}
         backgroundColor={backgroundColor}
@@ -63,7 +60,7 @@ export default function Navbar(props) {
         transform={transform}
         styledCss={styledCss}
         id="main-app-bar"
-      >
+    >
         <Toolbar>
           <Home />
           <div className="spacing" />
@@ -101,8 +98,7 @@ export default function Navbar(props) {
           links={links}
           linkComponent={LinkComponent}
         />
-      </StyledAppBar>
-    </>
+    </StyledAppBar>
   );
 }
 

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import PropTypes from 'prop-types';
 import React, { lazy, useCallback } from 'react';
@@ -5,7 +6,7 @@ import React, { lazy, useCallback } from 'react';
 /**
  * After the lazy imported component loads, delay the promise to increase smoothness.
  */
-const LazyImport = props => {
+function LazyImport(props) {
   const {
     importedComponent,
     resolvedCallback,
@@ -22,9 +23,10 @@ const LazyImport = props => {
       new Promise(resolve => {
         if (resolvedCallback) {
           setTimeout(() => {
-            resolvedCallback('It works.');
+            resolvedCallback();
           }, resolvedCallbackDelay);
         }
+
         setTimeout(resolve, process.env.NODE_ENV === 'development' ? devDelay : delay);
       })
     ]).then(([moduleExports]) => moduleExports)),
@@ -32,7 +34,7 @@ const LazyImport = props => {
   );
 
   return shouldRender ? <Component /> : null;
-};
+}
 
 LazyImport.propTypes = {
   importedComponent: PropTypes.instanceOf(Object).isRequired,

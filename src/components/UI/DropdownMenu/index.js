@@ -1,5 +1,3 @@
-
-
 import Button from '@material-ui/core/Button';
 import ListItemText from '@material-ui/core/ListItemText';
 import Menu from '@material-ui/core/Menu';
@@ -8,7 +6,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
-const DropdownMenu = props => {
+function DropdownMenu(props) {
   const {
     id,
     header,
@@ -38,8 +36,8 @@ const DropdownMenu = props => {
       <Button
         aria-controls={menuId}
         aria-haspopup="true"
-        onClick={handleClick}
-        onMouseEnter={handleClick}
+        onClick={() => handleClick()}
+        onMouseEnter={() => handleClick()}
         color="inherit"
       >
         {header}
@@ -49,7 +47,7 @@ const DropdownMenu = props => {
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
-        onClose={handleClose}
+        onClose={() => handleClose()}
         MenuListProps={{ onMouseLeave: handleClose }}
         elevation={4}
         getContentAnchorEl={null}
@@ -80,7 +78,7 @@ const DropdownMenu = props => {
       </StyledMenu>
     </div>
   );
-};
+}
 
 DropdownMenu.propTypes = {
   id: PropTypes.string.isRequired,

@@ -1,5 +1,3 @@
-
-
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import { DropdownMenu } from 'components/UI';
@@ -23,7 +21,7 @@ const getShouldRenderDrawerIcon = (navLinks = []) => navLinks.find(link => {
  * If it's not an array, it will evaluate if the item is a button, or a list,
  * then render the respective component.
  */
-const renderNavLinks = (navLinks = [], LinkComponent) => navLinks.map((link, index) => {
+const renderNavLinks = (navLinks, LinkComponent) => navLinks.map((link, index) => {
   const navbarContext = useContext(NavbarContext);
   const [navbarColor] = navbarContext.colorState;
   const [navbarBackgroundColor] = navbarContext.backgroundColorState;
@@ -35,7 +33,9 @@ const renderNavLinks = (navLinks = [], LinkComponent) => navLinks.map((link, ind
       </React.Fragment>
     );
   }
+
   const { type } = link;
+
   switch(type) {
     case 'list': {
       // TODO: DropdownMenu support with LinkComponent
@@ -53,6 +53,7 @@ const renderNavLinks = (navLinks = [], LinkComponent) => navLinks.map((link, ind
         />
       );
     }
+
     case 'button': {
       const {
         key,
@@ -62,8 +63,11 @@ const renderNavLinks = (navLinks = [], LinkComponent) => navLinks.map((link, ind
         wrapperProps,
         isDrawerOnly,
       } = link;
+
       if (isDrawerOnly) return null;
+
       const Wrapper = ButtonLinkComponent || LinkComponent;
+
       const navLink = (
         <Button
           key={key}
@@ -72,6 +76,7 @@ const renderNavLinks = (navLinks = [], LinkComponent) => navLinks.map((link, ind
           {title}
         </Button>
       );
+
       return Wrapper ? (
         <Wrapper
           key={key}
@@ -81,6 +86,7 @@ const renderNavLinks = (navLinks = [], LinkComponent) => navLinks.map((link, ind
         </Wrapper>
       ) : navLink;
     }
+
     default:
       return null;
   }
@@ -92,7 +98,7 @@ const renderNavLinks = (navLinks = [], LinkComponent) => navLinks.map((link, ind
  * If it's not an array, it will evaluate if the item is a button, or a list,
  * then render the respective component.
  */
-const renderDrawerLinks = (navLinks = [], listItemProps = {}, LinkComponent) => navLinks.map((link, index) => {
+const renderDrawerLinks = (navLinks, listItemProps, LinkComponent) => navLinks.map((link, index) => {
   if (Array.isArray(link)) {
     return (
       <React.Fragment key={index}>
@@ -101,7 +107,9 @@ const renderDrawerLinks = (navLinks = [], listItemProps = {}, LinkComponent) => 
       </React.Fragment>
     );
   }
+
   const { type } = link;
+
   switch(type) {
     case 'list': {
       // Placeholder before implementing dropdown
@@ -131,6 +139,7 @@ const renderDrawerLinks = (navLinks = [], listItemProps = {}, LinkComponent) => 
         </React.Fragment>
       );
     }
+
     case 'button': {
       const { key, icon, title, caption, wrapper, wrapperProps } = link;
       return (
@@ -151,6 +160,7 @@ const renderDrawerLinks = (navLinks = [], listItemProps = {}, LinkComponent) => 
         </React.Fragment>
       );
     }
+
     default:
       return null;
   }

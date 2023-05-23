@@ -1,4 +1,3 @@
-
 import Button from '@material-ui/core/Button';
 import { Col, Row } from 'components/Layout';
 import { Animations } from 'components/UI';

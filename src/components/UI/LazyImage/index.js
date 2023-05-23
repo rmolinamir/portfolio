@@ -1,4 +1,3 @@
-
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import LazyLoad from 'react-lazyload';
@@ -39,7 +38,7 @@ class LazyImage extends Component {
     offset: PropTypes.number,
     alt: PropTypes.string,
     draggable: PropTypes.bool
-  }
+  };
 
   static defaultProps = {
     onLoad: undefined,
@@ -51,10 +50,13 @@ class LazyImage extends Component {
     offset: 0,
     src: undefined,
     alt: undefined
-  }
+  };
 
-  state = {
-    className: 'loading'
+  constructor(props) {
+    super(props);
+    this.state = {
+      className: 'loading'
+    };
   }
 
   onLoadHandler = event => {
@@ -63,7 +65,7 @@ class LazyImage extends Component {
       onLoad(event);
     }
     this.setState({ className: 'loaded' });
-  }
+  };
 
   render() {
     const {

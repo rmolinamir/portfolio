@@ -1,4 +1,3 @@
-
 import Loader from 'components/UI/Loader';
 import LogoLoader from 'components/UI/LogoLoader';
 import LazyImport from 'components/Util/LazyImport';
@@ -10,7 +9,7 @@ const LOADER_DELAY = 1500;
 const LOADER_DEV_DELAY = 1500;
 const RESOLVED_CALLBACK_DELAY = process.env.NODE_ENV === 'development' ? LOADER_DEV_DELAY : LOADER_DELAY;
 
-const CodeLabLoader = () => {
+function CodeLabLoader() {
   const [isLoading, setIsLoading] = React.useState(true);
 
   return (
@@ -39,7 +38,7 @@ const CodeLabLoader = () => {
       />
     </Suspense>
   );
-};
+}
 
 const Loaders = styled.div`
   position: relative;

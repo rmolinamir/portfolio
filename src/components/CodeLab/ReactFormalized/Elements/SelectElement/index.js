@@ -1,5 +1,3 @@
-
-
 import { Select } from 'react-formalized';
 
 export default function SelectElement() {

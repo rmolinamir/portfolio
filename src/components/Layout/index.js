@@ -1,5 +1,3 @@
-
-
 import Grid from '@material-ui/core/Grid';
 import styled, { css } from 'styled-components';
 
@@ -35,18 +33,22 @@ const StyledRow = styled(({ height, styledCss, ...rest }) => (
   }};
 `;
 
-const Row = props => (
-  <StyledRow
+function Row(props) {
+  return (
+<StyledRow
     {...props}
-  />
+/>
 );
+}
 
-const Col = props => (
-  <Grid
+function Col(props) {
+  return (
+<Grid
     {...props}
     item
-  />
+/>
 );
+}
 
 export {
   Row,

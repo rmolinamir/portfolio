@@ -1,5 +1,3 @@
-
-
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -7,7 +5,7 @@ import { Caption, Subtitle } from 'components/UI/Text';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Item = props => {
+function Item(props) {
   const {
     icon,
     title,
@@ -53,7 +51,7 @@ const Item = props => {
       {navLink}
     </Wrapper>
   ) : navLink;
-};
+}
 
 Item.propTypes = {
   icon: PropTypes.node.isRequired,

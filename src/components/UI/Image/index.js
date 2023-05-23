@@ -1,11 +1,10 @@
-
 import styled from 'styled-components';
 
 import LazyImage from '../LazyImage';
 
-const Image = props => (
-  <StyledImage {...props} />
-);
+function Image(props) {
+  return <StyledImage {...props} />;
+}
 
 Image.Lazy = LazyImage;
 

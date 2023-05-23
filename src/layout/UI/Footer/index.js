@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 const currentYear = (new Date()).getFullYear();
 
-const Footer = props => (
-  <Wrapper {...props}>
+function Footer(props) {
+  return (
+<Wrapper {...props}>
     <div>
       <div>
         All original code is <strong>Copyright © {currentYear} Robert Molina</strong> & licensed under
@@ -17,7 +18,7 @@ const Footer = props => (
         <a
           href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
           target="blank"
-          rel="noopener noreferer"
+          rel="noopener"
         >
           Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
         </a>
@@ -25,8 +26,9 @@ const Footer = props => (
         except where explicitly stated otherwise.
       </div>
     </div>
-  </Wrapper>
+</Wrapper>
 );
+}
 
 const Wrapper = styled.footer`
     border-top: 1px solid ${({ theme }) => theme.dividerColor};

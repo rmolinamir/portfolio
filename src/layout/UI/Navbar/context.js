@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
@@ -24,7 +25,7 @@ const initialContext = {
 
 export const NavbarContext = React.createContext(initialContext);
 
-const NavbarThemeProvider = props => {
+function NavbarThemeProvider(props) {
   const {
     color,
     backgroundColor,
@@ -77,7 +78,7 @@ const NavbarThemeProvider = props => {
       {children}
     </NavbarContext.Provider>
 	);
-};
+}
 
 NavbarThemeProvider.propTypes = {
   color: PropTypes.string,

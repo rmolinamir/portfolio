@@ -1,6 +1,3 @@
-
-
-
 export default function GithubIcon(props) {
   return (
     <svg

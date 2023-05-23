@@ -1,5 +1,3 @@
-
-
 import RawDivider from '@material-ui/core/Divider';
 import { H6 } from 'components/UI/Text';
 import styled from 'styled-components';

@@ -1,4 +1,3 @@
-
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
@@ -19,7 +18,7 @@ const Container = styled.div`
   }
 `;
 
-const Loader = props => {
+function Loader(props) {
   const { size, loader, ...rest } = props;
 
   return (
@@ -35,7 +34,7 @@ const Loader = props => {
       )}
     </Container>
   );
-};
+}
 
 Loader.propTypes = {
   size: PropTypes.number,

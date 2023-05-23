@@ -1,15 +1,15 @@
-
 import PropTypes from 'prop-types';
 
-const InfinityLoader = props => (
-  <svg
+function InfinityLoader(props) {
+  return (
+<svg
     width={`${props.size}px`}
     height={`${props.size}px`}
     viewBox="0 0 100 100"
-  >
+>
     <path
-      ng-attr-d="{{config.pathCmd}}"
-      ng-attr-fill="{{config.color}}"
+      // ng-attr-d="{{config.pathCmd}}"
+      // ng-attr-fill="{{config.color}}"
       stroke="none"
       d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50"
       fill="currentColor"
@@ -26,8 +26,9 @@ const InfinityLoader = props => (
       repeatCount="indefinite"
     />
     </path>
-  </svg>
+</svg>
 );
+}
 
 InfinityLoader.propTypes = {
   size: PropTypes.number

@@ -1,4 +1,3 @@
-
 // CSS
 import './WavesBackground.css';
 

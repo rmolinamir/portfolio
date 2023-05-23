@@ -1,15 +1,14 @@
-
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const PageWrapper = props => {
+function PageWrapper(props) {
   const { children, ...rest } = props;
   return (
     <Wrapper {...rest}>
       {children}
     </Wrapper>
   );
-};
+}
 
 PageWrapper.propTypes = {
   children: PropTypes.node.isRequired
