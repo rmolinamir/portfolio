@@ -247,7 +247,7 @@ export default function Technologies() {
             key={key}
           >
             <Animations.PopIn
-              animationDelayMultiplier={index / 2}
+              animationDelayMultiplier={index / 4}
             >
               <div>
                 <div className="list-header"><strong>{name}</strong></div>
