@@ -42,7 +42,7 @@ export default function CustomTooltips() {
     <StyledRow
       alignItems="center"
       alignContent="center"
-      justify="center"
+      justifyContent="center"
       spacing={4}
     >
       {[

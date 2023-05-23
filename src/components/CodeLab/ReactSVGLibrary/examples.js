@@ -115,7 +115,7 @@ export default function Underlines() {
     <Row
       alignItems="center"
       alignContent="center"
-      justify="center"
+      justifyContent="center"
       spacing={3}
     >
       {underlines.map(({ name, underline, literal }) => (
@@ -278,7 +278,7 @@ export default function CustomizedUnderlines() {
     <Row
       alignItems="center"
       alignContent="center"
-      justify="center"
+      justifyContent="center"
       spacing={3}
     >
       {underlines.map(({ name, underline, literal }) => (
@@ -358,7 +358,7 @@ export default function CustomizedUnderlines() {
     <Row
       alignItems="center"
       alignContent="center"
-      justify="center"
+      justifyContent="center"
       spacing={3}
     >
       {underlines.map((key => (
@@ -559,7 +559,7 @@ export default function RatingsAPI() {
     <Row
       alignItems="center"
       alignContent="center"
-      justify="center"
+      justifyContent="center"
       spacing={3}
       style={{
         marginBottom: '1ch',
@@ -1058,7 +1058,7 @@ export default function Underlines() {
     <Row
       alignItems="center"
       alignContent="center"
-      justify="center"
+      justifyContent="center"
       spacing={3}
       style={{
         marginBottom: '1ch',

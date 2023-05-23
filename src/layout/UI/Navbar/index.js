@@ -21,7 +21,7 @@ import { getShouldRenderDrawerIcon, renderNavLinks } from './links';
 export const NavbarContext = Context;
 export const NavbarProvider = Provider;
 
-const CONTACT_HREF = 'mailto:name@mydomain.com';
+const CONTACT_HREF = 'mailto:rmolinamir@gmail.com';
 const GITHUB_HREF = 'https://github.com/rmolinamir';
 const LINKEDIN_HREF = 'https://www.linkedin.com/in/rmolinamir/';
 

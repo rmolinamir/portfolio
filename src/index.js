@@ -11,7 +11,3 @@ import * as serviceWorker from './serviceWorker';
 serviceWorker.unregister();
 
 render(<App />, document.getElementById('root'));
-
-// TODO: Enable after upgrading react-router-dom.
-// const root = createRoot(document.getElementById('root')); // createRoot(container!) if you use TypeScript
-// root.render(<App />);

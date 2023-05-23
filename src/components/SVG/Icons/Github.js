@@ -8,7 +8,7 @@ export default function GithubIcon(props) {
     >
       <g>
         <title>Github</title>
-        <rect fill="#fff" height="inherit" width="inherit" y="-1" x="-1" />
+        <rect fill="#fff" y="-1" x="-1" />
         <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
         <rect fill="url(#gridpattern)" strokeWidth="0" y="0" x="0" height="100%" width="100%" />
         </g>

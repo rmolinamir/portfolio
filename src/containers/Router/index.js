@@ -4,9 +4,14 @@ import CodeLab from 'containers/CodeLab/loader';
 import Homepage from 'containers/Homepage';
 import Licenses from 'containers/Licenses';
 import RoutesWrapper from 'layout/UI/RoutesWrapper';
-import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
-import { NavLink, Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import {
+  Navigate,
+  NavLink,
+  Route,
+  Routes,
+  useLocation
+} from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledLink = styled(NavLink)`
@@ -35,7 +40,6 @@ const links = [
       <StyledLink
         {...props}
         to="/"
-        exact
       />
     )
   },
@@ -55,8 +59,8 @@ const links = [
   },
 ];
 
-function Routes(props) {
-  const { location } = props;
+function Router() {
+  const location = useLocation();
 
   /**
    * Any time the location (route) changes, an instant scroll to the top will execute.
@@ -73,18 +77,17 @@ function Routes(props) {
         to: '/'
       }}
     >
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route path="/codelab" component={CodeLab} />
-        <Route path="/licenses" component={Licenses} />
-        <Redirect to="/" />
-      </Switch>
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path="/licenses" element={<Licenses />} />
+        <Route path="/codelab/*" element={<CodeLab />} />
+        <Route
+          path="*"
+          element={<Navigate to="/" replace />}
+        />
+      </Routes>
     </RoutesWrapper>
   );
 }
 
-Routes.propTypes = {
-  location: PropTypes.instanceOf(Object).isRequired
-};
-
-export default withRouter(Routes);
+export default Router;

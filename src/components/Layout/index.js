@@ -35,19 +35,19 @@ const StyledRow = styled(({ height, styledCss, ...rest }) => (
 
 function Row(props) {
   return (
-<StyledRow
-    {...props}
-/>
-);
+    <StyledRow
+      {...props}
+    />
+  );
 }
 
 function Col(props) {
   return (
-<Grid
-    {...props}
-    item
-/>
-);
+    <Grid
+      {...props}
+      item
+    />
+  );
 }
 
 export {

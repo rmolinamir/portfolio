@@ -43,7 +43,6 @@ export default function SideDrawer(props) {
         <Divider />
         <List>
           <NavLink
-            exact
             to="/codelab"
             onClick={handleDrawerClose}
           >
@@ -55,7 +54,6 @@ export default function SideDrawer(props) {
           {content.map(({ name, icon: Icon, href }) => (
             <NavLink
               key={name}
-              exact
               to={href}
               onClick={handleDrawerClose}
             >

@@ -5,8 +5,9 @@ import React, { Suspense } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 
-const LOADER_DELAY = 1500;
-const LOADER_DEV_DELAY = 1500;
+const LOADER_DELAY = 750;
+const LOADER_DEV_DELAY = 750;
+
 const RESOLVED_CALLBACK_DELAY = process.env.NODE_ENV === 'development' ? LOADER_DEV_DELAY : LOADER_DELAY;
 
 function CodeLabLoader() {

@@ -10,7 +10,7 @@ import { Divider } from 'components/UI';
 import content from 'containers/CodeLab/content';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { withTheme } from 'styled-components';
 
 function CodeLab(props) {
@@ -20,7 +20,7 @@ function CodeLab(props) {
     setWidth(document.body.clientWidth);
   }, [setWidth]);
 
-  const { theme, match } = props;
+  const { theme } = props;
 
   // Remove page margins while on CodeLab
   useEffect(() => {
@@ -49,21 +49,19 @@ function CodeLab(props) {
     <>
       <SideDrawer content={content} />
       <Divider />
-      <Switch>
-        <Route exact path={match.path} component={Homepage} />
-        <Route exact path={`${match.path}/hero-slider`} component={HeroSlider} />
-        <Route exact path={`${match.path}/react-formalized`} component={ReactFormalized} />
-        <Route exact path={`${match.path}/react-png-tooltip`} component={ReactPNGTooltip} />
-        <Route exact path={`${match.path}/react-svg-library`} component={ReactSVGLibrary} />
-        <Redirect to="/" />
-      </Switch>
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path="hero-slider" element={<HeroSlider />} />
+        <Route path="react-formalized" element={<ReactFormalized />} />
+        <Route path="react-png-tooltip" element={<ReactPNGTooltip />} />
+        <Route path="react-svg-library" element={<ReactSVGLibrary />} />
+      </Routes>
     </>
   );
 }
 
 CodeLab.propTypes = {
   theme: PropTypes.instanceOf(Object).isRequired,
-  match: PropTypes.instanceOf(Object).isRequired,
 };
 
-export default withRouter(withTheme(CodeLab));
+export default withTheme(CodeLab);

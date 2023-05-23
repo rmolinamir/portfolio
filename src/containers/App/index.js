@@ -1,6 +1,6 @@
 import 'static/theme/index.scss';
 
-import Routes from 'containers/Routes';
+import Router from 'containers/Router';
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { BrowserRouter } from 'react-router-dom';
@@ -8,8 +8,9 @@ import googleSiteTag from 'services/gtag';
 import { mainTheme } from 'static/theme';
 import styled, { ThemeProvider } from 'styled-components';
 
-const LOADER_DELAY = 50;
-const LOADER_DEV_DELAY = 50;
+const LOADER_DELAY = 250;
+const LOADER_DEV_DELAY = 250;
+
 const RESOLVED_CALLBACK_DELAY = process.env.NODE_ENV === 'development' ? LOADER_DEV_DELAY : LOADER_DELAY;
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
             </script>
             {/* <!-- End Google Analytics --> */}
           </Helmet>
-            <Routes />
+          <Router />
         </Wrapper>
       </ThemeProvider>
     </BrowserRouter>
@@ -51,6 +52,7 @@ const Wrapper = styled.section`
   &&& {
     display: flex;
     flex-flow: column;
+    width: 100%;
     min-height: 100%;
 
     /* Loaders Animations */

@@ -26,12 +26,12 @@ body,
 #root {
   color: $base-font-color;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 #root {
+  display: flex;
   background: #fff;
-  min-height: 100%;
   max-width: $root-max-width;
   box-shadow: $base-box-shadow;
   margin: $root-margin;

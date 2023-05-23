@@ -57,7 +57,7 @@ const SimpleTooltips = withTheme(props => {
     <StyledRow
       alignItems="center"
       alignContent="center"
-      justify="center"
+      justifyContent="center"
       spacing={4}
     >
       {[

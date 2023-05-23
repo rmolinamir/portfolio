@@ -163,7 +163,7 @@ export default function RatingsAPI() {
     <Row
       alignItems="center"
       alignContent="center"
-      justify="center"
+      justifyContent="center"
       spacing={3}
       style={{
         marginBottom: '1ch',

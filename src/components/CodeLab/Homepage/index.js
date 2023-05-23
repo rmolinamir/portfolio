@@ -13,6 +13,7 @@ const StyledHoverCard = styled(HoverCard)`
   box-shadow: 1px 1px 8px 6px rgba(0,0,0, 0.075);
   overflow: hidden;
   border-radius: 2px;
+  margin: 0 auto;
 `;
 
 const Grid = styled.div`
@@ -37,6 +38,7 @@ export default function Homepage() {
   const codeLabProjects = useMemo(() => Object.keys(projectsData).map((projectKey, index) => {
     const codeLabProject = projectsData[projectKey];
     const { name, github, href, description } = codeLabProject;
+
     return (
       <StyledCol
         key={projectKey}
@@ -78,7 +80,7 @@ export default function Homepage() {
       <Grid>
         <Row
           direction="row"
-          justify="center"
+          justifyContent="center"
           alignItems="center"
           spacing={3}
         >

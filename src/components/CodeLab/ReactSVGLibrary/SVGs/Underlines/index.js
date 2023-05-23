@@ -114,7 +114,7 @@ export default function Underlines() {
     <Row
       alignItems="center"
       alignContent="center"
-      justify="center"
+      justifyContent="center"
       spacing={3}
     >
       {underlines.map(({ name, underline, literal }) => (
