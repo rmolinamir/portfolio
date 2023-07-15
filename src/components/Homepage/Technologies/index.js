@@ -23,12 +23,10 @@ const technologiesList = [
     key: 'programming-languages',
     name: 'Programming Languages',
     list: [
-      { name: 'C#', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'C++', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'C#', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'Java', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'JavaScript', proficiency: PROFICIENCY_EXPERT },
-      { name: 'Kotlin', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'Python', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'Python', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Solidity', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'TypeScript', proficiency: PROFICIENCY_EXPERT },
     ],
@@ -39,11 +37,10 @@ const technologiesList = [
     list: [
       { name: 'Auth0', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Domo', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
-      { name: 'Google (Apps Script, Auth, Cloud Hosting, Firebase, Firestore, Maps, etc.)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Google (Apps Script, Cloud Hosting, Firebase, Firestore, Maps, etc.)', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Mapbox', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'OAuth2 Integrations (e.g. Google, Twitch, Amazon Cognito, etc.)', proficiency: PROFICIENCY_EXPERT },
+      { name: 'OAuth2 Integrations (i.e. social providers)', proficiency: PROFICIENCY_EXPERT },
       { name: 'Stripe', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'YouTube', proficiency: PROFICIENCY_RECREATIONAL },
     ],
   },
   {
@@ -51,11 +48,10 @@ const technologiesList = [
     name: 'AWS',
     list: [
       { name: 'AWS Amplify', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'AWS CDK', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'AWS CDK', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'AWS CloudWatch', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'AWS DynamoDB', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'AWS EventBridge', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
-      { name: 'AWS IoT', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
+      { name: 'AWS EventBridge', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'AWS Kinesis', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'AWS Lambda', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'AWS RDS', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
@@ -68,13 +64,10 @@ const technologiesList = [
     key: 'backend',
     name: 'Backend Frameworks',
     list: [
-      { name: '.NET', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'Django', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Express', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'GraphQL', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'NestJS', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'OpenAPI', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'Prisma', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Serverless Framework', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
     ]
   },
@@ -93,7 +86,7 @@ const technologiesList = [
     name: 'JavaScript Runtime Environments',
     list: [
       { name: 'Deno', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'Node.js', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'Node.js', proficiency: PROFICIENCY_EXPERT },
     ]
   },
   {
@@ -101,6 +94,7 @@ const technologiesList = [
     name: 'Bundlers & Compilers',
     list: [
       { name: 'Babel', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
+      { name: 'esbuild', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Grunt', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Gulp', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'TypeScript Compiler', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
@@ -114,17 +108,14 @@ const technologiesList = [
       { name: 'AuroraDB', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'EventStore', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'MongoDB', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'MySQL', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'PostgreSQL', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'RavenDB', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'SQLite', proficiency: PROFICIENCY_RECREATIONAL },
     ]
   },
   {
     key: 'design',
     name: 'Design',
     list: [
-      { name: 'Adobe XD', proficiency: PROFICIENCY_RECREATIONAL },
       { name: 'Figma', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'InVision', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Zeplin', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
@@ -172,22 +163,10 @@ const technologiesList = [
     name: 'Testing',
     list: [
       { name: 'Chai', proficiency: PROFICIENCY_EXPERT },
-      { name: 'CodeFactor', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Enzyme', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Jest', proficiency: PROFICIENCY_EXPERT },
       { name: 'Mocha', proficiency: PROFICIENCY_EXPERT },
-    ]
-  },
-  {
-    key: 'ides',
-    name: 'IDEs',
-    list: [
-      { name: 'Android Studio', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'PyCharm', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'Rider', proficiency: PROFICIENCY_RECREATIONAL },
-      { name: 'Sublime Text', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
-      { name: 'Visual Studio Code', proficiency: PROFICIENCY_EXPERT },
-      { name: 'Visual Studio', proficiency: PROFICIENCY_RECREATIONAL },
+      { name: 'React Testing Library', proficiency: PROFICIENCY_EXPERT },
     ]
   },
   {
@@ -196,9 +175,7 @@ const technologiesList = [
     list: [
       { name: 'Bitbucket', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'Git', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'Github Desktop App', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
       { name: 'GitHub', proficiency: PROFICIENCY_ADVANCED_PRODUCTION },
-      { name: 'Sourcetree', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
     ]
   },
   {
@@ -210,7 +187,6 @@ const technologiesList = [
       { name: 'MATLAB', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
       { name: 'Excel (Data Analysis, Dynamic Dashboards, etc.)', proficiency: PROFICIENCY_EXPERT },
       { name: 'SolidWorks', proficiency: PROFICIENCY_LIMITED_PRODUCTION },
-      { name: 'Unreal Engine', proficiency: PROFICIENCY_RECREATIONAL },
     ]
   },
 ];

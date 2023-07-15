@@ -5,12 +5,11 @@ import styled from 'styled-components';
 import SectionCaption from '../SectionCaption';
 
 const interests = [
-  'Software architecture and design',
-  'Cutting-edge tech stacks and frameworks',
-  'Contributing to open source projects',
-  'Engaging with Dungeons and Dragons',
-  'Embarking on thrilling journeys and travels',
-  'Appreciating the beauty of nature and outdoor adventures'
+  'software architecture and design',
+  'cutting-edge tech stacks and frameworks',
+  'contributing to open source projects',
+  'travelling',
+  'nature and outdoor activities'
 ];
 
 export default function Interests() {

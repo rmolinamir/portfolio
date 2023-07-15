@@ -3,7 +3,7 @@ import { H3, P } from 'components/UI/Text';
 import styled from 'styled-components';
 import pdfDownloadLink from 'utils/pdfDownloadLink';
 
-const amountOfYears = new Date().getFullYear() - 2017;
+const amountOfYears = new Date().getFullYear() - 2018;
 
 export default function TLDR() {
   return (

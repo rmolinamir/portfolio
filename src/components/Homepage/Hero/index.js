@@ -23,9 +23,8 @@ export default function Homepage() {
             animationDelayMultiplier={2}
           >
             <H3>
-              I’m a <strong>Software Engineer</strong> specializing in backend development, leveraging
-              Domain-Driven Design (DDD) principles to build systems with a ubiquitous language that fosters
-              effective communication between technical and business stakeholders.
+              I’m a <strong>Fullstack Software Engineer</strong> proficient in both backend and frontend development,
+              while fostering collaboration among technical and business stakeholders through Domain-Driven Design (DDD) principles.
             </H3>
           </Animations.PopIn>
         </Col>
