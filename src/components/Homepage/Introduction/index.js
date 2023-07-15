@@ -10,11 +10,7 @@ export default function Introduction() {
         <H3 color="primary"><strong>Introduction</strong></H3>
         <br />
         <P>
-          I’m a <strong>Fullstack Software Engineer</strong> with a strong foundation in backend and frontend development with <strong>{amountOfYears} YOE</strong>.
-        </P>
-        <br />
-        <P>
-          My journey began with a major in mechanical engineering, but my passion for programming led me to transition into the software development field. Over the years, I have honed my skills as a professional software engineer, specializing in fullstack development. I am well-versed in technologies and languages such as TypeScript, JavaScript, Python, and a range of backend and frontend frameworks.
+          I’m a <strong>Software Engineer</strong> with a strong foundation in backend and frontend development with <strong>{amountOfYears} YOE</strong>. My journey began with a major in mechanical engineering, but my passion for programming led me to transition into the software development field. Over the years, I have honed my skills as a professional software engineer, specializing in fullstack development. I am well-versed in technologies and languages such as TypeScript, JavaScript, Python, and a range of backend and frontend frameworks.
         </P>
         <br />
         <P>
