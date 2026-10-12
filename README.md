@@ -1,6 +1,5 @@
 <div align="center">
   <img src="docs/images/website-preview.webp" alt="Website Preview" width="720" />
-  <h1><a href="https://www.robertmolina.dev/">robertmolina.dev</a></h1>
 </div>
 
 <p align="center">
