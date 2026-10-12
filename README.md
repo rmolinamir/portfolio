@@ -6,7 +6,7 @@
   <a href="https://www.robertmolina.dev/">
     <img src="https://img.shields.io/badge/Website-robertmolina.dev-111111?logo=vercel&logoColor=white" alt="Website" />
   </a>
-  <a href="https://rmolinamir.github.io/personal/">
+  <a href="https://rmolinamir.github.io/dotrmolinamir/">
     <img src="https://img.shields.io/badge/Storybook-Live-ff4785?logo=storybook&logoColor=white" alt="Storybook" />
   </a>
 </p>
