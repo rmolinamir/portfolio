@@ -10,7 +10,7 @@ export default {
     website: "https://www.robertmolina.dev",
   },
   summary:
-    "I'm a staff full-stack software engineer building checkout products, cloud services, and shared engineering platforms. I apply domain-driven design to complex business workflows and create tools for AI-assisted development. I lead architecture decisions, mentor engineers, and connect delivery to conversion and payment volume.",
+    "I'm a staff full-stack software engineer building checkout products, cloud services, and shared engineering platforms. I lead architecture decisions, mentor engineers, and build shared tools used across teams. My work spans checkout conversion, performance, domain-driven design, and AI-assisted development.",
   roles: [
     {
       company: "PayPal",
@@ -19,9 +19,9 @@ export default {
       dates: "Feb 2025 - Present",
       bullets: [
         "Shipped new checkout experiences across frontend and Node.js/GraphQL services. Single-click Pay in 4 generated $23M annualized incremental total payment volume (TPV) and lifted checkout conversion 11\u00a0basis\u00a0points. Cashback-card recommendations represented approximately\u00a0$14M annualized TPV.",
-        "Served as technical lead for a PayPal BNPL-only checkout flow built for Google's Pixel launch. The flow represents an estimated\u00a0$2.16M in annualized TPV. Wrote onboarding guides and mentored engineers in frontend/backend delivery.",
-        "Architected and built a TypeScript analytics framework with OpenTelemetry adapters. Generated self-service event documentation and machine-readable schemas that AI agents can access for downstream triage and analysis. Integrated the framework into two checkout applications.",
-        "Built region-based code splitting, automatic chunk discovery, and selective prefetching for a shared feature-flags SDK. Built Web Devtools that multiple organizations within PayPal use. Published agent skills for AI-assisted Next.js integration.",
+        "Led technical delivery of a PayPal buy now, pay later (BNPL)-only checkout flow for Google's Pixel launch. The flow represents an estimated\u00a0$2.16M in annualized TPV. Wrote onboarding guides and mentored engineers across frontend and backend delivery.",
+        "Architected and built a TypeScript analytics framework and integrated it into two checkout applications. Added OpenTelemetry adapters, self-service event documentation, and machine-readable schemas that AI agents can access for downstream triage and analysis.",
+        "Built Web Devtools that multiple organizations within PayPal use. Published agent skills for AI-assisted Next.js integration. Added region-based code splitting, automatic chunk discovery, and selective prefetching to a shared feature-flags SDK.",
       ],
     },
     {
@@ -31,7 +31,7 @@ export default {
       dates: "Sep 2023 - Feb 2025",
       bullets: [
         "Led technical decisions for a Next.js checkout rewrite across performance, personalization, and reliability. Reduced P95 first-page load time from over\u00a0six\u00a0seconds to about\u00a0three\u00a0seconds through server-side processing and streaming.",
-        "Built and maintained checkout web servers and backend-for-frontend (BFF) services handling millions of requests. Integrated authentication, protected routes, and session management for all PayPal Checkout experiences.",
+        "Built and maintained checkout web servers and backend-for-frontend (BFF) services. Integrated authentication, protected routes, and session management for all PayPal Checkout experiences.",
         "Delivered last-used payment method recommendations, including an ad-blocker compatibility fix. The feature reached full rollout in 2025.",
       ],
     },
