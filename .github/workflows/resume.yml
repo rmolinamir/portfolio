@@ -1,0 +1,69 @@
+name: Update Resume
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "apps/resume/**"
+      - ".github/workflows/resume.yml"
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: apps/resume
+
+permissions:
+  contents: read
+
+concurrency:
+  group: resume-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+      - uses: pnpm/action-setup@v4
+      - name: Install resume dependencies
+        run: pnpm install --frozen-lockfile --filter @acme/resume...
+      - name: Typecheck resume scripts
+        run: pnpm typecheck
+      - name: Test resume scripts
+        run: pnpm test
+      - name: Generate DOCX and PDF with containerized tools
+        run: node src/convert.ts
+      - name: Upload PDF and page previews
+        uses: actions/upload-artifact@v7
+        with:
+          name: resume
+          path: apps/resume/generated/
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    environment: resume-drive
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+      - uses: pnpm/action-setup@v4
+      - name: Install publishing dependencies
+        run: pnpm install --frozen-lockfile --prod --filter @acme/resume
+      - uses: actions/download-artifact@v8
+        with:
+          name: resume
+          path: apps/resume/generated/
+      - name: Replace existing Google Drive PDF
+        env:
+          GOOGLE_DRIVE_FILE_ID: ${{ vars.GOOGLE_DRIVE_FILE_ID || '15bEpE77LztNaNu2fn2wRtPsXeKzHSCu9' }}
+          GOOGLE_DRIVE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_OAUTH_CLIENT_ID }}
+          GOOGLE_DRIVE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_OAUTH_CLIENT_SECRET }}
+          GOOGLE_DRIVE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_DRIVE_OAUTH_REFRESH_TOKEN }}
+        run: node src/publish.ts
